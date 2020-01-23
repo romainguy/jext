@@ -1,0 +1,10 @@
+# test visibility of variables
+
+0 counter ->
+
+0 10 I for
+  counter ++
+  13 doom ->
+next
+
+counter rcl

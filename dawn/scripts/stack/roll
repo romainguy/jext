@@ -1,0 +1,9 @@
+4 3 2 1
+
+# rolls down three first levels: stack=[1 3 2]
+# rot would be equivalent
+3 rolld
+
+# rolls up three first levels: stack=[3 2 1]
+# unrot would be equivalent
+3 roll

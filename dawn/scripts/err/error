@@ -1,0 +1,21 @@
+# catch error
+try
+  2 +
+catch err
+
+# display error message on stack
+errMsg
+
+# catch another error
+
+# try
+#   2 +
+# catch err
+
+# goes on...
+
+# "oups" println
+
+# and throws the error
+
+# error

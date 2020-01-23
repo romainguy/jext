@@ -1,0 +1,14 @@
+##### LOOPS TESTS #####
+
+## FOR ##
+2 0 I for
+  I rcl
+  0 2 J for
+    "hello"
+  next
+next
+
+## WHILE ##
+while depth 1 != repeat
+  drop
+wend

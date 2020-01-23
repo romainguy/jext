@@ -1,0 +1,37 @@
+# sample Dawn source code
+# used for tests framework
+
+2 ->str
+
+# for and if
+
+0 10 I for
+  2 2 +
+  if 5 1 - I rcl == then
+    "cinq"
+  end
+  drop
+next
+
+# if and for
+
+if 3 5 < 2 4 > or then
+  13 doom ->
+  0 3 I for
+    doom rcl
+  next
+end
+
+# while
+
+0 counter sto
+
+while counter rcl 10 < repeat
+  counter rcl 1 + counter sto
+  "global" run
+wend
+
+"3.1416"
+str->
+
+3 pick

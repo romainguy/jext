@@ -1,0 +1,23 @@
+# misc tries
+
+# needs dawn.util
+# needsGlobal dawn.math
+
+# help
+# 2 ->str
+# "3.1416" str->
+# 1 2 3 dup dup 5 dropn
+# 5 guy sto
+# 6 romain ->
+# guy rcl
+# romain rcl
+# 2 isNumeric
+# "hello" isString
+# var isLiteral
+# 2 type
+# "hello" type
+# var type
+# version
+# 5 neg
+
+# End of script

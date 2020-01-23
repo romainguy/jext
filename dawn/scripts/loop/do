@@ -1,0 +1,8 @@
+# do/loop loop
+
+0 counter ->
+
+do
+  "hello"
+  counter ++
+loop counter rcl 10 == until

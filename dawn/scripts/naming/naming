@@ -1,0 +1,28 @@
+# this is an example showing how to create
+# a variable name from a string
+"myFunction" ->lit 4 swap -> myFunction rcl
+
+# lit-> function can be used to get a string from
+# a variable name. this can be used to modify the
+# variable name and create other dynamic names.
+myFunction lit->
+
+# once the literal myFunction is turned into a String
+# we can use it to create a new function. this shows
+# you how to dynamically create functions.
+
+function
+  drop
+  2 2 +
+endFunction
+
+myFunction
+
+# if you execute this script from the console (by launching:
+# java com.chez.powerteam.dawn.Dawn -console), you'll be able
+# to use myGlobal function from any other script or directly on
+# the Dawn console prompt.
+
+"myGlobal" global
+  2 3 +
+endGlobal

@@ -1,0 +1,10 @@
+# randoms tests
+0 5 I for
+  rand
+next
+
+# using a seed
+1 rdz
+0 5 I for
+  rand
+next

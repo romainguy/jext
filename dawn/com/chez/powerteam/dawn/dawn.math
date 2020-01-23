@@ -1,0 +1,25 @@
+# dawn.math package - Dawn package to handle maths (+, ++, *, %, sqrt...)
+
+com.chez.powerteam.dawn.math.ArcCosFunction
+com.chez.powerteam.dawn.math.ArcSinFunction
+com.chez.powerteam.dawn.math.ArcTanFunction
+com.chez.powerteam.dawn.math.CosFunction
+com.chez.powerteam.dawn.math.DecreaseFunction
+com.chez.powerteam.dawn.math.DivideFunction
+com.chez.powerteam.dawn.math.EFunction
+com.chez.powerteam.dawn.math.FactFunction
+com.chez.powerteam.dawn.math.IncreaseFunction
+com.chez.powerteam.dawn.math.InvertFunction
+com.chez.powerteam.dawn.math.MinusFunction
+com.chez.powerteam.dawn.math.ModuloFunction
+com.chez.powerteam.dawn.math.NegFunction
+com.chez.powerteam.dawn.math.PiFunction
+com.chez.powerteam.dawn.math.PlusFunction
+com.chez.powerteam.dawn.math.PowerFunction
+com.chez.powerteam.dawn.math.RoundFunction
+com.chez.powerteam.dawn.math.SinFunction
+com.chez.powerteam.dawn.math.SqrtFunction
+com.chez.powerteam.dawn.math.TanFunction
+com.chez.powerteam.dawn.math.TimesFunction
+
+# End of dawn.math package

@@ -1,0 +1,61 @@
+#######################################
+# JAVA PURE SOURCE CODE LINES COUNTER #
+#######################################
+# (C)2000 Romain Guy                  #
+# Dawn demonstration                  #
+#######################################
+
+# tells if we're inside a wing comment
+0 wing ->
+
+# builds the array required to check comments
+array
+"//" addElement
+"/*" addElement
+"*/" addElement
+comments ->
+
+# gets file name from user's prompt
+"Java source file: " print
+inputLine dup sourceFile ->
+
+# open the file
+"SOURCE.FILE" openForInput
+
+# inits variables
+"" line ->
+0 codeLines ->
+
+# parses the source code
+while "SOURCE.FILE" isFileAvailable repeat
+  "SOURCE.FILE" readLine
+
+  if depth 0 > then
+    # removes white spaces
+    trim line ->
+
+    # exits from wing comment
+    if wing rcl 1 == then
+      if line rcl comments rcl 2 elementAt swap drop endsWith then
+        0 wing ->
+      end
+    else
+      # if line begins with '//' we do not count it
+      if line rcl comments rcl 0 elementAt swap drop startsWith not
+         line rcl size 0 > and then
+
+         # checks if we're inside a wing comment
+         if line rcl comments rcl 1 elementAt swap drop startsWith then
+           line rcl comments rcl 2 elementAt swap drop startsWith not
+           wing ->
+         else
+           codeLines ++
+         end
+      end
+    end
+  end
+wend
+
+sourceFile rcl ":\t\t" concat codeLines rcl ->str " lines of code" concat concat println
+
+# End of script

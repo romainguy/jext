@@ -1,0 +1,9 @@
+# dawn.javaccess package - Java Access
+
+com.chez.powerteam.dawn.javaccess.ClassFunction
+com.chez.powerteam.dawn.javaccess.InvokeFunction
+com.chez.powerteam.dawn.javaccess.MethodFunction
+com.chez.powerteam.dawn.javaccess.NewFunction
+com.chez.powerteam.dawn.javaccess.NullFunction
+
+# End of dawn.javaccess package

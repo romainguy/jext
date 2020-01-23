@@ -1,0 +1,26 @@
+# copies a file
+"File to copy: " print inputLine
+"Destination: " print inputLine
+
+0 copyFileLinesCount ->
+copyFileDestination ->
+
+try
+  "DAWN.IO.COPYFILE" openForInput
+  while "DAWN.IO.COPYFILE" isFileAvailable repeat
+    "DAWN.IO.COPYFILE" readLine
+    copyFileLinesCount ++
+  wend
+
+  1 copyFileLinesCount rcl 1 - i for
+    swap lineSeparator concat swap concat
+  next
+
+  copyFileDestination rcl "DAWN.IO.COPYFILE" openForOutput
+  "DAWN.IO.COPYFILE" writeLine
+  "DAWN.IO.COPYFILE" closeFile
+catch "An error occured during copy !" println err
+
+"Copy done." println
+
+# End of script

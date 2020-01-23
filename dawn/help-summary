@@ -1,0 +1,133 @@
+COMMAND                        FUNCTION
+----------------------------   ----------------------------
+!                            : exponential math function (3! = 1 * 2 * 3)
+!=                           : 'different from' test operator
+%                            : modulo operator
+&                            : binary and operator
+*                            : times math operator
++                            : addition
+++                           : increases either a number either a variable by one
+-                            : substraction
+--                           : decreases either a number either a variable by one
+->                           : stores given value in a runtime variable
+->lit                        : turns a string into a literal (variable name)
+->str                        : turns a value into a string
+/                            : divide
+<                            : inferior test operator
+<=                           : inferior/equals test operator
+==                           : equals test operator
+>                            : greater test operator
+>=                           : greater/equals test operator
+^                            : exponent math operator
+acos                         : arc cosinus math function
+addElement                   : adds an element into an array
+and                          : and logic operator
+array                        : inits a new array
+asin                         : arc sinus math function
+atan                         : arc tan math function
+charAt                       : gets a character from a string
+chr                          : gets a character from its ASCII value
+class                        : pushes a Java class on the stack
+clear                        : clears stack
+clearArray                   : clear given array
+closeFile                    : closes given file
+concat                       : concatenates two strings
+constructPath                : construct an abstract path from a relative one for a file
+cos                          : cosine math function
+date                         : gets current date
+depth                        : returns stack depth (i.e amount of stored values in it)
+do                           : do/until loop
+drop                         : drops first element of the stack
+dropn                        : drops n-th element of the stack
+dump                         : prints stack on standard output
+dup                          : duplicates topmost stack element
+dupdup                       : duplicates twice
+dupn                         : duplicates n first elements
+e                            : math E approached value
+elementAt                    : gets an element from a given array
+elements                     : adds n elements from stack in an array
+endsWith                     : checks if given string ends with another one
+errMsg                       : displays last error caught message
+error                        : throw last caught error
+eval                         : executes a string (must be Dawn script)
+exec                         : executes an OS command
+exists                       : checks if given file exists
+exit                         : exit from current script
+fdate                        : displays current date using specified format
+fileSize                     : gives specified file's size
+for                          : for loop
+function                     : creates a new runtime function
+global                       : creates a new global function
+head                         : gets first char of a string
+help                         : displays a list of available functions
+if                           : if statement
+inputLine                    : inputs a line to user
+insertElementAt              : insert an element into an array
+inv                          : 1/x math function
+invoke                       : invokes a give Java method on a Java object
+isArray                      : checks if given value is an array
+isFileAvailable              : checks if specified file (using its Dawn ID) is available
+isLiteral                    : checks if given value is literal
+isNumeric                    : checks if given value is numeric
+isString                     : checks if given value is a string
+lastPos                      : returns last index of a string in another one
+length                       : returns the length of an array
+lineSeparator                : put OS line separator on stack
+lit->                        : turns a literal into a string
+lowerCase                    : returns same string, lower cased
+method                       : gets a method from a Java class
+ndup                         : dups n time topmost stack element
+neg                          : returns opposite numeric value
+new                          : creates a new instance of given Java class
+not                          : not logic operator
+null                         : returns the Java null object
+num                          : gets ASCII value of first char of given string
+openForInput                 : opens a file for input
+openForOutput                : opens a file for output
+or                           : or logic operator
+pi                           : math PI approached value
+pick                         : gets an element on n-th level of stack and dup it on first level
+pos                          : returns index of a string into another one
+print                        : prints on standard output
+println                      : prints on standard output adding a linefeed
+rand                         : gets a random number
+randomize                    : randomize random seed
+rcl                          : gets variable value
+rdz                          : sets random seed
+read                         : reads a char from a file
+readLine                     : reads a line from a file
+removeElementAt              : removes an element from an array
+rev                          : reverts stack
+roll                         : rotates up the n first stack elements
+rolld                        : rotates down the n first stack elements
+rot                          : rotates up the 3 first stack elements
+round                        : returns the round value of a decimal number
+run                          : runs an external script
+same                         : compares two objects
+sameType                     : compares two objects types
+setElementAt                 : sets an element in an array
+sin                          : sine math function
+size                         : returns length of a given string
+sqrt                         : square root math function
+startsWith                   : checks if a given string begins with another one
+sto                          : stores a value into a global variable
+str->                        : turns a string into a number
+sub                          : returns a portion of a string
+swap                         : swaps two first stack elements
+tail                         : returns the given string but first char
+tan                          : tan math function
+time                         : puts current time in millis on stack
+tokenize                     : tokenizes a string and puts each token on a level
+tokenizeArray                : tokenizes a string and stores result in an array
+trim                         : removes white spaces at beginning and end of a string
+try                          : try/catch block
+type                         : gets element type
+unrot                        : rotates down 3 first stack elements
+upperCase                    : returns the same string, upper cased
+version                      : gets Dawn version
+wait                         : wait for a specified delay (in millis)
+while                        : while loop
+write                        : writes a char into a file
+writeLine                    : writes a line into a file
+xor                          : xor binary operator
+|                            : or binary operator

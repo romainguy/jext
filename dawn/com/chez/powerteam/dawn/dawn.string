@@ -1,0 +1,23 @@
+# dawn.string package - String utilities
+
+com.chez.powerteam.dawn.string.CharAtFunction
+com.chez.powerteam.dawn.string.ChrFunction
+com.chez.powerteam.dawn.string.ConcatFunction
+com.chez.powerteam.dawn.string.EndsWithFunction
+com.chez.powerteam.dawn.string.FromStringFunction
+com.chez.powerteam.dawn.string.HeadFunction
+com.chez.powerteam.dawn.string.LastPosFunction
+com.chez.powerteam.dawn.string.LowerCaseFunction
+com.chez.powerteam.dawn.string.NumFunction
+com.chez.powerteam.dawn.string.PosFunction
+com.chez.powerteam.dawn.string.SizeFunction
+com.chez.powerteam.dawn.string.StartsWithFunction
+com.chez.powerteam.dawn.string.SubFunction
+com.chez.powerteam.dawn.string.TailFunction
+com.chez.powerteam.dawn.string.TokenizeFunction
+com.chez.powerteam.dawn.string.TokenizeArrayFunction
+com.chez.powerteam.dawn.string.ToStringFunction
+com.chez.powerteam.dawn.string.TrimFunction
+com.chez.powerteam.dawn.string.UpperCaseFunction
+
+# End of dawn.string package

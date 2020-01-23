@@ -1,0 +1,18 @@
+# tokenize a string
+"this is a sentence" tokenize
+
+# create an array
+array
+
+# swap to get tokens amount
+swap
+
+# fill the array with tokens
+elements
+
+# prints the sentence
+length 0 i for
+  i rcl elementAt println
+next
+
+# also see setElementAt removeElementAt clearArray insertElementAt

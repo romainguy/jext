@@ -1,0 +1,29 @@
+########################
+# Rot13 cipher program #
+########################
+# this is the result for 'this is a text'
+# "guvf vf n grkg" dup
+# the text source
+"this is a text" dup
+"" res ->
+"" char ->
+
+size 0 swap I for
+  dup I rcl dup 1 + sub
+  num char ->
+
+  if char rcl 32 == then
+    res rcl " " concat res ->
+  else
+    if "a" num char rcl <= "z" num char rcl >= and then
+      res rcl "a" num dup char rcl swap - 13 + 26 % + chr concat res ->
+    else
+      if "A" num char rcl <= "Z" num char rcl >= and then
+        res rcl "A" num dup char rcl swap - 13 + 26 % + chr concat res ->
+      end
+    end
+  end
+next
+
+drop
+res rcl

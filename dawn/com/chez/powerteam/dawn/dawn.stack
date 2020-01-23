@@ -1,0 +1,22 @@
+# dawn.stack package - Dawn package to handle stack (dup, drop, ...)
+
+com.chez.powerteam.dawn.stack.ClearFunction
+com.chez.powerteam.dawn.stack.DepthFunction
+com.chez.powerteam.dawn.stack.DropFunction
+com.chez.powerteam.dawn.stack.DropnFunction
+com.chez.powerteam.dawn.stack.DupFunction
+com.chez.powerteam.dawn.stack.DupDupFunction
+com.chez.powerteam.dawn.stack.DupnFunction
+com.chez.powerteam.dawn.stack.NDupFunction
+com.chez.powerteam.dawn.stack.PickFunction
+com.chez.powerteam.dawn.stack.RclFunction
+com.chez.powerteam.dawn.stack.ReverseFunction
+com.chez.powerteam.dawn.stack.RollFunction
+com.chez.powerteam.dawn.stack.RollDownFunction
+com.chez.powerteam.dawn.stack.RotFunction
+com.chez.powerteam.dawn.stack.SetFunction
+com.chez.powerteam.dawn.stack.StoFunction
+com.chez.powerteam.dawn.stack.SwapFunction
+com.chez.powerteam.dawn.stack.UnrotFunction
+
+# End of dawn.stack package

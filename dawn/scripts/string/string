@@ -1,0 +1,46 @@
+# strings
+#
+# gets the index of "world" in "hello world !"
+# then get "world" out of "hello world !"
+
+"hello world !" dup "world" swap 1 pick pos index ->
+size length -> index rcl dup length rcl + sub
+
+# turns "world" into ascii values
+num
+
+# turns ascii values into chars
+0 depth 1 - I for
+  if I rcl 0 > then
+    I rcl dup + 1 - pick
+  end
+  chr
+next
+
+# rebuild "world" from single chars
+rev
+depth 2 / dropn
+
+0 depth 2 / 1 + I for
+  concat
+next
+
+# tails
+dup size 0 swap I for
+  tail
+next
+
+# get rid of this blank string
+drop
+
+# displays "hello world !" char by char
+"hello world !" dup str ->
+size 0 swap I for
+  str rcl I rcl charAt
+next
+
+# clears the stack
+clear
+
+# then tokenize a string
+"hello evervyone listening to me in this wild wild world!" tokenize

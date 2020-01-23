@@ -1,0 +1,2 @@
+# tries to use global variable defined in 'misc'
+counter rcl

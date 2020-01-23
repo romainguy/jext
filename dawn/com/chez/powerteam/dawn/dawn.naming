@@ -1,0 +1,8 @@
+# dawn.naming package - Naming utilities
+
+com.chez.powerteam.dawn.naming.CreateFunction
+com.chez.powerteam.dawn.naming.CreateGlobalFunction
+com.chez.powerteam.dawn.naming.FromLiteralFunction
+com.chez.powerteam.dawn.naming.ToLiteralFunction
+
+# End of dawn.naming package

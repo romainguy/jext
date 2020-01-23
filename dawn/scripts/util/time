@@ -1,0 +1,20 @@
+# gets time
+time
+
+# wait for 1 second
+1 wait
+
+# gets time
+time
+
+# swaps and substract
+swap -
+
+# normally, the displayed number should be
+# approximatively 1000.0
+
+# displays formatted date
+"MM/dd/yyyy - HH:mm:ss" fdate
+
+# then display standard date
+date

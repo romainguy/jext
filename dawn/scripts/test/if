@@ -1,0 +1,20 @@
+# inner if/else statements tests
+
+if 3 4 > then
+  "hello"
+  if 1 2 > then
+    "romain"
+  else
+    "vincent"
+  end
+else
+  if 3 4 > then
+    "lycos"
+  else
+    "jeez"
+  end
+  "yahoo"
+  if 1 2 < then
+    "free!"
+  end
+end

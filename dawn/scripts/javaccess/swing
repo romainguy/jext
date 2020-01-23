@@ -1,0 +1,43 @@
+# Test Swing for Dawn
+
+"JLabel" global
+  "javax.swing.JLabel" class
+endGlobal
+
+"JFrame" global
+  "javax.swing.JFrame" class
+endGlobal
+
+"Container" global
+  "java.awt.Container" class
+endGlobal
+
+JFrame new
+dup
+dup
+dup
+
+200
+100
+JFrame "setSize(int,int)" method
+invoke
+
+"Swing Frame in Dawn"
+JFrame "setTitle(java.lang.String)" method
+invoke
+
+JFrame "getContentPane()" method
+invoke
+
+JLabel new
+dup
+" ( Guillaume ;-) "
+JLabel "setText(java.lang.String)" method
+invoke
+Container "add(java.awt.Component)" method
+invoke
+drop
+
+JFrame "show()" method
+invoke
+dump

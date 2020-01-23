@@ -1,0 +1,10 @@
+# test type
+
+"hello" "hi" sameType
+"hello" 2 sameType
+var 13 sameType
+
+"hello" dup same
+2 2 same
+2 3 same
+"hello" literal same
