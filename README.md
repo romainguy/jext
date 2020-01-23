@@ -32,10 +32,10 @@ Jext was made possible tahnks to the contributions and support of many talented 
 
 The interesting bits are in the following places:
 
-- [dawn](./dawn): Jext's custom RPN scripting language
-- [jedit](./lib/org/gjt/sp/jedit): syntax highlighting text area from jEdit
 - [jext](./lib/org/jext): Jext itself
 - [plugins](./plugins): a few plugins that shipped with Jext
+- [jedit](./lib/org/gjt/sp/jedit): syntax highlighting text area from jEdit
+- [dawn](./dawn): Jext's custom RPN scripting language examples
 
 ## License
 

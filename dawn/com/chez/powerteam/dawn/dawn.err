@@ -1,7 +1,0 @@
-# dawn.err package - Manages errors
-
-com.chez.powerteam.dawn.err.ErrMsgFunction
-com.chez.powerteam.dawn.err.ErrorFunction
-com.chez.powerteam.dawn.err.TryCatchFunction
-
-# End of dawn.err package
