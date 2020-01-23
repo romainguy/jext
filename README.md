@@ -32,7 +32,7 @@ Jext was made possible tahnks to the contributions and support of many talented 
 
 Jext is licensed under [GPL-2](./LICENSE).
 
-Some icons are licensed un [CPL-1.0](https://opensource.org/licenses/cpl1.0.php).
+Some icons are licensed under [CPL-1.0](https://opensource.org/licenses/cpl1.0.php).
 
 ## Disclaimer
 
