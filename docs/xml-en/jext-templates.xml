@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE xtiny-doc-page SYSTEM "../dtd/xtiny-doc-page.dtd" >
+
+<!--
+  -
+  - Jext documentation source document
+  - Based on xtiny-doc DTD
+  -
+  - DTD:xtiny-doc and XSL:xtiny-doc
+  - are (C)1999 Romain Guy
+  -
+  - Last updated: 12/02/2001 - 22:59:15
+  -
+  -->
+
+<xtiny-doc-page author="Romain Guy"
+           update="12/02/2000"
+           name="Jext : Templates"
+           title="Templates"
+           prev="jext-options.html"
+           next="jext-scripts.html">
+
+  <paragraph title="Overview">
+    The templates are available from Jext file menu and allow to quickly create a new file.
+  </paragraph>
+
+  <paragraph title="Using the templates">
+    The templates menu is built from the directory <b>jext_directory/bin/templates</b>. This directory can be
+    set in the options dialog. When clicking on a template, Jext will prompt you for each variable 
+    specified in the chosen template. At the end, Jext will ask you to save the file. Once
+    saved, this file will be automatically opened for editing.
+  </paragraph>
+
+  <paragraph title="Creating a new template">
+    To create a new template, create a new file and place it in the templates directory. You define variables
+    using the following sequence: <b>__VARIABLE__</b> (2 underscores on each side). If you want
+    to enter the two underscores (<b>__</b>) without having it interpreted by Jext as a variable,
+    enter <b>____</b> (4 underscores).
+  </paragraph>
+    
+</xtiny-doc-page>
+
+<!-- End of Jext documentation -->

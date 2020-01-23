@@ -1,0 +1,63 @@
+<project name="WheelMouse" default="compile" basedir=".">
+
+  <property environment="env" />
+  <property name="debug" value="off" />
+  <property name="optimize" value="on" />
+  <property name="build.dir" value="${basedir}/build" />
+  <property name="jar.file" value="${ant.project.name}.jar" />
+
+  <path id="build.classpath">
+    <pathelement location="${env.JEXT_HOME}/lib/jext.jar" />
+  </path>
+  
+  <target name="checkjava">
+    <condition property="docompile">
+      <or>
+        <equals arg1="1.2" arg2="${ant.java.version}" />
+        <equals arg1="1.3" arg2="${ant.java.version}" />
+      </or>
+    </condition>
+  </target>
+  
+  <target name="notifyjava" unless="docompile">
+    <echo>
+      The ${ant.project.name} plugin cannot be built
+      with the current Java version (${ant.java.version}).
+    </echo>
+  </target>
+  
+  <target name="checkos">
+    <condition property="windoze">
+      <os family="windows" />
+    </condition>
+  </target>
+  
+  <target name="notifyos" unless="windoze">
+    <echo>
+      This plugin only functions for Microsoft Windows.
+    </echo>
+  </target>
+  
+  <target name="compile" depends="checkjava,notifyjava" if="docompile">
+    <mkdir dir="${build.dir}" />
+    <javac srcdir="${basedir}" destdir="${build.dir}"
+           classpathref="build.classpath"
+           debug="${debug}" deprecation="off" optimize="${optimize}">
+    </javac>
+  </target>
+  
+  <target name="jar" depends="compile,checkos,notifyos" if="windoze">
+    <jar jarfile="${jar.file}"
+         index="true"
+         filesonly="true">
+      <fileset dir="${build.dir}" />
+      <fileset dir="${basedir}" includes="${ant.project.name}.props.xml" />
+    </jar>
+    <copy file="${basedir}/Native/MouseWheel.dll" todir="${env.JEXT_HOME}/bin" />
+  </target>
+  
+  <target name="clean">
+    <delete dir="${build.dir}" />
+  </target>
+  
+</project>

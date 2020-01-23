@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xproperties SYSTEM "xproperties.dtd" >
+
+<xproperties>
+  <property name="plugin.PhpPlugin.name" value="PHP's Plugin" />
+  <property name="plugin.PhpPlugin.author" value="Romain Guy, Touv" />
+  <property name="plugin.PhpPlugin.version" value="1.1" />
+
+  <property name="plugin.PhpPlugin.modes" value="php3" />
+
+  <property name="PHP_menu" value="phpbrowse - phpclean" />
+  <property name="PHP_menu.label" value="PHP" />
+  <property name="phpclean.label" value="Source Cleaner" />
+  <property name="phpbrowse.label" value="Source Browser" />
+</xproperties>

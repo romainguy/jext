@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE xtiny-doc-page SYSTEM "../dtd/xtiny-doc-page.dtd" >
+
+<!--
+  -
+  - Jext documentation source document
+  - Based on xtiny-doc DTD
+  -
+  - DTD:xtiny-doc and XSL:xtiny-doc
+  - are (C)1999 Romain Guy
+  -
+  - Last updated: 12/02/2001 - 22:16:51
+  -
+  -->
+
+<xtiny-doc-page author="Romain Guy"
+           update="12/02/2001"
+           name="Search Menu"
+           title="Jext : Search Menu"
+           prev="jext-menus-edit.html"
+           next="jext-menus-tools.html">
+
+  <paragraph title="Overview">
+    The <b>Search</b> menu provides access to the search and replace features. Refer to the
+    <a href="jext-search.html">Search</a> section for more information.
+  </paragraph>
+
+  <menu title="Contents">
+    <item name="Find">
+      Displays the Jext find dialog box. This dialog box can be used to enter a search pattern,
+      set search options and start a search. Some components are grayed out (disabled) because they
+      are meaningful to the <b>Replace</b> feature only.
+    </item>
+    <item name="Replace">
+      Displays the same dialog as the <b>Find</b> option, but enables components which were
+      disabled in <b>Find</b> feature.
+    </item>
+    <item name="Find All">
+      Displays the Find All dialog which provides same options as <b>Find</b> feature but
+      displays <b>all matches</b> in a list.
+    </item>
+    <item name="Find Next">
+      Searches for the next occurence of the previous pattern used for a search. The previous pattern
+      persists from one Jext session to the next.
+    </item>
+    <item name="Replace Next">
+      Replaces the next occurence of previous search pattern with the previous replacement pattern.
+    </item>
+    <item name="Replace Selection">
+      Replaces the current selection in the text area with the previous replacement pattern.
+    </item>
+  </menu>
+</xtiny-doc-page>
+
+<!-- End of Jext documentation -->

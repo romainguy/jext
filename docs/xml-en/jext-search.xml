@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE xtiny-doc-page SYSTEM "../dtd/xtiny-doc-page.dtd" >
+
+<!--
+  -
+  - Jext documentation source document
+  - Based on xtiny-doc DTD
+  -
+  - DTD:xtiny-doc and XSL:xtiny-doc
+  - are (C)1999 Romain Guy
+  -
+  - Last updated: 12/02/2001 - 22:54:51
+  -
+  -->
+
+<xtiny-doc-page author="Romain Guy"
+           update="12/02/2001"
+           name="Jext : Search"
+           title="Search And Replace"
+           prev="jext-editor.html"
+           next="jext-console.html">
+
+  <paragraph title="Overview">
+    The <b>Search</b> menu of the Jext menubar provides features to find and/or replace text in
+    your documents. There are six search/replace functions. Three of them only are
+    described in this page; the others are explained in the
+    <a href="jext-menus-search.html">Search Menu</a> page.
+  </paragraph>
+
+  <paragraph title="Find">
+    The <b>Find</b> item displays the Jext find dialog box. In this dialog box, three components
+    are grayed: they are activated only if you need to perform a replace operation. To perform
+    a search, simply enter your search pattern in the text field, then press the <b>Find</b>
+    button. Please note the text field remembers of the 25 last typed search pattern.
+  </paragraph>
+  <paragraph>
+    Next to the find button, there is a <b>Cancel</b> button. Pressing this button simply disposes of 
+    the dialog box. And finally, there are 4 check boxes at the bottom of the dialog. Those items
+    allow you to modify the way the search and replace operations are performed:
+    <menu>
+      <item name="Ignore Case">
+        If checked, the case of the letters will be ignored. For instance, using the search
+        pattern <b>java</b> and assuming this item is checked, pressing find button will
+        report <b>JAVA</b> as a match.
+      </item>
+      <item name="Save values">
+        If this item is checked when you quit the find/replace dialog, then Jext will remember
+        your settings the next time you use the dialog.
+      </item>
+      <item name="In All Files">
+        Performs the search/replace operation in all the open files.
+      </item>
+      <item name="Use Extended RegExp">
+        By default, Jext does a plain search. If you check this box, Jext will instead use the
+        Perl5 syntax for extended regular expressions, which can be used to perform powerful searches.
+      </item>
+    </menu>
+  </paragraph>
+
+  <paragraph title="Replace">
+    Clicking the <b>Replace</b> menu item displays the same dialog box as the <b>Find</b> item.
+    All the features described in the Find section are still available. Using the <b>Replace</b> 
+    button will replace the current match then look for next one. Also, 
+    the <b>Replace All</b> button will invoke replacement of all the matches without asking
+    anything, so take care if you checked the In All Files option. As for the Find feature, the
+    replace text field remembers the last 25 typed patterns.
+  </paragraph>
+  <paragraph>
+    You can also use the <b>Script</b> function. This function allows you to replace every 
+    match made by a regular expression with the result of the evaluation of a Python script.
+    For instance, if you look for the regular expression <i>&lt;([^&lt;&gt;]*)&gt;</i>, Jext will
+    attempt to find any single HTML tag. If you use the <b>Script</b> option with this value:
+    <i>"&lt;" + _m[0].upper() + "&gt;"</i> and then press <b>Replace All</b>, Jext will replace
+    any single HTML tag by the same, changed to uppercase. Just know the <b>_m</b> object is an array containing
+    the matches of groups of the regular expression.
+  </paragraph>
+
+  <paragraph title="Find All">
+    Even though the <b>Find All</b> dialog box is slighty different from the find/replace one,
+    most of the features are the same. That's why Ignore Case, Use Extended RegExp
+    and the text field behave the same way in both dialogs. Whenever you perform a Find All
+    operation, all the matches are displayed in a list. Clicking an item of the list directly
+    brings you onto the match, selecting it in your document.
+  </paragraph>
+  <paragraph>
+    To easily browse through the matches, you can check the option Highlight. If checked, all
+    the matches will be underlined in blue in your document.
+  </paragraph>
+</xtiny-doc-page>
+
+<!-- End of Jext documentation -->

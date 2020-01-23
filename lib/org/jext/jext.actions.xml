@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE pyactions SYSTEM "pyactions.dtd" >
+
+<!-- Actions for Jext menu items. Written in Python. -->
+<!-- All the code writting in this file is put under
+     the terms of the GNU/GPL -->
+
+<pyactions>
+  <!-- DEBUG ITEMS -->
+  <action name="debug_reload_actions">
+from org.jext import Jext
+Jext.loadXMLActions(__jext__.getClass().getResourceAsStream("jext.actions.xml"), "jext.actions.xml")
+  </action>
+
+  <action name="debug_reload_menus">
+from org.jext.event import JextEvent
+from org.jext.xml import XBarReader
+from org.jext.xml import XMenuReader
+XMenuReader.read(__jext__, __jext__.getClass().getResourceAsStream("jext.menu.xml"), "jext.menu.xml")
+XBarReader.read(__jext__, __jext__.class.getResourceAsStream("jext.toolbar.xml"), "jext.toolbar.xml")
+__jext__.fireJextEvent(JextEvent.TEXT_AREA_SELECTED)
+pos = __jext__.getTextArea().getCaretPosition()
+__jext__.getTextArea().setCaretPosition(pos + 1)
+__jext__.getTextArea().setCaretPosition(pos)
+  </action>
+
+  <action name="debug_reload_both">
+from org.jext import Jext
+from org.jext.event import JextEvent
+from org.jext.xml import XBarReader
+from org.jext.xml import XMenuReader
+Jext.loadXMLActions(__jext__.getClass().getResourceAsStream("jext.actions.xml"), "jext.actions.xml")
+XMenuReader.read(__jext__, __jext__.getClass().getResourceAsStream("jext.menu.xml"), "jext.menu.xml")
+XBarReader.read(__jext__, __jext__.class.getResourceAsStream("jext.toolbar.xml"), "jext.toolbar.xml")
+__jext__.fireJextEvent(JextEvent.TEXT_AREA_SELECTED)
+pos = __jext__.getTextArea().getCaretPosition()
+__jext__.getTextArea().setCaretPosition(pos + 1)
+__jext__.getTextArea().setCaretPosition(pos)
+  </action>
+  <!-- DEBUG ITEMS -->
+
+  <action name="about">
+from org.jext.misc import AboutWindow
+AboutWindow(__jext__)
+  </action>
+
+  <action name="about_plugins">
+from org.jext.misc import AboutPlugins
+AboutPlugins(__jext__)
+  </action>
+
+  <action name="append_copy">
+textArea = __jext__.getTextArea()
+textArea.appendCopy()
+textArea.grabFocus()
+textArea.requestFocus()
+  </action>
+
+  <action name="append_cut" edit="yes">
+textArea = __jext__.getTextArea()
+textArea.appendCut()
+textArea.grabFocus()
+textArea.requestFocus()
+  </action>
+
+  <action name="clear" edit="yes">
+textArea = __jext__.getNSTextArea()
+textArea.newFile()
+textArea.grabFocus()
+textArea.requestFocus()
+  </action>
+
+  <action name="clear_recent">
+__jext__.removeRecent()
+  </action>
+
+  <action name="close">
+__jext__.close(__jext__.getNSTextArea())
+  </action>
+
+  <action name="close_all">
+__jext__.closeAll()
+  </action>
+
+  <action name="close_window">
+from org.jext import Jext
+Jext.closeToQuit(__jext__)
+  </action>
+
+  <action name="copy">
+textArea = __jext__.getTextArea()
+textArea.copy()
+textArea.grabFocus()
+textArea.requestFocus()
+  </action>
+
+  <action name="cut" edit="yes">
+textArea = __jext__.getTextArea()
+textArea.cut()
+textArea.grabFocus()
+textArea.requestFocus()
+  </action>
+
+  <action name="dawn_execute">
+from org.jext.scripting.dawn import Run
+Run.execute(__jext__.getTextArea().getText(), __jext__)
+  </action>
+
+  <action name="dawn_log_window">
+from org.jext.gui import Dockable
+log = __jext__.getDawnDock()
+if not log.isDocked():
+  log.setDockingStatus(Dockable.FLOATING)
+#__jext__.getDawnLogWindow().setVisible(1)
+  </action>
+
+  <action name="dawn_run_script">
+from org.jext import Utilities
+from org.jext.scripting.dawn import Run
+fileToLoad = Utilities.chooseFiles(__jext__, Utilities.SCRIPT)
+if fileToLoad != None:
+  for i in range(len(fileToLoad)):
+    Run.runScript(fileToLoad[i], __jext__)
+  </action>
+
+  <action name="delete_file">
+from jarray import array
+from java.lang import String
+from javax.swing import JOptionPane
+from org.jext import Jext
+textArea = __jext__.getNSTextArea()
+if not textArea.isNew():
+  args = array([textArea.getCurrentFile()], String)
+  response = JOptionPane.showConfirmDialog(__jext__, Jext.getProperty("general.deleteFile.question", args), Jext.getProperty("general.deleteFile.title"), JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE)
+  if response == 0:
+    f = textArea.getFile()
+    if f != None:
+      f.delete()
+      __jext__.close(textArea, 0)
+  </action>
+
+  <action name="delete_line" edit="yes">
+textArea = __jext__.getTextArea()
+try:
+  line = textArea.getCaretLine()
+  start = textArea.getLineStartOffset(line)
+  end = textArea.getLineEndOffset(line)
+  if end == textArea.getLength() + 1:
+    end = end - 1
+  textArea.getDocument().remove(start, end - start)
+except:
+  pass
+  </action>
+
+  <action name="download_plugins">
+from org.jext.misc import PluginDownload
+PluginDownload.startUpdate()
+  </action>
+
+  <action name="transpose_lines" edit="yes">
+textArea = __jext__.getTextArea()
+try:
+  line = textArea.getCaretLine()
+  if line != 0:
+    start = textArea.getLineStartOffset(line)
+    end = textArea.getLineEndOffset(line) - 1
+    prevStart = textArea.getLineStartOffset(line - 1)
+    prevEnd = textArea.getLineEndOffset(line - 1) - 1
+    lineText = textArea.getLineText(line)
+    prevLineText = textArea.getLineText(line - 1)
+    doc = textArea.getDocument()
+    doc.remove(start, end - start)
+    doc.insertString(start, prevLineText, None)
+    doc.remove(prevStart, prevEnd - prevStart)
+    doc.insertString(prevStart, lineText, None)
+except:
+  pass
+  </action>
+
+  <action name="end_one_click">
+pass
+  </action>
+
+  <action name="exchange_anchor">
+textArea = __jext__.getTextArea()
+anchor = textArea.getAnchorOffset()
+if anchor != -1:
+  textArea.setAnchor()
+  textArea.setCaretPosition(anchor)
+  </action>
+
+  <action name="filtered_paste" edit="yes">
+textArea = __jext__.getTextArea()
+textArea.filteredPaste()
+textArea.grabFocus()
+textArea.requestFocus()
+  </action>
+
+  <action name="find">
+from org.jext.search import FindReplace
+FindReplace(__jext__, FindReplace.SEARCH, 0)
+  </action>
+
+  <action name="find_all">
+from org.jext.search import FindAllDialog
+FindAllDialog(__jext__)
+  </action>
+
+  <action name="find_matching_bracket">
+from org.gjt.sp.jedit.textarea import TextUtilities
+textArea = __jext__.getTextArea()
+try:
+  pos = TextUtilities.findMatchingBracket(textArea.getDocument(), textArea.getCaretPosition() - 1)
+  if pos != -1:
+    textArea.setCaretPosition(pos + 1)
+except:
+  pass
+  </action>
+
+  <action name="find_next">
+from jarray import array
+from java.lang import String
+from javax.swing import JOptionPane
+from org.jext import Jext
+from org.jext.search import Search
+textArea = __jext__.getTextArea()
+try:
+  if not Search.find(textArea, textArea.getCaretPosition()):
+    args = array([textArea.getName()], String)
+    response = JOptionPane.showConfirmDialog(None, Jext.getProperty("find.matchnotfound", args), Jext.getProperty("find.title"), JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE)
+    if response == 0:
+      textArea.setCaretPosition(0)
+      Jext.getAction("find_next").actionPerformed(__evt__)
+except:
+  pass
+  </action>
+
+  <action name="goto_anchor">
+__jext__.getTextArea().gotoAnchor()
+  </action>
+
+  <action name="goto_line">
+from jarray import array
+from java.lang import Integer
+from org.jext import Jext
+from javax.swing import JOptionPane
+line = 0
+textArea = __jext__.getTextArea()
+linesCount = textArea.getLineCount()
+args = array([Integer(1), Integer(linesCount)], Integer)
+response = JOptionPane.showInputDialog(__jext__, Jext.getProperty("goto.label", args), Jext.getProperty("goto.title"), JOptionPane.QUESTION_MESSAGE)
+if response != None:
+  try:
+    line = Integer.parseInt(response)
+  except:
+    pass
+  else:
+    textArea.setCaretPosition(textArea.getLineStartOffset(line - 1))
+    textArea.grabFocus()
+    textArea.requestFocus()
+  </action>
+
+  <action name="insert_date" edit="yes">
+from java.util import Date
+from java.text import SimpleDateFormat
+df = SimpleDateFormat("MM/dd/yyyy - HH:mm:ss")
+__jext__.getTextArea().setSelectedText(df.format(Date()))
+  </action>
+
+  <action name="insert_file_extension" edit="yes">
+from string import rfind
+area = __jext__.getTextArea()
+fileName = area.getName()
+if fileName != None:
+  index = rfind(fileName, ".")
+  if index != -1:
+    area.setSelectedText(fileName[index:])
+  </action>
+
+  <action name="insert_file_full_name" edit="yes">
+area = __jext__.getTextArea()
+area.setSelectedText(area.getName())
+  </action>
+
+  <action name="insert_file_full_path" edit="yes">
+area = __jext__.getTextArea()
+area.setSelectedText(area.getCurrentFile())
+  </action>
+
+  <action name="insert_file_name" edit="yes">
+from string import rfind
+area = __jext__.getTextArea()
+fileName = area.getName()
+index = rfind(fileName, ".")
+if index == -1:
+  index = len(fileName)
+area.setSelectedText(fileName[:index])
+  </action>
+
+  <action name="insert_file_path" edit="yes">
+from java.io import File
+area = __jext__.getTextArea()
+fileName = area.getCurrentFile()
+if fileName != None:
+  index = rfind(fileName, File.separator)
+  if index != -1:
+    area.setSelectedText(fileName[:index + 1])
+  </action>
+
+  <action name="mail_to">
+from org.jext.misc import JextMail
+JextMail(__jext__.getTextArea())
+  </action>
+
+  <action name="new">
+__jext__.createFile()
+  </action>
+
+  <action name="new_window">
+from org.jext import Jext, Utilities
+Utilities.setCursorOnWait(__jext__, 1)
+Jext.newWindow()
+Utilities.setCursorOnWait(__jext__, 0)
+  </action>
+
+  <action name="next_tab">
+__jext__.getTabbedPane().nextTab()
+  </action>
+
+  <action name="open">
+from org.jext import Utilities
+fileToLoad = Utilities.chooseFiles(__jext__, Utilities.OPEN)
+if fileToLoad != None:
+  for i in range(len(fileToLoad)):
+    __jext__.open(fileToLoad[i])
+  </action>
+
+  <action name="open_in_area">
+from org.jext import Utilities
+textArea = __jext__.getNSTextArea()
+if __jext__.checkContent(textArea):
+  fileToLoad = Utilities.chooseFile(__jext__, Utilities.OPEN)
+  if fileToLoad != None:
+    textArea.open(fileToLoad)
+    textArea.grabFocus()
+    textArea.requestFocus()
+  </action>
+
+  <action name="open_in_window">
+from org.jext import Jext, Utilities
+fileToLoad = Utilities.chooseFiles(__jext__, Utilities.OPEN)
+if fileToLoad != None:
+  Jext.newWindow(fileToLoad)
+  </action>
+
+  <action name="open_recent">
+fileToLoad = __evt__.getSource().getActionCommand()
+if fileToLoad != None:
+  __jext__.open(fileToLoad)
+  </action>
+
+  <action name="options_dialog">
+from org.jext.options import OptionsDialog
+OptionsDialog.showOptionDialog(__jext__)
+  </action>
+
+  <action name="paste" edit="yes">
+textArea = __jext__.getTextArea()
+textArea.paste()
+textArea.grabFocus()
+textArea.requestFocus()
+  </action>
+
+  <action name="previous_tab">
+__jext__.getTabbedPane().previousTab()
+  </action>
+
+  <action name="python_execute">
+from org.jext.scripting.python import Run
+from org.jext.gui import Dockable
+Run.execute(__jext__.getTextArea().getText(), __jext__)
+
+log = __jext__.getPythonDock()
+if not log.isDocked():
+  log.setDockingStatus(Dockable.FLOATING)
+  </action>
+
+  <action name="python_log_window">
+from org.jext.gui import Dockable
+#log = __jext__.getPythonLogWindow()
+log = __jext__.getPythonDock()
+if not log.isDocked():
+  log.setDockingStatus(Dockable.FLOATING)
+  </action>
+
+  <action name="python_run_script">
+from org.jext import Utilities
+from org.jext.scripting.python import Run
+fileToLoad = Utilities.chooseFiles(__jext__, Utilities.SCRIPT)
+if fileToLoad != None:
+  for i in range(len(fileToLoad)):
+    Run.runScript(fileToLoad[i], __jext__)
+  </action>
+
+  <action name="quit">
+from org.jext import Jext
+Jext.exit()
+  </action>
+
+  <action name="redo" edit="yes">
+from org.jext import Utilities
+textArea = __jext__.getTextArea()
+Utilities.setCursorOnWait(textArea, 1)
+redo = textArea.getUndo()
+textArea.setUndoing(1)
+if redo.canRedo():
+  redo.redo()
+textArea.grabFocus()
+textArea.requestFocus()
+textArea.setUndoing(0)
+Utilities.setCursorOnWait(textArea, 0)
+  </action>
+
+  <action name="reload">
+textArea = __jext__.getNSTextArea()
+toReload = textArea.getCurrentFile()
+if toReload != None:
+  textArea.open(toReload)
+  textArea.requestFocus()
+  </action>
+
+  <action name="replace" edit="yes">
+from org.jext.search import FindReplace
+FindReplace(__jext__, FindReplace.REPLACE, 0)
+  </action>
+
+  <action name="replace_next" edit="yes">
+from jarray import array
+from java.lang import String
+from javax.swing import JOptionPane
+from org.jext import Jext
+from org.jext.search import Search
+try:
+  textArea = __jext__.getTextArea()
+  if not Search.find(textArea, textArea.getCaretPosition()):
+    args = array([textArea.getName()], String)
+    response = JOptionPane.showConfirmDialog(None, Jext.getProperty("find.matchnotfound", args), Jext.getProperty("find.title"), JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE)
+    if response == 0:
+      textArea.setCaretPosition(0)
+      Jext.getAction("replace_next").actionPerformed(__evt__)
+  else:
+    Search.replace(textArea)
+except:
+  pass
+  </action>
+
+  <action name="replace_selection" edit="yes">
+from org.jext import Jext
+from org.jext.search import Search
+try:
+  Search.replace(__jext__.getTextArea())
+except:
+  pass
+  </action>
+
+  <action name="reverse_paste" edit="yes">
+from java.lang import String
+from java.awt.datatransfer import Clipboard, DataFlavor
+textArea = __jext__.getTextArea()
+clipboard = textArea.getToolkit().getSystemClipboard()
+selection = String()
+try:
+  selection = clipboard.getContents(__jext__).getTransferData(DataFlavor.stringFlavor).replace('\r', '\n')
+except:
+  pass
+else:
+  textArea.paste()
+  textArea.setCaretPosition(textArea.getCaretPosition() - len(selection))
+  textArea.grabFocus()
+  textArea.requestFocus()
+  </action>
+
+  <action name="reverse_sort_lines" edit="yes">
+from org.jext.misc import StringSorter
+textArea = __jext__.getTextArea()
+textArea.beginCompoundEdit()
+if textArea.getSelectionEnd() &gt; textArea.getSelectionStart():
+  StringSorter.sort(textArea.getDocument(), textArea.getSelectionStart(), textArea.getSelectionEnd() - textArea.getSelectionStart(), 1)
+else:
+  StringSorter.sort(textArea.getDocument(), 1)
+textArea.endCompoundEdit()
+  </action>
+
+  <action name="save">
+textArea = __jext__.getNSTextArea()
+textArea.saveContent()
+textArea.grabFocus()
+textArea.requestFocus()
+  </action>
+
+  <action name="save_all">
+from org.jext import JextTextArea
+textAreas = __jext__.getTextAreas()
+pane = __jext__.getTabbedPane()
+c = pane.getSelectedComponent()
+for i in range(len(textAreas)):
+  pane.setSelectedComponent(textAreas[i])
+  textAreas[i].saveContent()
+pane.setSelectedComponent(c)
+if type(c) is type(JextTextArea):
+  c.grabFocus()
+  c.requestFocus()
+  </action>
+
+  <action name="save_as">
+from org.jext import Utilities
+fileToLoad = Utilities.chooseFile(__jext__, Utilities.SAVE)
+if fileToLoad != None:
+  textArea = __jext__.getNSTextArea()
+  textArea.save(fileToLoad)
+  textArea.requestFocus()
+  </action>
+
+  <action name="select_all">
+__jext__.getTextArea().selectAll()
+  </action>
+
+  <action name="select_from_anchor">
+textArea = __jext__.getTextArea()
+if textArea.getAnchorOffset() != -1:
+  pos = textArea.getCaretPosition()
+  textArea.gotoAnchor()
+  textArea.setSelectionEnd(pos)
+  </action>
+
+  <action name="select_to_anchor">
+textArea = __jext__.getTextArea()
+anchor = textArea.getAnchorOffset()
+if anchor != -1:
+  textArea.setSelectionEnd(anchor)
+  </action>
+
+  <action name="set_anchor">
+__jext__.getTextArea().setAnchor()
+  </action>
+
+  <action name="sort_lines" edit="yes">
+from org.jext.misc import StringSorter
+textArea = __jext__.getTextArea()
+textArea.beginCompoundEdit()
+if textArea.getSelectionEnd() &gt; textArea.getSelectionStart():
+  StringSorter.sort(textArea.getDocument(), textArea.getSelectionStart(), textArea.getSelectionEnd() - textArea.getSelectionStart(), 0)
+else:
+  StringSorter.sort(textArea.getDocument(), 0)
+textArea.endCompoundEdit()
+  </action>
+
+  <action name="split_editor">
+from org.jext import Jext
+if "on" == Jext.getProperty("editor.splitted"):
+  Jext.setProperty("editor.splitted", "off")
+else:
+  Jext.setProperty("editor.splitted", "on")
+__jext__.splitEditor()
+  </action>
+
+  <action name="trigger_left_pane">
+from org.jext import Jext
+if "on" == Jext.getProperty("leftPanel.show"):
+  Jext.setProperty("leftPanel.show", "off")
+else:
+  Jext.setProperty("leftPanel.show", "on")
+__jext__.triggerTabbedPanes()
+  </action>
+
+  <action name="trigger_top_pane">
+from org.jext import Jext
+if "on" == Jext.getProperty("topPanel.show"):
+  Jext.setProperty("topPanel.show", "off")
+else:
+  Jext.setProperty("topPanel.show", "on")
+__jext__.triggerTabbedPanes()
+  </action>
+
+  <action name="undo" edit="yes">
+from org.jext import Utilities
+textArea = __jext__.getTextArea()
+Utilities.setCursorOnWait(textArea, 1)
+undo = textArea.getUndo()
+textArea.setUndoing(1)
+if undo.canUndo():
+  undo.undo()
+  if not undo.canUndo() and textArea.isDirty():
+    if not textArea.isLineTermChanged():
+      __jext__.resetStatus(__jext__.getNSTextArea())
+    else:
+      textArea.clean()
+textArea.grabFocus()
+textArea.requestFocus()
+textArea.setUndoing(0)
+Utilities.setCursorOnWait(textArea, 0)
+  </action>
+
+  <action name="zip_as">
+__jext__.getTextArea().zipContent()
+  </action>
+</pyactions>
+
+<!-- End of jext.actions.xml -->

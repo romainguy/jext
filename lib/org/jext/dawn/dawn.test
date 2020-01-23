@@ -1,0 +1,24 @@
+# dawn.test package - Dawn package to handle tests (if, ==, !=, ...)
+
+org.jext.dawn.test.AndFunction
+org.jext.dawn.test.BinAndFunction
+org.jext.dawn.test.BinOrFunction
+org.jext.dawn.test.DifferentFromFunction
+org.jext.dawn.test.EqualsFunction
+org.jext.dawn.test.GetTypeFunction
+org.jext.dawn.test.GreaterEqualsFunction
+org.jext.dawn.test.GreaterThanFunction
+org.jext.dawn.test.IfFunction
+org.jext.dawn.test.IsArrayFunction
+org.jext.dawn.test.IsLiteralFunction
+org.jext.dawn.test.IsNumericFunction
+org.jext.dawn.test.IsStringFunction
+org.jext.dawn.test.LowerEqualsFunction
+org.jext.dawn.test.LowerThanFunction
+org.jext.dawn.test.NotFunction
+org.jext.dawn.test.OrFunction
+org.jext.dawn.test.SameFunction
+org.jext.dawn.test.SameTypeFunction
+org.jext.dawn.test.XorFunction
+
+# End of dawn.test package

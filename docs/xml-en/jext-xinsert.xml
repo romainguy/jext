@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE xtiny-doc-page SYSTEM "../dtd/xtiny-doc-page.dtd" >
+
+<!--
+  -
+  - Jext documentation source document
+  - Based on xtiny-doc DTD
+  -
+  - DTD:xtiny-doc and XSL:xtiny-doc
+  - are (C)1999 Romain Guy
+  -
+  - Last updated: 12/02/2001 - 23:13:46
+  -
+  -->
+
+<xtiny-doc-page author="Romain Guy"
+           update="12/02/2001"
+           name="Jext : XInsert"
+           title="XInsert"
+           prev="jext-console.html"
+           next="jext-workspaces.html">
+
+  <paragraph title="Overview">
+    The default Jext interface displays a panel containing a tree on the left of the window. This
+    panel is called the <b>XInsert Panel</b> and the tree <b>XTree</b>. The tree is dynamically
+    built from a set of XML files shipped with Jext. Of course, you can add your own items in the
+    XTree by creating your own XInsert definition files. Note that shown items depend on which
+    syntax colorizing mode is chosen !
+  </paragraph>
+  <paragraph>
+    The XInsert panel is an easy way to add pre-defined text in your documents. For instance,
+    the Licenses node is able to insert the GNU/GPL license in your document. The XTree can also
+    hold scripts which can act as macros. This page is dedicated to the use of the XInsert panel
+    and the writing of the XInsert files.
+  </paragraph>
+
+  <paragraph title="XInsert Panel">
+    The <b>XInsert Panel</b> layout is very simple. On the top of the panel, there are two
+    buttons: <b>Collapse</b> and <b>Expand</b>. The first one will collapse all the XTree nodes
+    whereas the second one will expand all the nodes.
+  </paragraph>
+  <paragraph>
+    At the bottom of the panel, there are three check boxes. The <b>Add A Line Break</b> box will,
+    if checked, adds a line break at the end of the inserted text. The second box, <b>Execute
+    Scripts</b>, allows you to switch between execute and insert modes for scripted items. Indeed,
+    some of the items held in the XTree are scripts. If you check the box, they will be
+    normally executed (and this way act as macros). Otherwise, the script source will be inserted
+    in your document. The third check box allows some items to surround the selection within the area.
+    The top also provides a button called <b>Reload</b>. Clicking this button
+    will simply reload the entire XTree from XML files. This is very useful when you want to
+    load a new XInsert file without having to restart Jext.
+  </paragraph>
+  <paragraph>
+    The most important component of the XInsert panel is the XTree. This tree contains a set
+    of nodes which can be expanded to access other nodes or items. If you single-click on an item,
+    its content will be inserted in your document. To expand/collapse a node, double-click it.
+  </paragraph>
+
+  <paragraph title="XInsert Files">
+    You can add your own data to the <b>XTree</b> by creating new XInsert files. An XInsert file
+    is a plain text file with the extension <b>.insert.xml</b> placed in the directory
+    <b>&lt;home&gt;/.jext/xinsert</b>. Those files contain XML tags based on the <b>xinsert.dtd</b>
+    document type definition which can be found in
+    <b>&lt;jext home&gt;/lib/jext.jar!org/jext/</b>.
+  </paragraph>
+  <paragraph>
+    Writing an XInsert file is quite easy. First you must declare the file as an XML document by
+    placing this on the first line:
+    <code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;</code>
+    Then, you must specify the XInsert DTD:
+    <code>&lt;!DOCTYPE xinsert SYSTEM "xinsert.dtd"&gt;</code>
+    Finally create the root tag:
+    <code>&lt;xinsert&gt;&lt;/xinsert&gt;</code>
+  </paragraph>
+  <paragraph>
+    You are now ready to create your own data node. Within the <b>&lt;xinsert&gt;</b> you can
+    insert any number of <b>&lt;menu&gt;</b> tags you wish.
+    <code>&lt;menu name="MENU_NAME" [modes="MODES"]&gt;&lt;/menu&gt;</code>
+    Parameters between brackets [] are optional. If you set this attribute like this:
+    <b>modes="java cc"</b> the menu will appear only when Java or C++ syntax colorizing modes
+    are selected. This attribute works only with top parent menus. Nested submenus won't be
+    affected by it.
+  </paragraph>
+  <paragraph>
+    A menu tag can contain any number of other menu tags (to create nested submenus) as well
+    as <b>&lt;item&gt;</b> tags:
+    <code>
+    &lt;item name="ITEM NAME" [type="plain|script|mixed"]&gt;ITEM CONTENTS&lt;/item&gt;
+      &lt;br /&gt;
+    &lt;/html&gt;
+    </code>
+    Parameters between brackets [] are considered optional. The <b>type</b> attribute can be used to define the item
+    status. Specifying <i>plain</i> does the same thing as not writing the type attribute. Using <i>script</i>
+    you can set the item as a script meant to be executed on a mouse click. Finally, the <i>mixed</i> value allows you to
+    create items which can contain both scripts and plain text. Each script must be surrounded by two
+    <b>%</b>. To enter a <b>%</b> as a normal character, type it twice: <b>%%</b>. The advantage of the mixed
+    type is that the first value of stack created by the script will be inserted into the text.
+    <b>ITEM CONTENTS</b> is the data which will be inserted/executed whenever you click on the item.
+    Example of a mixed item:
+    <code>&lt;item name="Mixed item" type="mixed"&gt;Hello %"Your name:" input% !&lt;/item&gt;</code>
+    This item will, on click, prompt the user for its name and then insert the text "Hello name_entered !"
+    in the text area. Another example:
+    <code>&lt;item name="Mixed item 2" type="mixed"&gt;The current date is: %date%&gt;</code>
+    This mixed item will display text and append the current date to it.
+  </paragraph>
+  <paragraph>
+    You can see more examples by looking at the default XInsert files in the jext.jar archive file.
+  </paragraph>
+</xtiny-doc-page>
+
+<!-- End of Jext documentation -->

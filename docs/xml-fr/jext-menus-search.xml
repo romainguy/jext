@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE xtiny-doc-page SYSTEM "../dtd/xtiny-doc-page.dtd" >
+
+<!--
+  -
+  - Jext documentation source document
+  - Based on xtiny-doc DTD
+  -
+  - DTD:xtiny-doc and XSL:xtiny-doc
+  - are (C)1999 Romain Guy
+  -
+  - Last updated: 09/30/2001 - 20:23:32
+  -
+  -->
+
+<xtiny-doc-page author="Romain Guy"
+           update="09/30/2001"
+           name="Menu Recherche"
+           title="Jext : Menu Recherche"
+           prev="jext-menus-edit.html"
+           next="jext-menus-tools.html">
+
+  <paragraph title="Présentation">
+    Le menu <b>Recherche</b> offre un accès aux fonctions de recherche de Jext. Veuillez vous référer
+    à la section <a href="jext-search.html">Recherche</a> pour de plus amples informations sur le fonctionnement
+    des recherches.
+  </paragraph>
+
+  <menu title="Contenu">
+    <item name="Rechercher">
+      Ce menu affiche la boîte de recherche. Cette boîte de dialogue peut être utilisée pour entrer un motif de
+      recherche, changer les options de recherche et lancer une recherche. Les composants appraissant en grisé
+      ne sont activés que lorsque vous faites appel au menu <b>Remplacer</b>.
+    </item>
+    <item name="Remplacer">
+      Affiche la même fenêtre que la fonction <b>Rechercher</b>, mais active les composants précédemment grisés.
+    </item>
+    <item name="Rechercher Tout">
+      Ouvre la fenêtre de recherche complète. Celle-ci propose les mêmes options que la fenêtre de recherche simple
+      mais cherche toutes les occurences du motif utilisé.
+    </item>
+    <item name="Rechercher Suivant">
+      Lance la recherche de l'occurence suivante correspondant au dernier motif de recherche utilisé. Le dernier
+      motif utilisé est sauvegardé d'une session de Jext à l'autre.
+    </item>
+    <item name="Remplacer Suivant">
+      Remplace l'occurence suivante du dernier motif de recherche utilisé par le dernier motif de remplacement utilisé.
+    </item>
+    <item name="Remplacer Sélection">
+      Remplace la sélection en cours par le dernier motif de remplacement.
+    </item>
+  </menu>
+</xtiny-doc-page>
+
+<!-- End of Jext documentation -->

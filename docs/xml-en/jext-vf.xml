@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE xtiny-doc-page SYSTEM "../dtd/xtiny-doc-page.dtd" >
+
+<!--
+  -
+  - Jext documentation source document
+  - Based on xtiny-doc DTD
+  -
+  - DTD:xtiny-doc and XSL:xtiny-doc
+  - are (C)1999 Romain Guy
+  -
+  - Last updated: 12/02/2001 - 23:02:41
+  -
+  -->
+
+<xtiny-doc-page author="Romain Guy"
+           update="12/02/2001"
+           name="Jext : Bookmarks"
+           title="Bookmarks"
+           prev="jext-workspaces.html"
+           next="jext-options.html">
+
+  <paragraph title="Overview">
+    Bookmarks are placed in the tabbed pane called "Bookmarks" on the left part of the interface. This panel shows
+    four buttons and a tree. The tree contains your bookmarks. These bookmarks are pointers, specified by you, to your most
+    frequently accessed files.
+  </paragraph>
+
+  <paragraph title="Using the bookmarks">
+    Using the buttons, you can create a folder, add selected opened file to the current folder, add all the opened
+    files to current folder and remove selected file/folder. The remove button works if several items are selected
+    (use <b>Shift</b> and <b>Control</b> keys combined to mouse clicks).
+  </paragraph>
+  <paragraph>
+    To add a file to a given folder, either use the second and third buttons or drag and drop files onto a
+    folder. To open a file from a folder, double-click it or select it and press <b>ENTER</b>. You can
+    also select several files to open them at once. All the folders you've defined are saved with their contents
+    on Jext exit.
+  </paragraph>
+    
+</xtiny-doc-page>
+
+<!-- End of Jext documentation -->

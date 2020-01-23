@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xproperties SYSTEM "xproperties.dtd" >
+<xproperties>
+  <property name="plugin.KeystrokeRecorderPlugin.name" value="Keystroke Recorder" />
+  <property name="plugin.KeystrokeRecorderPlugin.author" value="James Kolean, Matt Benson" />
+  <property name="plugin.KeystrokeRecorderPlugin.version" value="0.2" />
+  <property name="plugin.KeystrokeRecorderPlugin.depend.0" value="jext 02.10.00.00" />
+
+  <property name="keystroke_recorder.menu" value="keystroke_recorder.menu.record keystroke_recorder.menu.stop keystroke_recorder.menu.play" />
+  <property name="keystroke_recorder.menu.label" value="Keystroke Recorder" />
+  <property name="keystroke_recorder.menu.record.label" value="Record" />
+  <property name="keystroke_recorder.menu.stop.label" value="Stop" />
+  <property name="keystroke_recorder.menu.play.label" value="Play" />
+  <property name="keystroke_recorder.menu.play.shortcut" value="CA+ENTER" />
+  <property name="keystroke_recorder.debug" value="off" />
+
+</xproperties>

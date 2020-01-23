@@ -1,0 +1,7 @@
+<!ELEMENT xinsert (#PCDATA | menu)* >
+  <!ELEMENT menu (#PCDATA | menu | item)* >
+    <!ATTLIST menu name CDATA #REQUIRED
+                   modes CDATA #IMPLIED >
+  <!ELEMENT item (#PCDATA) >
+    <!ATTLIST item name CDATA #REQUIRED
+                   type (plain | script | mixed) "plain" >

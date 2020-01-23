@@ -1,0 +1,36 @@
+<!ELEMENT xtiny-doc-page (paragraph+ | break | menu)* >
+  <!ATTLIST xtiny-doc-page author CDATA #REQUIRED
+                           update CDATA #REQUIRED
+                           title CDATA #REQUIRED
+                           name CDATA #REQUIRED
+                           prev CDATA #IMPLIED
+                           next CDATA #IMPLIED >
+
+  <!-- Equivalent to CODE tag in HTML: code -->
+  <!ELEMENT code (#PCDATA) >
+
+  <!-- Equivalent to B tag in HTML: bold -->
+  <!ELEMENT b (#PCDATA) >
+
+  <!-- Equivalent to I tag in HTML: italic -->
+  <!ELEMENT i (#PCDATA) >
+
+  <!-- Equivalent to A tag in HTML: anchor -->
+  <!ELEMENT a (#PCDATA) >
+    <!ATTLIST a href CDATA #REQUIRED >
+
+  <!ELEMENT menu (submenu | item)* >
+    <!ATTLIST menu title CDATA #IMPLIED >
+
+  <!ELEMENT submenu (item*) >
+    <!ATTLIST submenu title CDATA #REQUIRED >
+
+  <!ELEMENT item (#PCDATA) >
+    <!ATTLIST item name CDATA #REQUIRED >
+
+  <!-- A paragraph which can be titled -->
+  <!ELEMENT paragraph (#PCDATA | b | i | a | code)* >
+    <!ATTLIST paragraph title CDATA #IMPLIED >
+
+  <!-- An horizontal rule -->
+  <!ELEMENT break EMPTY >

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE xtiny-doc-page SYSTEM "../dtd/xtiny-doc-page.dtd" >
+
+<!--
+  -
+  - Jext documentation source document
+  - Based on xtiny-doc DTD
+  -
+  - DTD:xtiny-doc and XSL:xtiny-doc
+  - are (C)1999 Romain Guy
+  -
+  - Last updated: 09/30/2001 - 15:52:03
+  -
+  -->
+
+<xtiny-doc-page author="Romain Guy"
+           update="09/30/2001"
+           name="Menu Edition"
+           title="Jext : Menu Edition"
+           prev="jext-menus-file.html"
+           next="jext-menus-search.html">
+
+  <paragraph title="Présentation">
+   Le menu <b>Edition</b> contient toutes les fonctions relatives à l'édition du texte même. Il contient
+   des fonctions classiques d'édition (telles que copier, coller...) aussi bien que des fonctions plus puissantes
+   (par exemple, complétion des mots).
+  </paragraph>
+
+  <menu title="Contenu">
+    <item name="Annuler">
+      Annule la dernière action d'édition. Par exemple, si vous collez le texte "N'Cha !", l'appui sur
+      <b>Annuler</b> enlèvera ledit texte.
+    </item>
+    <item name="Refaire">
+      Refait l'action précédemment annulée par Jext.
+    </item>
+    <item name="Copier">
+      Copie le texte sélectionné dans le presse-papier.
+    </item>
+    <item name="Couper">
+      Coupe (c'est à dire copie puis supprime) le texte sélectionné dans le presse-papier.
+    </item>
+    <item name="Coller">
+      Insère le contenu du presse-papier dans votre texte au niveau du curseur.
+    </item>
+    <item name="Coller Filtré">
+      Insère le contenu du presse-papier dans votre texte après avoir effectué sur ce contenu une opération
+      de type "rechercher et remplacer tout". Les motifs et les options utilisées pour cette opération sont
+      ceux définis dans la boîte de dialogue Remplacer.
+    </item>
+    <item name="Coller/Insertion">
+      Insère le contenu du presse-papier dans votre texte au niveau du curseur. Cette fonction ne change pas
+      la position du curseur.
+    </item>
+    <item name="Sélectionner Tout">
+      Sélectionne l'intégralité de votre document.
+    </item>
+    <submenu title="Ancres">
+      <item name="Poser Ancre">
+        Pose une ancre sous votre curseur. Notez que cette ancre est relative au texte et non à la position.
+        Par exemple, si vous posez une ancre devant le mot "Claire" à la ligne 11, puis que vous effacez
+        quelques lignes, l'ancre sera toujours placée devant le mot "Claire".
+      </item>
+      <item name="Aller Ancre">
+        Déplace votre curseur sur l'ancre. Si vous n'avez pas déposé l'ancre, rien ne se passera.
+      </item>
+      <item name="Echanger Ancre/Curseur">
+        Place le curseur sur l'ancre et déplace l'ancre sur l'ancienne position du curseur. Cette action
+        est une combinaison de "Poser Ancre" et de "Aller Ancre".
+      </item>
+      <item name="Sélectionner Vers Ancre">
+        Sélectionne le texte depuis votre curseur jusqu'à l'ancre, positionnant ainsi votre curseur sur l'ancre.
+      </item>
+      <item name="Sélectionner Depuis Ancre">
+        Sélectionne le texte depuis l'ancre jusqu'à votre curseur, laissant ainsi votre curseur à sa position
+        actuelle.
+      </item>
+    </submenu>
+    <submenu title="Code Source">
+      <item name="Indentation">
+        Indente le bloc de code sélectionné d'une tabulation vers la droite. Si l'option activant la conversion
+        des tabulations en espaces est activée, l'indentation se fera à l'aide de caractères d'espacement simple.
+      </item>
+      <item name="Désindentation">
+        Agit de la même manière que la fonction "Indentation" mais vers la gauche.
+      </item>
+      <item name="Crochet Correspondant">
+        Si le caractère sous le curseur est une parenthèse, une accolade ou un crochet, cette fonction déplacera
+        le curseur jusqu'au caractère de correspondant.
+      </item>
+      <item name="Commentaire">
+        Enferme le texte sélectionné dans un commentaire. Les caractères de commentaire dépendent du langage
+        sélectionné dans le mode de coloration. Ainsi, en Java, C et C++, cette fonction ajoute <b>/*</b> au début
+        du texte et <b>*/</b> à la fin ainsi que <b>*</b> au début de chaque ligne.
+      </item>
+      <item name="Bloc De Commentaire">
+        Enferme le texte sélectionné dans un commentaire. Les caractères de commentaire dépendent du langage
+        sélectionné dans le mode de coloration. Ainsi, en Java, C et C++, cette fonction ajoute <b>/*</b> au début
+        du texte et <b>*/</b> à la fin.
+      </item>
+      <item name="Commenter Bloc">
+        Ajoute un commentaire simple au début de chaque ligne sélectionnée. En Java, C ou C++, chaque ligne
+        commencera alors par <b>//</b>.
+      </item>
+      <item name="Décommenter Bloc">
+        Retire les commentaires créés par l'action "Commenter Bloc".
+      </item>
+    </submenu>
+    <submenu title="Texte">
+      <item name="Tabs En Espaces">
+        Convertit tous les caractères de tabulation du texte en leur équivalent d'espaces simples.
+      </item>
+      <item name="Espaces En Tabs">
+        Convertit si possible toutes les séquences d'espaces en caractère de tabulation.
+      </item>
+      <item name="Commencer Lignes Par">
+        Affiche une boîte de dialogue demandant un texte. Ensuite, ce texte sera ajouté au début de chacune
+        des lignes sélectionnées.
+      </item>
+      <item name="Finir Lignes Par">
+        Agit de la même manière que la fonction précédente mais ajoute le texte à la fin des lignes.
+      </item>
+      <item name="Majuscules">
+        Convertit en majuscule toute minuscule contenue dans le texte sélectionné.
+      </item>
+      <item name="Minuscules">
+        Convertit toute majuscule contenur dans le texte sélectionné en minuscule.
+      </item>
+      <item name="Trier Lignes">
+        Trie les lignes sélectionnées par ordre alphabétique.
+      </item>
+      <item name="Tri Inverse Des Lignes">
+        Trie les lignes sélectionnées par ordre alphabétique inverse.
+      </item>
+      <item name="Joinde Lignes">
+        Joint la ligne en cours d'édition avec la ligne suivante.
+      </item>
+      <item name="Joinde Toutes Les Lignes">
+        Joint toutes les lignes de votre document. Le document final est plus petit, ne contient qu'une ligne
+        mais est difficile à modifier.
+      </item>
+      <item name="Supprimer Espaces Finaux">
+        Supprime tous les espaces et toutes les tabulations se trouvant en fin de ligne. Cette fonction
+        permet de réduire la taille d'un document.
+      </item>
+      <item name="Transposer Lignes">
+        Remplace la ligne en cours d'édition par la ligne précédente et vice-versa.
+      </item>
+      <item name="Compléter Mot">
+        Tente de compléter le mot. Par exemple, si vous avez déjà tapé "anticonstitutionnellement", il peut
+        être astreignant de le retaper chaque fois que vous en aurez l'usage dans votre texte. Il vous suffit
+        en fait de taper le début du mot (par exemple: "antic") et de lancer cette fonction (raccourci par
+        défaut: <b>C+b</b>). Jext complètera alors automatiquement "antic" ! Si Jext trouve plusieurs
+        mots susceptibles d'être celui que vous souhaitez, une fenêtre apparaît pour vous laisser le choix.
+      </item>
+      <item name="Compter Mots">
+        Cette action résume les informations concernant votre texte: le nombre de lignes, de caractères,
+        de mots et, pour les programmeurs, le nombre de lignes de code réelles (en excluant les lignes
+        vides et les lignes commentées).
+      </item>
+    </submenu>
+    <submenu name="Fichier">
+      <item name="Insérer Extension">
+        Insère l'extension de fichier du document.
+      </item>
+      <item name="Insérer Nom Complet">
+        Insère le nom du fichier édité avec extension.
+      </item>
+      <item name="Insérer Nom">
+        Insère le nom du fichier édité sans extension.
+      </item>
+      <item name="Insérer Chemin Complet">
+        Insère le chemin absolu du fichier édité (avec nom du fichier).
+      </item>
+      <item name="Insérer Chemin">
+        Insère le chemin absolu du fichier édité (sans nom du fichier).
+      </item>
+    </submenu>
+    <item name="Aller Ligne">
+      Cette fonction permet de déplacer le curseur à une ligne donnée en entrant simplement son numéro.
+    </item>
+    <item name="Supprimer Ligne">
+      Supprime la ligne.
+    </item>
+    <item name="Date/Heure">
+      Insère la date et l'heure dans votre document.
+    </item>
+    <submenu title="One Click!">
+      <item name="Terminer One Click!">
+        Lorsque vous souhaitez mettre fin à une séquence <b>One Click!</b>, vous pouvez soit cliquez sur cet
+        élément, soit cliquer sur n'importe quel autre élément. Mais celui-ci ne lance aucune opération.
+      </item>
+      <item name="[une action]">
+        Les éléments <b>One Click!</b> activent le système du même nom. Vous pouvez vérifier si le système
+        est actif ou non en regardant en bas à droite de la zone de texte. La mention "one click!" apparaît
+        si la fonction est active. Une fois le système activé, chaque clic dans la zone de texte lancera
+        l'opération d'édition. Par exemple, si vous avez cliqué sur <b>Coller</b>, chaque clic dans la zone
+        de texte collera le contenu du presse-papier.
+      </item>
+    </submenu>
+    <item name="Options">
+      Affiche la fenêtre des options de Jext. Reportez-vous à la section <a href="jext-options.html">Options</a>
+      pour de plus amples informations.
+    </item>
+  </menu>
+</xtiny-doc-page>
+
+<!-- End of Jext documentation -->

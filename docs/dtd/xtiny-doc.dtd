@@ -1,0 +1,29 @@
+<!ELEMENT xtiny-doc (paragraph+ | img | sections-list)* >
+  <!ATTLIST xtiny-doc author CDATA #REQUIRED
+                      email CDATA #IMPLIED
+                      url CDATA #IMPLIED
+                      update CDATA #REQUIRED
+                      copyright CDATA #REQUIRED
+                      version CDATA #REQUIRED
+                      title CDATA #REQUIRED
+                      name CDATA #REQUIRED >
+
+  <!-- Bold HTML element -->
+  <!ELEMENT b (#PCDATA) >
+
+  <!-- Defines a list of sections -->
+  <!ELEMENT sections-list (section*) >
+    <!ATTLIST sections-list title CDATA #IMPLIED >
+
+  <!-- Defines a list item in a list of sections -->
+  <!ELEMENT section EMPTY >
+    <!ATTLIST section name CDATA #REQUIRED
+                      target CDATA #IMPLIED >
+
+  <!-- A picture -->
+  <!ELEMENT img EMPTY >
+    <!ATTLIST img src CDATA #REQUIRED >
+
+  <!-- A paragraph which can be titled -->
+  <!ELEMENT paragraph (#PCDATA | b)* >
+    <!ATTLIST paragraph title CDATA #IMPLIED >

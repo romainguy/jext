@@ -1,0 +1,24 @@
+# dawn.string package - String utilities
+
+org.jext.dawn.string.CharAtFunction
+org.jext.dawn.string.ChrFunction
+org.jext.dawn.string.ConcatFunction
+org.jext.dawn.string.EndsWithFunction
+org.jext.dawn.string.FromStringFunction
+org.jext.dawn.string.HeadFunction
+org.jext.dawn.string.LastPosFunction
+org.jext.dawn.string.LowerCaseFunction
+org.jext.dawn.string.NumFunction
+org.jext.dawn.string.PosFunction
+org.jext.dawn.string.SizeFunction
+org.jext.dawn.string.StartsWithFunction
+org.jext.dawn.string.SubFunction
+org.jext.dawn.string.TailFunction
+org.jext.dawn.string.TokenizeFunction
+org.jext.dawn.string.TokenizeArrayFunction
+org.jext.dawn.string.TokenizeDelimFunction
+org.jext.dawn.string.ToStringFunction
+org.jext.dawn.string.TrimFunction
+org.jext.dawn.string.UpperCaseFunction
+
+# End of dawn.string package

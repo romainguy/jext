@@ -1,0 +1,7 @@
+<!ELEMENT tags-list (tag+) >
+  <!ELEMENT tag (attribute*) >
+    <!ATTLIST tag name  CDATA #REQUIRED
+                  empty (true | false) "false" >
+    <!ELEMENT attribute EMPTY >
+      <!ATTLIST attribute name  CDATA #REQUIRED
+                          value CDATA #IMPLIED >

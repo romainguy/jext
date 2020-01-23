@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE xtiny-doc-page SYSTEM "../dtd/xtiny-doc-page.dtd" >
+
+<!--
+  -
+  - Jext documentation source document
+  - Based on xtiny-doc DTD
+  -
+  - DTD:xtiny-doc and XSL:xtiny-doc
+  - are (C)1999 Romain Guy
+  -
+  - Last updated: 12/02/2001 - 22:16:39
+  -
+  -->
+
+<xtiny-doc-page author="Romain Guy"
+           update="12/02/2001"
+           name="Plugins Menu"
+           title="Jext : Plugins Menu"
+           prev="jext-menus-search.html"
+           next="jext-menus-jext.html">
+
+  <paragraph title="Overview">
+    This menu contains the menu items and sub menus added by installed plugins. 
+    However, plugins aren't restricted to this menu alone, they can add their menu items to other
+    menus (as HTMLPlugin and JavaPlugin do: their items show up in the Edit Menu). Plugins can
+    be shown and hidden according to the current syntax colorizing mode selected !
+  </paragraph>
+
+  <menu title="Contents">
+    <item name="No Plugins">
+      This appears only when no items have been added in Plugins Menu. The default Jext distribution
+      includes at least one plugin in this menu: HyperTyper.
+    </item>
+  </menu>
+</xtiny-doc-page>
+
+<!-- End of Jext documentation -->

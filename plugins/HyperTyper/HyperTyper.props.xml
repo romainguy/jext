@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xproperties SYSTEM "xproperties.dtd" >
+
+<xproperties>
+  <property name="plugin.HyperTyperPlugin.name" value="Hyper Typer" />
+  <property name="plugin.HyperTyperPlugin.author" value="Romain Guy and Matt Albrecht" />
+  <property name="plugin.HyperTyperPlugin.version" value="1.1" />
+
+  <property name="options.hyper_typer.label" value="HyperTyper" />
+  
+  <property name="hyper_typer" value="plugin" />
+  <property name="hyper_typer.autoExpand" value="off" />
+  <property name="hyper_typer.title" value="HyperTyper" />
+  <property name="hyper_typer.keybinding.label" value="HyperTyper Keybinding\w" />
+  <property name="hyper_typer.menu" value="hyper_typer.window hyper_typer.hotkey" />
+  <property name="hyper_typer.menu.label" value="HyperTyper" />
+  <property name="hyper_typer.window_autostart" value="off" />
+  <property name="hyper_typer.window_autostart.label" value="Autostart Manager Window" />
+  <property name="hyper_typer.persist_tab_autostart" value="off" />
+  <property name="hyper_typer.persist_tab_autostart.label" value="Auto-add Persistent Tab" />
+  <property name="hyper_typer.transient_tab_autostart" value="off" />
+  <property name="hyper_typer.transient_tab_autostart.label" value="Auto-add Transient Tab" />
+  <property name="hyper_typer.autoexpand.label" value="Auto-expand Abbrevs" />
+
+  <property name="hyper_typer.hotkey.keybinding" value="ESCAPE" />
+  <property name="hyper_typer.hotkey.label" value="Create Sequence" />
+  <property name="hyper_typer.hotkey.shortcut" value="C+F5" />
+  <property name="hyper_typer.hotkey.dialog.title" value="Create Sequence" />
+  <property name="hyper_typer.hotkey.dialog.expanded_label" value="Create a sequence using expanded text: " />
+  <property name="hyper_typer.hotkey.dialog.entry_field" value="Enter the shorthand text for this expanded text:" />
+  <property name="hyper_typer.hotkey.dialog.error_message" value="Invalid keystroke for binding; reverting to:" />
+  <property name="hyper_typer.hotkey.dialog.error_title" value="Invalid Keystroke Bind" />
+  <property name="hyper_typer.hotkey.dialog.transient_label" value="Make Transient" />
+  <property name="hyper_typer.hotkey.dialog.persistent_label" value="Make Persistent" />
+
+  <property name="hyper_typer.window.label" value="Manager Window" />
+  <property name="hyper_typer.window.shortcut" value="S+F5" />
+  <property name="hyper_typer.window.title" value="HyperTyper Manager Window" />
+
+  <property name="hyper_typer.mapping.persistent_table.title" value="Persistent" />
+  <property name="hyper_typer.mapping.persistent_table.column1" value="Shorthand" />
+  <property name="hyper_typer.mapping.persistent_table.column2" value="Expanded" />
+  <property name="hyper_typer.mapping.persistent_table.delete_button.text" value="Delete" />
+  <property name="hyper_typer.mapping.persistent_table.delete_button.accelerator" value="D" />
+  <property name="hyper_typer.mapping.persistent_table.move_button.text" value="Make Transient" />
+  <property name="hyper_typer.mapping.persistent_table.move_button.accelerator" value="T" />
+    
+  <property name="hyper_typer.mapping.transient_table.title" value="Transient" />
+  <property name="hyper_typer.mapping.transient_table.column1" value="Shorthand" />
+  <property name="hyper_typer.mapping.transient_table.column2" value="Expanded" />
+  <property name="hyper_typer.mapping.transient_table.delete_button.text" value="Delete" />
+  <property name="hyper_typer.mapping.transient_table.delete_button.accelerator" value="D" />
+  <property name="hyper_typer.mapping.transient_table.move_button.text" value="Make Persistent" />
+  <property name="hyper_typer.mapping.transient_table.move_button.accelerator" value="P" />
+
+  <!-- ============================================================ -->
+  <!-- FAST TYPER                                                   -->
+  <!-- ============================================================ -->
+  <property name="fastTyper.0" value="Ex=Exception" />
+  <property name="fastTyper.1" value="IOEx=IOException" />
+  <property name="fastTyper.2" value="Ob=Object" />
+  <property name="fastTyper.3" value="Psf=public static final" />
+  <property name="fastTyper.4" value="Psfb=public static final boolean" />
+  <property name="fastTyper.5" value="Psfi=public static final int" />
+  <property name="fastTyper.6" value="Psfs=public static final String" />
+  <property name="fastTyper.7" value="St=String" />
+  <property name="fastTyper.8" value="ab=abstract" />
+  <property name="fastTyper.9" value="bo=boolean" />
+  <property name="fastTyper.10" value="br=break" />
+  <property name="fastTyper.11" value="ca=catch (|) {\\n\\n}" />
+  <property name="fastTyper.12" value="cl=class" />
+  <property name="fastTyper.13" value="cn=continue" />
+  <property name="fastTyper.14" value="db=double" />
+  <property name="fastTyper.15" value="de=default" />
+  <property name="fastTyper.16" value="do=do\\n{\\n|\\n} while () {\\n\\n}" />
+  <property name="fastTyper.17" value="doc=/**\\n\\ * |\\n*/" />
+  <property name="fastTyper.18" value="el=else" />
+  <property name="fastTyper.19" value="ex=extends" />
+  <property name="fastTyper.20" value="fa=false" />
+  <property name="fastTyper.21" value="fi=final" />
+  <property name="fastTyper.22" value="fl=float" />
+  <property name="fastTyper.23" value="for=for (|; ; )\\n{\\n\\n}" />
+  <property name="fastTyper.24" value="fy=finally" />
+  <property name="fastTyper.25" value="ie=interface" />
+  <property name="fastTyper.26" value="if=if (|)\\n{\\n\\n}" />
+  <property name="fastTyper.27" value="im=implements" />
+  <property name="fastTyper.28" value="impa=import java.awt." />
+  <property name="fastTyper.29" value="impj=import java." />
+  <property name="fastTyper.30" value="imps=import javax.swing." />
+  <property name="fastTyper.31" value="impu=import java.util." />
+  <property name="fastTyper.32" value="iof=instanceof" />
+  <property name="fastTyper.33" value="ir=import" />
+  <property name="fastTyper.34" value="main=public static void main(String[] args)\\n{\\n|\\n}" />
+  <property name="fastTyper.35" value="pe=protected" />
+  <property name="fastTyper.36" value="pr=private" />
+  <property name="fastTyper.37" value="psf=private static final" />
+  <property name="fastTyper.38" value="psfb=private static final boolean" />
+  <property name="fastTyper.39" value="psfi=private static final int" />
+  <property name="fastTyper.40" value="psfs=private static final String" />
+  <property name="fastTyper.41" value="Pu=public" />
+  <property name="fastTyper.42" value="re=return" />
+  <property name="fastTyper.43" value="serr=System.err.println(&#34;|&#34;);" />
+  <property name="fastTyper.44" value="sh=short" />
+  <property name="fastTyper.45" value="sout=System.out.println(&#34;|&#34;);" />
+  <property name="fastTyper.46" value="st=static" />
+  <property name="fastTyper.47" value="sw=switch (|)\\n{\\n\\n}" />
+  <property name="fastTyper.48" value="sy=synchronized" />
+  <property name="fastTyper.49" value="th=throws" />
+  <property name="fastTyper.50" value="tr=transient" />
+  <property name="fastTyper.51" value="try=try\\n{\\n|\\n}\\ncatch ()\\n{\\n\\n}" />
+  <property name="fastTyper.52" value="tw=throw" />
+  <property name="fastTyper.53" value="twn=throw new" />
+  <property name="fastTyper.54" value="vo=void" />
+  <property name="fastTyper.55" value="wh=while (|)\\n{\\n\\n}" />
+  <property name="fastTyper.56" value="Pv=public void " />
+</xproperties>
+

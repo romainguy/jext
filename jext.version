@@ -1,0 +1,53 @@
+# Jext version check
+.release 5.0 <Karsten/Tiger>
+.build 05.00.01.00
+.description
+<html>
+<body>
+<font color="green">Jext</font> version <font color="blue">3.2pre3</font> build <font color="blue">03.02.00.03</font> is available.<br>
+Download URL: http://www.jext.org/download.php
+<p>
+<ul>
+<li><font color="red">5.0<b></b></font>
+<ul>
+<li>Core changes:<ul>
+<li>Designed to work with J2SE 5.0</li>
+</ul></li>
+<li>API changes:<ul>
+<li>Many plugins changes</li>
+<li>Modifications in option panes which can be cacheable now</li>
+</ul></li>
+<li>GUI changes:<ul>
+<li>New default theme</li>
+<li>Skins support</li>
+</ul></li>
+<li>Bug fixes:<ul>
+<li>Numpad is now working again</li>
+<li>An extra line feed was added to last line of the file on save</li>
+<li>Fixed the infinite loop which would occure with some Replace All operations</li>
+<li>Drag n' dropping an already opened file does not cause Jext to hang anymore</li>
+<li>Fixed double-click on error bug in Python Log Window</li>
+<li>Changing tab or workspace gives the focus to the text area</li>
+<li>On launch the focus is given to text area</li>
+</ul></li>
+<li>New features:<ul>
+<li>You can switch between "standard way" and "Jext way" for word selection (ie does
+          Ctrl[+Shift]+Left or Right greedily takes spaces or not)</li>
+<li>New option to add an extra line feed in the file on save</li>
+<li>The -bg flag on the command line makes Jext running in background mode</li>
+<li>New Append Copy and Append Cut. They work like Copy and Cut but append data to
+          the clipboard instead of replacing it</li>
+<li>Jext can now be ran in server mode using the command line -bg flag</li>
+<li>You can turn on Python interpreter mode for the Console. In this mode every command
+          is issued as a Python instruction (prefix the command with ! for standard commands)</li>
+<li>Python log window can now be docked and undocked next to the Console</li>
+<li>PHP snippets are highlighted</li>
+</ul></li>
+<li>Features improvments:<ul>
+<li>Jext.exe works much better</li>
+</ul></li>
+</ul>
+</body>
+</html>
+.end
+.end

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xproperties SYSTEM "xproperties.dtd" >
+
+<xproperties>
+  <property name="plugin.PyBrowsePlugin.name" value="PyBrowse" />
+  <property name="plugin.PyBrowsePlugin.author" value="Romain Guy" />
+  <property name="plugin.PyBrowsePlugin.version" value="1.1" />
+
+  <property name="plugin.PyBrowsePlugin.modes" value="python" />
+
+  <property name="Python_menu" value="pybrowse" />
+  <property name="Python_menu.label" value="Python" />
+  <property name="pybrowse.label" value="Source Browser" />
+</xproperties>

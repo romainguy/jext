@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE xtiny-doc-page SYSTEM "../dtd/xtiny-doc-page.dtd" >
+
+<!--
+  -
+  - Jext documentation source document
+  - Based on xtiny-doc DTD
+  -
+  - DTD:xtiny-doc and XSL:xtiny-doc
+  - are (C)1999 Romain Guy
+  -
+  - Last updated: 09/30/2001 - 21:44:50
+  -
+  -->
+
+<xtiny-doc-page author="Romain Guy"
+           update="09/30/2001"
+           name="Jext : Console"
+           title="Console"
+           prev="jext-search.html"
+           next="jext-xinsert.html">
+
+  <paragraph title="Présentation">
+    La console interne de Jext se comporte exactement comme la console de votre système (parfois appelée
+    terminal). Ainsi, elle pourra être utilisée pour parcourir le disque dur, lancer des applications, etc...
+  </paragraph>
+
+  <paragraph title="Utiliser la console">
+    Avant tout, sachez que la console est par défaut cachée. Vous devez appuyer sur <b>F8</b> ou l'activer
+    dans les options en cochant l'option "Show top tabbed pane" de la section générale.
+  </paragraph>
+  <paragraph>
+    Pour utiliser la console, cliquez simplement dessus et tapez votre commande, suivi de <b>ENTER</b> pour
+    l'exécuter. La console propose de nombreuses commandes internes indépendantes du système, des variables
+    (qui différent suivant le document en cours) ainsi que des touches spéciales.
+  </paragraph>
+
+  <paragraph title="Invite de la console">
+    Jext laisse la possibilité à l'utilisateur de définir sa propre invite. L'invite par défaut est de la
+    forme <b>nom_utilisateur@chemin &gt;</b>. Dans les options, vous avez la possivilité de changer ceci. Jext
+    propose, en sus de cette invite, trois autres invites: Linux (<b>utilisateur@machine%</b>), Solaris
+    (<b>machine%</b>) et DOS (<b>chemin &gt;</b>). Pour personnaliser l'invite, entrez n'importe quel texte
+    dans le champ dédié. Dans votre invite, vous pourrez utilisez les variablez suivantes:
+    <menu>
+      <item name="$u">
+        Inclut le nom de l'utilisateur dans l'invite
+      </item>
+      <item name="$h">
+        Inclut le nom de l'hôte (machine) dans l'invite
+      </item>
+      <item name="$p">
+        Inclut le chemin du répertoire courant
+      </item>
+      <item name="$$">
+        Inclut le caractère '$' dans l'invite
+      </item>
+    </menu>
+  </paragraph>
+
+  <menu title="Commandes internes">
+    <item name="help">
+      Affiche l'aide de la console. Cette aide résume les commandes et les variables disponibles.
+    </item>
+    <item name="clear">
+      Efface l'écran de la console.
+    </item>
+    <item name="cd">
+      Cette commande sert à changer de répertoire. Les deux types de séparateurs / et \ sont acceptés.
+      Vous pouvez également utiliser le caractère ~ qui représente le répertoire de l'utilisateur. Tapez
+      <b>cd -help</b> pour plus d'informations.
+    </item>
+    <item name="exit">
+      Quitte Jext.
+    </item>
+    <item name="home">
+      Cette commande est un raccourci pour <b>cd &lt;chemin de jext&gt;</b>
+    </item>
+    <item name="ls">
+      Cette fonction, bien connue des utilisateurs Un*x, est l'équivalent de la commande DOS 'dir'.
+      Cette commande liste le contenu du répertoire courant. De nombreuses options sont acceptées. Vous
+      pouvez en connaître l'usage en tapant <b>ls -help</b>. Notez que la commande <b>dir</b> fonctionnera
+      de la même manière que celle-ci.
+    </item>
+    <item name="pwd">
+      Affiche le chemin complet du répertoire courant.
+    </item>
+    <item name="file:nom_fichier">
+      Permet d'ouvrir un fichier dans l'éditeur. Le nom de fichier peut contenir un chemin relatif
+      (i.e file:../infos.txt) ou absolu (i.e file:/etc/.bashrc).
+    </item>
+    <item name="http://URL">
+      Ouvre le contenu de l'adresse internet spécifiée.
+    </item>
+    <item name="run:nom_script">
+      Lance l'exécution du script passé en paramètre. Pour obtenir plus d'informations à propos des scripts,
+      veuillez consulter la section  <a href="jext-scripts.html">Scripts</a>.
+    </item>
+    <item name="eval:code">
+      Exécute le code Python "code".
+    </item>
+  </menu>
+
+  <paragraph title="Utilisation des variables">
+    Si vous insérez une variable interne dans une commande console, la commande sera modifiée pour remplacer
+    les variables par leur valeur avant exécution. Imaginons que vous ayiez ouvert le fichier Hello.java
+    du répertoire /home/Gfx/java/hello et que vous souhaitiez le compiler. Même en faisant appel à la commande
+    'cd' pour vous placer dans le susdit répertoire, vous ne serez pas en mesure de mener à bien la compilation.
+    Ceci est dû à une limitation de Java. Mais vous pouvez contourner ce problème en utilisant les variables
+    interne. Pour compiler le fichier, tapez donc la commande <b>javac $n/Hello.java</b>. Ensuite, pour
+    lancer la classe Hello.class, tapez <b>java -classpath $n $e</b>. Les variables peuvent s'avérer très
+    utiles dans de nombreux autres cas. Pour accéder au répertoire du fichier par exemple: <b>cd $n</b>
+    ou pour effacer le fichier: <b>rm -f $f</b>.
+  </paragraph>
+
+  <menu title="Variables internes">
+    <item name="$j">
+      Répertoire de Jext.
+    </item>
+    <item name="$h">
+      Répertoire utilisateur (/home/utilisateur sous Un*x, C:\Windows ou C:\Windows\Profiles\Utilisateur sous
+      Windows).
+    </item>
+    <item name="$d">
+      Répertoire courant.
+    </item>
+    <item name="$f">
+      Fichier courant - sélectionné dans l'éditeur -, désigné par son chemin absolu.
+    </item>
+    <item name="$p">
+      Nom du fichier sélectionné dans l'éditeur.
+    </item>
+    <item name="$e">
+      Nom, sans extension, du fichier sélectionné dans l'éditeur.
+    </item>
+    <item name="$n">
+      Répertoire du fichier sélectionné.
+    </item>
+    <item name="$s">
+      Texte sélectionné dans l'éditeur.
+    </item>
+  </menu>
+
+  <paragraph title="Touches">
+    La console gère des touches pour en simplifier l'utilisation. En voici la liste:
+  </paragraph>
+  <menu>
+    <item name="ESCAPE">
+      Efface la ligne de commande en cours.
+    </item>
+    <item name="LEFT">
+      Déplace le curseur vers la gauche.
+    </item>
+    <item name="RIGHT">
+      Déplace le curseur vers la droite.
+    </item>
+    <item name="UP">
+      Accède à la commande précedemment tapée (jusqu'à 25 en mémoire).
+    </item>
+    <item name="DOWN">
+      Accède à la commande suivant dans l'historique des commandes tapées.
+      Get next typed command from the history.
+    </item>
+    <item name="TAB">
+      Complète le nom du fichier si une occurence est trouvée dans le répertoire courant. Par exemple,
+      si vous êtes dans un répertoire contenant le fichier <b>jext-patch-2.8.0.3.zip</b>, vous pouvez
+      taper simplement <b>jext-</b> et appuyer sur <b>TAB</b> pour que Jext complète le nom du fichier.
+      Si plusieurs fichiers commençant par ce que vous avez tapé sont trouvés, Jext complète avec la plus
+      grande partie commune.
+    </item>
+    <item name="S+TAB">
+      Complète la commande si une occurence est trouvée dans l'historique. Si vous avez tapé par exemple
+      <b>ls -rind</b> puis tapez seulement <b>ls -</b>, un appui sur <b>S+TAB</b> complètera la commande
+      en <b>ls -rind</b>.
+    </item>
+    <item name="C+c">
+      Copie le texte sélectionné dans le presse-papier.
+    </item>
+    <item name="C+d">
+      Tue le processus courant. Si vous avez lancé une tâche qui semble avoir planté ou qui nécessite
+      d'être tuée, appuyez sur ces touches.
+    </item>
+  </menu>
+</xtiny-doc-page>
+
+<!-- End of Jext documentation -->

@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <menu name="Java" modes="java jsp bsh">
+   <menu name="Wizards">
+     <item name="Class Wizard" type="script"># Class wizard
+"Multi-datas statement (like constructor arguments\\n"
+"or implements) can be entered separated by a coma." concat
+msgBox
+
+# get class definition
+"Package:" input package ->
+
+"Class name:" input dup
+if size 0 == then
+  "Class name unspecified !" msgBox
+  exit
+end
+className ->
+
+"Extends:" input extends ->
+"Implements:" input implements ->
+
+"Constructor args:" input construct ->
+"Super args:" input super ->
+
+# build class code
+
+package rcl dup
+if size 0 != then
+  "package " swap concat ";\\n\\n" concat
+end
+
+"public class " className rcl concat
+concat
+
+extends rcl dup
+if size 0 != then
+  " extends " swap concat
+end
+concat
+
+implements rcl dup
+if size 0 != then
+  " implements " swap concat
+end
+"\\n{\\n  " concat concat
+
+"public " className rcl "(" concat concat
+construct rcl ")" concat concat "\\n  {\\n" concat
+concat
+
+"    super(" concat super rcl ");" concat concat "\\n  }\\n}" concat
+
+setText</item>
+     <item name="Get/Set Wizard" type="script"># Get/Set wizard
+# turns hello to Hello
+"tinyName" function
+  dup head upperCase swap tail concat
+endFunction
+
+# data type
+"Data type:" input dup
+if size 0 == then
+  "Data type unspecified !" msgBox
+  exit
+end
+dataType ->
+
+# data name
+"" dataName ->
+
+getSelectedText dup
+if size 0 == then
+  "Data name:" input dup
+  if size 0 == then
+    "Data name unspecified !" msgBox
+    exit
+  end
+  dataName ->
+  drop
+else
+  dataName ->
+end
+
+# build code
+"\\n  " dataType rcl concat " " concat dataName rcl concat ";\\n\\n" concat
+
+"  public " dataType rcl concat " get" concat
+dataName rcl tinyName concat "()\\n  {  \\n    return " concat
+dataName rcl concat ";\\n  }" concat
+
+concat
+
+"\\n\\n  public void set" dataName rcl tinyName concat "(" concat
+dataType rcl concat " " concat dataName rcl concat ")\\n  {  \\n    this." concat
+dataName rcl concat " = " concat dataName rcl concat ";\\n  }" concat
+
+concat
+
+insertText</item>
+   </menu>
+
+   <menu name="Templates">
+     <item name="Sample Class">public class MyClass
+{
+  public MyClass()
+  {
+  |
+  }
+}</item>
+    <item name="Application">public class App
+{
+  public static void main(String args[])
+  {
+  |
+  }
+}</item>
+    <item name="Applet">import java.awt.*;
+
+public class WebApp extends java.applet.Applet implements Runnable
+{
+  private Thread runner;
+
+  public void start()
+  {
+    if (runner == null)
+    {
+      runner = new Thread(this);
+      runner.start();
+    }
+  }
+
+  public void init()
+  {
+  }
+
+  public void run()
+  {
+  }
+
+  public void stop()
+  {
+    runner = null;
+  }
+
+  public void destroy()
+  {
+  }
+
+  public void paint(Graphics g)
+  {
+  }
+}</item>
+
+    <item name="Animated Applet">import java.awt.*;
+import java.applet.Applet;
+
+/**
+ * This class will instanciate a &lt;code&gt;Paintable&lt;/code&gt; object and
+ * call &lt;code&gt;paint()&lt;/code&gt; on it. This object can be an instance
+ * of the introduction, the menus or the game. At last, this class
+ * provides a buffered graphcis and a &lt;code&gt;loadImage()&lt;/code&gt;
+ * method which uses a &lt;code&gt;MediaTracker&lt;/code&gt;.
+ * @author Romain Guy
+ */
+
+public class AnimatedApplet extends Applet implements Runnable
+{
+  // the thread
+  private Thread thread;
+
+  // double buffering
+  private Graphics off;
+  private Image offImg;
+
+  // local variables for applet width and height
+  private int width;
+  private int height;
+
+  // used for debugging
+  private int track_index;
+  // this tracker will be used by all the other classes
+  private MediaTracker tracker;
+
+  // this instance will contain the intro, the menus then the game
+  private Paintable paintable;
+
+  // used for fixed fps
+  private long FPS = 30;
+  private long FPS_PERIOD = 1000 / FPS;
+
+  /**
+   * The &lt;code&gt;init&lt;/code&gt; initialize the buffered picture an instanciate
+   * appropriate &lt;code&gt;Paintable&lt;/code&gt; class.
+   */
+
+  public void init()
+  {
+    // we store width and size of the applet
+    width = size().width;
+    height = size().height;
+
+    // background color
+    setBackground(Color.black);
+
+    // image for double bffering
+    offImg = createImage(width, height);
+    // create a Graphics object from the image
+    off = offImg.getGraphics();
+
+    tracker = new MediaTracker(this);
+
+    // can be any Paintable object
+    // paintable = new MainGame(this); //new PaintableTester(this);
+  }
+
+  /**
+   * Load an image using a &lt;code&gt;MediaTracker&lt;/code&gt;. Each time you load an
+   * image, we use an ID defined by: ID = 2 ^ image_number.
+   * @param imageName The relative path from the HTML file to the image file
+   * return The loaded &lt;code&gt;Image&lt;/code&gt;
+   */
+
+  public Image loadImage(String imageName)
+  {
+    Image img = getImage(getDocumentBase(), imageName);
+    int id = 2 ^ ++track_index;
+    tracker.addImage(img, id);
+    try
+    {
+      tracker.waitForID(id);
+    } catch (InterruptedException e) { }
+    if (tracker.isErrorAny())
+      stop();
+    tracker.removeImage(img, id);
+    if (track_index == 64) track_index = 0;
+    return img;
+  }
+
+  /**
+   * Other classes need to get the applet width
+   * @return The width of the applet
+   */
+
+  public int getWidth()
+  {
+    return width;
+  }
+
+  /**
+   * Other classes need to get the applet height
+   * @return The height of the applet
+   */
+
+  public int getHeight()
+  {
+    return height;
+  }
+
+  public void start()
+  {
+    if (thread == null)
+    {
+      thread = new Thread(this);
+      thread.setName("-*-* Animated Applet *-*- Main Thread -*-*");
+      thread.start();
+    }
+  }
+
+  /**
+   * If user stop the loading, we stop the game, too.
+   */
+
+  public void stop()
+  {
+    thread.interrupt();
+    thread = null;
+  }
+
+  /**
+   * When the browser is closed, we free memory
+   * used by the graphics resources.
+   */
+
+  public void destroy()
+  {
+    tracker = null;
+    off = null;
+    offImg.flush();
+    offImg = null;
+  }
+
+  /**
+   * This method loops and call the paintable instance's method
+   * &lt;code&gt;work()&lt;/code&gt; then &lt;code&gt;paint()&lt;/code&gt;.
+   */
+
+  public void run()
+  {
+    // fixed fps
+    long start, sleep;
+    Graphics g = getGraphics();
+    while (thread != null &amp;&amp; paintable != null)
+    {
+      start = System.currentTimeMillis();
+      paintable.run();
+      paintable.paint(off);
+      paint(g);
+      // following block ensure a fixed fps
+      sleep = FPS_PERIOD - System.currentTimeMillis() + start;
+      if (sleep &gt; 0)
+      {
+        try
+        {
+          Thread.sleep(sleep);
+        } catch (InterruptedException ie) { }
+      }
+    }
+  }
+
+  /**
+   * Paint the content of the buffered picture.
+   */
+
+  public void paint(Graphics g)
+  {
+    g.drawImage(offImg, 0, 0, this);
+  }
+
+  /**
+   * An interface which defines a paintable object
+   * @author Romain Guy
+   */
+
+  public interface Paintable
+  {
+    /**
+     * Called to free resources.
+     */
+
+    public void stop();
+
+    /**
+     * Notifies the object to call methods needed before
+     * painting.
+     */
+
+    public void run();
+
+    /**
+     * Notify the object to draw its content.
+     * @param off The &lt;code&gt;Graphics&lt;/code&gt; where to paint
+     */
+
+    public void paint(Graphics off);
+  }
+}
+
+// End of AnimatedApplet.java</item>
+
+    <item name="Servlet">import java.io.*;
+
+import javax.servlet.*;
+import javax.servlet.http.*;
+
+public class ClassNameServelet extends HttpServlet
+{
+  public void init(ServletConfig conf) throws ServletException
+  {
+    super.init(conf);
+  }
+
+  public void destroy() { }
+
+  public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
+  {
+    resp.setContentType("text/html");
+
+    PrintWriter out = resp.getWriter();
+    out.println("&lt;HTML&gt;");
+    out.println("&lt;/HTML&gt;");
+  }
+
+  public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException,
+                                                                              IOException
+  {
+  }
+}
+
+// End of ClassNameServlet.java</item>
+    </menu>
+
+    <menu name="Blocks">
+      <item name="{ }">{\n|\n}</item>
+      <item name="if">if (|)\n{\n} else {\n}</item>
+      <item name="try">try\n{\n|\n} catch (Exception e) { }</item>
+    </menu>
+
+    <menu name="Javadoc">
+      <item name="author">@author=@author |</item>
+      <item name="version">@version=@version |</item>
+      <item name="see">@see=@see |</item>
+      <item name="since">@since=@since |</item>
+      <item name="deprecated">@deprecated=@deprecated |</item>
+      <item name="param">@param=@param |</item>
+      <item name="return">@return=@return |</item>
+      <item name="exception">@exception |</item>
+      <item name="link">@link |</item>
+    </menu>
+
+    <menu name="Loops">
+      <item name="do">do\n{\n|\n} while()</item>
+      <item name="for">for( ; ; )\n{\n|\n}</item>
+      <item name="while">while()\n{\n|\n}</item>
+      <item name="switch">switch()\n{\n  case:\n  |\n  default:\n}</item>
+    </menu>
+
+    <menu name="Methods/Classes">
+      <item name="abstract">abstract</item>
+      <item name="class">class</item>
+      <item name="extends">extends</item>
+      <item name="final">final</item>
+      <item name="import">import</item>
+      <item name="implements">implements</item>
+      <item name="interface">interface</item>
+      <item name="native">native</item>
+      <item name="new">new</item>
+      <item name="package">package</item>
+      <item name="private">private</item>
+      <item name="protected">protected</item>
+      <item name="public">public</item>
+      <item name="return">return</item>
+      <item name="synchronized">synchronized</item>
+      <item name="static">static</item>
+      <item name="super">super</item>
+      <item name="this">this</item>
+      <item name="throw">throw</item>
+      <item name="throws">throws</item>
+      <item name="threadsafe">threadsafe</item>
+      <item name="transient">transient</item>
+    </menu>
+
+    <menu name="Misc">
+      <item name="profiling">long ttim = System.currentTimeMillis();\n// ...\nSystem.out.println("time taken (millis): " + (System.currentTimeMillis() - ttim));</item>
+    </menu>
+
+    <menu name="Types/Values">
+      <item name="byte">byte</item>
+      <item name="boolean">boolean</item>
+      <item name="char">char</item>
+      <item name="double">double</item>
+      <item name="false">false</item>
+      <item name="float">float</item>
+      <item name="int">int</item>
+      <item name="long">long</item>
+      <item name="null">null</item>
+      <item name="short">short</item>
+      <item name="true">true</item>
+      <item name="void">void</item>
+    </menu>
+
+    <menu name="Imports">
+      <menu name="java: A to M">
+        <item name="java.applet">import java.applet.*;</item>
+        <item name="java.awt">import java.awt.*;</item>
+        <item name="java.awt.color">import java.awt.color.*;</item>
+        <item name="java.awt.datatransfer">import java.awt.datatransfer.*;</item>
+        <item name="java.awt.dnd">import java.awt.dnd.*;</item>
+        <item name="java.awt.event">import java.awt.event.*;</item>
+        <item name="java.awt.font">import java.awt.font.*;</item>
+        <item name="java.awt.geom">import java.awt.geom.*;</item>
+        <item name="java.awt.im">import java.im.*;</item>
+        <item name="java.awt.image">import java.image.*;</item>
+        <item name="java.awt.image.renderable">import java.image.renderable.*;</item>
+        <item name="java.awt.print">import java.print.*;</item>
+        <item name="java.beans">import java.beans.*;</item>
+        <item name="java.beans.beancontext">import java.beancontext.*;</item>
+        <item name="java.io">import java.io.*;</item>
+        <item name="java.math">import java.math.*;</item>
+        <item name="java.net">import java.net.*;</item>
+      </menu>
+
+      <menu name="java: R to U ">
+        <item name="java.rmi">import java.rmi.*;</item>
+        <item name="java.rmi.activation">import java.rmi.activation.*;</item>
+        <item name="java.rmi.dgc">import java.rmi.dgc.*;</item>
+        <item name="java.rmi.registry">import java.rmi.registry.*;</item>
+        <item name="java.rmi.server">import java.rmi.server.*;</item>
+        <item name="java.security">import java.security.*;</item>
+        <item name="java.security.acl">import java.security.acl.*;</item>
+        <item name="java.security.cert">import java.security.cert.*;</item>
+        <item name="java.security.interfaces">import java.security.interfaces.*;</item>
+        <item name="java.security.spec">import java.security.spec.*;</item>
+        <item name="java.sql">import java.sql.*;</item>
+        <item name="java.text">import java.text.*;</item>
+        <item name="java.util">import java.util.*;</item>
+        <item name="java.util.jar">import java.util.jar.*;</item>
+        <item name="java.util.zip">import java.util.zip.*;</item>
+      </menu>
+
+      <menu name="javax: A to U">
+        <item name="javax.accessibility">import javax.accessibility.*;</item>
+        <item name="javax.swing">import javax.swing.*;</item>
+        <item name="javax.swing.border">import javax.swing.border.*;</item>
+        <item name="javax.swing.colorchooser">import javax.swing.colorchooser.*;</item>
+        <item name="javax.swing.event">import javax.swing.event.*;</item>
+        <item name="javax.swing.filechooser">import javax.swing.filechooser.*;</item>
+        <item name="javax.swing.plaf">import javax.swing.plaf.*;</item>
+        <item name="javax.swing.table">import javax.swing.table.*;</item>
+        <item name="javax.swing.text">import javax.swing.text.*;</item>
+        <item name="javax.swing.text.html">import javax.swing.text.html.*;</item>
+        <item name="javax.swing.text.html.parser">import javax.swing.text.html.parser.*;</item>
+        <item name="javax.swing.text.rtf">import javax.swing.text.rtf.*;</item>
+        <item name="javax.swing.tree">import javax.swing.tree.*;</item>
+        <item name="javax.swing.undo">import javax.swing.undo.*;</item>
+      </menu>
+    </menu>
+
+  </menu>

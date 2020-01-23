@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <menu name="C" modes="c cc">
+    <menu name="Includes">
+      <item name="stdio.h">#include &lt;stdio.h&gt; </item>
+      <item name="math.h">#include &lt;math.h&gt;</item>
+      <item name="string.h">#include &lt;string.h&gt;</item>
+      <item name="stdlib.h">#include &lt;stdlib.h&gt;</item>
+      <item name="ctype.h">#include &lt;ctype.h&gt;</item>
+      <item name="malloc.h">#include &lt;malloc.h&gt;</item>
+    </menu>
+    
+    <menu name="Preprocessor">
+      <item name="define">#define</item>
+      <item name="undef">#undef</item>
+      <item name="if">#if</item>
+      <item name="ifdef">#ifdef</item>
+      <item name="ifndef">#ifndef</item>
+      <item name="else">#else</item>
+      <item name="endif">#endif</item>
+    </menu>    
+ 
+    <menu name="Blocks">
+      <item name="{ }">{\n|\n}</item>
+      <item name="if">if (|)\n{\n} else {\n}</item>
+      <item name="main">int main (|) {\n}</item>
+      <item name="main-args">int main (int argc, char **argv) {\n|\n}</item>
+      <item name="struct">struct |\n{\n\n};</item>
+      <item name="union">union |\n{\n\n}</item>
+      <item name="enum">enum |\n{\n\n}</item>
+      <item name="try catch">try {\n\n}\ncatch (|){\n\n}</item>
+    </menu>
+   
+    <menu name="Loops">
+      <item name="do">do\n{\n|\n} while()</item>
+      <item name="for">for( ; ; )\n{\n|\n}</item>
+      <item name="while">while()\n{\n|\n}</item>
+      <item name="switch">switch()\n{\n  case:\n  |\n  default:\n};</item>
+    </menu>
+
+    <menu name="C++">
+      <item name="class" type="mixed">class %"Class Name :" input dup CN sto% {\n// Constructor-destructor\n%CN rcl% (|);\n%CN rcl%;\n\npublic :\n\nprivate:\n\nprotected:\n}</item>
+    </menu>
+  </menu>

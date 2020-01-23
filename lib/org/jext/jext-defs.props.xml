@@ -1,0 +1,568 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xproperties SYSTEM "xproperties.dtd" >
+
+<xproperties>
+  <!-- ============================================================ -->
+  <!-- DEFAULT SETTINGS                                             -->
+  <!-- ============================================================ -->
+  <property name="jext.look.icons" value="_eclipse" />
+  <property name="current_skin" value="plastic" />
+  <property name="use.selection" value="on" />
+  <property name="full.filename" value="off" />
+  <property name="tips" value="on" />
+  <property name="toolbar" value="on" />
+  <property name="ignoreCase" value="on" />
+  <property name="max.recent" value="8" />
+  <property name="load.classes" value="off" />
+  <property name="jext.width" value="640" />
+  <property name="jext.height" value="480" />
+  <property name="highlight.all" value="on" />
+  <property name="console.prompt" value="$u@$p &gt;" />
+  <property name="dawn.scripting.debug" value="on" />
+  <property name="leftPanel.show" value="on" />
+  <property name="topPanel.show" value="off" />
+  <property name="flatMenus" value="off" />
+  <property name="useJextTheme" value="on" />
+  <property name="toolbarRollover" value="on" />
+  <property name="jextLoader.newWindow" value="off" />
+  <property name="buttonsHighlight" value="off" />
+  <property name="xtree.enabled" value="on" />
+  <property name="console.enabled" value="on" />
+  <property name="scrollableTabbedPanes" value="on" />
+  <property name="plugDownload.core.version" value="0" />
+
+  <!-- ============================================================ -->
+  <!-- PRINT SETTINGS                                               -->
+  <!-- ============================================================ -->
+  <property name="print.font" value="Monospaced" />
+  <property name="print.fontSize" value="10" />
+  <property name="print.lineNumbers" value="off" />
+  <property name="print.wrapText" value="off" />
+  <property name="print.header" value="on" />
+  <property name="print.pageOrientation" value="1" />
+  <property name="print.pageWidth" value="612" />
+  <property name="print.pageHeight" value="792" />
+  <property name="print.pageImgX" value="72" />
+  <property name="print.pageImgY" value="72" />
+  <property name="print.pageImgWidth" value="468" />
+  <property name="print.pageImgHeight" value="648" />
+
+  <!-- ============================================================ -->
+  <!-- EDITOR  SETTINGS                                             -->
+  <!-- ============================================================ -->
+  <property name="editor.wordmove.go_over_space" value="on" />
+  <property name="editor.splitted.orientation" value="Vertical" />
+  <property name="editor.autoScroll" value="3" />
+  <property name="editor.antiAliasing" value="on" />
+  <property name="editor.dirDefaultDialog" value="on" />
+  <property name="editor.linesInterval" value="5" />
+  <property name="editor.linesIntervalEnabled" value="off" />
+  <property name="editor.linesHighlightColor" value="#e6e6ff" />
+  <property name="editor.tabStop" value="on" />
+  <property name="editor.font" value="Monospaced" />
+  <property name="editor.fontSize" value="12" />
+  <property name="editor.tabSize" value="8" />
+  <property name="editor.tabIndent" value="off" />
+  <property name="editor.enterIndent" value="on" />
+  <property name="editor.blinkingCaret" value="on" />
+  <property name="editor.softTab" value="on" />
+  <property name="editor.saveSession" value="on" />
+  <property name="editor.colorize.mode" value="plain" />
+  <property name="editor.bgColor" value="#ffffff" />
+  <property name="editor.fgColor" value="#000000" />
+  <property name="editor.lineHighlight" value="on" />
+  <property name="editor.lineHighlightColor" value="#e0e0e0" />
+  <property name="editor.highlightColor" value="#ffff00" />
+  <property name="editor.wrapGuideColor" value="#ff0000" />
+  <property name="editor.wrapGuideOffset" value="0" />
+  <property name="editor.wrapGuideEnabled" value="off" />
+  <property name="editor.bracketHighlight" value="on" />
+  <property name="editor.bracketHighlightColor" value="#00ff00" />
+  <property name="editor.eolMarkers" value="off" />
+  <property name="editor.eolMarkerColor" value="#009999" />
+  <property name="editor.caretColor" value="#ff0000" />
+  <property name="editor.selectionColor" value="#ccccff" />
+  <property name="editor.blockCaret" value="off" />
+  <property name="editor.line_end.preserve" value="on"/>
+  <property name="console.errorColor" value="#ff0000" />
+  <property name="console.promptColor" value="#0000ff" />
+  <property name="console.outputColor" value="#000000" />
+  <property name="console.infoColor" value="#00a500" />
+  <property name="console.bgColor" value="#ffffff" />
+  <property name="console.selectionColor" value="#ccccff" />
+  <property name="vf.selectionColor" value="#ff0000" />
+  <property name="buttons.highlightColor" value="#c0c0d2" />
+
+  <!-- ============================================================ -->
+  <!-- GUTTER                                                       -->
+  <!-- ============================================================ -->
+  <property name="textArea.gutter.bgColor" value="#ffffff" />
+  <property name="textArea.gutter.fgColor" value="#000000" />
+  <property name="textArea.gutter.highlightColor" value="#ff0000" />
+  <property name="textArea.gutter.borderColor" value="#8080bd" />
+  <property name="textArea.gutter.caretMarkColor" value="#00ff00" />
+  <property name="textArea.gutter.anchorMarkColor" value="#ff0000" />
+  <property name="textArea.gutter.selectionMarkColor" value="#0000ff" />
+  <property name="textArea.gutter.font" value="Monospaced" />
+  <property name="textArea.gutter.fontStyle" value="0" />
+  <property name="textArea.gutter.fontSize" value="10" />
+  <property name="textArea.gutter.width" value="40" />
+  <property name="textArea.gutter.borderWidth" value="3" />
+  <property name="textArea.gutter.collapsed" value="yes" />
+  <property name="textArea.gutter.lineNumbers" value="yes" />
+  <property name="textArea.gutter.numberAlignment" value="right" />
+  <property name="textArea.gutter.highlightInterval" value="5" />
+
+  <!-- ============================================================ -->
+  <!-- SYNTAX COLORIZING                                            -->
+  <!-- ============================================================ -->
+  <property name="editor.style.comment1" value="color:#009900 style:i" />
+  <property name="editor.style.comment2" value="color:#009900 style:i" />
+  <property name="editor.style.keyword1" value="color:#0000ff style:b" />
+  <property name="editor.style.keyword2" value="color:#ff9900" />
+  <property name="editor.style.keyword3" value="color:#ff0000" />
+  <property name="editor.style.label" value="color:#cc00cc style:b" />
+  <property name="editor.style.literal1" value="color:#9999ff" />
+  <property name="editor.style.literal2" value="color:#650099 style:b" />
+  <property name="editor.style.operator" value="color:#ffc800 style:b" />
+  <property name="editor.style.invalid" value="color:#ff9900 style:b" />
+  <property name="editor.style.method" value="color:#000000 style:b" />
+
+  <!-- ============================================================ -->
+  <!-- JEXT LIST OF COLORIZING MODES                                -->
+  <!-- ============================================================ -->
+  <property name="jext.modes" value="asm asp asp-vbscript bat bsh c cbl cc c# dawn eiffel fortran html idl
+                                     java javascript jsp lat makefile patch pascal perl php3 
+                                     pike plain plsql props povray python ruby shell sap sql sqr tex
+                                     text verilog vhdl" />
+
+  <!-- ============================================================ -->
+  <!-- ASM SYNTAX MODE SETTINGS                                     -->
+  <!-- ============================================================ -->
+  <property name="mode.asm.name" value="ASM" />
+  <property name="mode.asm.blockComment" value=";" />
+  <property name="mode.asm.tokenMarker" value="org.gjt.sp.jedit.syntax.ASMTokenMarker" />
+  <property name="mode.asm.fileFilter" value="*.asm" />
+  <property name="mode.asm.noWordSep" value="_" />
+
+  <!-- ============================================================ -->
+  <!-- ASP SYNTAX MODE SETTINGS                                     -->
+  <!-- ============================================================ -->
+  <property name="mode.asp.name" value="ASP" />
+  <property name="mode.asp.commentStart" value="&lt;!--" />
+  <property name="mode.asp.commentEnd" value="--&gt;" />
+  <property name="mode.asp.tokenMarker" value="org.gjt.sp.jedit.syntax.ASPTokenMarker" />
+  <property name="mode.asp.fileFilter" value="*.{asa,asp}" />
+
+  <!-- ============================================================ -->
+  <!-- ASP VBSCRIPT SYNTAX MODE SETTINGS                            -->
+  <!-- ============================================================ -->
+  <property name="mode.asp-vbscript.name" value="ASP VBScript" />
+  <property name="mode.asp-vbscript.blockComment" value="'" />
+  <property name="mode.asp-vbscript.tokenMarker" value="org.gjt.sp.jedit.syntax.ASPVBScriptTokenMarker" />
+  <property name="mode.asp-vbscript.bracketHighlight" value="on" />
+  <property name="mode.asp-vbscript.fileFilter" value="*.vbs" />
+
+  <!-- ============================================================ -->
+  <!-- BATCH SYNTAX MODE SETTINGS                                   -->
+  <!-- ============================================================ -->
+  <property name="mode.bat.name" value="DOS Batch" />
+  <property name="mode.bat.blockComment" value="rem" />
+  <property name="mode.bat.tokenMarker" value="org.gjt.sp.jedit.syntax.BatchFileTokenMarker" />
+  <property name="mode.bat.fileFilter" value="*.bat" />
+
+  <!-- ============================================================ -->
+  <!-- BEANSHELL SYNTAX MODE SETTINGS                               -->
+  <!-- ============================================================ -->
+  <property name="mode.bsh.name" value="BeanShell Scripts" />
+  <property name="mode.bsh.blockComment" value="//" />
+  <property name="mode.bsh.boxComment" value="\w*" />
+  <property name="mode.bsh.commentStart" value="/*" />
+  <property name="mode.bsh.commentEnd" value="*/" />
+  <property name="mode.bsh.indentOpenBrackets" value="{" />
+  <property name="mode.bsh.indentCloseBrackets" value="}" />
+  <property name="mode.bsh.tokenMarker" value="org.gjt.sp.jedit.syntax.BeanShellTokenMarker" />
+  <property name="mode.bsh.indentPrevLine" value="\\s*(((if|while)\\s*\\(|else|case|default)[^;]*|for\\s*\\(.*)" />
+  <property name="mode.bsh.fileFilter" value="*.bsh" />
+  <property name="mode.bsh.noWordSep" value="_" />
+
+  <!-- ============================================================ -->
+  <!-- C SYNTAX MODE SETTINGS                                       -->
+  <!-- ============================================================ -->
+  <property name="mode.c.name" value="C" />
+  <property name="mode.c.tokenMarker" value="org.gjt.sp.jedit.syntax.CTokenMarker" />
+  <property name="mode.c.bracketHighlight" value="on" />
+  <property name="mode.c.blockComment" value="//" />
+  <property name="mode.c.boxComment" value="\w*" />
+  <property name="mode.c.commentStart" value="/*" />
+  <property name="mode.c.commentEnd" value="*/" />
+  <property name="mode.c.indentOpenBrackets" value="{" />
+  <property name="mode.c.indentCloseBrackets" value="}" />
+  <property name="mode.c.indentPrevLine" value="\\s*(((if|while)\\s*\\(|else|case|default)[^;]*|for\\s*\\(.*)" />
+  <property name="mode.c.fileFilter" value="*.[ch]" />
+  <property name="mode.c.noWordSep" value="_" />
+
+  <!-- ============================================================ -->
+  <!-- COBOL SYNTAX MODE SETTINGS                                   -->
+  <!-- ============================================================ -->
+  <property name="mode.cbl.name" value="Cobol" />
+  <property name="mode.cbl.tokenMarker" value="org.gjt.sp.jedit.syntax.CobolTokenMarker" />
+  <property name="mode.cbl.blockComment" value="*" />
+  <property name="mode.cbl.fileFilter" value="*.cbl" />
+	<property name="mode.cbl.noWordSep" value="_" />
+
+  <!-- ============================================================ -->
+  <!-- C++ SYNTAX MODE SETTINGS                                     -->
+  <!-- ============================================================ -->
+  <property name="mode.cc.name" value="C++" />
+  <property name="mode.cc.tokenMarker" value="org.gjt.sp.jedit.syntax.CCTokenMarker" />
+  <property name="mode.cc.bracketHighlight" value="on" />
+  <property name="mode.cc.blockComment" value="//" />
+  <property name="mode.cc.boxComment" value="\w*" />
+  <property name="mode.cc.commentStart" value="/*" />
+  <property name="mode.cc.commentEnd" value="*/" />
+  <property name="mode.cc.indentOpenBrackets" value="{" />
+  <property name="mode.cc.indentCloseBrackets" value="}" />
+  <property name="mode.cc.indentPrevLine" value="\\s*(((if|while)\\s*\\(|else|case|default)[^;]*|for\\s*\\(.*)" />
+  <property name="mode.cc.fileFilter" value="*.{cc,cpp,hpp,hh,cxx}" />
+  <property name="mode.cc.noWordSep" value="_" />
+
+  <!-- ============================================================ -->
+  <!-- C# SYNTAX MODE SETTINGS                                      -->
+  <!-- ============================================================ -->
+
+  <property name="mode.c#.name" value="C#" />
+  <property name="mode.c#.tokenMarker" value="org.gjt.sp.jedit.syntax.CSharpTokenMarker" />
+  <property name="mode.c#.bracketHighlight" value="on" />
+  <property name="mode.c#.blockComment" value="//" />
+  <property name="mode.c#.boxComment" value="\w*" />
+  <property name="mode.c#.commentStart" value="/*" />
+  <property name="mode.c#.commentEnd" value="*/" />
+  <property name="mode.c#.indentOpenBrackets" value="{" />
+  <property name="mode.c#.indentCloseBrackets" value="}" />
+  <property name="mode.c#.indentPrevLine" value="\\s*(((if|while)\\s*\\(|else|case|default)[^;]*|((for|foreach)\\s*\\(.*))" />
+  <property name="mode.c#.fileFilter" value="*.cs" />
+  <property name="mode.c#.noWordSep" value="_" />
+
+  <!-- ============================================================ -->
+  <!-- DAWN SYNTAX MODE SETTINGS                                    -->
+  <!-- ============================================================ -->
+  <property name="mode.dawn.name" value="Dawn" />
+  <property name="mode.dawn.blockComment" value="#" />
+  <property name="mode.dawn.tokenMarker" value="org.gjt.sp.jedit.syntax.DawnTokenMarker" />
+  <property name="mode.dawn.fileFilter" value="*.{dawn,jext-script}" />
+
+  <!-- ============================================================ -->
+  <!-- EIFFEL SYNTAX MODE SETTINGS                                  -->
+  <!-- ============================================================ -->
+  <property name="mode.eiffel.name" value="Eiffel" />
+  <property name="mode.eiffel.blockComment" value="--" />
+  <property name="mode.eiffel.tokenMarker" value="org.gjt.sp.jedit.syntax.EiffelTokenMarker" />
+  <property name="mode.eiffel.fileFilter" value="*.e" />
+  <property name="mode.eiffel.noWordSep" value="_" />
+
+  <!-- ============================================================ -->
+  <!-- FORTRAN SYNTAX MODE SETTINGS                                 -->
+  <!-- ============================================================ -->
+  <property name="mode.fortran.name" value="FORTRAN" />
+  <property name="mode.fortran.tokenMarker" value="org.gjt.sp.jedit.syntax.FortranTokenMarker" />
+  <property name="mode.fortran.blockComment" value="@" />
+  <property name="mode.fortran.bracketHighlight" value="on" />
+  <property name="mode.fortran.fileFilter" value="*.{ftn|f77|for)" />
+  <property name="mode.fortran.noWordSep" value="_" />
+
+  <!-- ============================================================ -->
+  <!-- HTML SYNTAX MODE SETTINGS                                    -->
+  <!-- ============================================================ -->
+  <property name="mode.html.name" value="HTML/XML" />
+  <property name="mode.html.tokenMarker" value="org.gjt.sp.jedit.syntax.HTMLTokenMarker" />
+  <property name="mode.html.bracketHighlight" value="off" />
+  <property name="mode.html.commentStart" value="&lt;!--" />
+  <property name="mode.html.commentEnd" value="--&gt;" />
+  <property name="mode.html.fileFilter" value="*.{html,htm,xml,xsl,dtd,sgml,jnlp,css}" />
+
+  <!-- ============================================================ -->
+  <!-- IDL SYNTAX MODE SETTINGS                                     -->
+  <!-- ============================================================ -->
+  <property name="mode.idl.name" value="IDL" />
+  <property name="mode.idl.blockComment" value="//" />
+  <property name="mode.idl.boxComment=" value="\w*" />
+  <property name="mode.idl.commentStart=" value="/*" />
+  <property name="mode.idl.commentEnd=" value="*/" />
+  <property name="mode.idl.indentOpenBrackets" value="{" />
+  <property name="mode.idl.indentCloseBrackets" value="}" />
+  <property name="mode.idl.noWordSep" value="_" />
+  <property name="mode.idl.tokenMarker" value="org.gjt.sp.jedit.syntax.IDLTokenMarker" />
+  <property name="mode.idl.fileFilter" value="*.idl" />
+
+  <!-- ============================================================ -->
+  <!-- JAVA SYNTAX MODE SETTINGS                                    -->
+  <!-- ============================================================ -->
+  <property name="mode.java.name" value="Java" />
+  <property name="mode.java.tokenMarker" value="org.gjt.sp.jedit.syntax.JavaTokenMarker" />
+  <property name="mode.java.indentPrevLine" value="\\s*(((if|while)\\s*\\(|else|case|default)[^;]*|for\\s*\\(.*)" />
+  <property name="mode.java.bracketHighlight" value="on" />
+  <property name="mode.java.blockComment" value="//" />
+  <property name="mode.java.boxComment" value="\w*" />
+  <property name="mode.java.commentStart" value="/*" />
+  <property name="mode.java.commentEnd" value="*/" />
+  <property name="mode.java.indentOpenBrackets" value="{" />
+  <property name="mode.java.indentCloseBrackets" value="}" />
+  <property name="mode.java.fileFilter" value="*.{java,jav}" />
+  <property name="mode.java.noWordSep" value="_" />
+
+  <!-- ============================================================ -->
+  <!-- JAVASCRIPT SYNTAX MODE SETTINGS                              -->
+  <!-- ============================================================ -->
+  <property name="mode.javascript.name" value="JavaScript" />
+  <property name="mode.javascript.tokenMarker" value="org.gjt.sp.jedit.syntax.JavaScriptTokenMarker" />
+  <property name="mode.javascript.indentPrevLine" value="\\s*(((if|while)\\s*\\(|else|case|default)[^;]*|for\\s*\\(.*)" />
+  <property name="mode.javascript.bracketHighlight" value="on" />
+  <property name="mode.javascript.blockComment" value="//" />
+  <property name="mode.javascript.boxComment" value="\w*" />
+  <property name="mode.javascript.commentStart" value="/*" />
+  <property name="mode.javascript.commentEnd" value="*/" />
+  <property name="mode.javascript.indentOpenBrackets" value="{" />
+  <property name="mode.javascript.indentCloseBrackets" value="}" />
+  <property name="mode.javascript.fileFilter" value="*.js" />
+  <property name="mode.javascript.noWordSep" value="_" />
+
+  <!-- ============================================================ -->
+  <!-- JSP SYNTAX MODE SETTINGS                                     -->
+  <!-- ============================================================ -->
+  <property name="mode.jsp.name" value="JSP" />
+  <property name="mode.jsp.tokenMarker" value="org.gjt.sp.jedit.syntax.JSPTokenMarker" />
+  <property name="mode.jsp.indentPrevLine" value="\\s*(((if|while)\\s*\\(|else|case|default)[^;]*|for\\s*\\(.*)" />
+  <property name="mode.jsp.bracketHighlight" value="on" />
+  <property name="mode.jsp.blockComment" value="//" />
+  <property name="mode.jsp.boxComment" value="\w*" />
+  <property name="mode.jsp.commentStart" value="/*" />
+  <property name="mode.jsp.commentEnd" value="*/" />
+  <property name="mode.jsp.indentOpenBrackets" value="{" />
+  <property name="mode.jsp.indentCloseBrackets" value="}" />
+  <property name="mode.jsp.fileFilter" value="*.jsp" />
+  <property name="mode.jsp.noWordSep" value="_" />
+
+  <!-- ============================================================ -->
+  <!-- LAT SYNTAX MODE SETTINGS                                     -->
+  <!-- ============================================================ -->
+  <property name="mode.lat.name" value="LAT" />
+  <property name="mode.lat.tokenMarker" value="org.gjt.sp.jedit.syntax.LATTokenMarker" />
+  <property name="mode.lat.bracketHighlight" value="on" />
+  <property name="mode.lat.blockComment" value="//" />
+  <property name="mode.lat.commentStart" value="{" />
+  <property name="mode.lat.commentEnd" value="}" />
+  <property name="mode.lat.fileFilter" value="*.{lat,dec}" />
+  <property name="mode.lat.noWordSep" value="_" />
+
+  <!-- ============================================================ -->
+  <!-- MAKEFILE SYNTAX MODE SETTINGS                                -->
+  <!-- ============================================================ -->
+  <property name="mode.makefile.name" value="Makefile" />
+  <property name="mode.makefile.tokenMarker" value="org.gjt.sp.jedit.syntax.MakefileTokenMarker" />
+  <property name="mode.makefile.bracketHighlight" value="on" />
+  <property name="mode.makefile.blockComment" value="#" />
+  <property name="mode.makefile.fileFilter" value="*makefile*" />
+
+  <!-- ============================================================ -->
+  <!-- PASCAL SYNTAX MODE SETTINGS                                  -->
+  <!-- ============================================================ -->
+  <property name="mode.pascal.name" value="Pascal" />
+  <property name="mode.pascal.tokenMarker" value="org.gjt.sp.jedit.syntax.PascalTokenMarker" />
+  <property name="mode.pascal.bracketHighlight" value="on" />
+  <property name="mode.pascal.boxComment" value="*" />
+  <property name="mode.pascal.commentStart" value="{" />
+  <property name="mode.pascal.commentEnd" value="}" />
+  <property name="mode.pascal.indentPrevLine" value="\\s*(((if|while)\\s*\\(|else|case)[^;]*|for\\s*\\(.*)" />
+  <property name="mode.pascal.fileFilter" value="*.pas" />
+  <property name="mode.pascal.noWordSep" value="_" />
+
+  <!-- ============================================================ -->
+  <!-- PATCH SYNTAX MODE SETTINGS                                   -->
+  <!-- ============================================================ -->
+  <property name="mode.patch.name" value="Diff/Patch" />
+  <property name="mode.patch.tokenMarker" value="org.gjt.sp.jedit.syntax.PatchTokenMarker" />
+  <property name="mode.patch.fileFilter" value="*.diff" />
+  <property name="mode.patch.noWordSep" value="_" />
+
+  <!-- ============================================================ -->
+  <!-- PERL SYNTAX MODE SETTINGS                                    -->
+  <!-- ============================================================ -->
+  <property name="mode.perl.name" value="Perl" />
+  <property name="mode.perl.blockComment" value="#" />
+  <property name="mode.perl.indentOpenBrackets" value="{" />
+  <property name="mode.perl.indentCloseBrackets" value="}" />
+  <property name="mode.perl.tokenMarker" value="org.gjt.sp.jedit.syntax.ASPPerlscriptTokenMarker" />
+  <property name="mode.perl.bracketHighlight" value="on" />
+  <property name="mode.perl.fileFilter" value="*.p[lm]" />
+
+  <!-- ============================================================ -->
+  <!-- PHP3 SYNTAX MODE SETTINGS                                    -->
+  <!-- ============================================================ -->
+  <property name="mode.php3.name" value="PHP" />
+  <property name="mode.php3.fileFilter" value="*.{php3,php4,php,phtml,inc}" />
+  <property name="mode.php3.blockComment" value="//" />
+  <property name="mode.php3.boxComment" value="\w*" />
+  <property name="mode.php3.commentStart" value="/*" />
+  <property name="mode.php3.commentEnd" value="*/" />
+  <property name="mode.php3.tokenMarker" value="org.gjt.sp.jedit.syntax.PHPTokenMarker" />
+  <property name="mode.php3.bracketHighlight" value="on" />
+  <property name="mode.php3.noWordSep" value="_" />
+
+  <!-- ============================================================ -->
+  <!-- PIKE SYNTAX MODE SETTINGS                                    -->
+  <!-- ============================================================ -->
+  <property name="mode.pike.name" value="Pike" />
+  <property name="mode.pike.tokenMarker" value="org.gjt.sp.jedit.syntax.PikeTokenMarker" />
+  <property name="mode.pike.bracketHighlight" value="on" />
+  <property name="mode.pike.blockComment" value="//" />
+  <property name="mode.pike.boxComment" value="\w*" />
+  <property name="mode.pike.commentStart" value="/*" />
+  <property name="mode.pike.commentEnd" value="*/" />
+  <property name="mode.pike.indentOpenBrackets" value="{" />
+  <property name="mode.pike.indentCloseBrackets" value="}" />
+  <property name="mode.pike.indentPrevLine" value="\\s*(((if|while)\\s*\\(|else|case|default)[^;]*|for\\s*\\(.*)" />
+  <property name="mode.pike.fileFilter" value="*.{pike,pmod}" />
+  <property name="mode.pike.noWordSep" value="_" />
+
+  <!-- ============================================================ -->
+  <!-- PLAIN SYNTAX MODE SETTINGS                                   -->
+  <!-- ============================================================ -->
+  <property name="mode.plain.name" value="Plain Text" />
+  <property name="mode.plain.bracketHighlight" value="off" />
+  <property name="mode.plain.tokenMarker" value="org.gjt.sp.jedit.syntax.PlainTokenMarker" />
+
+  <!-- ============================================================ -->
+  <!-- PL/SQL SYNTAX MODE SETTINGS                                  -->
+  <!-- ============================================================ -->
+  <property name="mode.plsql.name" value="PL/SQL" />
+  <property name="mode.plsql.blockComment" value="--" />
+  <property name="mode.plsql.boxComment" value="\w*" />
+  <property name="mode.plsql.commentStart" value="/*" />
+  <property name="mode.plsql.commentEnd" value="*/" />
+  <property name="mode.plsql.tokenMarker" value="org.gjt.sp.jedit.syntax.PLSQLTokenMarker" />
+  <property name="mode.plsql.fileFilter" value="*.{sql,pls}" />
+
+  <!-- ============================================================ -->
+  <!-- POVRAY SYNTAX MODE SETTINGS                                  -->
+  <!-- ============================================================ -->
+  <property name="mode.povray.name" value="POVray" />
+  <property name="mode.povray.tokenMarker" value="org.gjt.sp.jedit.syntax.PovrayTokenMarker" />
+  <property name="mode.povray.bracketHighlight" value="on" />
+  <property name="mode.povray.blockComment" value="//" />
+  <property name="mode.povray.boxComment" value="\w*" />
+  <property name="mode.povray.commentStart" value="/*" />
+  <property name="mode.povray.commentEnd" value="*/" />
+  <property name="mode.povray.indentOpenBrackets" value="{" />
+  <property name="mode.povray.indentCloseBrackets" value="}" />
+  <property name="mode.povray.fileFilter" value="*.{povray,pov}" />
+  <property name="mode.povray.noWordSep" value="_" />
+
+  <!-- ============================================================ -->
+  <!-- PROPERTIES SYNTAX MODE SETTINGS                              -->
+  <!-- ============================================================ -->
+  <property name="mode.props.name" value="Properties" />
+  <property name="mode.props.blockComment" value="#" />
+  <property name="mode.props.tokenMarker" value="org.gjt.sp.jedit.syntax.PropsTokenMarker" />
+  <property name="mode.props.fileFilter" value="{properties,config.sys,*.{ini,reg,props}}" />
+
+  <!-- ============================================================ -->
+  <!-- PYTHON SYNTAX MODE SETTINGS                                  -->
+  <!-- ============================================================ -->
+  <property name="mode.python.name" value="Python" />
+  <property name="mode.python.blockComment" value="#" />
+  <property name="mode.python.bracketHighlight" value="on" />
+  <property name="mode.python.tokenMarker" value="org.gjt.sp.jedit.syntax.PythonTokenMarker" />
+  <property name="mode.python.indentPrevLine" value="\\s*.{3,}:\\s*(#.*)?" />
+  <property name="mode.python.fileFilter" value="*.py" />
+  <property name="mode.python.noWordSep" value="_" />
+
+  <!-- ============================================================ -->
+  <!-- RUBY SYNTAX MODE SETTINGS                                    -->
+  <!-- ============================================================ -->
+  <property name="mode.ruby.name" value="Ruby" />
+  <property name="mode.ruby.blockComment" value="#" />
+  <property name="mode.ruby.bracketHighlight" value="on" />
+  <property name="mode.ruby.tokenMarker" value="org.gjt.sp.jedit.syntax.RubyTokenMarker" />
+  <property name="mode.ruby.fileFilter" value="*.rb" />
+  <property name="mode.ruby.noWordSep" value="_" />
+
+  <!-- ============================================================ -->
+  <!-- SHELL SYNTAX MODE SETTINGS                                   -->
+  <!-- ============================================================ -->
+  <property name="mode.shell.name" value="Shell Scripts" />
+  <property name="mode.shell.blockComment" value="#" />
+  <property name="mode.shell.tokenMarker" value="org.gjt.sp.jedit.syntax.ShellScriptTokenMarker" />
+  <property name="mode.shell.fileFilter" value="*.{csh,sh}" />
+
+  <!-- ============================================================ -->
+  <!-- SAP SYNTAX MODE SETTINGS                                     -->
+  <!-- ============================================================ -->
+  <property name="mode.sap.name" value="SAP 2000" />
+  <property name="mode.sap.blockComment" value=";" />
+  <property name="mode.sap.boxComment" value=";" />
+  <property name="mode.sap.tokenMarker" value="org.gjt.sp.jedit.syntax.SAP2000TokenMarker" />
+  <property name="mode.sap.fileFilter" value="*.{s2k,sap}" />
+
+  <!-- ============================================================ -->
+  <!-- SQL SYNTAX MODE SETTINGS                                     -->
+  <!-- ============================================================ -->
+  <property name="mode.sql.name" value="TransactSQL" />
+  <property name="mode.sql.blockComment" value="--" />
+  <property name="mode.sql.boxComment" value="\w*" />
+  <property name="mode.sql.commentStart" value="/*" />
+  <property name="mode.sql.commentEnd" value="*/" />
+  <property name="mode.sql.tokenMarker" value="org.gjt.sp.jedit.syntax.TSQLTokenMarker" />
+  <property name="mode.sql.fileFilter" value="*.tsql" />
+
+  <!-- ============================================================ -->
+  <!-- SQR SYNTAX MODE SETTINGS                                     -->
+  <!-- ============================================================ -->
+  <property name="mode.sqr.name" value="SQR" />
+  <property name="mode.sqr.blockComment" value="!" />
+  <property name="mode.sqr.tokenMarker" value="org.gjt.sp.jedit.syntax.SQRTokenMarker" />
+  <property name="mode.sqr.fileFilter" value="*.{sqr,sqc}" />
+
+  <!-- ============================================================ -->
+  <!-- TEX/LATEX SYNTAX MODE SETTINGS                               -->
+  <!-- ============================================================ -->
+  <property name="mode.tex.name" value="TeX" />
+  <property name="mode.tex.blockComment" value="%" />
+  <property name="mode.tex.tokenMarker" value="org.gjt.sp.jedit.syntax.TeXTokenMarker" />
+  <property name="mode.tex.fileFilter" value="*.{tex,cls,sty,aux}" />
+
+  <!-- ============================================================ -->
+  <!-- TEXT SYNTAX MODE SETTINGS                                    -->
+  <!-- ============================================================ -->
+  <property name="mode.text.name" value="Text" />
+  <property name="mode.text.tokenMarker" value="org.gjt.sp.jedit.syntax.TextTokenMarker" />
+  <property name="mode.text.bracketHighlight" value="on" />
+  <property name="mode.text.fileFilter" value="*.text" />
+
+  <!-- ============================================================ -->
+  <!-- VERILOG SYNTAX MODE SETTINGS                                 -->
+  <!-- ============================================================ -->
+  <property name="mode.verilog.name" value="Verilog" />
+  <property name="mode.verilog.tokenMarker" value="org.gjt.sp.jedit.syntax.VerilogTokenMarker" />
+  <property name="mode.verilog.bracketHighlight" value="off" />
+  <property name="mode.verilog.blockComment" value="//" />
+  <property name="mode.verilog.boxComment" value="\w*" />
+  <property name="mode.verilog.commentStart" value="/*" />
+  <property name="mode.verilog.commentEnd" value="*/" />
+  <property name="mode.verilog.fileFilter" value="*.{ver,v}" />
+
+  <!-- ============================================================ -->
+  <!-- VHDL SYNTAX MODE SETTINGS                                    -->
+  <!-- ============================================================ -->
+  <property name="mode.vhdl.name" value="VHDL" />
+  <property name="mode.vhdl.tokenMarker" value="org.gjt.sp.jedit.syntax.VHDLTokenMarker" />
+  <property name="mode.vhdl.bracketHighlight" value="off" />
+  <property name="mode.vhdl.blockComment" value="--" />
+  <property name="mode.vhdl.boxComment" value="--" />
+  <property name="mode.vhdl.commentStart" value="--" />
+  <property name="mode.vhdl.commentEnd" value="" />
+  <property name="mode.vhdl.fileFilter" value="*.{vhdl,vhd}" />
+
+</xproperties>
+
+<!-- End of jext-defs.props.xml -->

@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE xtiny-doc-page SYSTEM "../dtd/xtiny-doc-page.dtd" >
+
+<!--
+  -
+  - Jext documentation source document
+  - Based on xtiny-doc DTD
+  -
+  - DTD:xtiny-doc and XSL:xtiny-doc
+  - are (C)1999 Romain Guy
+  -
+  - Last updated: 09/30/2001 - 23:24:34
+  -
+  -->
+
+<xtiny-doc-page author="Romain Guy"
+           update="09/30/2001"
+           name="Scripts Dawn"
+           title="Scripts"
+           prev="jext-templates.html"
+           next="jext-plugins.html">
+
+  <paragraph title="Présentation">
+    Jext propose un système interne de scripting basé sur un langage nommé <b>Dawn</b>. Ce langage peut
+    servir à créer des programmes simples destinés à être exécutés au sein de Jext. Le language de
+    scripting <b>Dawn</b> est basé sur la notation polonaise inverse (ou RPN) qui est notamment utilisée
+    dans les calculatrices HP48 et HP49. Un langage basé sur le RPN fonctionne avec un système de pile.
+    Chaque fois que l'interpréteur trouve une valeur, celle-ci est déposé sur le dessus de la pile. Chaque
+    fois que l'interpréteur rencontre une fonction, celle-ci "pioche" des données sur la pile.
+  </paragraph>
+  <paragraph>
+    <b>Note sur les scripts Python:</b> Ce langage est expliqué sur le site <a href="http://www.python.org">python.org</a>.
+    Les scripts Python peuvent utiliser la variable <b>__jext__</b> qui est une instance de <b>JextFrame</b> (i.e fenêtre de Jext).
+  </paragraph>
+  <paragraph>
+    Dans le menu <b>Outils</b>, vous trouverez trois outils utiles pour les scripts Dawn.
+    <b>Exécuter</b> exécute directement le contenu de l'éditeur en tant que script Dawn. <b>Lancer Script</b>
+    permet d'exécuter un fichier externe en tant que script. Enfin, <b>Fenêtre de Trace</b> affiche la fenêtre
+    de trace dans laquelle les scripts peuvent écrire des données ou informations. Si l'option de débuggage
+    des scripts est activée, le contenu de la pile en fin d'exécution du script sera affiché dans cette
+    fenêtre. Cette fenêtre permet aussi d'exécuter une ligne de commande Dawn.
+  </paragraph>
+
+  <paragraph title="Dawn">
+    Le langage Dawn est très simple à apprendre. Chaque ligne commençant par un dièse (#) est considérée
+    comme un commentaire, c'est à dire ignorée lors de l'exécution. La particularité de ce langage est que
+    vous devez taper votre code à l'envers. Par exemple, pour écrire l'équivalent de <b>(2 + 2) / 3</b>, vous
+    devez, en Dawn, écrire: <b>2 2 + 3 /</b>. Pourquoi cela ? Rappelez vous que Dawn fonctionne avec une pile.
+    Ainsi, <b>2 2 +</b> doit être lut ainsi: <i>placer 2 sur la pile, placer 2 sur la pile, aditionner les deux
+    premiers éléments de la pile</i>. L'exemple pourrait aussi être réécrit ainsi: <b>2 dup 3 /</b>. Car la
+    fonction <b>dup</b> copie le premier élément de la pile. Notez que l'écriture inversée de Dawn exclut
+    l'emploi des parenthèses. Une fois habitué à ce fonctionnement, vous remarquerez à quel point cela est
+    plus aisé à utiliser pour des séquences très structurées.
+  </paragraph>
+  <paragraph>
+    Certaines fonctions fonctionnent d'une manière particulière. Ces fonctions sont appelées fonctions
+    en bloc. La fonction <b>if</b> par exemple est une fonction en bloc. Elle fonctionne de la sorte:
+    <code>if [test] then [commandes] end</code>
+    Notez que [test] peut être vide. En effet, l'interpréteur teste la première valeur de la pile lorsqu'il
+    rencontre <b>then</b>. Si cette valeur est égale ou supérieure à 1, alors il exécute la partie
+    [commandes]. Cela signifie que [test] est aussi interprété. Voici un meilleur exemple:
+    <code>if 2 5 &lt; then "2 est inférieur à 5" println end</code>
+    Ce code vérifie si 2 est inférieur à 5. Comme cela est vrai (la valeur 1 est retournée par l'opérateur
+    &lt;), le code entre <b>then</b> et <b>end</b> est exécuté. Dans ce cas, une phrase est écrite dans la
+    fenêtre de trace.
+  </paragraph>
+
+  <paragraph title="Valeurs et variables">
+    Dawn connaît quatre type de données différentes: les valeurs numériques, litérales, les tableaux et les
+    identifieurs. <b>2</b>, <b>-17</b> ou <b>99.99</b> sont des valeurs numériques. <b>Salut !!</b> est une
+    valeur litérale. <b>maVariable</b> est un identifieur. Les tableaux fonctionnent différement puisque vous
+    devez d'abord appeler la fonction <b>array</b> pour créer un nouveau tableau sur la pile.
+  </paragraph>
+  <paragraph>
+    Vous pouvez enregistrer des valeurs dans des variables en employant deux fonctions différentes. La plus utilisée,
+    est <b>-&gt;</b> qui stocke la valeur dans une variable locale. La seconde est <b>sto</b> qui enregistre la
+    valeur dans une variable globale. Une variable globale peut être lue et écrite par d'autres scripts (par exemple
+    si vous appelez un script externe dans le vôtre - simulant ainsi le concept de séparation du code -). Par exemple:
+    <code>3 myVar -&gt;</code>
+    place la valeur 3 dans la variable myVar. Pour rappeler le contenu d'une variable sur la pile, utilisez:
+    <code>myVar rcl</code>
+    Voici un exemple d'utilisation des variables:
+    <code>2 left -&gt; 5 right -&gt; if left rcl right rcl &lt; then "2 &lt; 5" println end</code>
+  </paragraph>
+
+  <paragraph title="Fonctions">
+    Vous pouvez également vous reportez au répertoire <b>&lt;jext&gt;/bin/scripts</b> et lire les fichiers
+    d'exemples fournis pour mieux comprendre comment en écrire vous même. Sachez également qu'il existe un plugin
+    nommé QuickMake écrit en Dawn. Il existe de nombreuses fonctions en Dawn. En voici la liste avec une courte
+    description pour chacune d'entre elle. Dans cette liste, les fonctions sont écrites sous la forme
+    <b>function(arg1, arg2)</b> mais doivent être utilisée ainsi: <b>arg1 arg2 function</b>. Dans les déclarations
+    de fonctions, <i>s</i> indique l'utilisation d'une chaîne de caractère (type litéral), <i>i</i> un indentifieur,
+    <i>a</i> un tableau, <i>n</i> une valeur numérique et <i>value</i> n'importe quel type de donnée.
+
+    <menu title="Fonctions internes à Dawn">
+      <item name="!(n number)">fonction factorielle mathématique (3! = 1 * 2 * 3)</item>
+      <item name="!=(n left, n right)">opérateur de test "différent de"</item>
+      <item name="%(n number)">opérateur modulo</item>
+      <item name="&amp;(n left, n right)">opérateur binaire "et"</item>
+      <item name="*(n left, n right)">fonction multiplier</item>
+      <item name="+(n left, n right)">adition</item>
+      <item name="++(n number) or ++(i var)">incrémente un nombre ou une variable de 1</item>
+      <item name="-(n left, n right)">soustraction</item>
+      <item name="--(n number) or --(i var)">décrémente une variable ou un nombre de 1</item>
+      <item name="-&gt;(value, i var)">enregistre une valeur dans une variable locale</item>
+      <item name="-&gt;lit(s string)">transforme une donnée litérale en identifieur</item>
+      <item name="-&gt;str(n value)">transforme une valeur numérique en chaine de caractères</item>
+      <item name="/(n left, n right)">division</item>
+      <item name="&lt;(n left, n right)">opérateur de test "inférieur à"</item>
+      <item name="&lt;=(n left, n right)">opérateur de test "inférieur ou égal à"</item>
+      <item name="==(n left, n right)">opérateur d'égalité de test</item>
+      <item name="&gt;(n left, n right)">opérateur de test "supérieur à"</item>
+      <item name="&gt;=(n left, n right)">opérateur de test "supérieur ou égal à"</item>
+      <item name="^(n left, n right)">opérateur mathématique exponentiel</item>
+      <item name="acos(n number)">fonction mathématique arc cosinus</item>
+      <item name="addElement(a array, value)">ajoute un élément dans un tableau</item>
+      <item name="and(n number, n number)">opérateur logique "et"</item>
+      <item name="array">crée un nouveau tableau</item>
+      <item name="asin(n number)">fonction mathématique arc sinus</item>
+      <item name="atan(n number)">fonction mathématique arc tangeante</item>
+      <item name="charAt(s string, n position)">récupère un caractère dans une chaîne de caractères</item>
+      <item name="chr(n number)">crée un caractère depuis sa valeur ASCII</item>
+      <item name="class(s className)">place une classe Java sur la pile</item>
+      <item name="clear">efface la pile</item>
+      <item name="clearArray(a array)">efface un tableau</item>
+      <item name="closeFile(s fileID)">ferme le fichier</item>
+      <item name="concat(s left, s right)">concatène deux chaînes de caractères</item>
+      <item name="constructor(c class, s constructor)">donne le constructeur d'une classe</item>
+      <item name="constructPath(s path)">construit le chemin absolu d'un nom de fichier relatif</item>
+      <item name="cos(n number)">fonction mathématique cosinus</item>
+      <item name="date">retourne la date courante</item>
+      <item name="depth">retourne la taille de la pile</item>
+      <item name="do [test] until [command] loop">boucle faire/tant que</item>
+      <item name="drop">rejette le premier élément de la pile</item>
+      <item name="dropn(n number)">rejette le n-ième élément de la pile</item>
+      <item name="dump">affiche le contenu de la pile</item>
+      <item name="dup">copie le premier élément de la pile</item>
+      <item name="dupdup">copie deux fois le premier élément de la pile</item>
+      <item name="dupn(n number)">copie les n premiers éléments</item>
+      <item name="e">valeur approchée de "e"</item>
+      <item name="elementAt(a array, n number)">renvoie l'élément contenu en n-ième position d'un tableau</item>
+      <item name="elements(a array, n amount)">ajoute les n premiers éléments de la pile dans un tableau</item>
+      <item name="endsWith(s left, s right)">vérifie si une chaîne de caractères se termine par une autre</item>
+      <item name="errMsg">affiche le dernier message d'erreur intercepté</item>
+      <item name="error">rejette la dernière erreur interceptée</item>
+      <item name="eval(s code)">exécute la chaîne de caractères sous forme de script Dawn</item>
+      <item name="exec(s command)">exécute une commande du système</item>
+      <item name="exists(s file)">vérifie si le fichier spécifié exsite</item>
+      <item name="exit">termine le script en cours</item>
+      <item name="fdate(s format)">affiche la date en utilisant le formattage indiqué</item>
+      <item name="field(c class, s field)">retourne un champ de classe</item>
+      <item name="fileSize(s file)">retourne la taille d'un fichier</item>
+      <item name="for(n start, n end, i var) [commands] next">boucle pour/suivant</item>
+      <item name="function(s functioName) [body] endFunction">crée une nouvelle fonction locale</item>
+      <item name="global(s functioName) [body] endFunction">crée une nouvelle fonction globale</item>
+      <item name="head(s string)">retourne le premier caractère d'une chaîne</item>
+      <item name="help">affiche la liste de toutes les fonctions</item>
+      <item name="if [test] then [commands] end">test "si/sinon"</item>
+      <item name="inputLine">demande à l'utilisateur de rentrer une donnée</item>
+      <item name="insertElementAt(a array, value, n position)">insère un élément dans un tableau</item>
+      <item name="inv(n number)">fonction mathématique inverse</item>
+      <item name="invoke(c class, [parameters values], m method)">invoque une méthode Java sur un objet Java</item>
+      <item name="isArray(value)">vérifie si l'élément est de type tableau</item>
+      <item name="isFileAvailable(s fileID)">vérifie si le fichier spécifié par son identifiant est disponible en lecture/écriture</item>
+      <item name="isLiteral(value)">vérifie si la donnée est de type identifieur</item>
+      <item name="isNumeric(value) ">vérifie si la donnée est de type numérique</item>
+      <item name="isString(value)">vérifie si la donnée est de type chaîne de caractères</item>
+      <item name="lastPos(s left, s right)">retourne l'index de la dernière occurence d'une chaîne au sein d'une autre</item>
+      <item name="length(a array)">retourne la longueur d'un tableau</item>
+      <item name="lineSeparator ">place le séparateur de ligne spécifique au système d'exploitation sur la pile</item>
+      <item name="lit-&gt;(i varName)">transforme un indentifieur en chaîne</item>
+      <item name="lowerCase(s string)">retourne la chaîne en minuscules</item>
+      <item name="method(c class, s method)">récupère une méthode depuis une classe Java</item>
+      <item name="ndup(n number)">duplique n fois le premier élément de la pile</item>
+      <item name="neg(n number)">retourne la valeur numérique opposée</item>
+      <item name="new(c class)">crée une nouvelle instance de la classe Java</item>
+      <item name="not(n left, n right)">opérateur logique "non"</item>
+      <item name="null">crée un objet Java de type "null"</item>
+      <item name="num(s string)">retourne la valeur ASCII du premier caractère d'une chaîne</item>
+      <item name="openForInput(s file, s fileID)">ouvre un fichier en lecture</item>
+      <item name="openForOutput(s file, s fileID)">ouvre un fichier en écriture</item>
+      <item name="or(n left, n right)">opérateur logique "ou"</item>
+      <item name="pi">valeur approchée de PI</item>
+      <item name="pick(n depth)">duplique le n-ième élément de la pile</item>
+      <item name="pos(s left, s right)">retourne l'index de la première occurence d'une chaîne au sein d'une autre</item>
+      <item name="print(s string)">affiche une chaîne sur le flux de sortie standard</item>
+      <item name="println(s string)">comme print avec un retour à la ligne</item>
+      <item name="rand">nombre aléatoire</item>
+      <item name="randomize">initialise les nombres aléatoires</item>
+      <item name="rcl(i var)">retourne la valeur contenue dans une variable</item>
+      <item name="rdz(n seed)">fixe la "graine" du générateur de nombres aléatoires</item>
+      <item name="read(s fileID)">lit un caractère depuis un fichier</item>
+      <item name="readLine(s fileID)">lit une ligne d'un fichier</item>
+      <item name="removeElementAt(a array, n pos)">retire le n-ième élément d'un tableau</item>
+      <item name="rev">inverse la pile</item>
+      <item name="roll(n depth)">effectue une rotation vers le haut des n premiers éléments de la pile</item>
+      <item name="rolld(n depth)">comme roll, ves le bas</item>
+      <item name="rot">effectue une rotation vers le haut des 3 premiers éléments</item>
+      <item name="round(n number)">retourne la valeur arrondie d'un nombre décimal</item>
+      <item name="run(s script)">exécute un script externe</item>
+      <item name="same(value, value)">compare deux objets</item>
+      <item name="sameType(value, value)">compare deux objets selon leur type</item>
+      <item name="setElementAt(a array, value, n pos)">change la valeur d'un élément d'un tableau</item>
+      <item name="sin(n number)">fonction mathématique sinus</item>
+      <item name="size(s string)">retourne la longueur d'une chaîne</item>
+      <item name="sqrt(n number)">fonction mathématique racine carrée</item>
+      <item name="startsWith(s left, s right)">vérifie si une chaîne commence par une autre</item>
+      <item name="sto(value, i varName)">place une valeur dans une variable globale</item>
+      <item name="str-&gt;(s string)">transforme une chaîne en nombre</item>
+      <item name="sub(s string, n start, n end)">retourne une portion de chaîne</item>
+      <item name="swap">échange les deux premiers éléments de la pile</item>
+      <item name="tail(s string)">retourne la chaîne sans son premier caractère</item>
+      <item name="tan(n number)">fonction mathématique tangeante</item>
+      <item name="time">place le temps courant en millisecondes</item>
+      <item name="tokenize(s string)">découpe la chaîne</item>
+      <item name="tokenizeArray(s string)">découpe une chaîne et place le résultat dans un tableau</item>
+      <item name="trim(s string)">enlève les espaces en début et fin de chaîne</item>
+      <item name="try [code] catch [code if err] err">bloc d'interception d'erreur</item>
+      <item name="type(value)">retourne le type de l'élément</item>
+      <item name="unrot">rotation vers le bas des 3 premiers éléments de la pile</item>
+      <item name="upperCase(s string)">retourne la chaîne en majuscules</item>
+      <item name="version">retourne le numéro de version de Dawn sous forme de chaîne</item>
+      <item name="wait(n delay)">attend durant un temps donné en millisecondes</item>
+      <item name="while [test] repeat [code] wend">boucle tant que</item>
+      <item name="write(s string, s fileID)">écrit une chaîne dans un fichier</item>
+      <item name="writeLine(s string, s fileID)">écrit une ligne dans un fichier</item>
+      <item name="xor(n left, n right)">opérateur binaire "xor"</item>
+      <item name="|(n left, n right)">opérateur binaire "ou"</item>
+    </menu>
+
+    <menu title="Fonctions de Jext">
+      <item name="console(s command)">exécute une commande dans la console</item>
+      <item name="createAction(s code, s actionLabel, s actionName)">crée un nouvel élément dans le menu Outils-Dawn.
+      Cet élément est nommé actionLabel et exécute le code Dawn "code"</item>
+      <item name="getProperty(s prop)">retourne un propriété de Jext</item>
+      <item name="getSelectedText">retourne le texte sélectionné</item>
+      <item name="getText">retourne le texte contenu dans l'éditeur</item>
+      <item name="input(s prompt)">affiche une boîte de dialogue de requête</item>
+      <item name="insertText(s text)">insère du texte dans l'éditeur</item>
+      <item name="isPropertyEnabled(s prop)">vérifie si une propriété donnée est activée ou non</item>
+      <item name="jextAction(s actionName)">exécute une action Jext désignée par son nom interne</item>
+      <item name="msgBox(s msg)">affiche une boîte de message</item>
+      <item name="open(s file)">ouvre un fichier</item>
+      <item name="setProperty(s propName, s value)">crée une propriété</item>
+      <item name="setText(s text)">change le texte de l'éditeur</item>
+      <item name="yesNo(s prompt)">affiche une boîte oui/non</item>
+      <item name="yesNoCancel(s prompt)">affiche une boîte oui/non/annuler</item>
+    </menu>
+
+  </paragraph>
+</xtiny-doc-page>
+
+<!-- End of Jext documentation -->

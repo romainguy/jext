@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <menu name="Dawn" modes="dawn">
+
+    <menu name="Blocks">
+      <item name="if">if |  then\n\nelse\n\nend</item>
+      <item name="try">try\n|\ncatch err</item>
+    </menu>
+
+    <menu name="Functions">
+      <item name="function">"|name" function\n\nendFunction</item>
+      <item name="global">"|name" global\n\nendGlobal</item>
+    </menu>
+
+    <menu name="Loops">
+      <item name="do">do\n|\nloop until</item>
+      <item name="for">0 10 i for\n|\nnext</item>
+      <item name="while">while |  repeat\n\nwend</item>
+    </menu>
+
+    <menu name="Arrays">
+      <item name="addElement">arr elem addElement</item>
+      <item name="array">array</item>
+      <item name="clearArray">arr clearArray</item>
+      <item name="elementAt">arr index elementAt</item>
+      <item name="elements">arr amount elements</item>
+      <item name="insertElementAt">arr elem index insertElementat</item>
+      <item name="length">arr length</item>
+      <item name="removeElementAt">arr index removeElementAt</item>
+      <item name="setElementAt">arr elem index setElementAt</item>
+    </menu>
+
+    <menu name="Errors">
+      <item name="errMsg">errMsg</item>
+      <item name="error">error</item>
+    </menu>
+
+    <menu name="I/O">
+      <item name="closeFile">fileID closeFile</item>
+      <item name="exists">file exists</item>
+      <item name="fileSize">file fileSize</item>
+      <item name="inputLine">inputLine</item>
+      <item name="isAvailable">fileID isAvailable</item>
+      <item name="lineSeparator">lineSeparator</item>
+      <item name="openForInput">file fileID openForInput</item>
+      <item name="openForOutput">file fileID openForOutput</item>
+      <item name="print">obj print</item>
+      <item name="println">obj println</item>
+      <item name="read">fileID read</item>
+      <item name="readLine">fileID readLine</item>
+      <item name="write">fileID write</item>
+      <item name="writeLine">fileID writeLine</item>
+    </menu>
+
+    <menu name="Java Access">
+      <item name="class">classname class</item>
+      <item name="constructor">classObj constructorName constructor</item>
+      <item name="field">classObj fieldName field</item>
+      <item name="invoke">classObj parameters methodObj invoke</item>
+      <item name="method">classObj methodName method</item>
+      <item name="new">classObj new</item>
+      <item name="null">null</item>
+    </menu>
+
+    <menu name="Jext">
+      <item name="console">command console</item>
+      <item name="createAction">code actionLabel actionName createAction</item>
+      <item name="getProperty">prop getProperty</item>
+      <item name="getSelectedText">getSelectedText</item>
+      <item name="getText">getText</item>
+      <item name="input">message input</item>
+      <item name="insertText">text insertText</item>
+      <item name="isPropertyEnabled">prop isPropertyEnabled</item>
+      <item name="jextAction">actionName jextAction</item>
+      <item name="msgBox">message msgBox</item>
+      <item name="open">fileName open</item>
+      <item name="setProperty">propName propValue setProperty</item>
+      <item name="setText">text setText</item>
+      <item name="yesNo">message yesNo</item>
+      <item name="yesNoCancel">message yesNoCancel</item>
+    </menu>
+
+    <menu name="Maths">
+      <item name="acos">number acos</item>
+      <item name="asin">number asin</item>
+      <item name="atan">number atan</item>
+      <item name="cos">number cos</item>
+      <item name="e">e</item>
+      <item name="fact">number !</item>
+      <item name="invert">number inv</item>
+      <item name="modulo">number number %</item>
+      <item name="neg">number neg</item>
+      <item name="pi">pi</item>
+      <item name="power">number number ^</item>
+      <item name="round">number round</item>
+      <item name="sin">number sin</item>
+      <item name="sqrt">number sqrt</item>
+      <item name="tan">number tan</item>
+    </menu>
+
+    <menu name="Naming">
+      <item name="->lit">string lit-></item>
+      <item name="lit->">literal lit-></item>
+    </menu>
+
+    <menu name="Stack">
+      <item name="->">variable value -></item>
+      <item name="clear">clear</item>
+      <item name="depth">depth</item>
+      <item name="drop">drop</item>
+      <item name="dropn">amount dropn</item>
+      <item name="dupdup">dupdup</item>
+      <item name="dup">dup</item>
+      <item name="dupn">index dupn</item>
+      <item name="ndup">amount ndup</item>
+      <item name="pick">index pick</item>
+      <item name="rcl">variable rcl</item>
+      <item name="rev">rev</item>
+      <item name="rolld">amount rolld</item>
+      <item name="roll">amount roll</item>
+      <item name="rot">rot</item>
+      <item name="sto">variable value sto</item>
+      <item name="swap">swap</item>
+      <item name="unrot">unrot</item>
+    </menu>
+
+    <menu name="Strings">
+      <item name="->str">elem ->str</item>
+      <item name="charAt">string index charAt</item>
+      <item name="chr">string chr</item>
+      <item name="concat">string string concat</item>
+      <item name="endsWith">string string endsWidth</item>
+      <item name="head">string head</item>
+      <item name="lastPos">string string lastPos</item>
+      <item name="lowerCase">string lowerCase</item>
+      <item name="num">string num</item>
+      <item name="pos">string string pos</item>
+      <item name="size">string size</item>
+      <item name="startsWith">string string startsWith</item>
+      <item name="sub">string start end sub</item>
+      <item name="str->">string str-></item>
+      <item name="tail">string tail</item>
+      <item name="tokenizeArray">string tokenizeArray</item>
+      <item name="tokenize">string tokenize</item>
+      <item name="trim">string trim</item>
+      <item name="upperCase">string upperCase</item>
+    </menu>
+
+    <menu name="Tests">
+      <item name="getType">elem getType</item>
+      <item name="isArray">elem isArray</item>
+      <item name="isLiteral">elem isLiteral</item>
+      <item name="isNumeric">elem isNumeric</item>
+      <item name="isString">elem isString</item>
+      <item name="same">elem elem same</item>
+      <item name="sameType">elem elem sameType</item>
+    </menu>
+
+    <menu name="Utils">
+      <item name="constructPath">path constructPath</item>
+      <item name="date">date</item>
+      <item name="dump">dump</item>
+      <item name="eval">expression eval</item>
+      <item name="exec">osCommand exec</item>
+      <item name="exit">exit</item>
+      <item name="fdate">format fdate</item>
+      <item name="help">help</item>
+      <item name="rand">rand</item>
+      <item name="randomize">randomize</item>
+      <item name="rdz">seed rdz</item>
+      <item name="run">scriptName run</item>
+      <item name="time">time</item>
+      <item name="version">version</item>
+      <item name="wait">timeInSeconds wait</item>
+    </menu>
+  </menu>

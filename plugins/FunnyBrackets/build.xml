@@ -1,0 +1,75 @@
+<project name="FindInFiles" default="compile" basedir=".">
+
+<!--
+    <property name="build.compiler" value="jikes"/>
+-->
+
+    <property name="jext.home" value="../../.."/>
+
+    <!-- Source directory -->
+    <property name="src.dir" value="./src"/>
+
+    <!-- Destination directory -->
+    <property name="dst.dir" value="./dst"/>
+
+
+    <!-- Compilation Classpath -->
+    <path id="compile.classpath">
+      <pathelement location="${jext.home}/lib/jext.jar"/>
+      <pathelement location="${jext.home}/lib/jython.jar"/>
+      <pathelement location="${jext.home}/lib/dawn.jar"/>
+    </path>
+
+
+<!-- ========== Executable Targets ======================================== -->
+
+
+<!--
+        The "init" target evaluates "available" expressions as necessary
+        to modify the behavior of this script and print some information on
+        screen
+-->
+    <target name="init">
+        <echo message="java.class.path = ${java.class.path}"/>
+    </target>
+
+<!--
+        Create directories and copy files for the core struts library
+-->
+    <target name="prepare" depends="init">
+        <mkdir dir="${dst.dir}"/>
+    </target>
+
+<!--
+        Compile
+-->
+    <target name="compile" depends="prepare"
+     description="Compile Source">
+      <javac srcdir="${src.dir}" destdir="${dst.dir}">
+        <classpath refid="compile.classpath"/>
+      </javac>
+    </target>
+
+    <target name="jar" depends="compile">
+      <copy todir="${dst.dir}" >
+        <fileset dir="${src.dir}" >
+          <include name="**/*.xml"/>
+        </fileset>
+      </copy>
+      <jar jarfile="${jext.home}/bin/plugins/FunnyBrackets.jar" basedir="${dst.dir}"/>
+    </target>
+
+    <target name="tpl">
+      <mkdir dir="${tpl.dst.dir}"/>
+      <copy todir="${tpl.dst.dir}" >
+          <fileset dir="${tpl.src.dir}" >
+             <include name="**/*.php"/>
+          </fileset>
+      </copy>
+    </target>
+
+    <target name="clean">
+      <delete dir="${dst.dir}" />
+    </target>
+
+</project>

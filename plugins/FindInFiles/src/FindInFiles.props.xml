@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xproperties SYSTEM "xproperties.dtd" >
+<xproperties>
+  <property name="FindInFiles.label" value="Find In Files Window" />
+  <property name="plugin.FindInFilesPlugin.name" value="Find In Files" />
+  <property name="plugin.FindInFilesPlugin.author" value="James Kolean" />
+  <property name="plugin.FindInFilesPlugin.version" value="0.1" />
+  <property name="plugin.FindInFilesPlugin.depend.0" value="jext 02.10.00.00" />
+  <property name="options.find_in_files.label" value="Find in Files" />
+  <property name="findinfiles.title" value="Find In Files" />
+  <property name="findinfiles.path.label" value="Directory:"/>
+  <property name="findinfiles.path.tooltip" value="Directory to start searching in"/>
+  <property name="findinfiles.filter.label" value="Filter:"/>
+  <property name="findinfiles.filter.tooltip" value="File filter to restrict search. May use '?' and '*'. Example: '*.java'"/>
+  <property name="findinfiles.pattern.label" value="Pattern:"/>
+  <property name="findinfiles.pattern.tooltip" value="Pattern to match on"/>
+  <property name="findinfiles.regexp.label" value="Regular Expression"/>
+  <property name="findinfiles.regexp.tooltip" value="Treat pattern as a Regular Expression"/>
+  <property name="findinfiles.searchsubdir.label" value="Search Subdirectories"/>
+  <property name="findinfiles.searchsubdir.tooltip" value="Search this directory and all subdirectories"/>
+  <property name="findinfiles.ignorecase.label" value="Ignore Case"/>
+  <property name="findinfiles.ignorecase.tooltip" value="Search ignoring case"/>
+  <property name="findinfiles.search.label" value="Search"/>
+  <property name="findinfiles.msg.nomatch" value="No matches found."/>
+  <property name="findinfiles.msg.nodir" value="Directory not found."/>
+  <property name="findinfiles.msg.nofilesallowed" value="Directory not found, file found instead."/>
+  <property name="findinfiles.useglob.label" value="Use Un*x glob instead of regular expression"/>
+</xproperties>

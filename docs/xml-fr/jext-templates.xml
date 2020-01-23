@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE xtiny-doc-page SYSTEM "../dtd/xtiny-doc-page.dtd" >
+
+<!--
+  -
+  - Jext documentation source document
+  - Based on xtiny-doc DTD
+  -
+  - DTD:xtiny-doc and XSL:xtiny-doc
+  - are (C)1999 Romain Guy
+  -
+  - Last updated: 09/30/2001 - 22:25:59
+  -
+  -->
+
+<xtiny-doc-page author="Romain Guy"
+           update="09/30/2001"
+           name="Jext : Modèles"
+           title="Modèles"
+           prev="jext-options.html"
+           next="jext-scripts.html">
+
+  <paragraph title="Présentation">
+    Les modèles, disponibles dans le menu Fichier de Jext permettent de créer rapidement un nouveau fichier.
+  </paragraph>
+
+  <paragraph title="Utilisation des modèles">
+    Le menu modèles est basé, par défaut, sur le répertoire <b>rép_de_jext/bin/templates</b>. Ce répertoire
+    peut être changé dans les options générales. Lorsque vous cliquez sur un modèle donné, Jext vous posera
+    plusieurs questions pour remplacer les variables par la valeur que vous leur donnerez. A la fin, Jext
+    vous demandera de sauvegarder le fichier. Ensuite, le fichier sera automatiquement ouvert dans l'éditeur.
+  </paragraph>
+
+  <paragraph title="Créer un nouveau modèle">
+    Pour créer un nouveau modèle, il vous suffit de créer un nouveau fichier et de la placer dans le répertoire
+    des modèles. Vous pouvez créer une variable en entrant une séquence du type: <b>__VARIABLE__</b> (2 soulignés
+    de chaque côté). Si vous souhaitez entrer le texte <b>__</b> sans que Jext l'interprète comme une variable,
+    vous devrez taper <b>____</b> (4 soulignés).
+  </paragraph>
+    
+</xtiny-doc-page>
+
+<!-- End of Jext documentation -->

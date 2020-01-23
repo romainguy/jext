@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xinsert SYSTEM "xinsert.dtd" [
+  <!ENTITY c        SYSTEM "c.insert.xml">
+  <!ENTITY css      SYSTEM "css.insert.xml">
+  <!ENTITY dawn     SYSTEM "dawn.insert.xml">
+  <!ENTITY html     SYSTEM "html.insert.xml">
+  <!ENTITY htmlchar SYSTEM "htmlchar.insert.xml">
+  <!ENTITY jscript  SYSTEM "jscript.insert.xml">
+  <!ENTITY ant      SYSTEM "ant.insert.xml">
+  <!ENTITY java     SYSTEM "java.insert.xml">
+  <!ENTITY jsp      SYSTEM "jsptag.insert.xml">
+  <!ENTITY licenses SYSTEM "licenses.insert.xml">
+  <!ENTITY php      SYSTEM "php.insert.xml">
+  <!ENTITY xml      SYSTEM "xml.insert.xml">
+  <!ENTITY xsl      SYSTEM "xsl.insert.xml">
+]>
+
+<!--
+Jext (c)1998-2001 Romain GUY
+Resource file for Jext - Java tEXt ediTor
+This file is used to create the clipping library
+
+Sample structure of an XInsert file:
+
+ <xinsert>
+   <menu name="NAME_OF_TOP_LEVEL_MENU">
+     <menu name="NAME_OF_SUB_MENU">
+       <item name="ANOTHER_ITEM">OTHER_STUFFS</item>
+       <menu name="ANOTHER_SUB_MENU">
+         <item name="YET_ANOTHER_ITEM">ITEM!</item>
+       </menu>
+     </menu>
+   </menu>
+ </xinsert>
+
+Datas contained between item tags will be inserted in your document.
+If you type a '|' in your data, cursor will be placed at this positon after
+insert. Type '||' to insert a '|' character.
+You can type '\n' to insert break lines in your insert datas.
+
+-->
+
+<xinsert>
+  <!-- ============================================================ -->
+  <!-- C/C++ LIBRARY                                                -->
+  <!-- ============================================================ -->
+  &c;
+
+  <!-- ============================================================ -->
+  <!-- XML LIBRARY                                                  -->
+  <!-- ============================================================ -->
+  &xml;
+
+  <!-- ============================================================ -->
+  <!-- CSS LIBRARY                                                  -->
+  <!-- ============================================================ -->
+  &css;
+
+  <!-- ============================================================ -->
+  <!-- XSL LIBRARY                                                  -->
+  <!-- ============================================================ -->
+  &xsl;
+
+  <!-- ============================================================ -->
+  <!-- DAWN LIBRARY                                                 -->
+  <!-- ============================================================ -->
+  &dawn;
+
+  <!-- ============================================================ -->
+  <!-- HTML LIBRARY                                                 -->
+  <!-- ============================================================ -->
+  &html;
+  &htmlchar;
+
+  <!-- ============================================================ -->
+  <!-- PHP LIBRARY                                                  -->
+  <!-- ============================================================ -->
+  &php;
+
+  <!-- ============================================================ -->
+  <!-- JAVASCRIPT LIBRARY                                           -->
+  <!-- ============================================================ -->
+  &jscript;
+
+  <!-- ============================================================ -->
+  <!-- JSP LIBRARY                                                  -->
+  <!-- ============================================================ -->
+  &jsp;
+
+  <!-- ============================================================ -->
+  <!-- JAVA LIBRARY                                                 -->
+  <!-- ============================================================ -->
+  &ant;
+  &java;
+
+  <!-- ============================================================ -->
+  <!-- XINSERT LIBRARY                                              -->
+  <!-- ============================================================ -->
+  <menu name="XInsert" modes="html">
+    <item name="XInsert">&lt;?xml version="1.0"?&gt;\n\n&lt;xinsert&gt;\n|\n&lt;/xinsert&gt;</item>
+    <item name="Menu">&lt;menu name="|"&gt;\n&lt;/menu&gt;</item>
+    <item name="Menu (mode specific)">&lt;menu name="|" modes=""&gt;\n&lt;/menu&gt;</item>
+    <item name="Item">&lt;item name="|"&gt;&lt;/item&gt;</item>
+    <item name="Mixed">&lt;item name="|" type="mixed"&gt;&lt;/item&gt;</item>
+    <item name="Script">&lt;item name="|" type="script"&gt;&lt;/item&gt;</item>
+  </menu>
+
+  <!-- ============================================================ -->
+  <!-- LICENSES LIBRARY                                             -->
+  <!-- ============================================================ -->
+  &licenses;
+</xinsert>

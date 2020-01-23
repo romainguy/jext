@@ -1,0 +1,293 @@
+<?xml version="1.0"?>
+
+<!-- ======================================================================= -->
+<!-- ANT-Makefile for Jext (C)2000 Romain Guy                                -->
+<!-- Created 18:06:52 19/06/00 for Jext 2.8.1pre6                            -->
+<!-- ======================================================================= -->
+
+<project name="Jext" default="compiledebug" basedir="..">
+
+  <!-- ===================================================================== -->
+  <!-- PROPERTIES                                                            -->
+  <!-- ===================================================================== -->
+
+  <property file="src/version.properties" />
+
+  <property name="name" value="jext" />
+  <property name="Name" value="Jext" />
+
+  <property name="classpath" value="" />
+
+  <property name="jext.home" value=".." />
+
+  <property name="jext.dist.dir" value="dist" />
+  <property name="bin.dir" value="bin" />
+  <property name="build.dir" value="build" />
+  <property name="docs.dir" value="docs" />
+  <property name="javadocs.dir" value="docs/api" />
+  <property name="lib.dir" value="lib" />
+  <property name="src.dir" value="src/lib" />
+  <property name="src.plain.dir" value="src" />
+
+  <property name="src.update.dir" value="src/updating" />
+  <property name="build.update.dir" value="build/updating" />
+
+  <property name="debug" value="off" />
+  <property name="optimize" value="on" />
+
+  <!-- ===================================================================== -->
+  <!-- COMPILER: classic (JDK 1.1 & 1.2), modern or jikes                    -->
+  <!-- ===================================================================== -->
+  <property file="src/build.properties" />
+
+  <property name="packages" value="org.jext.*,org.gjt.*" />
+
+  <!-- ===================================================================== -->
+  <!-- PREPARE BUILD                                                         -->
+  <!-- ===================================================================== -->
+
+  <target name="prepare">
+    <mkdir dir="${build.dir}" />
+    <mkdir dir="${build.update.dir}" />
+  </target>
+
+  <!-- ===================================================================== -->
+  <!-- COPYBEFORECOMPILE                                                     -->
+  <!-- ===================================================================== -->
+
+  <target name="copybeforecompile" depends="prepare">
+    <copy todir="${build.dir}">
+      <fileset dir="${src.dir}">
+        <patternset>
+          <include name="**/*.properties" />
+          <include name="**/*.gif" />
+          <include name="**/*.xml" />
+          <include name="**/*.py" />
+          <include name="**/*.dtd" />
+          <include name="**/dawn.*" />
+          <include name="**/*.scripting" />
+          <include name="**/classlist" />
+          <include name="**/packages" />
+        </patternset>
+      </fileset>
+    </copy>
+    <copy todir="${build.update.dir}">
+      <fileset dir="${src.update.dir}">
+        <patternset>
+          <include name="**/*.dtd" />
+          <include name="**/*.xml" />
+        </patternset>
+      </fileset>
+    </copy>
+
+    <filter token="VERSION" value="${version}" />
+    <filter token="DAWN-VERSION" value="${dawn-version}" />
+    <filter token="JYTHON-VERSION" value="${jython-version}" />
+    <filter token="LOOKS-VERSION" value="${looks-version}" />
+
+    <copy file="${src.plain.dir}/jext" todir="${bin.dir}" filtering="yes" />
+    <copy file="${src.plain.dir}/jext_alt" todir="${bin.dir}" filtering="yes" />
+    <copy file="${src.plain.dir}/jext.bat" todir="${bin.dir}" filtering="yes" />
+    <copy file="${src.plain.dir}/dawn.bat" todir="${bin.dir}" filtering="yes" />
+    <copy file="${src.plain.dir}/jext.js" todir="${bin.dir}" filtering="yes" />
+    <copy file="${src.plain.dir}/jextlauncher.ini" todir="${bin.dir}" filtering="yes" />
+  </target>
+  
+  <!-- ===================================================================== -->
+  <!-- Test Java version.                                                    -->
+  <!-- ===================================================================== -->
+ 
+  <target name="testjava">
+    <condition property="oldJava">
+      <or>
+        <equals arg1="1.2" arg2="${ant.java.version}" />
+        <equals arg1="1.3" arg2="${ant.java.version}" />
+      </or>
+    </condition>
+  </target>
+
+  <!-- ===================================================================== -->
+  <!-- COMPILE for DEBUG                                                     -->
+  <!-- ===================================================================== -->
+ 
+  <target name="compiledebug">
+    <antcall target="compile">
+      <param name="debug" value="on"/>
+      <param name="optimize" value="off"/>
+    </antcall>
+  </target>
+
+  <!-- ===================================================================== -->
+  <!-- COMPILE                                                               -->
+  <!-- ===================================================================== -->
+
+  <target name="compile" depends="copybeforecompile,testjava">
+    <javac srcdir="${src.dir}" destdir="${build.dir}"
+           classpath="${classpath};lib\jython-${jython-version}.jar;lib\looks-${looks-version}.jar"
+           source="1.4" debug="${debug}" deprecation="off" optimize="${optimize}">
+      <exclude name="org/jext/JavaSupport.java" if="oldJava" />
+    </javac>
+    <javac srcdir="${src.update.dir}" destdir="${build.update.dir}"
+           classpath="${build.dir};lib\jython-${jython-version}.jar"
+           debug="${debug}" deprecation="off" optimize="${optimize}">
+    </javac>
+  </target>
+  
+  <!-- ===================================================================== -->
+  <!-- JAR FILE                                                              -->
+  <!-- ===================================================================== -->
+
+  <target name="jarUpdate" depends="compiledebug">
+
+    <jar jarfile="${lib.dir}/autoupdate-${autoupdate-version}.jar" compress="yes"
+     basedir="${build.update.dir}" includes="**"
+    />
+
+  </target>
+
+  <!--Since PlugZilla is disabled, don't compile it.-->
+  <!--<target name="jar" depends="jarUpdate">-->
+
+  <target name="jar" depends="compile">
+    <mkdir dir="${lib.dir}" />
+
+    <jar jarfile="${lib.dir}/jext-${version}.jar" compress="no"
+         basedir="${build.dir}" includes="com/**,org/jext/**,org/gjt/**,gnu/**"
+         excludes="org/jext/dawn/**">
+      <manifest>
+        <attribute name="Built-By" value="${user.name}"/>
+        <attribute name="Main-Class" value="org.jext.Jext" />
+        <attribute name="Class-Path" value="jython-${jython-version}.jar dawn-${dawn-version}.jar looks-${looks-version}.jar" />
+      </manifest>
+    </jar>
+
+    <jar jarfile="${lib.dir}/dawn-${dawn-version}.jar" compress="yes"
+     basedir="${build.dir}" includes="org/jext/dawn/**"
+    />
+<!--
+    <jar jarfile="${lib.dir}/jython-${jython-version}.jar" compress="yes"
+     basedir="${build.dir}" includes="org/apache/**,org/python/**"
+    />
+-->
+  </target>
+
+  <target name="jardebug">
+    <antcall target="jar">
+      <param name="debug" value="on"/>
+      <param name="optimize" value="off"/>
+    </antcall>
+  </target>
+
+
+  <!-- ===================================================================== -->
+  <!-- JAVADOC                                                               -->
+  <!-- ===================================================================== -->
+
+  <target name="javadocs">
+    <mkdir dir="${javadocs.dir}" />
+
+    <javadoc packagenames="${packages}"
+             sourcepath="${basedir}/${src.dir}"
+             destdir="${javadocs.dir}"
+             author="true"
+             version="true"
+             windowtitle="${Name} API"
+             doctitle="${Name}"
+             bottom="Copyright &#169; 2004 Romain Guy."
+             link="${sysJDocs.path}"
+    />
+  </target>
+
+  <!-- ===================================================================== -->
+  <!-- CVS UPDATE                                                            -->
+  <!-- ===================================================================== -->
+
+  <target name="update">
+    <cvs compressionlevel="9" dest="${src.plain.dir}" command="-f update -P -d" />
+  </target>
+
+  <!-- ===================================================================== -->
+  <!-- DISTRIBUTION                                                          -->
+  <!-- ===================================================================== -->
+
+  <target name="dist" depends="jar">
+    <filter token="VERSION" value="${version}" />
+    <filter token="DAWN-VERSION" value="${dawn-version}" />
+    <filter token="JYTHON-VERSION" value="${jython-version}" />
+    <filter token="LOOKS-VERSION" value="${looks-version}" />
+
+    <property name="jext.bin.dist.dir" value="jext-${version}" />
+    <property name="jext.src.dist.dir" value="jext-src-${version}" />
+    <property name="jext.docs.dist.dir" value="jext-docs" />
+    <!--Now things are more consistent with normal tar packing(jext-${version}.tar.gz
+        includes a jext-${version} folder)-->
+
+    <copy todir="${jext.dist.dir}/${jext.src.dist.dir}/src">
+      <fileset dir="${src.plain.dir}" defaultexcludes="no" excludes="jextlauncher/*.opt,jextlauncher/*.plg,jextlauncher/*.ncb,jextlauncher/Release/,jextlauncher/Debug/,docs/bin/gaia.jar,key.bat,signjar.bat,**/.#*,**/*~" />
+    </copy><!--So we pack even CVS dirs, and exclude .#*, that is conflict files-->
+    <copy todir="${jext.dist.dir}/${jext.src.dist.dir}/extplugins/Admin">
+      <fileset dir="extplugins/Admin" defaultexcludes="no" excludes="**/.#*,**/*~" />
+    </copy>
+    <copy todir="${jext.dist.dir}/${jext.bin.dist.dir}/lib">
+      <fileset dir="${lib.dir}" excludes="cachedir/,**/*.class,**/*.pyc" />
+    </copy>
+    <copy todir="${jext.dist.dir}/${jext.bin.dist.dir}/bin">
+      <fileset dir="${bin.dir}" />
+    </copy>
+    <chmod perm="a+x" file="${jext.dist.dir}/${jext.bin.dist.dir}/bin/jext"/>
+
+    <copy todir="${jext.dist.dir}/${jext.bin.dist.dir}/docs">
+      <fileset dir="${docs.dir}" />
+    </copy>
+
+    <copy file="${src.plain.dir}/Jython-LICENSE" todir="${jext.dist.dir}/${jext.bin.dist.dir}" filtering="no" />
+    <copy file="${src.plain.dir}/LICENSE" todir="${jext.dist.dir}/${jext.bin.dist.dir}" filtering="no" />
+    <copy file="${src.plain.dir}/cpl-v10.html" todir="${jext.dist.dir}/${jext.bin.dist.dir}" filtering="no" />
+    <copy file="${src.plain.dir}/README" todir="${jext.dist.dir}/${jext.bin.dist.dir}" filtering="yes" />
+
+    <copy file="${src.plain.dir}/LICENSE" todir="${jext.dist.dir}/${jext.src.dist.dir}" filtering="no" />
+    <copy file="${src.plain.dir}/SOURCES" todir="${jext.dist.dir}/${jext.src.dist.dir}" filtering="yes" />
+    <copy file="${src.plain.dir}/cpl-v10.html" todir="${jext.dist.dir}/${jext.src.dist.dir}" filtering="no" />
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- TAR-GZIP                                                            -->
+  <!-- =================================================================== -->
+
+  <target name="dist-tgz" depends="dist">
+    <mkdir dir="${jext.dist.dir}/tgz" />
+
+    <!--Now things are more consistent with normal tar packing(jext-${version}.tar.gz
+        includes a jext-${version} folder)-->
+    <tar tarfile="${jext.dist.dir}/tgz/${name}-${version}.tar" basedir="${jext.dist.dir}" includes="${jext.bin.dist.dir}/**"/>
+    <gzip zipfile="${jext.dist.dir}/tgz/${name}-${version}.tar.gz"
+          src="${jext.dist.dir}/tgz/${name}-${version}.tar"
+    />
+
+    <tar tarfile="${jext.dist.dir}/tgz/${name}-sources-${version}.tar"
+         basedir="${jext.dist.dir}" includes="${jext.src.dist.dir}/**" defaultexcludes="no"
+    /><!--So the copied **/CVS/* files are packed-->
+    <gzip zipfile="${jext.dist.dir}/tgz/${name}-sources-${version}.tar.gz"
+          src="${jext.dist.dir}/tgz/${name}-sources-${version}.tar"
+    />
+
+    <!--<tar tarfile="${jext.dist.dir}/tgz/jext-docs.tar"
+         basedir="${jext.dist.dir}" includes="${jext.docs.dist.dir}/**"
+    />
+    <gzip zipfile="${jext.dist.dir}/tgz/jext-docs.tar.gz"
+          src="${jext.dist.dir}/tgz/jext-docs.tar"
+    />-->
+  </target>
+
+  <!-- =================================================================== -->
+  <!-- CLEAN                                                               -->
+  <!-- =================================================================== -->
+
+  <target name="clean">
+    <delete dir="${build.dir}" />
+    <delete dir="${jext.dist.dir}" />
+  </target>
+
+</project>
+
+<!-- End of build.xml -->

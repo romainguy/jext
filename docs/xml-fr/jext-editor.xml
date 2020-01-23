@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE xtiny-doc-page SYSTEM "../dtd/xtiny-doc-page.dtd" >
+
+<!--
+  -
+  - Jext documentation source document
+  - Based on xtiny-doc DTD
+  -
+  - DTD:xtiny-doc and XSL:xtiny-doc
+  - are (C)1999 Romain Guy
+  -
+  - Last updated: 09/30/2001 - 13:45:48
+  -
+  -->
+
+<xtiny-doc-page author="Romain Guy"
+           update="09/30/2001"
+           name="Jext : Editeur"
+           title="Editeur"
+           prev="jext-menus-jext.html"
+           next="jext-search.html">
+
+  <paragraph title="Présentation">
+    Le composant d'édition de texte de Jext semblera familier à toute personne ayant déjà fait usage d'un
+    éditeur de texte moderne. Pour ajouter du texte, cliquez simplement dans la zone de texte et tapez le.
+    Au delà de cet utilisation classique, l'éditeur de Jext offre de nombreuses autres possibilités très utiles.
+  </paragraph>
+
+  <paragraph title="Menu contextuel">
+    Un clic droit de la souris sur la zone de texte fera apparaître le menu contextuel de l'éditeur.
+    Ce menu contient des éléments en provenance du menu "Edition" ainsi que "Rechercher" et "Outils".
+    L'accès au menu contextuel étant bien plus rapide que l'accès aux menus standards, il est vivement
+    recommandé d'en faire usage.
+  </paragraph>
+
+  <paragraph title="Touches spéciales">
+    L'éditeur de Jext contient plusieurs touches ou combinaisons de touches spéciales dont l'usage vous
+    permettra d'éditer plus aisément vos documents. Voici la liste (rappel: <b>C</b> équivaut à <b>Control</b>,
+    <b>S</b> à <b>Shift</b> (ou Maj) et <b>A</b> à <b>Alt</b>, lorsque ces indications se suivent, il faut
+    les combiner: <b>CAS</b> équivaut à <b>Ctrl + Maj + Alt</b>):
+  </paragraph>
+
+  <menu>
+    <item name="TAB">
+      Indente le bloc de texte sélectionné.
+    </item>
+    <item name="S+TAB">
+      Désindente le bloc de texte sélectionné.
+    </item>
+    <item name="CA+HAUT">
+      Fait défile la vue de l'éditeur d'une ligne vers le haut sans changer de place le curseur.
+    </item>
+    <item name="CA+BAS">
+      Fait défile la vue de l'éditeur d'une ligne vers le bas sans changer de place le curseur.
+    </item>
+    <item name="CA+PAGE_HAUT">
+      Fait défile la vue de l'éditeur d'une page vers le haut sans changer de place le curseur.
+    </item>
+    <item name="CA+PAGE_BAS">
+      Fait défile la vue de l'éditeur d'une page vers le bas sans changer de place le curseur.
+    </item>
+    <item name="C+HAUT">
+      Place le curseur au début de la ligne précédente, au début du premier caractère alphabétique.
+    </item>
+    <item name="C+BAS">
+      Place le curseur au début de la ligne suivante, au début du premier caractère alphabétique. Cela
+      s'avère, comme la commande précédente, d'une très grande utilité en programmation, pour "sauter" les
+      indentations.
+    </item>
+    <item name="C+GAUCHE">
+      Saute au début du mot précédent. Un mot peut être délimité par un esapce aussi bien que par une parenthèse, un
+      point, etc...
+    </item>
+    <item name="C+DROIT">
+      Saute au début du mot suivant.
+    </item>
+    <item name="CS+GAUCHE ou DROITE">
+      Sélectionne depuis le curseurs jusqu'au début du mot précédent/suivant.
+    </item>
+    <item name="CA+GAUCHE ou DROITE">
+      Agit de la même mlanière que la combinaison <b>C+GAUCHE ou DROITE</b> mais en tenant compte de la casse.
+      Si un mot contient des lettres majuscules, celles-ci seront utilisées comme séparateurs. Cette fonction
+      s'avère extrêmement pratique en programmation.
+    </item>
+    <item name="CAS+GAUCHE ou DROITE">
+      Même fonction que la précédente, avec sélection.
+    </item>
+    <item name="C+SUPPR">
+      Efface le mot suivant.
+    </item>
+    <item name="C+BACK_SPACE">
+      Efface le mot précédent.
+    </item>
+    <item name="CA+BACK_SPACE">
+      Efface le mot précédent en tenant compte de la casse.
+    </item>
+    <item name="CAS+SUPPR">
+      Efface le mot suivant en tenant compte de la casse.
+    </item>
+    <item name="INSERT">
+      Passe du mode "insertion" au mode "remplacement". Le mode insertion est le mode par défaut. En mode
+      remplacement, le curseur change et chaque caractère tapé remplace celui situé sous le curseur.
+    </item>
+    <item name="HOME">
+      Place le curseur en début de ligne. Si l'option "HOME/END intelligent" est activée, un second appui sur
+      cette touche déplacera le curseur au début la page, et un troisième appui le placera au début du document.
+    </item>
+    <item name="C+HOME">
+      Saute au début du document.
+    </item>
+    <item name="FIN">
+      Place le curseur en fin de ligne. Si l'option "HOME/END intelligent" est activée, un second appui placera
+      le curseur en fin page et un troisième en fin de texte.
+    </item>
+    <item name="C+FIN">
+      Saute à la fin du texte.
+    </item>
+    <item name="C+TAB ou C+PGUP">
+      Navigue à travers les documents ouverts, vers la droite.
+    </item>
+    <item name="CS+TAB ou C+PGDWN">
+      Navigue à travers les documents ouverts, vers la gauche.
+    </item>
+    <item name="S+[GAUCHE | DROITE | HAUT | BAS]">
+      Sélectionne une partie du texte. Les touches <b>HAUT et BAS</b> sélectionnent des lignes et les touches
+      <b>GAUCHE et DROITE</b> sélectionnent des caractères. Vous pouvez combiner cette commande avec la
+      touche Control.
+    </item>
+    <item name="C+[BOUTON GAUCHE SOURIS] ou [BOUTON MILIEU SOURIS]">
+      Déplacez la souris pour effectuer une sélection rectangulaire du texte.
+    </item>
+    <item name="[Glisser déposer d'une sélection]">
+      Déplace le texte sélectionné.
+    </item>
+    <item name="C+[Glisser déposer d'une sélection]">
+      Copie le texte sélectionné.
+    </item>
+  </menu>
+
+  <paragraph title="Hyper Typer">
+    La distribution standard de Jext propose un plugin appelé Hyper Typer. Ce plugin vous permet de gagner
+    énormément de temps lors de la frappe de vos textes. Ce plugin permet en effet de définir un raccourci
+    textuel pour une expression donnée. Si vous tapez votre raccourci puis appuyez sur <b>ECHAP</b> (par défaut),
+    votre raccourci sera remplacé par l'expression qui lui est liée. Ce plugin propose par défaut plusieurs
+    raccourcis qui ne seront utiles qu'aux programmeurs Java (éventuellement C++). Pour éditer les raccourcis,
+    en ajouter ou en enlever, allez dans le menu <b>Plugins-Hyper Typer-Manager Window</b>. Les raccourcis de
+    type "transient" ne sont pas sauvegardés entre deux lancements de Jext.
+  </paragraph>
+  <paragraph>
+    Pour ajouter un nouveau raccourci, tapez l'expression finale et appuyez sur <b>C+F5</b> (ou cliquez sur
+    l'élément <b>Plugin-Hyper Typer-Create Sequence</b>. Une fenêtre apparaît, vous permettant de modifier
+    l'expression, de définir le raccourci et de choisir le type du raccourci (temporaire ou persistant).
+  </paragraph>
+
+  <paragraph title="Bordure">
+    Sur la gauche de l'éditeur, vous pouvez remarquer une fine bande bleue. Un double-clic sur cette bande
+    fera apparaître la bordure. Vous pouvez également effectuer un cliquer/glisser dessus pour lui donner
+    la taille désirée. La bordure offre principalement une numérotation des lignes, affichant d'une couleur
+    différente le numéro toutes les cinq lignes. Ces paramètres peuvent être modifiés dans les options.
+  </paragraph>
+</xtiny-doc-page>
+
+<!-- End of Jext documentation -->

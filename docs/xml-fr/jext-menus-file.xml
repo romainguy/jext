@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE xtiny-doc-page SYSTEM "../dtd/xtiny-doc-page.dtd" >
+
+<!--
+  -
+  - Jext documentation source document
+  - Based on xtiny-doc DTD
+  -
+  - DTD:xtiny-doc and XSL:xtiny-doc
+  - are (C)1999 Romain Guy
+  -
+  - Last updated: 09/30/2001 - 21:16:56
+  -
+  -->
+
+<xtiny-doc-page author="Romain Guy"
+           update="09/30/2001"
+           name="Menu Fichier"
+           title="Jext : Menu Fichier"
+           prev="jext-menus.html"
+           next="jext-menus-edit.html">
+
+  <paragraph title="Présentation">
+    Le menu <b>Fichier</b> contient toutes les fonctions ayant trait à la manipulation des fichiers.
+  </paragraph>
+
+  <menu title="Contenu">
+    <item name="Nouveau">
+      Crée un nouveau document utilisant le mode de coloration syntaxique en cours d'utilisation.
+    </item>
+    <item name="Nouveau Modèle">
+      Crée un nouveau fichier depuis un modèle. Vous pouvez changer le répertoire d'accès aux modèles
+      dans les options.
+    </item>
+    <item name="Effacer">
+      Supprime tout le contenu du document.
+    </item>
+    <item name="Supprimer Fichier">
+      Efface le fichier de votre disque dur. Jext vous demandera confirmation avant suppression.
+    </item>
+    <item name="Ouvrir">
+      Ouvre un fichier existant en sélectionnant le mode de coloration à priori le plus approprié.
+      Si vous ouvrez un fichier ZIP ou JAR, Jext lancer alors l'explorateur de ZIP dans lequel vous pourrez
+      ouvrir un fichier directement depuis le fichier compressé.
+    </item>
+    <item name="Ouvrir Dans">
+      Fonctionne de la même manière que la fonction "Ouvrir" mais ne crée pas de nouveau document. A la place,
+      cette fonction remplace le document sélectionné par celui choisi.
+    </item>
+    <item name="Ouvrir URL">
+      Ouvre un fichier désigné par son adresse internet.
+    </item>
+    <item name="Récents">
+      Ce sous-menu contient la liste des fichiers ouverts récemment. Par défaut, ce sous-menu peut accueillir
+      huit fichiers. Ceci peut cependant être configuré dans les options.
+    </item>
+    <item name="Effacer Récents">
+      Supprime le contenu du menu "Récents". Ceci peut servir à masquer le nom des fichiers sur lesquels vous
+      avez travaillé ou pour éviter d'ouvrir par accident un fichier stocké sur un périphérique de stockage
+      amovible (CD-Rom, disquette, lecteur ZIP...).
+    </item>
+    <item name="Fermer">
+      Ferme le document sélectionné. Si ce document a été modifié, Jext vous proposera de le sauvegarder.
+      wether to save the document or not.
+    </item>
+    <item name="Fermer Tous">
+      Ferme tous les documents ouverts dans le bureau courant.
+    </item>
+    <item name="Enregistrer">
+      Enregistre le fichier. Si le document est nouveau (c'est à dire si il n'a pas encore été enregistré sur
+      le disque dur), Jext fait appel à la fonction "Enregistrer Sous".
+    </item>
+    <item name="Enregistrer Tous">
+      Enregistre tous les fichiers ouverts dans l'éditeur.
+    </item>
+    <item name="Enregistrer Sous">
+      Permet d'enregistrer un nouveau document ou d'enregistrer un fichier sous un nom différent.
+    </item>
+    <item name="Imprimer">
+      Imprime le document.
+    </item>
+    <item name="Nouvelle Fenêtre">
+      Ouvre une nouvelle fenêtre Jext.
+    </item>
+    <item name="Ouvrir Dans Fenêtre">
+      Crée une nouvelle fenêtre et ouvre un document en son sein.
+    </item>
+    <item name="Fermer Fenêtre">
+      Ferme la fenêtre de Jext et quitte l'application si il ne reste plus aucune fenêtre ouverte. Si
+      vos documents n'ont pas encore été sauvegardés, Jext vous proposera de le faire.
+    </item>
+    <item name="Quitter">
+      Quitte Jext en fermant toutes les fenêtres actives.
+    </item>
+  </menu>
+</xtiny-doc-page>
+
+<!-- End of Jext documentation -->

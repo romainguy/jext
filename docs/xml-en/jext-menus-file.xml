@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE xtiny-doc-page SYSTEM "../dtd/xtiny-doc-page.dtd" >
+
+<!--
+  -
+  - Jext documentation source document
+  - Based on xtiny-doc DTD
+  -
+  - DTD:xtiny-doc and XSL:xtiny-doc
+  - are (C)1999 Romain Guy
+  -
+  - Last updated: 12/02/2001 - 22:16:09
+  -
+  -->
+
+<xtiny-doc-page author="Romain Guy"
+           update="12/02/2001"
+           name="File Menu"
+           title="Jext : File Menu"
+           prev="jext-menus.html"
+           next="jext-menus-edit.html">
+
+  <paragraph title="Overview">
+    The <b>File</b> menu contains features related to file management (open, save,
+    new, etc.).
+  </paragraph>
+
+  <menu title="Contents">
+    <item name="New File">
+      Creates a new empty file with the current syntax colorizing mode enabled.
+    </item>
+    <item name="New From Template">
+      Creates a new file from a selected template. You can set the templates directory in the options.
+    </item>
+    <item name="Clear File">
+      Clears all text from the selected document.
+    </item>
+    <item name="Delete File">
+      Erases the current file from your hard disk. You'll be prompted before deletion.
+    </item>
+    <item name="Open">
+      Opens an existing file enabling the most appropriate syntax colorizing mode. If you open
+      a ZIP or JAR file, Jext will open a ZipExplorer in which will prompt you to choose which
+      packed file to open from the archive.
+    </item>
+    <item name="Open In Area">
+      Works exactly like the Open function but does not create a new document in the interface. It
+      replaces the selected document instead.
+    </item>
+    <item name="Open URL">
+      Opens a file specified by its URL. This allows you to open a file from the Web or from
+      your Intranet.
+    </item>
+    <item name="Recents">
+      This submenu contains a list of recently opened files. By default it holds the eight most 
+      recently opened files, but this can be configured in the Options pane.
+    </item>
+    <item name="Clear Recents">
+      Flushes the contents of the Recents submenu. Use it to mask what you've been working on 
+      or to prevent accidental access to recent files that no longer exist or aren't currently
+      mounted (i.e. if they were opened from a removable device such as a CD-ROM or floppy disk).
+    </item>
+    <item name="Close">
+      Closes the selected document. If this document was modified, Jext warns you and offers an 
+      opportunity to save the document.
+    </item>
+    <item name="Close All">
+      Closes all the open documents, asking to save any of them if they were modified.
+    </item>
+    <item name="Save">
+      Saves the current document. If the current document is new (i.e. has not been opened from
+      an existing file or has not been saved yet) Jext calls "Save As..."
+    </item>
+    <item name="Save All">
+      Attempts to save all the opened documents.
+    </item>
+    <item name="Save As">
+      Permits the current document to be saved with a different name.
+    </item>
+    <item name="Print">
+      Prints the current document.
+    </item>
+    <item name="New Window">
+      Creates a new Jext window.
+    </item>
+    <item name="Open In Window">
+      Creates a new Jext window and opens an existing file in it, enabling the most appropriate
+      syntax colorizing mode. Opening a ZIP or a JAR file initiates the same action as with the 
+      normal Open command.
+    </item>
+    <item name="Close Window">
+      Closes the current window and exits Jext if there are no remaining windows. If your work
+      hasn't been saved yet, Jext asks you if you would like to save your changes before exiting.
+    </item>
+    <item name="Quit">
+      Exits Jext by closing all its open windows and checking if your documents need to be
+      saved or not.
+    </item>
+  </menu>
+</xtiny-doc-page>
+
+<!-- End of Jext documentation -->

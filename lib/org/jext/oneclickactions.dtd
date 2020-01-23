@@ -1,0 +1,4 @@
+<!ELEMENT oneclickactions (action)* >
+  <!ELEMENT action EMPTY >
+    <!ATTLIST action name     CDATA #REQUIRED >
+    <!ATTLIST action internal CDATA #REQUIRED >

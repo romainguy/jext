@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xproperties SYSTEM "xproperties.dtd" >
+
+<xproperties>
+  <property name="plugin.XMLBrowsePlugin.name" value="XML Browse" />
+  <property name="plugin.XMLBrowsePlugin.author" value="Romain Guy" />
+  <property name="plugin.XMLBrowsePlugin.version" value="1.0" />
+
+  <property name="plugin.XMLBrowsePlugin.modes" value="html" />
+
+  <property name="XML_menu" value="xmlbrowse" />
+  <property name="XML_menu.label" value="XML" />
+  <property name="xmlbrowse.label" value="XML Browser" />
+</xproperties>

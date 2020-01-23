@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+  <menu name="JSP Tags" modes="java jsp">
+
+    <item name="Scriptlet">&lt;%\n|\n%&gt;</item>
+    <item name="Declaration">&lt;%!  | %&gt;</item>
+    <item name="Expression">&lt;% = | %&gt;</item>
+    <menu name="Directives">
+      <item name="include">&lt;%@ include = "|" %&gt;</item>
+      <item name="page">&lt;%@ page | %&gt;</item>
+      <menu name="page attributes">
+        <item name="language"> language="|"</item>
+        <item name="extends"> extends="|"</item>
+        <item name="import"> import="|"</item>
+        <item name="session"> session="|"</item>
+        <item name="buffer"> buffer="|"</item>
+        <item name="autoFlush"> autoFlush="|"</item>
+        <item name="isThreadSafe"> isThreadSafe="|"</item>
+        <item name="info"> info="|"</item>
+        <item name="errorPage"> errorPage="|"</item>
+        <item name="isErrorPage"> isErrorPage="|"</item>
+        <item name="contentType"> contentType="|"</item>
+      </menu>
+      <item name="taglib">&lt;%@ taglib uri="|" prefix="" %&gt;</item>
+    </menu>
+    <menu name="Actions">
+      <item name="useBean single line">&lt;jsp:useBean id="|" /&gt;</item>
+      <item name="useBean multiple lines">&lt;jsp:useBean id="|" &gt;\n\n&lt;/jsp:useBean&gt;</item>
+      <menu name="useBean attributes">
+        <menu name="scope">
+          <item name="page"> scope="page"</item>
+          <item name="request"> scope="request"</item>
+          <item name="session"> scope="session"</item>
+          <item name="application"> scope="application"</item>
+        </menu>
+        <menu name="typeSpec">
+          <item name="class"> class="|"</item>
+          <item name="type"> type="|"</item>
+          <item name="beanName"> beanName="|"</item>
+        </menu>
+      </menu>
+      <item name="setProperty">&lt;jsp:setProperty name="|" property="" value="" /&gt;</item>
+      <item name="getProperty">&lt;jsp:getProperty name="|" property="" /&gt;</item>
+      <item name="include">&lt;jsp:include page="|" /&gt;</item>
+      <item name="forward">&lt;jsp:forward page="|" /&gt;</item>
+      <item name="plugin">&lt;jsp:plugin type="|" codebase="" &gt;\n\n&lt;/jsp:plugin&gt;</item>
+      <menu name="plugin attributes">
+        <item name="name"> name="|"</item>
+        <item name="archive"> archive="|"</item>
+        <item name="align"> align="|"</item>
+        <item name="height"> height="|"</item>
+        <item name="width"> width="|"</item>
+        <item name="hspace"> hspace="|"</item>
+        <item name="vspace"> vspace="|"</item>
+        <item name="jreversion"> jreversion="|"</item>
+        <item name="nspluginurl"> nspluginurl="|"</item>
+        <item name="iepluginurl"> iepluginurl="|"</item>
+        <item name="params">&lt;jsp:params&gt;\n|\n&lt;/jsp:params&gt;</item>
+        <item name="param">&lt;param name="|" value="" /&gt;</item>
+      </menu>
+    </menu>
+    <menu name="Built in Objects">
+      <item name="request">request</item>
+      <item name="response">response</item>
+      <item name="pageContext">pageContext</item>
+      <item name="session">session</item>
+      <item name="application">application</item>
+      <item name="out">out</item>
+      <item name="config">config</item>
+      <item name="page">page</item>
+    </menu>
+  </menu>

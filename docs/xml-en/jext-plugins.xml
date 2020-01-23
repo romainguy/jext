@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE xtiny-doc-page SYSTEM "../dtd/xtiny-doc-page.dtd" >
+
+<!--
+  -
+  - Jext documentation source document
+  - Based on xtiny-doc DTD
+  -
+  - DTD:xtiny-doc and XSL:xtiny-doc
+  - are (C)1999 Romain Guy
+  -
+  - Last updated: 05/31/2001 - 15:47:36
+  -
+  -->
+
+<xtiny-doc-page author="Romain Guy"
+           update="12/02/2001"
+           name="Jext : Plugins"
+           title="Plugins"
+           prev="jext-scripts.html"
+           next="">
+
+  <paragraph title="Overview">
+    This section explains how to develop your own plugin.
+  </paragraph>
+
+  <paragraph title="Developping a plugin">
+    Jext provides an easy way to create your own plugins. Jext also provides a very useful API by which 
+    you can avoid creating certain functions.
+    If you want, you can also use Ant to manage easily compilation and deployment of the plugin. See in the source distro the extplugins/Admin folder and expecially the readme.txt in it. You need to place your plugin in a folder under &lt;Jextdir&gt;\extplugins\ to make everything work.
+  </paragraph>
+
+  <paragraph title="First step">
+    The first step in the creation of a new plugin is the creation of a class called <b>NamePlugin</b> where Name
+    stands for your plugin name. This class must import the packages <b>java.util.*</b>, <b>org.jext.*</b> and
+    <b>org.jext.gui.*</b>. This class must also implements the <b>Plugin</b> interface. This interface defines four
+    methods:
+    <menu title="Plugin interface methods">
+      <item name="public void createMenuItems(JextFrame parent, Vector pluginsMenus, Vector pluginsMenuItems)">
+        This method is called when a new instance of a Jext window is created. This method can be used to add
+        buttons to the toolbar, panels to the tabbed panes, etc. The <b>JextFrame</b> parameter is the parent
+        window. The two vectors can be used to add new menus and items to the Plugins menu in the window. Use
+        the GUIUtilities class API to create the menus and items.
+      </item>
+      <item name="public void createOptionPanes(OptionsDialog parent)">
+        When the user calls the options dialog, this method is invoked.
+      </item>
+      <item name="public void start()">
+        Called on Jext start, before the creation of the first Jext window.
+      </item>
+      <item name="public void stop()">
+        Invoked on Jext exit, after the close of the last Jext window.
+      </item>
+    </menu>
+  </paragraph>
+  <paragraph>
+    The first two methods require some methods of the Jext API to be correctly used. They are described below.
+  </paragraph>
+  <paragraph>
+    Note that a plugin may implement the <b>RegisterablePlugin</b> interface which provides a single function:
+    <b>register(JextFrame parent)</b>. This can be used to receive all the events fired during JextFrame
+    instantiation.
+  </paragraph>
+  
+  <paragraph title="Second step">
+    Once you've defined the base class, you have to create a properties file. You can name this file the way you want,
+    as long as you give the extension <b>.props.xml</b>. This first line defines the file as an XML document file:
+    <code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;</code>
+    The second line defines the document type definition:
+    <code>&lt;!DOCTYPE xproperties SYSTEM "xproperties.dtd" &gt;</code>
+    Create then the root node:
+    <code>&lt;xproperties&gt;</code>
+    This node contains the plugins properties. The first property defines the plugin name:
+    <code>&lt;property name="plugin.NamePlugin.name" value="Name of plugin" /&gt;</code>
+    The second property defines the plugin author:
+    <code>&lt;property name="plugin.NamePlugin.author" value="Author name" /&gt;</code>
+    And the third one defines the plugin version:
+    <code>&lt;property name="plugin.NamePlugin.version" value="1.0" /&gt;</code>
+    Finally, close the root node:
+    <code>&lt;/xproperties&gt;</code>
+  </paragraph>
+  <paragraph>
+    You can define as many properties as you need. These properties can be used to avoid using hard coded strings.
+    To manage these properties, take a look at Jext class API. There is a special property, the dependance property.
+    It must be used like this:
+    <code>&lt;property name="plugin.NamePlugin.depend.0" value="dep depVal" /&gt;</code>
+    The number after the "depend" can be used to set several dependencies. Jext offers four dependencies:
+    <menu>
+      <item name="jdk">
+        Checks if the running JDK is the one required by the plugin. Example: <b>jdk 1.2.1</b>.
+      </item>
+      <item name="jext">
+        Checks if running Jext matches the required version. For instance, since version 2.10, all plugins
+        must require at least Jext 2.10. Example: <b>jext 02.10.00.01</b>. The number corresponds to the
+        build number shown in the About window.
+      </item>
+      <item name="os">
+        Checks if the running OS is the one needed by the plugin. For instance, MouseWheel plugin uses this
+        dependency: <b>os Windows</b>.
+      </item>
+      <item name="class">
+        Use this dependency if your plugin requires a given class. Example: <b>class PuyoPlugin</b>
+      </item>
+    </menu>
+  </paragraph>
+  <paragraph>
+    You can also link your plugin to one or more syntax colorizing modes. For this purpose, use the following
+    property:
+    <code>&lt;property name="plugin.NamePlugin.modes" value="list_of_modes" /&gt;</code>
+    If you specifies "*" as value, the plugin won't rely on any syntax mode (as if you don't specify the property).
+    You can link the plugin to any amount of modes, simply by separating their names by a whitespace. For instance:
+    <code>&lt;property name="plugin.NamePlugin.modes" value="c cc java html" /&gt;</code>
+    will make the plugin being shown in C, C++, Java and HTML/XML modes only. That is how HTML and Java plugins
+    work.
+  </paragraph>
+  <paragraph>
+    The properties are useful also because they can easily be translated. You or the translator need only to supply a new property file with translated content and with the same name of the original one.
+    In previous releases(until 3.2pre2) translations had to be put in the main pack to be read, even for plugins.
+    But since property files also include datas that must change with every release, now they can be packed also into the plugins jar.
+    The correct location is under trans\&lt;languagename&gt;; so for instance if your plugin has a property file named Jump.props.xml, the Italian translated one will be trans\Italiano\Jump.props.xml.
+    Note that the language name must match the language pack name and that name match are case sensitive.
+    When you change language independent properties or add new ones, change also the translation.
+    However remember that the English translation is always read before the translated ones in the plugin(since Jext3.2pre3 however and only for plugins properties).
+    So dependencies and so on can be omitted from translations from this release of Jext.
+  </paragraph>
+  <paragraph title="Third step">
+    Start the implementation ;-)
+  </paragraph>
+
+  <paragraph title="Properties">
+    The properties are very useful as they allow you to easily change data for your plugin without having to
+    recompile it. To manage properties, use these methods from the <b>org.jext.Jext</b> class:
+    <menu>
+      <item name="Jext.getProperty(String name)">
+        Return the value of the given property.
+      </item>
+      <item name="Jext.getProperty(String name, String default)">
+        Return the value of the given property. If the property is not found, it returns the default String passed
+        as a parameter.
+      </item>
+      <item name="Jext.getProperty(String name, String[] args)">
+        Return the value of the given property, using the arguments. For instance, in this property value:
+        <b>this is an example of {0} the properties {1}</b>, this method will replace the <b>{0}</b> sequence
+        by the first item from the args array, and the sequence <b>{1}</b> by the second item of the array.
+      </item>
+      <item name="Jext.unsetProperty(String name)">
+        Unset the specified property.
+      </item>
+    </menu>
+  </paragraph>
+  <paragraph>
+    It is advised that you use only properties in your code instead of static data.
+  </paragraph>
+
+  <paragraph title="Creating menu items">
+    To add menus or menu items on the Jext menubar, you have to use the GUIUtilities class associated with
+    properties. Basically, to add a menu item, write this in the <b>createMenuItems()</b> method:
+    <code>pluginsMenuItems.add(GUIUtilities.loadMenuItem("menu_item_name"));</code>
+    The menu item will be given the value of the property <b>menu_item_name.label</b> as a label. The parameter
+    ("menu_item_name") also defines which menu action the item is associated with (see next section). There
+    are other <b>loadMenuItem()</b> methods which provide more parameters (to add the item's picture, etc.).
+    You can give a menu item a shortcut by declaring this property:
+    <code>&lt;property name="menu_item_name.shortcut" value="C+p C+p" /&gt;</code>
+  </paragraph>
+  <paragraph>
+    Creating a menu is very similar to creating a menu item:
+    <code>pluginsMenus.add(GUIUtilities.loadMenu("menu_name"));</code>
+    The created menu will be named according to the property <b>menu_name.label</b>. The contents of the property
+    called <b>menu_name</b> will define the contents of the menu itself. For instance:
+    <code>&lt;property name="myMenu" value="item1 item2 - item3" /&gt;</code>
+    will create the items <b>item1, item2</b> and <b>item3</b> the same way they would be created if you were
+    using the above method. An item of name <b>-</b> is replaced by a menu separator.
+  </paragraph>
+   <paragraph>
+    If you want your item to appear in a menu other than "Plugins", you should do this:
+    <code>jextFrame.getJextMenuBar().addMenuItem(GUIUtilities.loadMenuItem("menu_item"), "MenuID");</code>
+    or
+    <code>jextFrame.getJextMenuBar().addMenu(GUIUtilities.loadMenu("menu"), "MenuID");</code>
+    where MenuID can be: File, Edit, Search, Tools or Jext.
+  </paragraph>
+
+  <paragraph title="Creating a menu action">
+    Jext provides a specific API to create menu action. Any new menu action must derive from the class
+    <b>org.jext.MenuAction</b>. A class extending a MenuAction must use the super constructor:
+    <code>public MenuAction(String actionName)</code>
+    The <b>actionName</b> must match the name of the menu item (the parameter passed to loadMenuItem() method or the
+    name used in a menu definition). You also have to declare the method:
+    <code>public void actionPerformed(java.awt.avent.ActionEvent evt)</code>
+    Once you're done with this, you have to add this line in the <b>start()</b> method of the plugin to register
+    the action (thus Jext will be able to associate it to an item and to show it in the shortcuts list):
+    <code>Jext.addAction(new MyAction());</code>
+    Note that an action can be defined without having to create an associated menu item. That's how the HyperTyper
+    plugin registers the ESC key. In fact, it adds the action to the Jext class and then, in its properties, defines
+    a key shortcut as described above.
+  </paragraph>
+  <paragraph>
+    The <b>MenuAction</b> class provides two important methods:
+    <menu>
+      <item name="JextFrame getJextParent(ActionEvent evt)">
+        This method returns the Jext window in which the action was performed.
+      </item>
+      <item name="JextTextArea getTextArea(ActionEvent evt)">
+        Returns the text area which is currently selected. It is equivalent to getJextParent(evt).getTextArea();
+      </item>
+      <item name="JextTextArea getNSTextArea(ActionEvent evt)">
+        Returns the text area which is currently selected, except the split area, if shown.
+        It is equivalent to getJextParent(evt).getNSTextArea();
+      </item>
+      <item name="JextFrame getJextParent(Component c)">
+        This method returns the Jext window which is the parent of a given component.
+      </item>
+      <item name="JextTextArea getTextArea(Component c)">
+        Returns the text area which is currently selected in the component's parent window.
+      </item>
+    </menu>
+  </paragraph>
+
+  <paragraph title="Creating an option pane">
+    To add an option pane in the Jext options dialog, add this line to the method <b>createOptionPanes()</b>:
+    <code>parent.addOptionPane(new MyOptions);</code>
+    Where parent stands for the calling <b>OptionsDialog</b> object. The <b>MyOptions</b> class must extends
+    <b>org.jext.gui.AbstractOptionPane</b>. The constructor of your class must call:
+    <code>super("optionsPaneName");</code>
+    The parameter "optionsPaneName" will be used to get the panel title, using the property;
+    <code>&lt;property name="options.optionsPaneName.label" value="Title" /&gt;</code>
+    The only other method your options pane have to implement is this one:
+    <code>public void save()</code>
+    which is called on Save or Apply buttons click.
+    However, you should implement also these two methods:
+    <code>public boolean isCacheable() {return true;} </code>
+    <code>public void load()</code>
+    Inside AbstractOptionPane there is an empty implementation of load, and isCacheable returns false, so the pane is destroyed and reloaded every time the options dialog shows up.If instead isCacheable returns true, then it simply calls load() to load the settings. If you implement the load() method, you should use it also inside the constructor, at the end, after you built everything(see for instance org.jext.options.*Options), to load settings.
+  </paragraph>
+  <paragraph>
+    To add components within your options pane, it is advised you use the AbstractOptionPane API:
+    <menu>
+      <item name="public void addComponent(Component c)">
+        Adds the specified component within the panel.
+      </item>
+      <item name="public void addComponent(String label, Component c)">
+        Adds the specified component within the panel, placing a <b>JLabel</b> in front of it containing the
+        specified label.
+      </item>
+      <item name="public Component getComponent()">
+        This method returns by default the panel itself. Yet, you can override it to return something else. For
+        instance, the Jext Editor options panel returns a JScrollPane as it provides too many options for a good
+        view on small screens.
+      </item>
+    </menu>
+  </paragraph>
+
+  <paragraph title="GUI components">
+    As you may have noticed, Jext GUI components are slighty different from default Swing ones. In order for your plugin
+    to match the Jext GUI style, you should use the following components:
+    <menu>
+      <item name="org.jext.gui.EnhancedMenuItem">
+        If you add a menu item to a Jext menu bar, you have to use this class because item borders are not the same
+        as standard JMenuItem ones. This class also draws the key shortcuts differently.
+      </item>
+      <item name="org.jext.gui.FontSelector">
+        Displays a font selector button. The constrcutor requires a "key" which will be used to store font
+        properties: key.font key.fontSize and key.fontStyle
+	(It has got now, besides a save() method, a load() one).
+      </item>
+      <item name="org.jext.gui.JextButton">
+        The kind of buttons used in the toolbar: they can be grayed out and their borders are painted on mouse over.
+      </item>
+      <item name="org.jext.gui.JextCheckBox">
+        Due to a change in Metal theme, you should use this item for your check boxes to avoid having the first letter of the
+        box clipped.
+      </item>
+      <item name="org.jext.gui.JextHighlightButton">
+        You must use this for all your buttons. This button renders a light blue background on mouse over.
+      </item>
+    </menu>
+  </paragraph>
+
+  <paragraph title="API">
+    Here are the most useful methods and fields from the Jext API.
+    <menu title="Jext class">
+      <item name="static String SETTINGS_DIRECTORY">
+        Contains the path to the Jext settings directory (with a path separator at the end).
+      </item>
+      <item name="static String JEXT_HOME">
+        Contains the path to the Jext starting directory.
+      </item>
+      <item name="ArrayList Jext.getInstances()">
+        Returns an array list containing all the opened Jext windows.
+      </item>
+    </menu>
+    <menu title="JextFrame class">
+      <item name="void addJextListener(org.jext.event.JextListener)">
+        Adds a listener to the Jext listeners list. See the class org.jext.event.JextListener for more
+        information about Jext events.
+      </item>
+      <item name="JextTextArea getTextArea()">
+        Returns the selected text area.
+      </item>
+      <item name="JextTextArea getNSTextArea()">
+        Returns the selected textarea. Know that the split text area (i.e the bottom area in split
+        mode) cannot be returned by this method. You should call this method if your code is likely
+        to perform file operations on the text area.
+      </item>
+      <item name="JextTextArea[] getTextAreas()">
+        Returns an array containing all the opened text areas in the current window.
+      </item>
+      <item name="Console getConsole()">
+        Returns the console. You can use it to perform OS operations.
+      </item>
+      <item name="JFileChooser getFileChooser(int mode)">
+        Returns the cached file chooser. The parameter allows you to choose the type of the file chooser. There
+        are three different modes, defined in the Utilities class: OPEN, SAVE and SCRIPT.
+      </item>
+      <item name="JTabbedPane getHorizontalTabbedPane()">
+        Returns the top tabbed pane which contains by default the Console.
+      </item>
+      <item name="JTabbedPane getVerticalTabbedPane()">
+        Returns the left tabbed pane which contains by default the XTree, the Virtual Folders and the
+        Workspaces.
+      </item>
+      <item name="JTabbedPane getJextToolBar()">
+        Returns the toolbar. You can use this method to add buttons to the toolbar, like the Puyo! plugin,
+        for example.
+      </item>
+    </menu>
+    <menu title="Utilities class">
+      <item name="String Utilities.chooseFile(Component owner, int mode)">
+        Displays the Jext file chooser, owned by a specified component, and designed by its mode: Utilities.OPEN,
+        Utilities.SAVE or Utilities.SCRIPT.
+      </item>
+      <item name="String[] Utilities.chooseFiles(Component owner, int mode)">
+        Displays the Jext file chooser, owned by a specified component, and designed by its mode: Utilities.OPEN,
+        Utilities.SAVE or Utilities.SCRIPT. Returns chosen files. If the JDK version is lower than 1.3, it
+        calls the previous method.
+      </item>
+      <item name="void Utilities.centerComponent(Component c)">
+        Centers the component on the screen. Useful with frames.
+      </item>
+      <item name="void Utilities.centerComponentChild(Component c, Component child)">
+        Centers the component "child" on the component "c".
+      </item>
+      <item name="void Utilities.beep()">
+        Beeps the user.
+      </item>
+      <item name="ImageIcon Utilities.getIcon(String path, Class baseClass)">
+        Returns the image icon from a file designed by its path. The path is relative to a specified class.
+      </item>
+      <item name="String Utilities.getShortStringOf(String s, int length)">
+        Shortens a given string if its length is greater than "length".
+      </item>
+      <item name="String Utilities.constructPath(String path)">
+        Constructs a new path from current user path. Both absolute and relative paths can be used.
+      </item>
+      <item name="String Utilities.getUserDirectory()">
+        Returns the current directory.
+      </item>
+      <item name="String Utilities.getHomeDirectory()">
+        Returns the user's home directory.
+      </item>
+      <item name="String[] Utilities.getWildcardMatches(String pattern, boolean sort)">
+        Finds all files in the current directory whose names match the given pattern (example: *.java). The
+        sort parameter causes a sorted list to be returned.
+      </item>
+      <item name="String[] Utilities.getWildcardMatches(String path, String pattern, boolean sort)">
+        Same as the previous method but looks in a specified path.
+      </item>
+      <item name="String[] Utilities.sortStrings(String[] s)">
+	Returns a sorted array of strings. However don't use it-there is Arrays.sort, so
+	it was even removed in some releases around 3.1(it's now there but is deprecated).
+      </item>
+    </menu>
+  </paragraph>
+  <paragraph>
+    Many other very useful methods exist in Jext classes (especially in GUIUtilities, Utilities and Console) but
+    they are not described here. Carefully read the Jext source code (or better, generate the javadoc) to discover them.
+    But please remember that you can't use something only because it has public visibility, so for instance don't hack inside the loading process and so on.
+    If you have any doubt, check on the Jext Mailing List(see on the web site for the address).
+  </paragraph>
+</xtiny-doc-page>
+
+<!-- End of Jext documentation -->

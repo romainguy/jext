@@ -1,0 +1,4 @@
+<!ELEMENT xproperties (#PCDATA | property)* >
+  <!ELEMENT property EMPTY >
+    <!ATTLIST property name CDATA #REQUIRED >
+    <!ATTLIST property value CDATA #REQUIRED >

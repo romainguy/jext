@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+  <menu name="Html" modes="asp javascript asp-vbscript html perl php3">
+
+    <menu name="Html">
+      <item name="html">&lt;html&gt;\n&lt;head&gt;\n|\n&lt;/head&gt;&lt;body&gt;\n\n&lt;/body&gt;\n&lt;/html&gt;</item>
+      <item name="head">&lt;head&gt;\n|\n&lt;/head&gt;</item>
+      <item name="body">&lt;body&gt;\n|\n&lt;/body&gt;</item>
+      <item name="frameset">&lt;frameset&gt;\n&lt;frame&gt;\n&lt;noframes&gt;&lt;/noframes&gt;\n&lt;/frameset&gt;</item>
+    </menu>
+
+    <menu name="Head">
+      <item name="title">&lt;title&gt;|&lt;/title&gt;</item>
+      <item name="isindex">&lt;isindex prompt="|"&gt;</item>
+      <item name="base">&lt;base href="|"&gt;</item>
+      <item name="meta">&lt;meta name="|" content=""&gt;</item>
+      <item name="link">&lt;link href="|" rel=""&gt;</item>
+    </menu>
+
+    <menu name="Body">
+      <item name="h1">&lt;h1&gt;|&lt;/h1&gt;</item>
+      <item name="h2">&lt;h2&gt;|&lt;/h2&gt;</item>
+      <item name="h3">&lt;h3&gt;|&lt;/h3&gt;</item>
+      <item name="h4">&lt;h4&gt;|&lt;/h4&gt;</item>
+      <item name="h5">&lt;h5&gt;|&lt;/h5&gt;</item>
+      <item name="h6">&lt;h6&gt;|&lt;/h6&gt;</item>
+      <item name="p">&lt;p&gt;|&lt;/p&gt;</item>
+      <item name="br">&lt;br&gt;</item>
+      <item name="hr">&lt;hr&gt;</item>
+      <item name="ul">&lt;ul&gt;\n&lt;li&gt;|\n&lt;/ul&gt;</item>
+      <item name="ol">&lt;ol&gt;\n&lt;li&gt;|\n&lt;/ol&gt;</item>
+      <item name="li">&lt;li&gt;</item>
+      <item name="dl">&lt;dl&gt;\n&lt;dt&gt;|\n&lt;dd&gt;\n&lt;/dl&gt;</item>
+      <item name="dt">&lt;dt&gt;</item>
+      <item name="dd">&lt;dd&gt;</item>
+      <item name="pre">&lt;pre&gt;|&lt;/pre&gt;</item>
+      <item name="blockquote">&lt;blockquote&gt;|&lt;/blockquote&gt;</item>
+      <item name="div">&lt;div align=""&gt;|&lt;/div&gt;</item>
+      <item name="center">&lt;center&gt;|&lt;/center&gt;</item>
+      <item name="address">&lt;address&gt;|&lt;/address&gt;</item>
+    </menu>
+
+    <menu name="Fonts">
+      <item name="font">&lt;font color="|" size=""&gt;&lt;/font&gt;</item>
+      <item name="basefont">&lt;basefont size=|&gt;</item>
+      <item name="em">&lt;em&gt;|&lt;/em&gt;</item>
+      <item name="cite">&lt;cite&gt;|&lt;/cite&gt;</item>
+      <item name="var">&lt;var&gt;|&lt;/var&gt;</item>
+      <item name="strong">&lt;strong&gt;|&lt;/strong&gt;</item>
+      <item name="code">&lt;code&gt;|&lt;/code&gt;</item>
+      <item name="samp">&lt;samp&gt;|&lt;/samp&gt;</item>
+      <item name="kbd">&lt;kbd&gt;|&lt;/kbd&gt;</item>
+      <item name="dfn">&lt;dfn&gt;|&lt;/dfn&gt;</item>
+      <item name="i">&lt;i&gt;|&lt;/i&gt;</item>
+      <item name="b">&lt;b&gt;|&lt;/b&gt;</item>
+      <item name="u">&lt;u&gt;|&lt;/u&gt;</item>
+      <item name="tt">&lt;tt&gt;|&lt;/tt&gt;</item>
+      <item name="big">&lt;big&gt;|&lt;/big&gt;</item>
+      <item name="small">&lt;small&gt;|&lt;/small&gt;</item>
+      <item name="strike">&lt;strike&gt;|&lt;/strike&gt;</item>
+      <item name="sub">&lt;sub&gt;|&lt;/sub&gt;</item>
+      <item name="sup">&lt;sup&gt;|&lt;/sup&gt;</item>
+    </menu>
+
+    <menu name="Special">
+      <item name="(space)"><![CDATA[&nbsp;]]></item>
+      <item name="&lt;"><![CDATA[&lt;]]></item>
+      <item name="&gt;"><![CDATA[&gt;]]></item>
+      <item name="&amp;"><![CDATA[&amp;]]></item>
+      <item name="&quot;"><![CDATA[&quot;]]></item>
+    </menu>
+
+    <menu name="Images">
+      <item name="img">&lt;img src=| alt=""&gt;</item>
+      <item name="map">&lt;map name=""&gt;\n|\n&lt;/map&gt;</item>
+      <item name="area">&lt;area shape="|" coords="" href="" alt=""&gt;</item>
+    </menu>
+
+    <menu name="Links">
+      <item name="a-(link)">&lt;a href=""&gt;|&lt;/a&gt;</item>
+      <item name="a-(name)">&lt;a name=""&gt;|&lt;/a&gt;</item>
+    </menu>
+
+    <menu name="Applets">
+      <item name="applet">&lt;applet code="|" width="" height="" alt=""&gt;|&lt;/applet&gt;</item>
+      <item name="param">&lt;param name="|" value=""&gt;</item>
+    </menu>
+
+    <menu name="Forms">
+      <item name="form">&lt;form action="" method=post&gt;\n|\n&lt;/form&gt;</item>
+      <item name="input">&lt;input type="|" name=""&gt;</item>
+      <item name="select">&lt;select name=""&gt;\n|\n&lt;/select&gt;</item>
+      <item name="option">&lt;option value="|"&gt;</item>
+      <item name="textarea">&lt;textarea name="" rows="" cols=""&gt;|&lt;/textarea&gt;</item>
+    </menu>
+
+    <menu name="Tables">
+      <item name="table">&lt;table&gt;\n&lt;tr&gt;\n&lt;td&gt;|&lt;/td&gt;\n&lt;/tr&gt;\n&lt;/table&gt;</item>
+      <item name="caption">&lt;caption&gt;|&lt;/caption&gt;</item>
+      <item name="tr">&lt;tr&gt;\n|\n&lt;/tr&gt;</item>
+      <item name="td">&lt;td&gt;|&lt;/td&gt;</item>
+      <item name="th">&lt;th&gt;|&lt;/th&gt;</item>
+    </menu>
+  </menu>

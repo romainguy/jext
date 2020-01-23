@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+  <menu name="CSS" modes="html">
+    <menu name="Links">
+      <item name="a:link">a:link{|}</item>
+      <item name="a:visited">a:visited{|}</item>
+    </menu>
+
+    <menu name="Tables">
+      <item name="border-spacing:">border-spacing:|</item>
+      <item name="border-collapse:">border-collapse:|</item>
+      <item name="caption-side:">caption-side:|</item>
+      <item name="empty-cells:">empty-cells:|</item>
+      <item name="table-layout:">table-layout:|</item>
+      <item name="speak-header:">speak-header:|</item>
+    </menu>
+    
+    <menu name="Pseudo-elements">
+      <menu name="properties:">
+        <item name="content:">content:|</item>
+        <item name="counter">counter(|)</item>
+        <item name="counter-reset:">counter-reset:|</item>
+        <item name="counter-increment:">counter-increment:|</item>
+        <item name="quotes:">quotes:|</item>
+      </menu>
+      <item name=":active">:active{|}</item>
+      <item name=":after">:after {|}</item>
+      <item name=":before">:before {|}</item>
+      <item name=":first">:first{|}</item>
+      <item name=":focus">:focus{|}</item>
+      <item name=":hover">:hover{|}</item>
+      <item name=":left">:left{|}</item>
+      <item name=":right">:right{|}</item>
+    </menu>
+
+    <menu name="Marker">
+      <item name="marker:">marker:|</item>
+      <item name="marker-offset:">marker-offset:|</item>
+    </menu>
+
+    <menu name="Text">
+      <item name="color:">color:|</item>
+      <item name="@font-face{}">@font-face{|}</item>
+      <item name="font-size:">font-size:|</item>
+      <item name="font-size-adjust:">font-size-adjust:|</item>
+      <item name="font-family:">font-family:|</item>
+      <item name="font-weight:">font-weight:|</item>
+      <item name="font-variant:"> font-variant:|</item>
+      <item name="font-style:">font-style:|</item>
+      <item name="font-stretch:">font-stretch:|</item>
+      <item name="letter-spacing:">letter-spacing:|</item>
+      <item name="line-height:">line-height:|</item>
+      <item name="text-transform:">text-transform:|</item>
+      <item name="text-decoration:">text-decoration:|</item>      
+      <item name="text-align:">text-align:|</item>
+      <item name="text-indent:">text-indent:|</item>
+      <item name="text-shadow:">text-shadow:|</item>      
+      <item name="vertical-align:">vertical-align:|</item>
+      <item name="white-space:">white-space:|</item>
+      <item name="word-spacing:">word-spacing:|</item>
+      <item name="word-spacing:">word-spacing:|</item>
+    </menu>
+
+    <menu name="Boxes">
+      <menu name="Margin">
+        <item name="margin-left:">margin-left:|</item>
+        <item name="margin-right:">margin-right:|</item>
+        <item name="margin-top:">margin-top:|</item>
+        <item name="margin-bottom:">margin-bottom:|</item>
+      </menu>    
+      <menu name="Padding">    
+        <item name="padding-left:">padding-left:|</item>
+        <item name="padding-right:">padding-right:|</item>
+        <item name="padding-top:">padding-top:|</item>
+        <item name="padding-bottom:">padding-bottom:|</item>
+      </menu>        
+      <menu name="Border">    
+        <item name="border-color:"> border-color:|</item>
+        <item name="border-left-color:"> border-left-color:|</item>
+        <item name="border-right-color:"> border-right-color:|</item>
+        <item name="border-top-color:"> border-top-color:|</item>
+        <item name="border-bottom-color:"> border-bottom-color:|</item>
+        <item name="border-width:">border-width:|</item>
+        <item name="border-left-width:">border-left-width:|</item>
+        <item name="border-right-width:">border-right-width:|</item>
+        <item name="border-top-width:">border-top-width:|</item>
+        <item name="border-bottom-width:">border-bottom-width:|</item>
+        <item name="border-style:">border-style:|</item>        
+        <item name="border-left-style:">border-left-style:|</item>
+        <item name="border-right-style:">border-right-style:|</item>
+        <item name="border-top-style:">border-top-style:|</item>
+        <item name="border-bottom-style:">border-bottom-style:|</item>        
+      </menu>
+      <item name="left:">left:|</item>
+      <item name="right:">right:|</item>
+      <item name="top:">top:|</item>
+      <item name="bottom:">bottom:|</item>
+      <item name="width:">width:|</item>
+      <item name="min-width:">min-width:|</item>
+      <item name="max-width:">max-width:|</item>
+      <item name="height:">height:|</item>
+      <item name="min-height:">min-height:|</item>
+      <item name="max-height:">max-height:|</item>      
+      <item name="clear:">clear:|</item>
+      <item name="clip:">clip:|</item>
+      <item name="display:">display:|</item>
+      <item name="float:">float:|</item>
+      <item name="overflow:">overflow:|</item>
+      <item name="position:">position:|</item>
+      <item name="visibility:">visibility:|</item>
+      <item name="z-index:">z-index:|</item>
+    </menu>
+    
+    <menu name="Background">
+      <item name="background-attachment:">background-attachment:|</item>
+      <item name="background-color:">background-color:|</item>
+      <item name="background-image: url()">background-image: url(|)</item>
+      <item name="background-position:">background-position:|</item>
+      <item name="background-repeat:">background-repeat:|</item>    
+    </menu>
+    
+    <menu name="Page">
+      <item name="@page">@page|</item>
+      <item name="marks">marks|</item>
+      <item name="page-break-after:">page-break-after:|</item>
+      <item name="page-break-before:">page-break-before:|</item>
+      <item name="page-break-inside:">page-break-inside:|</item>
+      <item name="orphans">orphans|</item>
+      <item name="size">size|</item>
+      <item name="widows">widows|</item>
+    </menu>
+    
+    <menu name="Cursor">
+      <item name="cursor:">cursor:|</item>
+      <item name="crosshair">crosshair|</item>
+      <item name="hand">hand|</item>
+      <item name="text">text|</item>
+      <item name="wait">wait|</item>
+      <item name="help">help|</item>
+      <item name="default">default|</item>
+      <item name="e-resize">e-resize|</item>
+      <item name="ne-resize">ne-resize|</item>
+      <item name="n-resize">n-resize|</item>
+      <item name="nw-resize">nw-resize|</item>
+      <item name="w-resize">w-resize|</item>
+      <item name="sw-resize">sw-resize|</item>
+      <item name="s-resize">s-resize|</item>
+      <item name="se-resize">se-resize|</item>
+    </menu>
+
+    <menu name="Lists">
+      <item name="list-style-image:">list-style-image: url(|)</item>
+      <item name="list-style-position:">list-style-position:|</item>
+      <item name="list-style-type:">list-style-type:|</item>
+    </menu>
+    
+    <menu name="Misc.">
+      <item name="outline:">outline:|</item>
+      <item name="outline-color:">outline-color:|</item>
+      <item name="outline-style:">outline-style:|</item>
+      <item name="outline-width:">outline-width:|</item>
+    </menu>
+    
+    <menu name="Aural">
+      <item name="azimuth:">azimuth:|</item>
+      <item name="cue-after:">cue-after:|</item>
+      <item name="cue-before:">cue-before:|</item> 
+      <item name="elevation:">elevation:|</item>
+      <item name="pause-after:">pause-after:|</item>
+      <item name="pause-before:">pause-before:|</item> 
+      <item name="play-during:">play-during:|</item>
+      <item name="speak:">speak:|</item>
+      <item name="volume:">volume:|</item>
+      <item name="pause:">pause:|</item>
+      <item name="pitch:">pitch:|</item>
+      <item name="pitch-range:">pitch-range:|</item>
+      <item name="richness:">richness:|</item>
+      <item name="speak-numeral:">speak-numeral:|</item>
+      <item name="speak-punctuation:">speak-punctuation:|</item> 
+      <item name="speech-rate:">speech-rate:|</item>
+      <item name="stress:">stress:|</item>
+      <item name="voice-family:">voice-family:|</item>
+    </menu>
+    
+    <item name="@import">@import|</item>
+    <item name="@media">@media|</item>
+    <item name="style=">style=|</item>  
+  </menu>

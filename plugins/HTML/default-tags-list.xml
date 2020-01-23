@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tags-list SYSTEM "tagslist.dtd" >
+
+<!-- HTML 4.0/XSL TAGS LIST -->
+
+<tags-list>
+  <!-- DTD -->
+  <tag name="!ATTLIST" empty="true" />
+  <tag name="!ELEMENT" empty="true" />
+  <tag name="!ENTITY" empty="true" />
+  <tag name="!DOCTYPE" empty="true" />
+
+  <!-- LETTER A -->
+  <tag name="a">
+    <attribute name="href" />
+  </tag>
+  <tag name="abbr" />
+  <tag name="acronym" />
+  <tag name="applet">
+    <attribute name="archive" />
+    <attribute name="alt" />
+    <attribute name="codebase" />
+    <attribute name="code" />
+    <attribute name="height" />
+    <attribute name="width" />
+  </tag>
+  <tag name="area" empty="true">
+    <attribute name="shape" />
+    <attribute name="coords" />
+    <attribute name="href" />
+    <attribute name="alt" />
+  </tag>
+
+  <!-- LETTER B -->
+  <tag name="b" />
+  <tag name="base">
+    <attribute name="href" />
+  </tag>
+  <tag name="basefont">
+    <attribute name="size" />
+  </tag>
+  <tag name="bdo">
+    <attribute name="dir" />
+  </tag>
+  <tag name="big" />
+  <tag name="blockquote" />
+  <tag name="body" />
+  <tag name="br" empty="true" />
+  <tag name="button">
+    <attribute name="name" />
+    <attribute name="value" />
+    <attribute name="type" />
+  </tag>
+
+  <!-- LETTER C -->
+  <tag name="caption" />
+  <tag name="center" />
+  <tag name="cite" />
+  <tag name="code" />
+  <tag name="col" />
+  <tag name="colgroup" />
+
+  <!-- LETTER D -->
+  <tag name="dd" />
+  <tag name="del" />
+  <tag name="dfn" />
+  <tag name="dir" />
+  <tag name="div" />
+  <tag name="dl" />
+  <tag name="dt" />
+
+  <!-- LETTER E -->
+  <tag name="em" />
+  <tag name="embed">
+    <attribute name="src" />
+    <attribute name="height" />
+    <attribute name="width" />
+  </tag>
+
+  <!-- LETTER F -->
+  <tag name="fieldset" />
+  <tag name="font">
+    <attribute name="color" />
+    <attribute name="size" />
+  </tag>
+  <tag name="form">
+    <attribute name="action" />
+    <attribute name="method" value="GET" />
+  </tag>
+  <tag name="frame">
+    <attribute name="name" />
+    <attribute name="src" />
+  </tag>
+  <tag name="frameset" />
+
+  <!-- LETTER H -->
+  <tag name="h1" />
+  <tag name="h2" />
+  <tag name="h3" />
+  <tag name="h4" />
+  <tag name="h5" />
+  <tag name="h6" />
+  <tag name="head" />
+  <tag name="hr" empty="true" />
+  <tag name="html" />
+
+  <!-- LETTER I -->
+  <tag name="i" />
+  <tag name="img" empty="true">
+    <attribute name="src" />
+    <attribute name="alt" />
+  </tag>
+  <tag name="input" empty="true">
+    <attribute name="type" />
+    <attribute name="name" />
+    <attribute name="value" />
+  </tag>
+  <tag name="ins" />
+
+  <!-- LETTER K -->
+  <tag name="kbd" />
+
+  <!-- LETTER L -->
+  <tag name="label" />
+  <tag name="legend" />
+  <tag name="li" />
+  <tag name="link" empty="true">
+    <attribute name="href" />
+    <attribute name="type" />
+  </tag>
+
+  <!-- LETTER M -->
+  <tag name="map">
+    <attribute name="name" />
+  </tag>
+  <tag name="menu" />
+  <tag name="meta" empty="true">
+    <attribute name="name" />
+    <attribute name="content" />
+  </tag>
+
+  <!-- LETTER N -->
+  <tag name="noframes" />
+  <tag name="noscript" />
+
+  <!-- LETTER O -->
+  <tag name="object">
+    <attribute name="name" />
+    <attribute name="height" />
+    <attribute name="width" />
+  </tag>
+  <tag name="ol" />
+  <tag name="optgroup">
+    <attribute name="label" />
+  </tag>
+  <tag name="option">
+    <attribute name="value" />
+  </tag>
+
+  <!-- LETTER P -->
+  <tag name="p" />
+  <tag name="param" empty="true">
+    <attribute name="name" />
+    <attribute name="value" />
+  </tag>
+  <tag name="pre" />
+
+  <!-- LETTER Q -->
+  <tag name="q" />
+
+  <!-- LETTER S -->
+  <tag name="s" />
+  <tag name="samp" />
+  <tag name="script">
+    <attribute name="language" />
+    <attribute name="type" />
+  </tag>
+  <tag name="select">
+    <attribute name="name" />
+  </tag>
+  <tag name="small" />
+  <tag name="span" />
+  <tag name="strike" />
+  <tag name="strong" />
+  <tag name="style" empty="true">
+    <attribute name="title" />
+    <attribute name="type" />
+  </tag>
+  <tag name="sub" />
+  <tag name="sup" />
+
+  <!-- LETTER T -->
+  <tag name="table" />
+  <tag name="tbody" />
+  <tag name="td" />
+  <tag name="textarea">
+    <attribute name="cols" />
+    <attribute name="rows" />
+    <attribute name="name" />
+  </tag>
+  <tag name="tfoot" />
+  <tag name="th" />
+  <tag name="thead" />
+  <tag name="title" />
+  <tag name="tr" />
+  <tag name="tt" />
+
+  <!-- LETTER U -->
+  <tag name="u" />
+  <tag name="ul" />
+
+  <!-- LETTER V -->
+  <tag name="var" />
+
+  <!-- LETTER X -->
+  <tag name="xsl:apply-imports" empty="true" />
+  <tag name="xsl:apply-templates">
+    <attribute name="select" />
+  </tag>
+  <tag name="xsl:attribute">
+    <attribute name="name" />
+  </tag>
+  <tag name="xsl:attribute-set">
+    <attribute name="name" />
+  </tag>
+  <tag name="xsl:call-template">
+    <attribute name="name" />
+  </tag>
+  <tag name="xsl:choose" />
+  <tag name="xsl:comment" />
+  <tag name="xsl:copy" />
+  <tag name="xsl:copy-of">
+    <attribute name="select" />
+  </tag>
+  <tag name="xsl:decimal-format">
+    <attribute name="name" />
+    <attribute name="decimal-separator" />
+    <attribute name="grouping-separator" />
+  </tag>
+  <tag name="xsl:document">
+    <attribute name="href" />
+  </tag>
+  <tag name="xsl:element">
+    <attribute name="name" />
+  </tag>
+  <tag name="xsl:fallback" />
+  <tag name="xsl:for-each">
+    <attribute name="select" />
+  </tag>
+  <tag name="xsl:if">
+    <attribute name="test" />
+  </tag>
+  <tag name="xsl:import" empty="true">
+    <attribute name="href" />
+  </tag>
+  <tag name="xsl:include" empty="true">
+    <attribute name="href" />
+  </tag>
+  <tag name="xsl:key">
+    <attribute name="name" />
+    <attribute name="match" />
+  </tag>
+  <tag name="xsl:message">
+    <attribute name="terminate" />
+  </tag>
+  <tag name="xsl:namespace-alias" empty="true">
+    <attribute name="stylesheet-prefix" />
+    <attribute name="result-prefix" />
+  </tag>
+  <tag name="xsl:number" empty="true">
+    <attribute name="level" />
+    <attribute name="count" />
+    <attribute name="value" />
+  </tag>
+  <tag name="xsl:otherwise" />
+  <tag name="xsl:output" empty="true">
+    <attribute name="method" />
+    <attribute name="version" />
+    <attribute name="encoding" />
+  </tag>
+  <tag name="xsl:param">
+    <attribute name="name" />
+    <attribute name="select" />
+  </tag>
+  <tag name="xsl:preserve-space" empty="true">
+    <attribute name="elements" />
+  </tag>
+  <tag name="xsl:processing-instruction">
+    <attribute name="name" />
+  </tag>
+  <tag name="xsl:script">
+    <attribute name="language" />
+  </tag>
+  <tag name="xsl:sort" empty="true">
+    <attribute name="select" />
+  </tag>
+  <tag name="xsl:strip-space" empty="true">
+    <attribute name="elements" />
+  </tag>
+  <tag name="xsl:stylesheet">
+    <attribute name="version" />
+    <attribute name="id" />
+  </tag>
+  <tag name="xsl:template">
+    <attribute name="match" />
+  </tag>
+  <tag name="xsl:text" />
+  <tag name="xsl:value-of">
+    <attribute name="select" />
+  </tag>
+  <tag name="xsl:variable">
+    <attribute name="name" />
+    <attribute name="select" />
+  </tag>
+  <tag name="xsl:when">
+    <attribute name="test" />
+  </tag>
+  <tag name="xsl:with-param">
+    <attribute name="name" />
+    <attribute name="select" />
+  </tag>
+</tags-list>

@@ -1,0 +1,10 @@
+<!ELEMENT xpopup (submenu | item | separator)* >
+  <!ELEMENT submenu (item | separator)* >
+    <!ATTLIST submenu label CDATA #REQUIRED >
+  <!ELEMENT item EMPTY >
+    <!ATTLIST item label CDATA #REQUIRED
+                   action CDATA #REQUIRED
+                   shortcut CDATA #IMPLIED
+                   picture CDATA #IMPLIED
+                   enabled (yes | no) "yes" >
+  <!ELEMENT separator EMPTY >

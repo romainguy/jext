@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xproperties SYSTEM "xproperties.dtd" >
+
+<xproperties>
+  <!-- ============================================================ -->
+  <!-- USER TIPS                                                    -->
+  <!-- ============================================================ -->
+  <property name="tip.count" value="94" />
+  <property name="tip.0" value="Press Insert toggles overwrite mode" />
+  <property name="tip.1" value="Press C+d delete current line" />
+  <property name="tip.2" value="You can reload current file from disk by pressing appropriate button in the toolbar" />
+  <property name="tip.3" value="Turn on auto indent, it will help you a lot" />
+  <property name="tip.4" value="Activating soft tabs will ensure that your files will correctly be displayed under another OS" />
+  <property name="tip.5" value="Abuse of the Complete Word (C+SPACE) function" />
+  <property name="tip.6" value="Too busy to take care of the save of your work ? Activate auto save !" />
+  <property name="tip.7" value="Use the highlighting in Find All" />
+  <property name="tip.8" value="These tips are bothering you ? Disable them in the option dialog" />
+  <property name="tip.9" value="In Find/Replace dialog, you can use Perl5 syntax by checking 'Use Extended RegExp'" />
+  <property name="tip.10" value="In Find/Replace, selecting 'Save Values' will save strings entered" />
+  <property name="tip.11" value="Jext remembers last directory used to open or save a file" />
+  <property name="tip.12" value="If you code in Java, you must try the Java Browser in Edit-Java" />
+  <property name="tip.13" value="You'll find useful functions which will help you making your homepage in Edit-HTML" />
+  <property name="tip.14" value="Do not forget you can add your own items in the XInsert tree (see doc)" />
+  <property name="tip.15" value="You can translate the interface by creating a new language pack" />
+  <property name="tip.16" value="Your document is huge ? Zip it !" />
+  <property name="tip.17" value="Press C+e C+s save your position. Press C+e C+g to go back to it later" />
+  <property name="tip.18" value="If you already typed a long word, begin to type it again and press C+b" />
+  <property name="tip.19" value="Undo and Redo remember the last 1000 editing actions" />
+  <property name="tip.20" value="Try Edit-Text-Tabs to Spaces if you do not like using Tabs" />
+  <property name="tip.21" value="Try Edit-Text-Spaces to Tabs if someone sent you a file with soft tabs" />
+  <property name="tip.22" value="You can easily edit the key shortcuts in the options dialog" />
+  <property name="tip.23" value="Jext is Open Source: give copies to your friends" />
+  <property name="tip.24" value="Jext is Open Source: you can edit the source code to suit your needs" />
+  <property name="tip.25" value="When auto indent is on, press Tab to indent line" />
+  <property name="tip.26" value="Window size and position are saved between two sessions" />
+  <property name="tip.27" value="Jext's homepage: http://www.jext.org" />
+  <property name="tip.28" value="You can open files from command line. Path can be relative to your current directory (ie: ../test.txt ~\\.jext-props)" />
+  <property name="tip.29" value="C+UP and C+DOWN key shortcuts are very useful for programmers" />
+  <property name="tip.30" value="You can send your document through mail by clicking Tools-Mail To" />
+  <property name="tip.31" value="In Find/Replace dialogs try to use the extended RegExp" />
+  <property name="tip.32" value="Indenting huge blocks of code is easy with the Edit-Source Code menu (A+LEFT or A+RIGHT)" />
+  <property name="tip.33" value="You can access plugins options from Edit-Options" />
+  <property name="tip.34" value="You can open files directly from the Web by clicking File-Open URL" />
+  <property name="tip.35" value="You can set classes loading on startup on/off" />
+  <property name="tip.36" value="If a plugin cannot be loaded because of a dependency, answer yes to the question to disable it" />
+  <property name="tip.37" value="If you're lost in the XInsert tree maze, click on the Collapse button" />
+  <property name="tip.38" value="If expandind each node of the XInsert tree bothers you, click on Expand" />
+  <property name="tip.39" value="To increase the speed of your web site, join all lines, it will reduce size of pages" />
+  <property name="tip.40" value="If you check the Carriage Return check box in the XTree, a carriage return will be added at the end of the insert" />
+  <property name="tip.41" value="Try to open a zip file..." />
+  <property name="tip.42" value="Have you ever tried to open a jar file ?" />
+  <property name="tip.43" value="Easy indent your java source code with the Edit-Java-Beautify option" />
+  <property name="tip.44" value="Try the scripting system ! It makes usage of the Dawn and Pythons scripting languages" />
+  <property name="tip.45" value="If you create XInsert files, you can avoid restarting Jext by pressing the Reload button" />
+  <property name="tip.46" value="Jext is often updated, enable the Auto check version option" />
+  <property name="tip.47" value="Open a new window if you would like to edit many files" />
+  <property name="tip.48" value="Type help in the Console" />
+  <property name="tip.49" value="In the console, cd ... will get parent of parent directory (type any amount of '.')" />
+  <property name="tip.50" value="cd ~ gets home directory" />
+  <property name="tip.51" value="ls got a lot of flags, type ls -help" />
+  <property name="tip.52" value="Scripts can launch softs" />
+  <property name="tip.53" value="Use UP, DOWN, ESC, S+TAB and TAB in the console" />
+  <property name="tip.54" value="Use console internal variable ($j, $h, $d, $e, $f, $p, $n) to reduce commands length" />
+  <property name="tip.55" value="Open files from the console with the file: command" />
+  <property name="tip.56" value="Open URLs from console with the http:// command" />
+  <property name="tip.57" value="Remember you can make your own plugins !" />
+  <property name="tip.58" value="You mistyped almost all the line in the console ? Press ESC" />
+  <property name="tip.59" value="Wanna get back in Jext's directory from console ? Execute 'home'" />
+  <property name="tip.60" value="Rather than opening a new window, then opening a file, just click Open In Window" />
+  <property name="tip.61" value="You can execute scripts from XTree" />
+  <property name="tip.62" value="If you add a script in your XInsert data file, the item tag must contain the attribute script=yes" />
+  <property name="tip.63" value="If you uncheck Execute Scripts in the XInsert panel, Jext will add the script in the document" />
+  <property name="tip.64" value="Quickly find next occurence of a word by pressing F3" />
+  <property name="tip.65" value="Quickly replace next occurence of a word by pressing F4" />
+  <property name="tip.66" value="You can change console prompt display in the option dialog" />
+  <property name="tip.67" value="If you chose another prompt than DOS, type pwd in console to print working dir" />
+  <property name="tip.68" value="Use popup menus (right mouse click)" />
+  <property name="tip.69" value="Press END at the end of a line will go to bottom of page, then end of the document [Smart HOME/END]" />
+  <property name="tip.70" value="Press HOME at the beginning of a line will go to top of page, then start of the document [Smart HOME/END]" />
+  <property name="tip.71" value="Jext saves you histories in the search dialog" />
+  <property name="tip.72" value="You can follow mail sending by pressing Details" />
+  <property name="tip.73" value="You can save console history in the options pane" />
+  <property name="tip.74" value="Jext can use selected text as search pattern when you open a search dialog" />
+  <property name="tip.75" value="Press Control while selecting text with mouse to select a rectangular area" />
+  <property name="tip.76" value="You can copy console output by selecting it and pressing C+c" />
+  <property name="tip.77" value="Your text is targeted to be used on another OS ? Change the line separator in the options" />
+  <property name="tip.78" value="Kill running process in the console by pressing C+d" />
+  <property name="tip.79" value="If you don't like default syntax colorizing colors, check out the Styles &amp; Colors panel in options" />
+  <property name="tip.80" value="You can use styles (bold or italic) for syntax colorizing" />
+  <property name="tip.81" value="Jext automatically selects appropriate syntax colorizing mode when you open a file" />
+  <property name="tip.82" value="File filters used by Jext to select appropriate colorizing mode on open can be changed" />
+  <property name="tip.83" value="In the options dialog, you can change/add key shortcuts for menu items (even for plugins)" />
+  <property name="tip.84" value="Double-click the thin gray line on the left of the text area to shows the gutter" />
+  <property name="tip.85" value="While gutter is shown, you can click and drag to resize it" />
+  <property name="tip.86" value="While gutter is shown, you can double-click to hide it" />
+  <property name="tip.87" value="C+TAB and CS+TAB browse through opened documents" />
+  <property name="tip.88" value="In the Find All dialog, check the Highlight option to quickly find the occurences in the text" />
+  <property name="tip.89" value="You can easily test your Python scripts by simply editing them in Jext and hitting the F5 key" />
+  <property name="tip.90" value="Pressing S+TAB in the console completes the incomplete command looking in the commands history" />
+  <property name="tip.91" value="Pressing TAB in the console completes partial file name according to the ones located in the current directory" />
+  <property name="tip.92" value="Use key combinations with the Alt key to make them case sensitive (CA+LEFT, CAS+LEFT, CA+BACK_SPACE...)" />
+  <property name="tip.93" value="You can drag and drop files over workspaces list" />
+</xproperties>
+
+<!-- End of jext-tips.props.xml -->

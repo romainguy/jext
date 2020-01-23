@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xproperties SYSTEM "xproperties.dtd" >
+
+<xproperties>
+  <property name="plugin.FindAllPlugin.name" value="FindAll" />
+  <property name="plugin.FindAllPlugin.author" value="Grant Stead" />
+  <property name="plugin.FindAllPlugin.version" value="1.0" />
+
+  <property name="FindAll.title" value="FindAll" />
+    
+  <property name="FindAllAction.label" value="FindAll" />
+  <property name="FindAllAction.shortcut" value="C+F3" />
+  <property name="find.all.unHighlight" value="Unhighlight" />
+</xproperties>
+

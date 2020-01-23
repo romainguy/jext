@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE xtiny-doc-page SYSTEM "../dtd/xtiny-doc-page.dtd" >
+
+<!--
+  -
+  - Jext documentation source document
+  - Based on xtiny-doc DTD
+  -
+  - DTD:xtiny-doc and XSL:xtiny-doc
+  - are (C)1999 Romain Guy
+  -
+  - Last updated: 09/30/2001 - 20:16:50
+  -
+  -->
+
+<xtiny-doc-page author="Romain Guy"
+           update="09/30/2001"
+           name="Menu Jext"
+           title="Jext : Menu Jext"
+           prev="jext-menus-plugins.html"
+           next="jext-editor.html">
+
+  <paragraph title="Présentation">
+    Le menu <b>Jext</b> contient certaines fonctions spécifiques à Jext.
+  </paragraph>
+
+  <menu title="Contenu">
+    <item name="A Propos...">
+      Affiche la boîte de dialogue "A Propos" de l'application. Cette boîte de dialogue est extrêmement utile si vous
+      désirez reporter un bug à l'auteur. Vous verrez en effet affichés le numéro de version de Jext, son nom de code
+      ainsi que son numéro de sous-version. Le numéro de version du logiciel suit la convention suivante:
+      majeur.mineur.révision (ex: 2.8.1). Le numéro de sous-version est bien plus important car plus précis. Celui-ci
+      suit le format: majeur.mineur.révision.correction. Un bug sera corrigé plus rapidement si vous précisez ce
+      numéro. Enfin, le nom de code apparaît entre les deux numéros précédents, entourés des signes <b>&lt;</b> et
+      <b>&gt;</b>. Ce nom de code permet de distinguer les versions de développement non officielles. Là encore,
+      veillez à bien préciser ce numéro lors de tout contact avec l'auteur ou des développeurs affiliés.
+    </item>
+    <item name="A Propos Des Plugins">
+      Affiche la liste des plugins installés, leur numéro de version et le nom de leur(s) auteur(s).
+      Cette fonction permet également d'activer/désactiver le chargement d'un plugin au démarrage de Jext sans
+      avoir à le supprimer de votre disque dur. Pour désactiver un plugin, décochez simplement la case lui
+      faisant face.
+    </item>
+  </menu>
+</xtiny-doc-page>
+
+<!-- End of Jext documentation -->

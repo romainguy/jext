@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE oneclickactions SYSTEM "oneclickactions.dtd" >
+
+<oneclickactions>
+  <action name="one_paste" internal="paste" />
+  <action name="one_reverse_paste" internal="reverse_paste" />
+  <action name="one_delete_line" internal="delete_line" />
+  <action name="one_join_lines" internal="join_lines" />
+  <action name="one_right_indent" internal="right_indent" />
+  <action name="one_left_indent" internal="left_indent" />
+  <action name="one_simple_comment" internal="simple_comment" />
+  <action name="one_simple_uncomment" internal="simple_uncomment" />
+  <action name="one_complete_word" internal="complete_word" />
+</oneclickactions>
+
+<!-- End of jext.oneclickactions.xml -->

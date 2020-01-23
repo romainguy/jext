@@ -1,0 +1,7 @@
+# dawn.loop package - Dawn package to handle loops (for, while...)
+
+org.jext.dawn.loop.DoLoopFunction
+org.jext.dawn.loop.ForFunction
+org.jext.dawn.loop.WhileFunction
+
+# End of dawn.loop package

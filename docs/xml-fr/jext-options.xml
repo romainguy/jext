@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE xtiny-doc-page SYSTEM "../dtd/xtiny-doc-page.dtd" >
+
+<!--
+  -
+  - Jext documentation source document
+  - Based on xtiny-doc DTD
+  -
+  - DTD:xtiny-doc and XSL:xtiny-doc
+  - are (C)1999 Romain Guy
+  -
+  - Last updated: 09/30/2001 - 15:53:29
+  -
+  -->
+
+<xtiny-doc-page author="Romain Guy"
+           update="09/30/2001"
+           name="Options"
+           title="Jext : Options"
+           prev="jext-vf.html"
+           next="jext-templates.html">
+
+  <paragraph title="Présentation">
+    La boîte de dialogue des options contient toutes les options de Jext. Sur la partie gauche de la fenêtre
+    se trouve une arborescence qui vous permet d'accéder aux différentes catégories d'options. La partie
+    droite contient le panneau d'options correspondant à la catégorie sélectionnée. Vous trouverez trois boutons
+    en bas de l'écran: <b>Enregistrer</b> pour sauvegarder vos options et quitter la fenêtre, <b>Appliquer</b>
+    pour sauvegarder les options et les appliquer et enfin <b>Cancel</b> pour fermer la fenêtre sans générer
+    aucun changement que ce soit.
+  </paragraph>
+
+  <menu title="Options de Jext">
+    <submenu title="Général">
+      <item name="Invites par défaut">
+        Liste contenant diverses invites pour la console. Quatre sont proposées: DOS, Linux, Jext et Solaris.
+        Cliquer sur l'une d'entre elle change le contenu de l'option suivante. Reportez vous à
+        la section <a href="jext-console.html">Console</a> pour plus d'informations.
+      </item>
+      <item name="Invite">
+        Vous pouvez éditer ce champ de texte pour modifier l'invite de la console. Quelques exemples sont
+        proposés dans la liste précédente. Voir la section Console.
+      </item>
+      <item name="Nombre de récents">
+        Cette option permet de changer le nombre maximum de fichiers affichés dans le menu "Fichier-Récents".
+      </item>
+      <item name="Délai d'enregistrement">
+        Fixe le délai d'attente entre deux sauvegarde automatiques. Cette option n'est utilisée que lorsque
+        la fonction de sauvegarde est activée.
+      </item>
+      <item name="Répertoire des modèles">
+        Définit le répertoire dans lequel Jext cherche les modèles de fichiers.
+      </item>
+      <item name="Nouvelle fenêtre pour arguments">
+        Si le serveur de chargement de Jext est activé, cette option permet d'ouvrir une nouvelle fenêtre pour
+        ouvrir les fichiers correspondants aux argument passés en paramètre au script de lancement.
+      </item>
+      <item name="Activer débogage des scripts">
+        Si vous cochez cette options, Jext affichera le contenu de la pile dans la fenêtre de trace de Dawn
+        en fin d'exécution d'un script. Laissez cette option cochée si vous écrivez des scripts.
+      </item>
+      <item name="Enregistrement auto">
+        Cette option permet d'activer la fonction d'enregistrement automatique des fichiers ouverts.
+      </item>
+      <item name="Enregistrer session">
+        Si vous utilisez cette option, Jext sauvegardera le contenu de vos bureaux virtuels en fin de session.
+      </item>
+      <item name="Vérification de la version">
+        Jext étant mis à jour très régulièrement, vous pouvez demander à Jext de vérifier automatiquement
+        si une nouvelle version est disponible sur le site Web. Si jamais une nouvelle version est disponible,
+        Jext affiche une fenêtre contenant la liste des changements ainsi que l'adresse pour télécharger
+        ladite version.
+      </item>
+      <item name="Enregistrer historique de la console">
+        Chaque fois qu'une commande est entrée dans la console, celle-ci la conserve en mémoire. Vous pouvez
+        décider de sauvegarder ces commandes d'une session à l'autre.
+      </item>
+      <item name="Montrer chemin complet du fichier">
+        Cette option permet d'afficher le chemin d'accès complet au fichier dans la barre titre de la fenêtre
+        de Jext.
+      </item>
+      <item name="Astuce du jour">
+        Au démarrage, Jext peut afficher une astuce dans la barre de statut en bas de l'écran.
+      </item>
+      <item name="Montrer onglets de gauche">
+        Il est possible de masquer complètement le panneau d'onglets de gauche. Il est conseillé de le laisser
+        affiché.
+      </item>
+      <item name="Montrer onglets du haut">
+        De la même manière que vous pouvez masquer le panneau d'onglets de gauche, vous pouvez masquer celui du
+        haut qui contient la console.
+      </item>
+    </submenu>
+
+    <submenu name="Démarrage">
+      <item name="Charger classes au démarrage">
+        Vous pouvez faire en sorte que Jext charge ses classes principales au démarrage. Ainsi, vous réduirez
+        les délais d'attente lors de l'utilisation. Déconseillé sur des machines rapides.
+      </item>
+      <item name="Charger l'outil XInsert">
+        La désactivation du chargement de cet outil accélère le démarrage.
+      </item>
+      <item name="Charger l'outil Console">
+        La désactivation du chargement de cet outil accélère le démarrage.
+      </item>
+    </submenu>
+
+    <submenu title="Interface">
+      <item name="Style des icones">
+        Jext propose cinq jeux d'icones différents. <b>Tiny</b> est le jeu par défaut, celui que vous voyez
+        lors de la première exécution de Jext. <b>Tiny Swing</b> contient des icones 16x16 en accord avec
+        le style Swing, <b>20x20</b> est un jeu d'icones bien connu, <b>Swing</b> est le jeu d'icones
+        "officiel" de Swing et enfin <b>GNOME</b> comprend les icones du Window Manager GNOME.
+      </item>
+      <item name="Anti-aliasing du texte">
+        Active l'anti-aliasing du texte dans la zone d'édition. Le rendu est plus joli, mais plus lent.
+      </item>
+      <item name="Utiliser le thème Jext">
+        Cette option permet d'utiliser des polices de caractères plus fines pour l'interface.
+      </item>
+      <item name="Menus plats">
+        Les menus de Jext sont plats. En décochant cette option, Jext utilisera les menus de Swing.
+      </item>
+      <item name="Barre de boutons réactive">
+        Active ou désactive la réactivité des boutons de la barre d'outils.
+      </item>
+      <item name="Boutons réactifs">
+        Active ou désactive la coloration en bleu des boutons lorsque la souris passe dessus.
+      </item>
+      <item name="Séparateurs titrés">
+        Activer cette option permet d'afficher des titres au niveau des séparateurs dans les menus. Cela offre
+        une meilleure lisibilité.
+      </item>
+      <item name="Montrer barre d'outils">
+        Il est possible de masquer la barre d'outils en utilisant cette option. Néanmoins, il est conseillé
+        de la laisser affichée.
+      </item>
+      <item name="Barre d'outils grisée">
+        Cette options affiche la barre d'outils en gris si elle est activée. Déplacer la souris au dessus d'un
+        bouton le montre alors en couleurs.
+      </item>
+    </submenu>
+
+    <submenu title="Editeur">
+      <item name="Défilement auto">
+        Cette option fixe le nombre de lignes que Jext laissera forcément visibles avant ou après le curseur.
+      </item>
+      <item name="Intervalle de surlignement">
+        Jext peut surligner des lignes. Si vous entrez par exemple 5, Jext surlignera une ligne toutes les
+        cinq lignes.
+      </item>
+      <item name="Position du guide">
+        Permet de définir, en nombre de caractères, la position du guide de retour.
+      </item>
+      <item name="Encodage des fichiers">
+        Permet de définir le jeu de caractères à utiliser lors de la sauvegarde d'un fichier.
+      </item>
+      <item name="Police">
+        Ce bouton sert à définir la police d'édition de l'éditeur.
+      </item>
+      <item name="Taille des tabulations">
+        Contrôle la taille, en nombre de caractères, des tabulations.
+      </item>
+      <item name="Mode de coloration">
+        Permet de définir le mode de coloration pour le fichier en cours d'édition.
+      </item>
+      <item name="Séparateur">
+        Définit le type de séparateur à utiliser pour une nouvelle ligne lors de l'enregistrement des fichiers.
+      </item>
+      <item name="Orientation de la séparation">
+        Définit l'orientation de séparation lorsque vous activez l'option de séparation de l'éditeur.
+      </item>
+      <item name="Séparer éditeur">
+        Si cochée, l'éditeur sera séparé en deux pour vous permettre d'éditer un même fichier en deux endroits
+        différents. Vous pouvez activer cette séparation via le menu "Outils" ou la touche "F6".
+      </item>
+      <item name="Curseur rectangulaire">
+        Affiche un curseur rectangulaire.
+      </item>
+      <item name="Curseur clignotant">
+        Rend le curseur clignotant.
+      </item>
+      <item name="Activer intervalle de surlignement">
+        Sert à activer l'option Intervalle de surlignement afin que les lignes soient surlignées
+        dans la zone d'édition.
+      </item>
+      <item name="Activer guide de retour">
+        Sert à activer le guide de retour pour l'afficher dans l'éditeur.
+      </item>
+      <item name="Surlignage des lignes">
+        Cette option sert à surligner la ligne en cours d'édition.
+      </item>
+      <item name="Marqueurs de fin de ligne">
+        Option permettant d'afficher un point en fin de chaque ligne.
+      </item>
+      <item name="Indentation avec TAB">
+        Cette option active l'auto-indentation lors de l'appui sur la touche TAB.
+      </item>
+      <item name="Indentation avec ENTER">
+        This option activates auto indent on ENTER press.
+      </item>
+      <item name="Tabulations en espaces">
+        L'utilisation de cette option insère des espaces simples en lieu et place de tabulations lors de l'appui
+        sur TAB.
+      </item>
+      <item name="Tabulations fixes">
+        Active les tabulations fixes..
+      </item>
+      <item name="HOME/END intelligent.">
+        Reportez vous à la section <a href="jext-editor.html">Editeur</a> pour de plus amples informations.
+      </item>
+      <item name="Répertoire courant pour ouvrir">
+        Si cette option est activée, Jext utilisera le répertoire du fichier édité comme répertoire de base
+        des boîtes ouvrir et enregistrer.
+      </item>
+      <item name="Sélection comme expression de recherche">
+        Si lors de l'appel d'une fonction rechercher ou remplacer vous avez sélectionné cette option, le motif
+        de recherche sera le texte actuellement sélectionné.
+      </item>
+    </submenu>
+
+    <submenu name="Imprimer">
+      <item name="Police">
+        Sélectionne la police d'impression.
+      </item>
+      <item name="Imprimer numéro des lignes">
+        Imprime le numéro de chaque ligne.
+      </item>
+      <item name="Imprimer en-tête">
+        Imprime un en-tête.
+      </item>
+      <item name="Imprimer pied de page">
+        Imprime un pied de page. Accessible seulement pour l'impression colorée.
+      </item>
+      <item name="Imprimer couleurs et styles">
+        Imprime avec styles et couleurs.
+      </item>
+      <item name="Mise en page">
+        Sélectionne la mise en page. Disponible uniquement pour l'impression classique.
+      </item>
+    </submenu>
+
+    <submenu title="Bordure">
+      <item name="Largeur de la bordure">
+        Lorsque vous double-cliquez la bordure, cette option définit la largeur par défaut.
+      </item>
+      <item name="Largeur de la séparation">
+        Définit la largeur de la ligne de séparation.
+      </item>
+      <item name="Intervalle de surlignage des lignes">
+        Permet de définir l'intervalle de surlignage des lignes dans la bordure. Il faut que le comptage
+        des lignes soit activé.
+      </item>
+      <item name="Alignements du numéro des lignes">
+        Permet de choisir l'alignement du comptage des lignes.
+      </item>
+      <item name="Police">
+        Permet de choisir la police utilisée pour l'affichage dans la bordure.
+      </item>
+      <item name="Montrer bordure par défaut">
+        Si cette option est activée, vous n'aurez pas besoin de double-cliquer la séparation pour afficher
+        la bordure.
+      </item>
+      <item name="Comptage des lignes">
+        Active ou non le comptage des lignes au sein de la bordure.
+      </item>
+    </submenu>
+
+    <submenu title="Couleurs &amp; Styles">
+      <item name="(élément)">
+        Dans ce panneau d'options, vous pouvez changer la couleur de nombreux éléments de l'interface. Vous pouvez
+        également modifier les paramètres de coloration de syntaxe.
+      </item>
+    </submenu>
+
+    <submenu title="Raccourcis">
+      <item name="(menu)">
+        Vous pouvez définir un raccourci clavier pour chaque menu de Jext, plugins y compris. Pour entrer
+        un raccourci, double-cliquer la cellule de la seconde colonne et tapez le raccourci. Enfin, appuyez
+        sur ENTER pour valider le raccourci.
+      </item>
+    </submenu>
+
+    <submenu title="Filtres">
+      <item name="(mode de syntaxe)">
+        Jext peut sélectionner lui même le mode de coloration syntaxique le plus approprié lorsque vous
+        ouvrez un fichier. Pour cela, il fait appel aux filtres de fichiers qui peuvent être changés dans
+        ce panneau. Les filtres sont basés sur les filtres "glob" des environnements Un*x.
+      </item>
+    </submenu>
+
+    <submenu title="Langage">
+      <item name="[Langage]">
+        Il est possible de modifier la langue de l'interface de Jext. Cliquez simplement l'une des langues
+        de la liste, sauvegardez les options puis redémarrez Jext.
+      </item>
+    </submenu>
+
+    <submenu title="Sécurité">
+      <item name="Activer serveur de chargement">
+        Jext utilise un petit serveur pour ouvrir toutes ses instances au sein de la même machine virtuelle
+        pour gagner de la mémoire. L'ouverture d'un tel serveur crée une porte d'accès sécurisée à laquelle
+        d'autres ordinateurs peuvent avoir accès. Si vous êtes connectés à un réseau et que vous ne faites
+        pas confiance à la sécurité de Jext (qui est assez forte), vous pouvez désactiver cette option. Notez
+        que Jext vous avertira si quelqu'un tente de s'introduire dans votre machine à travers cette porte.
+      </item>
+    </submenu>
+  </menu>
+
+  <menu title="Options des plugins">
+    <item name="(plugin)">
+      Chaque plugin peut rajouter son propre jeu de panneaux d'options. Vous trouverez dans cette catégorie
+      toutes les options proposées par les plugins.
+    </item>
+  </menu>
+</xtiny-doc-page>
+
+<!-- End of Jext documentation -->

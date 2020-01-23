@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE xtiny-doc-page SYSTEM "../dtd/xtiny-doc-page.dtd" >
+
+<!--
+  -
+  - Jext documentation source document
+  - Based on xtiny-doc DTD
+  -
+  - DTD:xtiny-doc and XSL:xtiny-doc
+  - are (C)1999 Romain Guy
+  -
+  - Last updated: 09/30/2001 - 22:16:40
+  -
+  -->
+
+<xtiny-doc-page author="Romain Guy"
+           update="09/30/2001"
+           name="Jext : Menus"
+           title="Menus"
+           prev="index.html"
+           next="jext-menus-file.html">
+
+  <paragraph title="Présentation">
+    Les menus de Jext nécessitent quelques explications. Bien qu'ils soient similaires à ceux d'autres
+    applications (Word, The GIMP, etc...), les menus de Jext possèdent une fonctionnalité intéressante
+    que l'on retrouve usuellement dans Emacs/XEmacs... Voici donc comment ces menus fonctionnent.
+  </paragraph>
+  <paragraph>
+    Chaque menu principal (Fichier, Edition...) contient des éléments (par exemple: "Sélectionner Tout"
+    dans le menu "Edition") et éventuellement des sous-menus (par exemple, le sous-menu "Récents" du menu
+    principal "Fichier"). Déroulez les menus principaux en cliquant dessus ou simplement en utilisant le
+    raccourci clavier <b>Alt+LETTRE</b>, où LETTRE désigne la lettre soulignée dans le nom du menu. Vous
+    pouvez également dérouler le menu "Fichier" en appuyant sur <b>F10</b>.
+  </paragraph>
+  <paragraph>
+    Une fois que vous avez déroulé le menu désiré, sélectionnez l'élément de votre choix ou passez au dessus
+    d'un sous-menu pour le dérouler à son tour. Vous remarquerez que certains éléments possèdent un texte
+    bleuté sur leur droite. Ce texte rappelle le raccourci clavier associé à l'élément.
+  </paragraph>
+
+  <paragraph title="Eléments et raccourcis claviers">
+    Les raccourcis claviers sont de la forme: <b>C+e</b>. Ce raccourci signifie: "maintenir appuyé la touche
+    Control et presser e". Il existe deux autres modificateurs: <b>A</b> qui représente la touche <b>Alt</b>
+    et <b>S</b> qui représente la touche <b>Shift</b> (Maj) ou <b>Meta</b>. Ces touches peuvent êtres
+    combinées: <b>CA+s</b> signifie d'appuyer sur Control et Alt en même temps avant d'appuyer sur s.
+  </paragraph>
+  <paragraph>
+    Il existe des raccourcis plus compliqués. Ceux-ci sont de la forme: <b>C+e C+m</b>. Un tel raccourci
+    signifie: "maintenir appuyé sur Control, appuyer sur e, puis m, puis relâcher Control".
+  </paragraph>
+
+  <paragraph title="Actions répétées">
+    Dans le menu édition, l'action "Supprimer Ligne" peut être activée en pressant <b>C+d</b>. Imaginez que
+    vous souhaitiez effacer 10 lignes d'un coup... vous pourriez presser C+d dix fois mais il existe un moyen
+    plus effiace...
+  </paragraph>
+  <paragraph>
+    Ce moyen proposé par Jext est la combinaison <b>C+ENTER nombre raccourci</b>. Dans notre cas, la combinaison
+    <b>C+ENTER 10 C+d</b> atteindra le résultat désiré ! Cette séquence se tape ainsi: appuyez sur Control,
+    appuyez sur ENTER, relâchez Control, tapez 10, appuyez sur Control, appuyez sur d.
+  </paragraph>
+  <paragraph>
+    Bien entendu, vous pouvez entrer n'importe quel nombre et utiliser n'importe quel raccourci clavier !
+  </paragraph>
+</xtiny-doc-page>
+
+<!-- End of Jext documentation -->

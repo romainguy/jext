@@ -1,0 +1,25 @@
+# dawn.math package - Dawn package to handle maths (+, ++, *, %, sqrt...)
+
+org.jext.dawn.math.ArcCosFunction
+org.jext.dawn.math.ArcSinFunction
+org.jext.dawn.math.ArcTanFunction
+org.jext.dawn.math.CosFunction
+org.jext.dawn.math.DecreaseFunction
+org.jext.dawn.math.DivideFunction
+org.jext.dawn.math.EFunction
+org.jext.dawn.math.FactFunction
+org.jext.dawn.math.IncreaseFunction
+org.jext.dawn.math.InvertFunction
+org.jext.dawn.math.MinusFunction
+org.jext.dawn.math.ModuloFunction
+org.jext.dawn.math.NegFunction
+org.jext.dawn.math.PiFunction
+org.jext.dawn.math.PlusFunction
+org.jext.dawn.math.PowerFunction
+org.jext.dawn.math.RoundFunction
+org.jext.dawn.math.SinFunction
+org.jext.dawn.math.SqrtFunction
+org.jext.dawn.math.TanFunction
+org.jext.dawn.math.TimesFunction
+
+# End of dawn.math package

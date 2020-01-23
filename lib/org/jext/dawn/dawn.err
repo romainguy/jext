@@ -1,0 +1,7 @@
+# dawn.err package - Manages errors
+
+org.jext.dawn.err.ErrMsgFunction
+org.jext.dawn.err.ErrorFunction
+org.jext.dawn.err.TryCatchFunction
+
+# End of dawn.err package

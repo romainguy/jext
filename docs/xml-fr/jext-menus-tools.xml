@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE xtiny-doc-page SYSTEM "../dtd/xtiny-doc-page.dtd" >
+
+<!--
+  -
+  - Jext documentation source document
+  - Based on xtiny-doc DTD
+  -
+  - DTD:xtiny-doc and XSL:xtiny-doc
+  - are (C)1999 Romain Guy
+  -
+  - Last updated: 09/30/2001 - 23:19:36
+  -
+  -->
+
+<xtiny-doc-page author="Romain Guy"
+           update="09/30/2001"
+           name="Menu Outils"
+           title="Jext : Menu Outils"
+           prev="jext-menus-search.html"
+           next="jext-menus-plugins.html">
+
+  <paragraph title="Présentation">
+    Le menu <b>Outils</b> contient quelques outils divers dont vous pourriez avoir l'utilité.
+  </paragraph>
+
+  <menu title="Contenu">
+    <submenu title="Dawn">
+      <item name="Exécuter">
+        Exécute le contenu de l'éditeur en tant que script interne à Jext.
+      </item>
+      <item name="Lancer Script">
+        Exécute le fichier sélectionné en tant que script Dawn.
+      </item>
+      <item name="Fenêtre De Trace">
+        Ouvre la fenêtre de trace du langage de scripting Dawn. Cette fenêtre conserve une trace des dernières
+        activités des scripts exécutés. Ceci est notamment très pratique lorsque vous utilisez le serveur Dawn
+        (disponible en tant que plugin).
+      </item>
+    </submenu>
+    <submenu title="Python">
+      <item name="Exécuter">
+        Exécute le contenu de l'éditeur en tant que script Python.
+      </item>
+      <item name="Lancer Script">
+        Exécute le fichier sélectionné en tant que script Python.
+      </item>
+      <item name="Fenêtre De Trace">
+        Ouvre la fenêtre de trace du langage de scripting Python. Cette fenêtre conserve une trace des dernières
+        activités des scripts exécutés. Reportez-vous à cette fenêtre en cas d'erreur.
+      </item>
+    </submenu>
+    <item name="Zipper Sous">
+      Compresse le document courant dans un fichier ZIP. Faites très attention ! Si vous essayez de compresser le
+      fichier en lui donnant le nom d'un fichier ZIP déjà existant, ce dernier sera irrémédiablement effacé. Un
+      document doit être sauvegardé avant de pouvoir être compressé.
+    </item>
+    <item name="Envoyer Mail">
+      Ouvre la fenêtre d'envoi d'emails de Jext. Vous devez dans celle-ci entrer votre adresse email, celle de votre
+      serveur SMTP (par exemple: smtp.wanadoo.fr) ainsi que l'email du destinataire. Ces paramètres sont sauvegardés
+      lorsque vous quittez Jext. Un clic sur "Envoi" permet d'envoyer le contenu de l'éditeur par email. Le boutons
+      "Détails" permet de voir ce que fait Jext.
+    </item>
+    <item name="Séparer Editeur">
+      Ce menu permet de séparer ou de réunir l'éditeur. Lorsque l'éditeur est séparé, vous pouvez éditer le même
+      fichier en deux endroits différents.
+    </item>
+    <item name="Panneau  De Gauche">
+      Affiche ou cache le panneau de gauche qui contient les onglets XInsert, Bureaux...
+    </item>
+    <item name="Panneau De Dessus">
+      Affiche ou cache le panneau de dessus qui contient par défaut la console.
+    </item>
+  </menu>
+</xtiny-doc-page>
+
+<!-- End of Jext documentation -->

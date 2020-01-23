@@ -1,0 +1,7 @@
+<!ELEMENT workspaces (workspace)* >
+  <!ELEMENT workspace (file)* >
+    <!ATTLIST workspace name CDATA #REQUIRED >
+    <!ATTLIST workspace selectedIndex CDATA #REQUIRED >
+    <!ELEMENT file EMPTY >
+      <!ATTLIST file path CDATA #REQUIRED >
+      <!ATTLIST file caretPosition CDATA #REQUIRED >

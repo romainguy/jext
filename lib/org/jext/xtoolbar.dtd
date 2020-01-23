@@ -1,0 +1,9 @@
+<!ELEMENT xtoolbar (button | separator)* >
+  <!ELEMENT button EMPTY >
+    <!ATTLIST button action CDATA #REQUIRED
+                     label CDATA #IMPLIED
+                     tip CDATA #IMPLIED
+                     mnemonic CDATA #IMPLIED
+                     picture CDATA #IMPLIED
+                     enabled (yes | no) "yes" >
+  <!ELEMENT separator EMPTY >

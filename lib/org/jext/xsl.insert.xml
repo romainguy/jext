@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--/*
+ * 06/27/2001 - 09:45:10
+ *
+ * xsl.insert.xml - Xinsert template for XSL
+ * Copyright (C) 2001 Joel Benveniste
+ * joel_benveniste@yahoo.com
+ * 
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; either version 2
+ * of the License, or any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+ */
+ -->
+
+<menu name="XSL" modes="html">
+  <item name="apply-imports">&lt;xsl:apply-imports&gt;\n|\n&lt;/xsl:apply-imports&gt;</item>
+  <item name="apply-templates">&lt;xsl:apply-templates select='' mode=''/&gt;</item>
+  <item name="attribute">&lt;xsl:attribute name='' namespace='' &gt;\n|\n&lt;/xsl:attribute&gt;</item>
+  <item name="attribute-set">&lt;xsl:attribute-set name='' use-attribute-sets='' &gt;\n|\n&lt;/xsl:attribute-set&gt;</item>
+  <item name="call-template">&lt;xsl:call-template name=''/&gt;</item>
+  <item name="choose">&lt;xsl:choose&gt;\n|\n&lt;/xsl:choose&gt;</item>
+  <item name="comment">&lt;xsl:comment&gt;\n|\n&lt;/xsl:comment&gt;</item>
+  <item name="copy">&lt;xsl:copy use-attribute-sets=''&gt;\n|\n&lt;/xsl:copy&gt;</item>
+  <item name="copy-of">&lt;xsl:copy-of select=''&gt;\n|\n&lt;/xsl:copy-of&gt;</item>
+  <item name="decimal-format">&lt;xsl:decimal-format name='' decimal-separator='' grouping-separator=''&gt;\n|\n&lt;/xsl:decimal-format&gt;</item>
+  <item name="document">&lt;xsl:document href=''&gt;\n|\n&lt;/xsl:document&gt;</item>
+  <item name="element">&lt;xsl:element name='' namespace='' use-attribute-sets=''&gt;\n|\n&lt;/xsl:element&gt;</item>
+  <item name="fallback">&lt;xsl:fallback&gt;\n|\n&lt;/xsl:fallback&gt;</item>
+  <item name="for-each">&lt;xsl:for-each select=''&gt;\n|\n&lt;/xsl:for-each&gt;</item>
+  <item name="if">&lt;xsl:if test=''&gt;\n|\n&lt;/xsl:if&gt;</item>
+  <item name="import">&lt;xsl:import href=''&gt;\n|\n&lt;/xsl:import&gt;</item> 
+  <item name="include">&lt;xsl:include href=''&gt;\n|\n&lt;/xsl:include&gt;</item>  
+  <item name="key">&lt;xsl:key name='' match='' use=''&gt;\n|\n&lt;/xsl:key&gt;</item>
+  <item name="message">&lt;xsl:message terminate='yes'&gt;\n|\n&lt;/xsl:message&gt;</item>
+  <item name="namespace-alias">&lt;xsl:namespace-alias stylesheet-prefix='' result-prefix=''&gt;\n|\n&lt;/xsl:namespace-alias&gt;</item>
+  <item name="number">&lt;xsl:number level='' count='' from='' value='' format='' lang='' letter-value='' grouping-separator='' grouping-size=''&gt;\n|\n&lt;/xsl:number&gt;</item>
+  <item name="otherwise">&lt;xsl:otherwise&gt;\n|\n&lt;/xsl:othewise&gt;</item>
+  <item name="output">&lt;xsl:output version='' encoding='' indent='' cdata-section-elements='' media-type=''&gt;\n|\n&lt;/xsl:output&gt;</item>
+  <item name="param">&lt;xsl:param name='' select=''&gt;\n|\n&lt;/xsl:param&gt;</item>
+  <item name="preserve-space">&lt;xsl:preserve-space elements=''&gt;\n|\n&lt;/xsl:preserve-space&gt;</item>
+  <item name="processing-inst">&lt;xsl:processing-instruction name=''&gt;\n|\n&lt;/xsl:processing-instruction&gt;</item>
+  <item name="script">&lt;xsl:script implements-prefix='' language='' src='' archive=''&gt;\n|\n&lt;/xsl:script&gt;</item>
+  <item name="sort">&lt;xsl:sort select='' order='' case-order='' lang='' data-type=''&gt;\n|\n&lt;/xsl:sort&gt;</item>
+  <item name="strip-space">&lt;xsl:strip-space elements=''&gt;\n|\n&lt;/xsl:strip-space&gt;</item> 
+  <item name="stylesheet">&lt;xsl:stylesheet id='' version='' extension-element-prefixes='' exclude-result-prefixes=''&gt;\n|\n&lt;/xsl:stylesheet&gt;</item> 
+  <item name="template">&lt;xsl:template match='' name='' priority='' mode=''&gt;\n|\n&lt;/xsl:template&gt;</item>
+  <item name="text">&lt;xsl:text disable-output-escaping=''&gt;\n|\n&lt;/xsl:text&gt;</item>
+  <item name="value-of">&lt;xsl:value-of select='' disable-output-escaping=''/&gt;</item>
+  <item name="variable">&lt;xsl:variable name='' select=''&gt;\n|\n&lt;/xsl:variable&gt;</item>
+  <item name="when">&lt;xsl:when test=''&gt;\n|\n&lt;/xsl:when&gt;</item>
+  <item name="with-param">&lt;xsl:with-param name='' select=''&gt;\n|\n&lt;/xsl:with-param&gt;</item>
+</menu>

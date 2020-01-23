@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE xtiny-doc-page SYSTEM "../dtd/xtiny-doc-page.dtd" >
+
+<!--
+  -
+  - Jext documentation source document
+  - Based on xtiny-doc DTD
+  -
+  - DTD:xtiny-doc and XSL:xtiny-doc
+  - are (C)1999 Romain Guy
+  -
+  - Last updated: 09/30/2001 - 00:45:57
+  -
+  -->
+
+<xtiny-doc-page author="Romain Guy"
+           update="09/30/2001"
+           name="Jext : XInsert"
+           title="XInsert"
+           prev="jext-console.html"
+           next="jext-workspaces.html">
+
+  <paragraph title="Présentation">
+    L'interface par défaut de Jext montre un panneau d'onglets sur la gauche. Ce panneau contient un onglet
+    nommé "XInsert". Un clic sur cet onglet affiche alors le <b>panneau XInsert</b> contenant lui même
+    l'arbre nommé <b>XTree</b>. Cet arbre est dynamiquement construit depuis un ensemble de fichiers XML
+    livrés avec Jext. Cependant, vous pouvez ajouter vos propres éléments dans cet arbre en créant vous
+    même vos fichiers XInsert. Notez que les éléments affichés dans l'arbre dépendent du mode de coloration
+    syntaxique sélectionné.
+  </paragraph>
+  <paragraph>
+    XInsert est un moyen rapide pour ajouter du texte pré-tapé au sein de vos documents. Par exemple,
+    le noeud "Licences" contient diverses licences pour vos programmes. Le XTree peut également contenir
+    des scripts Dawn pouvant être exécutés comme des macros. Cette section est dédiée à l'utilisation du panneau
+    XInsert et à la création de nouveaux fichiers XInsert.
+  </paragraph>
+
+  <paragraph title="Panneau XInsert">
+    La mise en page du <b>panneau XInsert</b>  est très simple. En haut du panneau se trouvent trois boutons:
+    <b>Déployer</b>, <b>Refermer</b> et <b>Recharger</b>. Le premier permet d'ouvrir tous les noeuds de l'arbre
+    pour en voir le contenu. Le second réalise l'opération inverse. Enfin, le troisième bouton permet de
+    reconstruire l'arbre. Ceci est très utilise lorsque vous créez vos propres fichiers XInsert: ainsi vous
+    pouvez les tester sans relancer Jext.
+  </paragraph>
+  <paragraph>
+    En bas du panneau se trouvent trois cases à cocher. La première, <b>Ajouter Saut de Ligne</b>,
+    permet de rajouter un saut de ligne à la fin du texte inséré. La seconde, <b>Exécuter Scripts</b>, permet
+    de lancer l'exécution des scripts contenus dans l'arbre lors d'un clic sur ceux-ci. Un script est
+    représenté par un icone de couleur rouge. Si vous ne cochez pas la case, le contenu du script sera
+    inséré dans le texte. Enfin, la dernière case à cocher, <b>Inclure Sélection</b>, permet de placer
+    le texte sélectionné en un endroit donné d'un texte à insérer. Par exemple, si vous insérez la séquence
+    <b>&lt;a href=""&gt;&lt;/a&gt;</b> et que vous avez sélectionné le texte "http://www.jext.org", vous
+    obtiendrez: <b>&lt;a href="http://www.jext.org"&gt;&lt;/a&gt;</b>.
+  </paragraph>
+  <paragraph>
+    La partie la plus importante du panneau reste cependant l'arbre. Le XTree contient un jeu de noeuds que
+    vous pouvez ouvrir pour accéder à d'autres noeuds ou éléments. Si vous faites un clic simple sur
+    un élément, son contenu sera inséré dans le document. Pour ouvrir/fermer un noeud, double-cliquez le.
+  </paragraph>
+
+  <paragraph title="Fichiers XInsert">
+    Vous pouvez ajouter vos propres données dans le <b>XTree</b> en créant de nouveaux fichiers XInsert.
+    Un fichier XInsert est un fichier textuel portant l'extension <b>.insert.xml</b> et placé dans
+    le répertoire <b>&lt;home&gt;/.jext/xinsert</b>. Le répertoire &lt;home&gt; est /home/utilisateur
+    sous système Un*x. Sous Windows, il s'agit de C:\Windows (si la machine ne contient pas plusieurs
+    utilisateurs) ou C:\Windows\Profiles\Utilisateur. Les fichiers XInsert doivent contenir un ensemble
+    de balises basées sur la définition de document (DTD) <b>xinsert.dtd</b> qui peut être trouvée dans le
+    fichier <b>&lt;chemin de jext&gt;/lib/jext.jar</b>.
+  </paragraph>
+  <paragraph>
+    Ecrire un fichier XInsert est relativement simple. Malgré tout, quelques règles doivent être
+    impérativement respectées. Tout d'abord, il vous faut déclarer votre document comme un document XML
+    en plaçant la ligne suivant au tout début:
+    <code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;</code>
+    Ensuite, vous devez valider l'utilisation de la DTD:
+    <code>&lt;!DOCTYPE xinsert SYSTEM "xinsert.dtd"&gt;</code>
+    Enfin, créez la balise racine qui contiendra toutes les autres balises:
+    <code>&lt;xinsert&gt;&lt;/xinsert&gt;</code>
+  </paragraph>
+  <paragraph>
+    Tout est maintenant prêt pour que vous puissiez créer vos propres noeuds et éléments. A l'intérieur
+    de la balise <b>&lt;xinsert&gt;</b> vous pouvez placer autant de balises <b>&lt;menu&gt;</b> que vous
+    le désirez. Voici la structure de cette balise:
+    <code>&lt;menu name="MENU_NAME" [modes="MODES"]&gt;&lt;/menu&gt;</code>
+    La partie entre crochets [] est optionelle. Si vous spécifiez cet attribut ainsi:
+    <b>modes="java cc"</b> le noeud n'apparaîtra que lorsque le mode de coloration Java ou C++ sera sélectionné.
+    Seuls les noeuds "parents" seront affectés par ceci (c'est à dire les noeuds n'étant pas contenu dans
+    un autre noeud).
+  </paragraph>
+  <paragraph>
+    Un élément menu peut contenir autant de balises menu (pour créer des sous-noeuds)
+    et de balises <b>&lt;item&gt;</b> que vous le souhaitez. Voici la structure d'une balise item:
+    <code>&lt;item name="ITEM NAME" [type="plain|script|mixed"]&gt;ITEM CONTENTS&lt;/item&gt;</code>
+    La partie entre crochets [] est optionnelle. L'attribut <b>type</b> peut prendre trois valeurs:
+    <i>plain</i> agit comme si vous n'aviez pas écrit l'attribut, <i>script</i> définit le contenu de
+    l'élément en tant que script à exécuter, et <i>mixed</i> permet de créer du texte contenant des scripts
+    qui seront exécutés. <b>ITEM_CONTENTS</b> correspond au texte qui sera inséré ou exécuté dans le document
+    lors d'un clic. Exemple d'un élément de type mixed:
+    <code>&lt;item name="Elément Mixed" type="mixed"&gt;Salut %"Votre nom:" input% !&lt;/item&gt;</code>
+    Lors d'un clic sur cet élément, l'utilisateur se verra demandé son nom et le message "Salut nom_entré !"
+    sera inséré dans le texte. Voici un second exemple:
+    <code>&lt;item name="Elément Mixed 2" type="mixed"&gt;La date du jour est: %date%&gt;</code>
+    Cet élément, affiche simplement un message donnant la date.
+  </paragraph>
+  <paragraph>
+    Vous pourrez trouver de nombreux exemples de construction de tels fichiers en regardant les fichiers
+    *.insert.xml dans le fichier jext.jar de Jext ou bien dans l'archive contenant le code source du logiciel.
+  </paragraph>
+</xtiny-doc-page>
+
+<!-- End of Jext documentation -->

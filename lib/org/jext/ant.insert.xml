@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <menu name="Ant" modes="html java">
+
+    <item name="Project">&lt;project name=&quot;|&quot; default=&quot;&quot; basedir=&quot;&quot;&gt;\n\n&lt;/project&gt;</item>
+    <item name="Property - file">&lt;property file=&quot;|&quot; /&gt;</item>
+    <item name="Property - resource">&lt;property resource=&quot;|&quot; /&gt;</item>
+    <item name="Property - name/value">&lt;property name=&quot;|&quot; value=&quot;&quot; /&gt;</item>
+    <item name="Timestamp">&lt;tstamp /&gt;</item>
+
+    <menu name="Targets">
+      <item name="Target">&lt;target name=&quot;|&quot;&gt;\n\n&lt;/target&gt;</item>
+      <item name="Target - depends">&lt;target name=&quot;|&quot; depends=&quot;&quot; &gt;\n\n&lt;/target&gt;</item>
+      <item name="Target - if">&lt;target name=&quot;|&quot; if=&quot;&quot; &gt;\n\n&lt;/target&gt;</item>
+      <item name="Target - unless">&lt;target name=&quot;|&quot; unless=&quot;&quot; &gt;\n\n&lt;/target&gt;</item>
+      <item name="Target - depends-if">&lt;target name=&quot;|&quot; depends=&quot;&quot; if=&quot;&quot; &gt;\n\n&lt;/target&gt;</item>
+      <item name="Target - depends-unless">&lt;target name=&quot;|&quot; depends=&quot;&quot; unless=&quot;&quot; &gt;\n\n&lt;/target&gt;</item>
+      <item name="Target - depends-if-unless">&lt;target name=&quot;|&quot; depends=&quot;&quot; if=&quot;&quot; unless=&quot;&quot;&gt;\n\n&lt;/target&gt;</item>
+    </menu>
+
+    <menu name="Classpath/Path">
+      <item name="Classpath (outer elements)">&lt;classpath&gt;\n|\n&lt;/classpath&gt;</item>
+      <item name="Pathelement - location">&lt;pathelement location=&quot;|&quot; /&gt;</item>
+      <item name="Pathelement - path">&lt;pathelement path=&quot;|&quot;&gt;</item>
+      <item name="Classpath - path (one element)">&lt;classpath path=&quot;|&quot; /&gt;</item>
+    </menu>
+
+    <menu name="Javac">
+      <item name="Javac (srcdir, destdir) tag">&lt;javac srcdir=&quot;|&quot; destdir=&quot;&quot; /&gt;</item>
+      <item name="Javac (destdir) tag">&lt;javac destdir=&quot;|&quot; /&gt;</item>
+      <item name="Javac (parent tags)">&lt;javac destdir=&quot;|&quot; &gt;\n\n&lt;/javac&gt;</item>
+      <item name="Javac - src tag">&lt;src path=&quot;|&quot; /&gt;</item>
+      <item name="Javac - include tag">&lt;include name=&quot;|&quot; /&gt;</item>
+      <item name="Javac - exclude tag">&lt;exclude name=&quot;|&quot; /&gt;</item>
+      <item name="Javac - includes attr.">includes=&quot;|&quot;</item>
+      <item name="Javac - includesfile attr.">includesfile=&quot;|&quot;</item>
+      <item name="Javac - excludes attr.">excludes=&quot;|&quot;</item>
+      <item name="Javac - excludesfile attr.">excludesfile=&quot;|&quot;</item>
+      <item name="Javac - defaultexcludes attr.">defaultexcludes=&quot;|&quot;</item>
+      <item name="Javac - classpath attr.">classpath=&quot;|&quot;</item>
+      <item name="Javac - bootclasspath attr.">bootclasspath=&quot;|&quot;</item>
+      <item name="Javac - extdirs attr.">extdirs=&quot;|&quot;</item>
+      <item name="Javac - debug attr.">debug=&quot;|&quot;</item>
+      <item name="Javac - optimize attr.">optimize=&quot;|&quot;</item>
+      <item name="Javac - deprecation attr.">deprecation=&quot;|&quot;</item>
+      <item name="Javac - filtering attr.">filtering=&quot;|&quot;</item>
+      <item name="Javac - target attr.">target=&quot;|&quot;</item>
+    </menu>
+
+    <menu name="Javadoc">
+      <item name="Javadoc - sourcefiles">&lt;javadoc sourcepath=&quot;|&quot; destdir=&quot;&quot; sourcefiles=&quot;&quot; /&gt;</item>
+      <item name="Javadoc - packagenames">&lt;javadoc sourcepath=&quot;|&quot; destdir=&quot;&quot; packagenames=&quot;&quot; /&gt;</item>
+      <item name="Javadoc - parent tags">&lt;javadoc sourcepath=&quot;|&quot; destdir=&quot;&quot; &gt;\n\n&lt;/javadoc&gt;</item>
+      <item name="Javadoc - link tag">&lt;link href=&quot;|&quot; /&gt;</item>
+      <item name="Javadoc(link) offline attr.">offilne=&quot;|&quot;</item>
+      <item name="Javadoc(link) packagelistLoc attr.">packagelistLoc=&quot;|&quot;</item>
+      <item name="Javadoc - group tag">&lt;group title=&quot;|&quot; packages=&quot;&quot; /&gt;</item>
+    </menu>
+
+    <menu name="Java">
+      <item name="Java">&lt;java classname=&quot;|&quot; /&gt;</item>
+      <item name="Java - classpath attr.">classpath=&quot;|&quot;</item>
+      <item name="Java - args attr.">args=&quot;|&quot;</item>
+      <item name="Java - fork attr.">fork=&quot;|&quot;</item>
+      <item name="Java - jvm attr.">jvm=&quot;|&quot;</item>
+      <item name="Java - jvmargs attr.">jvmargs=&quot;|&quot;</item>
+      <item name="Java - failonerror attr.">failonerror=&quot;|&quot;</item>
+    </menu>
+
+    <menu name="Jar">
+      <item name="Jar">&lt;jar jarfile=&quot;|&quot; basedir=&quot;&quot; /&gt;</item>
+      <item name="Jar - compress attr.">compress=&quot;|&quot;</item>
+      <item name="Jar - items attr.">items=&quot;|&quot;</item>
+      <item name="Jar-  ignore attr.">ignore=&quot;|&quot;</item>
+      <item name="Jar - includes attr.">includes=&quot;|&quot;</item>
+      <item name="Jar - includesfile attr.">includesfile=&quot;|&quot;</item>
+      <item name="Jar - excludes attr.">excludes=&quot;|&quot;</item>
+      <item name="Jar - excludesfile attr.">excludesfile=&quot;|&quot;</item>
+      <item name="Jar - defaultexcludes attr.">defaultexcludes=&quot;|&quot;</item>    
+      <item name="Jar-  manifest attr.">manifest=&quot;|&quot;</item>
+    </menu>
+
+    <menu name="SignJar">
+      <item name="SignJar">&lt;signjar &gt;</item>
+    </menu>
+
+    <menu name="JUnit">
+      <item name="JUnit">&lt;junit &gt;</item>
+    </menu>
+
+    <menu name="Tasks">
+      <item name="Ant">&lt;ant dir=&quot;|&quot; /&gt;</item>
+      <item name="Ant w/antfile">&lt;ant dir=&quot;|&quot; antfile=&quot;&quot; /&gt;</item>
+      <item name="Ant w/antfile + output">&lt;ant dir=&quot;|&quot; antfile=&quot;&quot; output=&quot;&quot; /&gt;</item>
+      <item name="Available">&lt;available &gt;</item>
+      <item name="Chmod">&lt;chmod &gt;</item>
+      <item name="Copy Dir">&lt;copydir &gt;</item>
+      <item name="Copy File">&lt;copyfile src=&quot;|&quot; dest=&quot;&quot; /&gt;</item>
+      <item name="Copy File w/filter">&lt;copyfile src=&quot;|&quot; dest=&quot;&quot; filtering=&quot;&quot; /&gt;</item>
+      <item name="CVS">&lt;cvs &gt;</item>
+      <item name="Delete">&lt;delete &gt;</item>
+      <item name="Deltree">&lt;deltree dir=&quot;|&quot; /&gt;</item>
+      <item name="Echo">&lt;echo message=&quot;|&quot; /&gt;</item>
+      <item name="Exec">&lt;exec dir=&quot;|&quot; command=&quot;&quot; output=&quot;&quot; /&gt;</item>
+      <item name="Exec - os">&lt;exec dir=&quot;|&quot; command=&quot;&quot; output=&quot;&quot; os=&quot;&quot; /&gt;</item>
+      <item name="Exec - failonerror">&lt;exec dir=&quot;|&quot; command=&quot;&quot; output=&quot;&quot; failonerror=&quot;&quot; /&gt;</item>
+      <item name="Exec - os/failonerror">&lt;exec dir=&quot;|&quot; command=&quot;&quot; output=&quot;&quot; os=&quot;&quot; failonerror=&quot;&quot; /&gt;</item>
+      <item name="Filter">&lt;filter token=&quot;|&quot; value=&quot;&quot; /&gt;</item>
+      <item name="Fix CRLF">&lt;fixcrlf /&gt;</item>
+      <item name="Get">&lt;get src=&quot;|&quot; dest=&quot;&quot; /&gt;</item>
+      <item name="GUnzip">&lt;gunzip src=&quot;|&quot; /&gt;</item>
+      <item name="GUnzip w/dest">&lt;gunzip src=&quot;|&quot; dest=&quot;&quot; /&gt;</item>
+      <item name="GZip">&lt;gzip src=&quot;|&quot; zipfile=&quot;&quot; /&gt;</item>
+      <item name="Key Subst">&lt;keysubst src=&quot;|&quot; dest=&quot;&quot; keys=&quot;&quot; /&gt;</item>
+      <item name="Key Subst w/sep">&lt;keysubst src=&quot;|&quot; dest=&quot;&quot; keys=&quot;&quot; sep=&quot;&quot; /&gt;</item>
+      <item name="Mkdir">&lt;mkdir dir=&quot;|&quot; /&gt;</item>
+      <item name="Patch">&lt;patch &gt;</item>
+      <item name="Rename (replace on)">&lt;rename src=&quot;|&quot; dest=&quot;&quot; /&gt;</item>
+      <item name="Rename (replace off)">&lt;rename src=&quot;|&quot; dest=&quot;&quot; replace=&quot;off&quot; /&gt;</item>
+      <item name="Replace">&lt;replace &gt;</item>
+      <item name="Rmic">&lt;rmic &gt;</item>
+      <item name="Tar">&lt;tar &gt;</item>
+      <item name="Taskdef">&lt;taskdef name=&quot;|&quot; classname=&quot;&quot; /&gt;</item>
+      <item name="Touch">&lt;touch &gt;</item>
+      <item name="Style">&lt;style &gt;</item>
+      <item name="Untar">&lt;untar src=&quot;|&quot; dest=&quot;&quot; /&gt;</item>
+      <item name="Unzip/Unjar/Expand">&lt;unzip src=&quot;|&quot; dest=&quot;&quot; /&gt;</item>
+      <item name="Zip">&lt;zip &gt;</item>
+    </menu>
+  </menu>

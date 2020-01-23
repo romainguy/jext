@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xpopup SYSTEM "xpopup.dtd">
+
+<!-- (C)2000 Romain Guy
+     This XML data file contains all the
+     informations required to build Jext's GUI -->
+
+<xpopup>
+  <item label="$Undo" action="undo" picture="images/menu_undo" />
+  <item label="$Redo" action="redo" picture="images/menu_redo" />
+  <separator />
+  <item label="$Copy" action="copy" picture="images/menu_copy" />
+  <item label="Cu$t" action="cut" picture="images/menu_cut" />
+  <item label="$Paste" action="paste" picture="images/menu_paste" />
+  <item label="$Filtered Paste" action="filtered_paste" picture="images/menu_paste" />
+  <item label="Insert P$aste" action="reverse_paste" picture="images/menu_paste" />
+  <separator />
+  <item label="Select $All" action="select_all" />
+  <separator />
+  <submenu label="Anc$hor">
+    <item label="Set Anchor" action="set_anchor" />
+    <item label="Goto Anchor" action="goto_anchor" />
+    <item label="Exchange Caret/Anchor" action="exchange_anchor" />
+    <separator />
+    <item label="Select To Anchor" action="select_to_anchor" />
+    <item label="Select From Anchor" action="select_from_anchor" />
+  </submenu>
+  <submenu label="$Source Code">
+    <item label="Block Right Indent" action="right_indent" />
+    <item label="Block Left Indent" action="left_indent" />
+    <item label="Jump To Matching Bracket" action="find_matching_bracket" />
+    <separator />
+    <item label="Box Comment" action="box_comment" />
+    <item label="Wing Comment" action="wing_comment" />
+    <separator />
+    <item label="Comment Block" action="simple_comment" />
+    <item label="UnComment Block" action="simple_uncomment" />
+  </submenu>
+  <submenu label="Te$xt">
+    <item label="Begin Lines With..." action="begin_lines_with" />
+    <item label="End Lines With..." action="end_lines_with" />
+    <separator />
+    <item label="To Upper Case" action="to_upper_case" />
+    <item label="To Lower Case" action="to_lower_case" />
+    <separator />
+    <item label="Join Lines" action="join_lines" />
+    <item label="Transpose Lines" action="transpose_lines" />
+    <separator />
+    <item label="Complete Word" action="complete_word" />
+  </submenu>
+  <separator />
+  <item label="$Delete Line" action="delete_line" />
+  <separator />
+  <submenu label="One Click!">
+    <item label="End One Click!" action="end_one_click" />
+    <separator />
+    <item label="Paste" action="one_paste" />
+    <item label="Insert Paste" action="one_reverse_paste" />
+    <item label="Delete Line" action="one_delete_line" />
+    <item label="Join Lines" action="one_join_lines" />
+    <separator />
+    <item label="Auto Indent" action="one_auto_indent" />
+    <item label="Right Indent" action="one_right_indent" />
+    <item label="Left Indent" action="one_left_indent" />
+    <item label="Comment Line" action="one_simple_comment" />
+    <item label="UnComment Line" action="one_simple_uncomment" />
+    <separator />
+    <item label="Complete Word" action="one_complete_word" />
+  </submenu>
+  <separator />
+  <item label="$Find..." action="find" picture="images/menu_find" />
+  <item label="$Replace..." action="replace" picture="images/menu_replace" />
+  <item label="F$ind Next" action="find_next" />
+  <item label="R$eplace Next" action="replace_next" />
+  <separator />
+  <item label="Dawn E$xecute" action="dawn_execute" />
+  <item label="P$ython Execute" action="python_execute" />
+  <separator />
+  <item label="$Split/Unsplit Editor" action="split_editor" />
+</xpopup>

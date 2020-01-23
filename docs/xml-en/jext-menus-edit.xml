@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE xtiny-doc-page SYSTEM "../dtd/xtiny-doc-page.dtd" >
+
+<!--
+  -
+  - Jext documentation source document
+  - Based on xtiny-doc DTD
+  -
+  - DTD:xtiny-doc and XSL:xtiny-doc
+  - are (C)1999 Romain Guy
+  -
+  - Last updated: 12/02/2001 - 22:15:51
+  -
+  -->
+
+<xtiny-doc-page author="Romain Guy"
+           update="12/02/2001"
+           name="Edit Menu"
+           title="Jext : Edit Menu"
+           prev="jext-menus-file.html"
+           next="jext-menus-search.html">
+
+  <paragraph title="Overview">
+    The <b>Edit</b> menu contains features specific to editing text, including
+    basic text editing options (cut, copy, paste...) as well as advanced ones (expand
+    abbreviation...).
+  </paragraph>
+
+  <menu title="Contents">
+    <item name="Undo">
+     Undoes the last editing action. For example, if you paste in the string "Hello World!", 
+     <b>Undo</b> will remove it.
+    </item>
+    <item name="Redo">
+      Redoes last <b>Undo</b> operation.
+    </item>
+    <item name="Copy">
+      Copies the selected text from the text area to the system clipboard.
+    </item>
+    <item name="Cut">
+      Cuts (i.e. copies then removes) the selected text to the system clipboard.
+    </item>
+    <item name="Paste">
+      Inserts the contents of the system clipboard into the text area at the caret position.
+    </item>
+    <item name="Filtered Paste">
+      Inserts the contents of the system clipboard into the text area after having performed a "search and
+      replace all" operation on it. The patterns and options used for this purpose are the ones set
+      in the Search And Replace dialog.
+    </item>
+    <item name="Insert Paste">
+      Inserts the contents of system clipboard into the text area at the caret position. This
+      function does not move caret after insertion.
+    </item>
+    <item name="Select All">
+      Selects all the text.
+    </item>
+    <submenu title="Anchor">
+      <item name="Set Anchor">
+        Drops the anchor at the caret position. Note that this anchor is relative to the text
+        and NOT an offset in the file. For instance, if you drop anchor in front of the word "Duke"
+        at line 11, then delete the ten first lines, the anchor will still be in front of
+        the word "Duke."
+      </item>
+      <item name="Goto Anchor">
+        Places the caret at the anchor position. If the anchor hasn't been dropped (or set) yet, nothing
+        happens. Read the explanation of the <b>Set Anchor</b> menu item carefully to understand
+        why an anchor is so useful.
+      </item>
+      <item name="Exchange Caret/Anchor">
+        Substitutes the caret with the anchor and vice versa. This means your caret is placed at the
+        anchor position (as <b>Goto Anchor</b> does) and that the anchor is dropped at the caret's
+        former position. In other words, they swap locations.
+      </item>
+      <item name="Select To Anchor">
+        Selects text from the caret to the anchor, placing the caret at the anchor position.
+      </item>
+      <item name="Select From Anchor">
+        Selects text from the anchor to the caret, leaving the caret in its current position.
+      </item>
+    </submenu>
+    <submenu title="Source Code">
+      <item name="Block Right Indent">
+        Indents the selected block of text to the right. The amount of indent is controlled by
+        the tab size option.
+      </item>
+      <item name="Block Left Indent">
+        Does exactly the same as <b>Block Right Indent</b>, but to the left.
+      </item>
+      <item name="Jump To Matching Bracket">
+        If the character under the caret is a brace, a bracket or a parenthesis, this function will move the
+        caret to the matching one.
+      </item>
+      <item name="Box Comment">
+        Encloses selected text in a wing comment adding a special character in front of
+        each line. Comment characters depend on current selected syntax colorizing mode. For instance, Java,
+        C and C++ modes will add <b>/*</b> at the beginning of the block and <b>*/</b> at its end and each
+        line will begin with <b>*</b>.
+      </item>
+      <item name="Wing Comment">
+        Encloses selected text in a wing comment. Comment characters depends on current selected
+        syntax colorizing mode. For instance, Java, C and C++ modes will add <b>/*</b> at the
+        beginning of the block and <b>*/</b> at its end.
+      </item>
+      <item name="Comment Block">
+        Adds a single comment at the beginning of each selected line. In Java, C or C++ syntax
+        colorizing mode, each line will begin with <b>//</b>. Comment characters depends on
+        current selected syntax colorizing mode.
+      </item>
+      <item name="UnComment Block">
+        Removes comment characters within the selected block of code.
+      </item>
+    </submenu>
+    <submenu title="Text">
+      <item name="Tabs To Spaces">
+        Converts all tab characters in your text to the equivalent spaces.
+      </item>
+      <item name="Spaces To Tabs">
+        If possible, converts spaces to tab characters. For example, if you set Tab Size
+        to 8, each sequence of 8 spaces will be converted into a single tab character.
+      </item>
+      <item name="Begin Lines With">
+        Displays an input dialog in which you have to enter some text. Jext then adds this
+        text to the beginning of each selected line.
+      </item>
+      <item name="End Lines With">
+        Displays an input dialog which prompts for text to be added to the end of each selected line.
+      </item>
+      <item name="To Upper Case">
+        Turns each lower-case character of selected text to its upper-case equivalent.
+      </item>
+      <item name="To Lower Case">
+        Turns each upper-case character of selected text to its lower-case equivalent.
+      </item>
+      <item name="Sort Lines">
+        Sorts selected lines alphabetically using the first non-blank characters
+        of each line.
+      </item>
+      <item name="Reverse Sort Lines">
+        Sorts selected lines reverse alphabetically using the first non-blank characters
+        of each line.
+      </item>
+      <item name="Join Lines">
+        Joins the line on which the caret is placed with the next one. If the next line begins with more than one
+        blank character, those characters are removed.
+      </item>
+      <item name="Join All Lines">
+        Joins all lines contained in your text into a single line. This can greatly save space
+        for Web pages (and in this way bandwidth and download times). However, it makes future 
+        edits more difficult.
+      </item>
+      <item name="Remove End Spaces">
+        Removes all white space characters from the end of each line of
+        text. As with <b>Join All Lines</b>, using this feature can save some loading time
+        for Web pages.
+      </item>
+      <item name="Transpose Lines">
+        This function swaps the line of text located on the caret line with the
+        previous line of text.
+      </item>
+      <item name="Complete Word">
+        Tries to expand the current word. For instance, if you have already typed "thisIsAnotherVariable",
+        it can be exhausting to retype it each time you need to use it, right? Instead, just begin
+        to type it (type: "thisIsA", for example) and fire <b>Expand Abbreviation</b> action [Ctrl-b].
+        Jext will auto-complete "thisIsA" to write the complete word for you ! If several words in the text
+        match the abbreviation, a window pops up and let you choose the word you need.
+      </item>
+      <item name="Word Count">
+        Displays summary information about the current document: the number
+        of lines, characters, words and, for programmers only, real-code lines (this excludes blank
+        and commented lines).
+      </item>
+    </submenu>
+    <submenu title="File">
+      <item name="Insert Extension">
+        Inserts the current document's extension name at the caret.
+      </item>
+      <item name="Insert Full Name">
+        Inserts the current document's full name (with extension) at the caret.
+      </item>
+      <item name="Insert Name">
+        Inserts the current document's name (with no extension) at the caret.
+      </item>
+      <item name="Insert Full Path">
+        Inserts the current document's full path (absolute path and file name) at the caret.
+      </item>
+      <item name="Insert Path">
+        Inserts the current document's absolute path (without the full file name) at the caret.
+      </item>
+    </submenu>
+    <item name="Goto Line">
+      Displays an input dialog box which prompts for a line number. When <b>Ok</b> is clicked,
+      Jext places the caret at the beginning of the specified line, if it exists.
+    </item>
+    <item name="Delete Line">
+      Deletes the line on which the caret is placed.
+    </item>
+    <item name="Date/Time">
+      Inserts the current date and time in your text at the caret.
+    </item>
+    <submenu title="One Click!">
+      <item name="End One Click!">
+        When you want to disable the <b>One Click!</b> feature, you can either use this item, either click
+        any other menu item.
+      </item>
+      <item name="[an action]">
+        <b>One Click!</b> menu items activate the <b>One Click!</b> system. You can tell if the feature is activated
+        by the "one click!" message displayed in the bottom right corner of the text area. Once 
+        activated, each click within the text area will perform an action. For instance, after
+        having clicked <b>Paste</b>, each click will paste clipboard contents.
+      </item>
+    </submenu>
+    <item name="Options">
+      Displays the Jext options dialog. See the <a href="jext-options.html">Options</a> section
+      for more information.
+    </item>
+  </menu>
+</xtiny-doc-page>
+
+<!-- End of Jext documentation -->

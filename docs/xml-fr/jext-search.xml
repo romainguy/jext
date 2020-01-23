@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE xtiny-doc-page SYSTEM "../dtd/xtiny-doc-page.dtd" >
+
+<!--
+  -
+  - Jext documentation source document
+  - Based on xtiny-doc DTD
+  -
+  - DTD:xtiny-doc and XSL:xtiny-doc
+  - are (C)1999 Romain Guy
+  -
+  - Last updated: 09/30/2001 - 11:27:06
+  -
+  -->
+
+<xtiny-doc-page author="Romain Guy"
+           update="09/30/2001"
+           name="Jext : Recherche"
+           title="Rechercher Et Remplacer"
+           prev="jext-editor.html"
+           next="jext-console.html">
+
+  <paragraph title="Présentation">
+    Le menu <b>Recherche</b> de la barre de menus propose plusieurs fonctions de recherche et de remplacemen
+    au sein de vos documents. Nous allons détailler trois d'entre elles, celles ouvrant de nouvelles
+    fenêtres.
+  </paragraph>
+
+  <paragraph title="Rechercher">
+    L'élément <b>Rechercher</b> de Jext affiche une boîte de recherche à l'écran. Dans cette fenêtre,
+    trois composants sont grisés: ceux-ci ne sont activés que lorsque vous tentez une opération de remplacement.
+    Pour lancer une recherche, entrez simplement un motif de recherche dans le champ de texte puis appuyez sur
+    le bouton <b>Rechercher</b>. Notez que le champ de texte conserve en mémoire les 25 derniers motifs utilisés.
+  </paragraph>
+  <paragraph>
+    Le bouton <b>Annuler</b> quant à lui sert à fermer la fenêtre. Enfin, il y a quatre cases à cocher
+    en bas de la fenêtre. Ces cases permettent de modifier le comportement des recherches:
+    <menu>
+      <item name="Ignorer Casse">
+        Si cette case est cochée, la casse des lettres sera ignorée. Par exemple, l'utilisation du motif
+        <b>java</b> avec la case cochée définira le texte <b>JAVA</b> comme un résultat de la recherche.
+      </item>
+      <item name="Sauver valeurs">
+        Lorsque vous quittez la fenêtre et que cette option est cochée, Jext sauvegardera votre configuration.
+      </item>
+      <item name="Tous Fichiers">
+        Exécute l'opération dans tous les fichiers ouverts.
+      </item>
+      <item name="Expressions Régulières">
+        Par défaut, Jext effectue une recherche standard. Si vous cochez cette case, Jext utilisera la syntaxe
+        Perl5 pour sa recherche. Cela permet d'effectuer des recherches plus précises.
+      </item>
+    </menu>
+  </paragraph>
+
+  <paragraph title="Remplacer">
+    Un clic sur l'élément <b>Remplacer</b> ouvre la même fenêtre que précédemment. Cependant, celle-ci
+    affiche maintenant des composants activés dans sa partie basse. L'utilisation de cette fenêtre se
+    fait de la même manière que celle destinée à la recherche. Sachez seulementque le bouton <b>Remplacer</b>
+    remplacera l'occurence courante du motif de recherche et lancera la recherche pour l'occurence suivante.
+    Enfin, le bouton <b>Remplacer Tout</b> lancera l'opération de remplacement dans tous les fichiers ouverts
+    dans l'éditeur. A l'instar de la commande <b>Rechercher</b>, le champ de texte conserve en mémoire les
+    25 derniers motifs de remplacement utilisés.
+  </paragraph>
+  <paragraph>
+    Vous pouvez également utiliser la fonction de Script. Cette fonction permet de remplacer chaque résultat de
+    la recherche provoqué par une expression régulière par le résultat de l'évaluation d'un script Python.
+    Si vous recherchez par exemple l'expression &lt;([^&lt;&gt;]*)&gt;, Jext recherchera chaque tag HTML défini dans le texte.
+    Si vous employez l'option Script avec la valeur : "&lt;" + _m[0].upper() + "&gt;" et que vous pressez <b>Remplacer Tout</b>
+    chaque tag HTML sera mis en majuscules. Sachez juste que l'objet _m représente un tableau contenant les valeurs
+    de chacun des groupes (créés avec des parenthèses) de l'expressions régulière.
+  </paragraph>
+
+  <paragraph title="Rechercher Tout">
+    Bien que la fenêtre de la fonction <b>Rechercher Tout</b> soit sensiblement différente de la fenêtre
+    de recherche/remplacement, les options proposées restent les mêmes. Lorsque vous lancez une recherche
+    depuis cette boîte de dialogue, Jext listera toutes les occurences du motif de recherche dans une liste.
+    Un clic sur un élément de la liste permettra de placer le curseur à l'endroit de l'occurence. La case
+    "Souligner" permet de souligner toutes les occurences en bleu au sein du texte même.
+  </paragraph>
+</xtiny-doc-page>
+
+<!-- End of Jext documentation -->

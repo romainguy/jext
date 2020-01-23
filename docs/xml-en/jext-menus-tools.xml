@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE xtiny-doc-page SYSTEM "../dtd/xtiny-doc-page.dtd" >
+
+<!--
+  -
+  - Jext documentation source document
+  - Based on xtiny-doc DTD
+  -
+  - DTD:xtiny-doc and XSL:xtiny-doc
+  - are (C)1999 Romain Guy
+  -
+  - Last updated: 12/02/2001 - 22:20:47
+  -
+  -->
+
+<xtiny-doc-page author="Romain Guy"
+           update="12/02/2001"
+           name="Tools Menu"
+           title="Jext : Tools Menu"
+           prev="jext-menus-search.html"
+           next="jext-menus-plugins.html">
+
+  <paragraph title="Overview">
+    The <b>Tools</b> menu contains miscallenaous tools.
+  </paragraph>
+
+  <menu title="Contents">
+    <submenu title="Dawn">
+      <item name="Execute">
+        Executes the current text area content as a script.
+      </item>
+      <item name="Run Script">
+        Lets the user choose a file to run as a script.
+      </item>
+      <item name="Log Window">
+        Opens the scripting log window which keeps a trace of the latest executed scripts. It is very
+        useful when you activate the Dawn server.
+      </item>
+    </submenu>
+    <submenu title="Python">
+      <item name="Execute">
+        Executes the current text area content as a Python script.
+      </item>
+      <item name="Run Script">
+        Lets the user choose a file to run as a Python script.
+      </item>
+      <item name="Log Window">
+        Opens the scripting log window which keeps a trace of the latest executed scripts. Please report to this
+        window when an error occures.
+      </item>
+    </submenu>
+    <item name="Zip As">
+      Zips (i.e. packs or compresses) the current document into a specified zip file. Be careful!
+      If you specify an existing zip file, it will be overwritten. The document needs to be saved
+      before being zipped: see Save As or Save.
+    </item>
+    <item name="Mail To">
+      Displays the Jext mail dialog. You need to enter your email address(ex:
+      john.smith@yeah.gov), your SMTP server adress (ex: mail.yeah.gov) and the destination
+      email. All these settings are saved for future sessions. When you're done with these
+      settings, press Send and Jext will mail the contents of the active Jext window.
+    </item>
+    <item name="Split/Unsplit Editor">
+      Triggers the split feature. When the text area is split, you are allowed to edit the same
+      document in two text areas. Thus, you can read one part while editing another.
+    </item>
+    <item name="Trigger Left Panel">
+      Triggers the left panel which contains by default the XTree and some plugins.
+    </item>
+    <item name="Trigger Right Panel">
+      Triggers the console panel.
+    </item>
+  </menu>
+</xtiny-doc-page>
+
+<!-- End of Jext documentation -->

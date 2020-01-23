@@ -1,0 +1,4 @@
+<!ELEMENT pyactions (action)* >
+  <!ELEMENT action (#PCDATA) >
+    <!ATTLIST action name CDATA #REQUIRED
+                     edit (yes | no) "no" >

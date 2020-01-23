@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE xtiny-doc-page SYSTEM "../dtd/xtiny-doc-page.dtd" >
+
+<!--
+  -
+  - Jext documentation source document
+  - Based on xtiny-doc DTD
+  -
+  - DTD:xtiny-doc and XSL:xtiny-doc
+  - are (C)1999 Romain Guy
+  -
+  - Last updated: 12/02/2001 - 22:21:33
+  -
+  -->
+
+<xtiny-doc-page author="Romain Guy"
+           update="12/02/2001"
+           name="Jext : Menus"
+           title="Menus"
+           prev="index.html"
+           next="jext-menus-file.html">
+
+  <paragraph title="Overview">
+    Jext Menus benefit from a little explanation. Although they are similar to menus 
+    you see in many applications (Word, Gimp, etc...), Jext menus have an interesting feature
+    which you usually find only in applications such as Emacs/XEmacs... Here's how such menus
+    work.
+  </paragraph>
+  <paragraph>
+    Each main menu (File-Edit-Search-Plugins-Jext) contains menu items (ex: Select All in Edit
+    menu) and can contain a number of submenus (for instance the submenu Recents in main menu
+    File). You pulldown main menus by simply clicking on them, or by using the keyboard shortcut
+    <b>Alt+LETTER</b>, where LETTER is the underlined letter of the targeted menu. Because it is
+    used so often, the File menu can be activated with the <b>F10</b> key.
+  </paragraph>
+  <paragraph>
+    Once you've pulled down the desired menu, select your menu item of choice to fire the desired
+    action or hover your mouse over a submenu (represented by a little arrow on right) to unroll
+    it. You may notice that some menu items have blue text displayed on their right. This serves
+    as a reminder of the keyboard shortcut which activates this menu item. Using keyboard
+    shortcuts can greatly improve your productivity.
+  </paragraph>
+
+  <paragraph title="Menu items keyboard shortcuts">
+    Keyboard shortcuts look like this: <b>C+e</b>. <b>C+e</b> means hold the Control key down and
+    press e. There are two other modifiers: <b>A</b> which stands for the <b>Alt</b> key and
+    <b>S</b> which stands for the <b>Shift</b> or <b>Meta</b> key. They can be combined:
+    <b>CA+s</b> means hold down both Control and Alt, then press s.
+  </paragraph>
+  <paragraph>
+    Sometimes you'll find strange keyboard shortcuts (Emacs users already know these). Take
+    <b>C+e C+m</b> for example. This means that to activate the corresponding item you have to hold
+    down Control, press e and then press m.
+  </paragraph>
+
+  <paragraph title="Repeating actions">
+    In the Edit menu the Delete Line item is activated by pressing C+d. Now imagine you would 
+    like to delete 10 lines at once... You could press C+d ten times but this is not efficient
+    and we programmers abhor repetitive, brain-dead tasks. After all, that's what computers are
+    for, right? Use action repetition instead and make Jext do your work for you!
+  </paragraph>
+  <paragraph>
+    So, you want to delete 10 lines. Simply press <b>C+ENTER 10 C+d</b>. This sequence must be
+    done like this: hold down Control and press ENTER, release Control, type 10 on your numeric
+    pad on the keyboard, hold down Control and press d.
+  </paragraph>
+  <paragraph>
+    Of course, this trick works with any number, not just 10. Even better, this trick works with
+    any keyboard shortcut as well.
+  </paragraph>
+</xtiny-doc-page>
+
+<!-- End of Jext documentation -->

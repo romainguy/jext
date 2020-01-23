@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE xtiny-doc-page SYSTEM "../dtd/xtiny-doc-page.dtd" >
+
+<!--
+  -
+  - Jext documentation source document
+  - Based on xtiny-doc DTD
+  -
+  - DTD:xtiny-doc and XSL:xtiny-doc
+  - are (C)1999 Romain Guy
+  -
+  - Last updated: 09/30/2001 - 20:00:52
+  -
+  -->
+
+<xtiny-doc-page author="Romain Guy"
+           update="09/30/2001"
+           name="Jext : Favoris"
+           title="Favoris"
+           prev="jext-workspaces.html"
+           next="jext-options.html">
+
+  <paragraph title="Présentation">
+    Les favoris sont accessibles dans un onglet nommé "Favoris" dans la partie gauche de l'interface.
+    Cet onglet contient cinq boutons et un arbre. L'arbre contient vos répertoires. Ces répertoires sont
+    supposés contenir les fichiers auxquels vous accéder le plus souvent.
+  </paragraph>
+
+  <paragraph title="Utilisation des favoris">
+    En utilisant les boutons du panneau, vous pouvez créer un dossier, ajouter le fichier sélectionné au
+    dossier courant, ajouter tous les fichiers ouverts au dossier sélectionné and supprimer le fichier/dossier
+    sélectionné. Le bouton de supression marche si plusieurs éléments sont sélectionnés (utilisez les touches
+    <b>Shift</b> et <b>Control</b> combinées au clic de souris).
+  </paragraph>
+  <paragraph>
+    Pour ajouter un fichier dans un dossier donné, utilisez le second et le troisième bouton. Vous pouvez
+    également faire un cliquer/glisser d'un ou plusieurs fichiers sur un dossier. Pour ouvrir un fichier
+    depuis un dossier virtuel, double-cliquez dessus ou sélectionnez le puis appuyez sur <b>ENTER</b>. Vous
+    pouvez de la sorte ouvrire plusieurs fichiers à la fois en les sélectionnant. Notez enfin que les dossiers
+    et leurs contenus sont sauvegardés lorsque vous quittez Jext.
+  </paragraph>
+
+</xtiny-doc-page>
+
+<!-- End of Jext documentation -->

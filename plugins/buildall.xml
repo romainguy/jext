@@ -1,0 +1,59 @@
+<project name="allplugins" default="compile" basedir=".">
+  <description>
+    Builds all core Jext plugins.  Uses ant-contrib:  http://ant-contrib.sourceforge.net
+  </description>
+
+  <taskdef resource="net/sf/antcontrib/antcontrib.properties"/>
+  
+  <target name="compile">
+    <antcall target="each">
+      <param name="target" value="compile" />
+    </antcall>
+  </target>
+  
+  <target name="compiledebug">
+    <antcall target="each">
+      <param name="target" value="compiledebug" />
+    </antcall>
+  </target>
+  
+  <target name="jar">
+    <antcall target="each">
+      <param name="target" value="jar" />
+    </antcall>
+  </target>
+  
+  <target name="clean">
+    <antcall target="each">
+      <param name="target" value="clean" />
+    </antcall>
+  </target>
+  
+  <!-- Pass each file found in the base directory to the uncle task -->
+  <target name="each">
+    <foreach target="uncle" param="plugin" inheritall="false">
+      <fileset dir="${basedir}" includes="*" />
+      <param name="target" value="${target}" />
+    </foreach>
+  </target>
+  
+  <!-- Verify that the plugin property represents a directory -->
+  <target name="checkdir">
+    <condition property="plugin.isdir">
+      <and>
+        <isset property="plugin" />
+        <available file="${plugin}" type="dir" />
+      </and>
+    </condition>
+  </target>
+  
+  <!-- Uncle invokes Ant! -->
+  <target name="uncle" depends="checkdir" if="plugin.isdir">
+    <basename file="${plugin}" property="plugin.pathstripped"/>
+    <echo message="Invoking target ${target} for ${plugin.pathstripped} plugin..." />
+    <ant dir="${basedir}" target="${target}">
+      <property name="plugin" value="${plugin.pathstripped}" />
+    </ant>
+  </target>
+  
+</project>

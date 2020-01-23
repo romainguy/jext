@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE xtiny-doc SYSTEM "../dtd/xtiny-doc.dtd" >
+
+<!--
+  -
+  - Jext documentation source document
+  - Based on xtiny-doc DTD
+  -
+  - DTD:xtiny-doc and XSL:xtiny-doc
+  - are (C)1999 Romain Guy
+  -
+  - Last updated: 12/07/2000 - 16:41:35
+  -
+  -->
+
+<xtiny-doc author="Romain Guy"
+           name=""
+           version=""
+           copyright="Jext is (C)2001 Romain Guy. Distibuted under GPL-2 license."
+           email="romain.guy@jext.org"
+           url="http://www.jext.org"
+           title="Jext Documentation"
+           update="09/30/2001">
+
+  <img src="jext.gif" width="480" height="200" alt="Jext" />
+
+  <sections-list title="Choose a language">
+    <section name="English" target="en/index.html" />
+    <section name="French" target="fr/index.html" />
+  </sections-list>
+</xtiny-doc>
+
+<!-- End of Jext documentation -->

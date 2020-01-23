@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE xtiny-doc-page SYSTEM "../dtd/xtiny-doc-page.dtd" >
+
+<!--
+  -
+  - Jext documentation source document
+  - Based on xtiny-doc DTD
+  -
+  - DTD:xtiny-doc and XSL:xtiny-doc
+  - are (C)1999 Romain Guy
+  -
+  - Last updated: 12/02/2001 - 22:16:23
+  -
+  -->
+
+<xtiny-doc-page author="Romain Guy"
+           update="12/02/2001"
+           name="Jext Menu"
+           title="Jext : Jext Menu"
+           prev="jext-menus-plugins.html"
+           next="jext-editor.html">
+
+  <paragraph title="Overview">
+    The <b>Jext</b> menu contains items specific to Jext (version and plugin information).
+  </paragraph>
+
+  <menu title="Contents">
+    <item name="About Jext">
+      Displays the Jext "about" box. It contains useful when you want to report a bug 
+      since it shows the Jext version and build. The Jext version follows this format:
+      major.minor.revision (ex: 2.6.1). The build number is the more important of the two 
+      because it is more precise. The Build number follows this format:
+      major.minor.revision.fix. Bugs will be fixed more quickly if you specify the build number.
+    </item>
+    <item name="About Plugins">
+      Displays a dialog which lists the installed plugins, their names, their release numbers,
+      and their authors, useful when you need to report a bug to the plugin author. You
+      can also enable/disable plugins by ticking/unticking the check boxes on the left.
+    </item>
+  </menu>
+</xtiny-doc-page>
+
+<!-- End of Jext documentation -->

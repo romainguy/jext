@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<menu name="XML" modes="html">
+  <menu name="DTD">
+    <item name="ATTLIST">&lt;!ATTLIST |tag attribute #MODIF &gt;</item>
+    <item name="DOCTYPE">&lt;!DOCTYPE |root [\n\n]&gt;</item>
+    <item name="DOCTYPE (System)">&lt;!DOCTYPE |root SYSTEM "file.dtd" &gt;</item>
+    <item name="ELEMENT">&lt;!ELEMENT name (|) &gt;</item>
+  </menu>
+</menu>

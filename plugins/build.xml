@@ -1,0 +1,94 @@
+<project name="plugins" default="compile" basedir=".">
+
+  <description>
+    Builds the specified Jext plugin.
+  </description>
+
+  <!--<property environment="env" />-->
+  <property name="debug" value="off" />
+  <property name="optimize" value="on" />
+  <property file="../version.properties" />
+
+  <!-- Verify a plugin was specified and it is a directory; if so set properties. -->
+  <target name="init" unless="init.done">
+    <fail message="A plugin name must be specified." unless="plugin" />
+    <available property="pluginfound" file="${plugin}" type="dir" />
+    <fail message="Unable to locate plugin directory ${plugin}." unless="pluginfound" />
+    <!--<available property="jextfound" file="${env.JEXT_HOME}" type="dir" />-->
+    <available property="jextfound" file="../../lib/jext-{version}.jar" />
+    <fail message="Unable to locate JEXT_HOME." unless="jextfound" />
+    <available property="antfileexists" file="${plugin}/build.xml" />
+
+    <property name="jext.home" value="../.." />
+    <property name="lib.dir" value="${jext.home}/bin/plugins" />
+    <property name="init.done" value="true" />
+  </target>
+
+  <target name="jardebug">
+    <antcall target="jar">
+      <param name="debug" value="on"/>
+      <param name="optimize" value="off"/>
+    </antcall>
+  </target>
+  
+  <target name="initnoantfile" unless="antfileexists">
+    <property name="build.dir" value="${plugin}/build" />
+    
+    <path id="build.classpath">
+      <fileset dir="${jext.home}/lib" includes="*.jar" />
+      <fileset dir="${lib.dir}" includes="*.jar" />
+    </path>
+  </target>
+  
+  <!-- Compile without a separate build file -->
+  <target name="compilenoantfile" depends="init,initnoantfile" unless="antfileexists">
+    <mkdir dir="${build.dir}" />
+    <javac srcdir="${plugin}" destdir="${build.dir}"
+           classpathref="build.classpath"
+           debug="${debug}" deprecation="off" optimize="${optimize}">
+    </javac>
+  </target>
+  
+  <!-- Compile with a separate build file -->
+  <target name="compilewithantfile" depends="init" if="antfileexists">
+    <ant dir="${plugin}" target="compile" />
+  </target>
+  
+  <target name="compiledebug">
+    <antcall target="compile">
+      <param name="debug" value="on"/>
+      <param name="optimize" value="off"/>
+    </antcall>
+  </target>
+
+  <target name="compile" depends="compilenoantfile,compilewithantfile" />
+  
+  <!-- Jar without a separate build file -->
+  <target name="jarnoantfile" depends="compilenoantfile" unless="antfileexists">
+    <jar jarfile="${lib.dir}/${plugin}.jar"
+         filesonly="true">
+      <fileset dir="${build.dir}" />
+      <fileset dir="${plugin}" excludes="**/*.java,build/*" />
+    </jar>
+  </target>
+  
+  <!-- Jar with a separate build file -->
+  <target name="jarwithantfile" depends="compilewithantfile" if="antfileexists">
+    <ant dir="${plugin}" target="jar" />
+  </target>
+  
+  <target name="jar" depends="jarnoantfile,jarwithantfile" />
+  
+  <!-- Clean without a separate build file -->
+  <target name="cleannoantfile" depends="init,initnoantfile" unless="antfileexists">
+    <delete dir="${build.dir}"/>
+  </target>
+  
+  <!-- Clean with a separate build file -->
+  <target name="cleanwithantfile" depends="init" if="antfileexists">
+    <ant dir="${plugin}" target="clean" />
+  </target>
+
+  <target name="clean" depends="cleannoantfile,cleanwithantfile" />
+  
+</project>

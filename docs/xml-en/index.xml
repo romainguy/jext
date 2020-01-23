@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE xtiny-doc SYSTEM "../dtd/xtiny-doc.dtd" >
+
+<!--
+  -
+  - Jext documentation source document
+  - Based on xtiny-doc DTD
+  -
+  - DTD:xtiny-doc and XSL:xtiny-doc
+  - are (C)1999 Romain Guy
+  -
+  - Last updated: 12/02/2001 - 22:15:09
+  -
+  -->
+
+<xtiny-doc author="Romain Guy"
+           name=""
+           version=""
+           copyright="Jext is (C)2001 Romain Guy. Distibuted under GPL-2 license."
+           email="romain.guy@jext.org"
+           url="http://www.jext.org"
+           title="Jext Documentation"
+           update="12/02/2001">
+
+  <img src="../jext.gif" width="480" height="200" alt="Jext" />
+
+  <paragraph title="Special thanks">
+    I would like to warmly thank all the people who contributed to Jext by providing source code
+    or brilliant ideas: <b>Slava Pestov</b> and <b>Mike Dillon</b> (for their numerous parts of
+    code included in Jext), <b>Aaron Miller</b> (for his support, his help in correcting the
+    Jext documentation, his CodeMaster plugin and his help on the Jext maintainance),
+    <b>Matthew Allbrecht</b> (for having written the two first Jext plugins and for his
+    improvments on FastTyper - renamed HyperTyper when ported as plugin -), <b>Scott Bellamy</b>
+    (for his Print plugin and his support and ideas), <b>Matthew Benson</b> (various bug fixes
+    and improvments), <b>Bogdan Mitu</b> (plugins/modes association), <b>Steve Lawson</b> (toolbar hack),
+    <b>Benoit Rigaud &amp; Cyril Legrand</b> (splash screens), <b>Blake Winton</b> (templates
+    idea), <b>Scott Wyatt and Barranger Ridler</b> (mouse wheel support),
+    <b>Ian D. Stewart</b> (file dialog caching), <b>Grant Stead</b> (XML Workspaces) and <b>Julien Ponge</b>
+    (memory).
+  </paragraph>
+
+  <paragraph title="Requirements">
+    Jext runs on any Java Virtual Machine that supports Sun's JVM 1.2 specification or better.
+  </paragraph>
+  <paragraph>
+    Jext comes packaged with several start scripts. If you are running under Un*x, run jext,
+    NetWare 5 users should run jext.ncf. Windows users should run jext.exe, jext.js, or jext.bat.
+  </paragraph>
+  <paragraph title="Overview">
+    Jext is a powerful, pure Java text editor primarily targeted for use by programmers. 
+    For this reason, Jext provides many useful programming functions: syntax colorization, auto
+    indentation, a source code browser, a class browser, and an integrated console. Other users will
+    find some additional advanced Jext functions useful. These include: HTML editing, the ability
+    to send mail directly, scripting, and a configurable clip library. Lastly, Jext is fully
+    customizable with the help of plugins and XML configuration files. This enables anyone to
+    easily translate Jext from English into other languages.
+  </paragraph>
+  <paragraph>
+    Jext is full of useful shortcuts which will help improve your productivity. After having 
+    read this documentation, you will be able to make the most of all of Jext's many features.
+  </paragraph>
+
+  <sections-list title="Sections">
+    <section name="Menus" target="jext-menus.html" />
+      <sections-list>
+        <section name="File" target="jext-menus-file.html" />
+        <section name="Edit" target="jext-menus-edit.html" />
+        <section name="Search" target="jext-menus-search.html" />
+        <section name="Tools" target="jext-menus-tools.html" />
+        <section name="Plugins" target="jext-menus-plugins.html" />
+        <section name="Jext" target="jext-menus-jext.html" />
+      </sections-list>
+    <section name="Editor" target="jext-editor.html" />
+    <section name="Search And Replace" target="jext-search.html" />
+    <section name="Console" target="jext-console.html" />
+    <section name="XInsert" target="jext-xinsert.html" />
+    <section name="Workspaces" target="jext-workspaces.html" />
+    <section name="Bookmarks" target="jext-vf.html" />
+    <section name="Options" target="jext-options.html" />
+    <section name="Templates" target="jext-templates.html" />
+    <section name="Scripts" target="jext-scripts.html" />
+    <section name="Plugins" target="jext-plugins.html" />
+  </sections-list>
+</xtiny-doc>
+
+<!-- End of Jext documentation -->

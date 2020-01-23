@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE xtiny-doc-page SYSTEM "../dtd/xtiny-doc-page.dtd" >
+
+<!--
+  -
+  - Jext documentation source document
+  - Based on xtiny-doc DTD
+  -
+  - DTD:xtiny-doc and XSL:xtiny-doc
+  - are (C)1999 Romain Guy
+  -
+  - Last updated: 12/02/2001 - 23:08:19
+  -
+  -->
+
+<xtiny-doc-page author="Romain Guy"
+           update="12/02/2000"
+           name="Jext : Workspaces"
+           title="Workspaces"
+           prev="jext-xinsert.html"
+           next="jext-vf.html">
+
+  <paragraph title="Overview">
+    Workspaces are an easy and efficient way to manage your documents within Jext. Each workspace can contain
+    a different set of files. The workspaces panel displays a list and two buttons. By default, the list contains an item called "Default".
+    This is the default workspace, in which Jext will load files from the command line. You can create and remove
+    workspaces by using the buttons.
+  </paragraph>
+
+  <paragraph title="Using the workspaces">
+    To create a new workspace, simply click the first button. You'll be asked the workspace name. You can enter
+    anything in the input dialog. Yet, you cannot create two workspaces with same name. The second
+    button removes the selected workspace and closes all its contents.
+  </paragraph>
+  <paragraph>
+    Files are opened within the selected workspace, linking them to that workspace. Whenever
+    you click onto a workspace, the set of open files changes. To remove a file from the 
+    current workspace, simply close it using the toolbar, the file menu or the popup menu. 
+    To add a file to the current workspace, just open it. Note you can drag and drop files 
+    over a workspace to open them. The workspaces and their contents are saved from one
+    session to the next.
+  </paragraph>
+    
+</xtiny-doc-page>
+
+<!-- End of Jext documentation -->

@@ -1,0 +1,47 @@
+#!/bin/bash
+
+
+#  
+# If no JAVA_HOME define ==> We ahve a problem
+if [${JAVA_HOME} == ""];
+then
+    echo "Define first the JAVA_HOME variable"
+    exit 1
+fi
+
+# Defining some variables
+JAVA_BIN=${JAVA_HOME}/bin/java
+MAX_MEM=32M
+MAIN_CLASS=org.jext.Jext 
+
+
+# Assuming we are in the bin directory 
+# Home is one level up.
+if [${JEXT_HOME} == ""];
+then
+  CURRENT_DIR=`pwd`
+  JEXT_HOME=${CURRENT_DIR}/..
+fi
+
+JEXT_LIB=${JEXT_HOME}/lib
+echo CURRENT_DIR : ${CURRENT_DIR}
+echo JEXT_HOME : ${JEXT_HOME}
+echo JEXT_LIB : ${JEXT_LIB}
+
+CP=${JEXT_LIB}
+for file in ${JEXT_LIB}/*
+do
+    # File exist and is not empty, 
+    # we can do smthg with it
+    if  [ -s ${file} ] ;
+    then
+	CP=${CP}:${file}
+    else
+	echo "We did not used ${file}"
+    fi
+done
+echo "CP ${CP}"
+
+echo "${JAVA_BIN} -Xmx${MAX_MEM} -Dpython.path=${JEXT_HOME}/lib/Lib -classpath ${CP} org.jext.Jext"
+
+${JAVA_BIN} -Xmx${MAX_MEM} -Dpython.path=${JEXT_HOME}/lib/Lib -classpath ${CP} org.jext.Jext &

@@ -1,0 +1,20 @@
+<!ELEMENT xmenubar (plugins | menu)* >
+  <!ELEMENT menu (recents? | templates? | submenu | item | separator)* >
+    <!ATTLIST menu label CDATA #REQUIRED
+                   ID CDATA #IMPLIED
+                   debug (yes | no) "no" >
+  <!ELEMENT plugins EMPTY >
+    <!ATTLIST plugins label CDATA #REQUIRED >
+  <!ELEMENT submenu (item | separator)* >
+    <!ATTLIST submenu label CDATA #REQUIRED >
+  <!ELEMENT recents EMPTY >
+    <!ATTLIST recents label CDATA #REQUIRED >
+  <!ELEMENT templates EMPTY >
+  <!ELEMENT item EMPTY >
+    <!ATTLIST item label CDATA #REQUIRED
+                   action CDATA #REQUIRED
+                   picture CDATA #IMPLIED
+                   enabled (yes | no) "yes"
+                   debug (yes | no) "no" >
+  <!ELEMENT separator EMPTY >
+    <!ATTLIST separator text CDATA #IMPLIED >

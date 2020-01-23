@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <menu name="Java Script" modes="javascript html">
+
+    <menu name="Ready Scripts">
+      <item name="Save from frame catch">&lt;SCRIPT LANGUAGE="javascript"&gt;\n&lt;!--\n// Load me in a new window if caught in a frame\nif (self != top)\n  top.location.href = self.location.href;\n// --&gt;\n&lt;/SCRIPT&gt;</item>
+      <item name="Get screen resolution">&lt;SCRIPT LANGUAGE="javascript"&gt;\n&lt;!--\n// Save screen width in x_res and screen height in y_res\nvar x_res = screen.width;\nvar y_res = screen.height;\n// --&gt;\n&lt;/SCRIPT&gt;</item>
+      <item name="Check browser">&lt;SCRIPT LANGUAGE="javascript"&gt;\n&lt;!--\nname = navigator.appName;\nversion = navigator.appVersion;\nif (name == "Microsoft Internet Explorer")\n{\n  if (parseInt(version.substring(0, 1)) &lt; 4)\n    document.location.href = "error.html";\n} else if (name == "Netscape") {\n  if (parseInt(version.substring(0, 1)) &lt; 3)\n    document.location.href = "error.htm";\n}\n// --&gt;\n&lt;/SCRIPT&gt;</item>
+    </menu>
+
+    <menu name="Misc">
+      <item name="write">document.write("|")</item>
+      <item name="writeln">document.writeln("|")</item>
+      <item name="Function">function |()\n{\n\t\n}</item>
+      <item name="alert">alert("|")</item>
+      <item name="confirm">if(confirm("|")){\n\t\n}</item>
+      <item name="prompt"> = prompt("|",)</item>
+      <item name="userAgent">navigator.userAgent</item>
+      <item name="appName">navigator.appName</item>
+      <item name="appVersion">navigator.appVersion</item>
+    </menu>
+
+    <menu name="HTML Links">
+      <item name="void(0)">&lt;a href=javascript:void(0) onClick="|"&gt;</item>
+      <item name="back">&lt;a href=javascript:history.go(-1)&gt;</item>
+      <item name="forward">&lt;a href=javascript:history.go(+1)&gt;</item>
+    </menu>
+
+    <menu name="Conditions">
+      <item name="if (short)">if (|)\n\t</item>
+      <item name="if">if (|)\n{\n\t\n}</item>
+      <item name="else if">else if (|)\n{\n\t\n}</item>
+      <item name="else">else\n{\n\t|\n}</item>
+      <item name="switch">switch()\n{\n\tcase |:\n\t\t\n\t\tbreak;\n\tdefault:\n\t\t\n\t\tbreak;\n}</item>
+    </menu>
+
+    <menu name="Loops">
+      <item name="for (infinate)">for ( ; ; )\n{\n\t|\n}</item>
+      <item name="for">for (var i = 0;i &lt; |; i++)\n{\n\t\n}</item>
+      <item name="while">while (|)\n{\n\t\n}</item>
+      <item name="do">do{\n\t|\n}while ()</item>
+    </menu>
+
+    <menu name="objects">
+      <item name="Array">Array</item>
+      <item name="Date">Date</item>
+      <item name="document">document</item>
+      <item name="history">history</item>
+      <item name="Math">Math</item>
+      <item name="window">window</item>
+    </menu>
+
+    <menu name="Statements">
+      <item name="break">break</item>
+      <item name="continue">continue</item>
+      <item name="return">return</item>
+      <item name="var">var</item>
+      <item name="with">with (|){\n\t\n}</item>
+    </menu>
+  </menu>

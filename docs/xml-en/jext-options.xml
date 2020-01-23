@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE xtiny-doc-page SYSTEM "../dtd/xtiny-doc-page.dtd" >
+
+<!--
+  -
+  - Jext documentation source document
+  - Based on xtiny-doc DTD
+  -
+  - DTD:xtiny-doc and XSL:xtiny-doc
+  - are (C)1999 Romain Guy
+  -
+  - Last updated: 12/02/2001 - 22:45:35
+  -
+  -->
+
+<xtiny-doc-page author="Romain Guy"
+           name="Options Dialog"
+           update="12/02/2001"
+           title="Jext : Options"
+           prev="jext-vf.html"
+           next="jext-templates.html">
+
+  <paragraph title="Overview">
+    The <b>options dialog</b> contains all the Jext settings. On the left part of the window
+    is a tree which enables access the different settings categories. The right
+    part contains the settings panel which changes when you click on a category in the tree
+    on the left of the window. At the bottom there are three buttons: <b>Save</b> saves your
+    settings, applies them and closes the window, <b>Apply</b> only saves and applies settings
+    and <b>Cancel</b> closes the window.
+  </paragraph>
+
+  <menu title="Jext Options">
+    <submenu title="General">
+      <item name="Default prompt">
+        This setting sets the console prompt. There are four default prompts: DOS, Linux, Jext
+        and Solaris. Clicking one of these items will change the next setting content. See
+        the <a href="jext-console.html">Console</a> section for more informations about
+        prompts.
+      </item>
+      <item name="Prompt">
+        You can edit this field to customize the console prompt. Some examples are provided in
+        the previous setting. See the Console section for more informations.
+      </item>
+      <item name="Max recent files">
+        This setting allows you to set the maximum number of files shown in the menu File-Recents.
+      </item>
+      <item name="Save delay">
+        Sets the delay in seconds between each autosave. Used only when auto save is enabled.
+      </item>
+      <item name="Templates directory">
+        Sets the directory in which Jext will look for templates files.
+      </item>
+      <item name="Opens args in new window">
+        If the Jext loader server is enabled, using this option will cause arguments passed
+        to Jext launching script to open files within a new window.
+      </item>
+      <item name="Enabled scripting debugging">
+        If you check this box, Jext displays the contents of the Dawn stack in the log
+        window when a script exits. You should keep it checked if you write scripts.
+      </item>
+      <item name="Auto save">
+        If checked, Jext will automatically save all the opened files. The delay between each
+        save can be set.
+      </item>
+      <item name="Save session">
+        If this option is checked, Jext will automatically save the workspaces at the end of the session.
+      </item>
+      <item name="Auto check version">
+        As new Jext versions are often released, you can ask Jext to check if a newer version
+        has been released. If you check this setting, Jext will attempt to log onto its web site
+        on startup. If the logon succeeds, and if a newer version is available, Jext displays
+        a summary of the changes in the new version and displays the download URL.
+      </item>
+      <item name="Save console history">
+        Each time a command is entered, the console keeps it in memory. You can decide to save
+        those commands from one session to the next by using this option.
+      </item>
+      <item name="Show full filename">
+        This option causes Jext to display the full filename of the current file in the title bar.
+      </item>
+      <item name="Tip of the day">
+        On startup, Jext can display a tip in the bottom status bar. If checked a tip is also
+        shown each time you Save/Apply options.
+      </item>
+      <item name="Show left tabbed pane">
+        To increase the size of the text area, you can hide the left tabbed pane which contains the
+        XTree.
+      </item>
+      <item name="Show top tabbed pane">
+        You can also hide the top tabbed pane which contains the console.
+      </item>
+    </submenu>
+    <submenu title="Loading">
+      <item name="Load classes on startup">
+        You can make Jext load some classes on startup so that you don't need to  wait for 
+        them to be loaded during execution.
+      </item>
+      <item name="Load XInsert tool">
+        If you disable the loading of the XInsert tool, startup will be much faster.
+      </item>
+      <item name="Load Console tool">
+        If you disable the loading of the Console tool, startup will be much faster.
+      </item>
+    </submenu>
+    <submenu title="User Interface">
+      <item name="Select skin">
+	Jext now offers you the ability to select different UI skins. You'll find here the standard Swing ones, the Jext one(previously known as the "Jext UI theme") and, if installed, the Kunststoff and the ones for SkinLF(for this, one for each valid theme in &lt;JextHome&gt;\bin\themes). When you change skin and <b>Apply</b> or <b>Save</b> settings you'll see the new one(even if there could be some view problems until the restart).
+      </item>
+      <item name="Icon style">
+        Jext offers five different icon sets. <b>Tiny</b> is default icon set, the one you see
+        the first time you launch Jext, <b>Tiny Swing</b> is the 16x16 Swing icons set,
+        <b>20x20</b> is a well known icons set, <b>Swing</b> is the official Swing icons set and
+        <b>GNOME</b> is a 24x24 GNOME style icons set.
+      </item>
+      <!--<item name="Anti-aliased text">
+        Activates the anti-aliasing of the text within the edit area. Rendering is much better yet slower.
+      </item>-->
+      <!--<item name="Apply Jext UI theme">
+        Jext can use its own Metal theme which renders thin fonts.
+      </item>-->
+      <item name="Flat menus">
+        Default Jext menus are flattened. Unchecking this option makes menus look like standard
+        Swing ones.
+      </item>
+      <item name="Toolbar buttons rollover">
+        Activates or deactivates the rollover effect in the toolbar.
+      </item>
+      <item name="Highlights buttons">
+        Jext buttons are by default blue highlighted when the mouse moves over them. You can deactivate
+        this behavior.
+      </item>
+      <item name="Titled separators">
+        Activating this option will cause display of entitled menu separators for better visibility.
+      </item>
+      <item name="Show toolbar">
+        You can hide the toolbar by unchecking this box. You are advised to keep the toolbar visible.
+      </item>
+      <item name="Gray toolbar">
+        This option displays a grayed toolbar when checked. Passing the mouse pointer over the 
+        buttons displays them in colors.
+      </item>
+    </submenu>
+
+    <submenu title="Editor">
+      <item name="Auto scroll">
+        This settings defines how many lines Jext will scroll when you click on the topmost or
+        bottom-most text area line.
+      </item>
+      <item name="Interval highlight">
+        Jext can highlight lines. If you enter 5 for instance, Jext will highlight
+        every fifth line.
+      </item>
+      <item name="Wrap guide offset">
+        Enter the count of characters at which the wrap guide is to be placed.
+      </item>
+      <item name="File encoding">
+        This sets the character encoding used on save.
+      </item>
+      <item name="Font">
+        This option lets you choose the default editor font.
+      </item>
+      <item name="Tab size">
+        Sets the tabs size.
+      </item>
+      <item name="Colorizing mode">
+        Allows you to select the syntax colorizing mode for the current file.
+      </item>
+      <item name="Line separator">
+        Defines the type of the line separator used on save.
+      </item>
+      <item name="Split orientation">
+        Defines the split orientation when you activate the split editor option.
+      </item>
+      <item name="Split editor">
+        If checked, the text area is split so that you can edit two places in the same file.
+        Note you can split/unsplit through the tools menu, the popup menu or the F6 key.
+      </item>
+      <item name="Enable interval highlighting">
+        If checked, the interval highlight option will be used to highlight a line every
+        x lines.
+      </item>
+      <item name="Enable wrap quide">
+        If checked, the wrap guide will be shown within the text area.
+      </item>
+      <item name="Block caret">
+        Displays a block caret.
+      </item>
+      <item name="Blinking caret">
+        Makes the caret blink.
+      </item>
+      <item name="Line highlighting">
+        If you select this option, the line with caret on it is highlighted.
+      </item>
+      <item name="End of lines markers">
+        If you select this option, end of lines are marked with a dot.
+      </item>
+      <item name="Indent on TAB">
+        This option activates auto indent on TAB press.
+      </item>
+      <item name="Indent on ENTER">
+        This option activates auto indent on ENTER press.
+      </item>
+      <item name="Soft tabs">
+        Using this option inserts spaces instead of a tab character when you press TAB.
+      </item>
+      <item name="Tab stops">
+        Enables the use of tab stops.
+      </item>
+      <item name="Smart HOME/END">
+        By default HOME and END keys simply put your caret on start and end of the line. This option
+        improves upon this behaviour. Pressing HOME once puts the caret on the beginning of the line, press
+        it twice and the caret is put on beginning of the current page, press it a third time
+        and the caret goes to beginning of the document.
+      </item>
+      <item name="Default dir from active file">
+        If checked, Jext will use the directory which contains the current editing file as the default
+        directory in open and save dialogs.
+      </item>
+      <item name="Use selection as search pattern">
+        If you use find or replace dialog and if some text is selected in the text area, this
+        text will be automatically used as search pattern.
+      </item>
+      <item name="Word jumping goes over spaces">
+	This option makes the C+Left or C+Right keystrokes skip together a word and the space after it.
+      </item>
+    </submenu>
+
+    <submenu title="Print">
+      <item name="Font">
+        Selects the default font used for printing.
+      </item>
+      <item name="Print line numbers">
+        Prints the line number in front of each printed line of text.
+      </item>
+      <item name="Print header">
+        Prints the header (file name...).
+      </item>
+      <item name="Print footer">
+        Prints the footer. Available for colorized printing only.
+      </item>
+      <item name="Print colors and styles">
+        Print colors and styles.
+      </item>
+      <item name="Layout">
+        Sets the printing layout. Available in non-colorized printing only.
+      </item>
+    </submenu>
+
+    <submenu title="Gutter">
+      <item name="Gutter width">
+        When you expand the gutter, this settings defines the default width of the gutter.
+      </item>
+      <item name="Gutter border width">
+        Defines the width of the gutter border.
+      </item>
+      <item name="Line highlight interval">
+        In the gutter, lines numbers are highlighted. Here you can set the interval between
+        each highlight.
+      </item>
+      <item name="Line numbers alignment">
+        You can display lines numbers on left, right or center of the gutter.
+      </item>
+      <item name="Gutter font">
+        Let you choose the font used to display lines numbers.
+      </item>
+      <item name="Gutter expanded by default">
+        If checked, relieves you from having to double click the gutter border each for each file to
+        expand it.
+      </item>
+      <item name="Line numbering enabled">
+        Enables/disables lines numbering in the gutter.
+      </item>
+    </submenu>
+
+    <submenu title="Colors &amp; Styles">
+      <item name="(element)">
+        In this settings panel, you can change the color of many Jext interface
+        elements. You can also modify the syntax colorizing modes colors.
+      </item>
+    </submenu>
+
+    <submenu title="Shortcuts">
+      <item name="(menu item)">
+        You can define the shortcut for each menu item within Jext, even plugins menu items.
+        Simply double click on the shortcut cell in front of a menu item and type in the
+        new shortcut. Then press ENTER to set the shortcut.
+      </item>
+    </submenu>
+
+    <submenu title="Filter">
+      <item name="(syntax mode)">
+        Jext can select the appropriate syntax colorizing mode when you open a file. For that,
+        it uses file filters which can be changed in this panel. To edit a filter, simply double
+        click it. Filters are Un*x glob filters. Press ENTER to set the filter.
+      </item>
+    </submenu>
+
+    <submenu title="Language">
+      <item name="[Language]">
+        You can change the language used by Jext. Simply select one from the list, save the options
+        and restart Jext.
+      </item>
+    </submenu>
+
+    <submenu title="Security">
+      <item name="Enable Jext loader server">
+        Jext uses a small server to open all its instances in the same JVM to save memory. Yet, this
+        server opens a secure door to the external computers. If you are connected to a network
+        and do not trust Jext security (which is quite strong), you should disable
+        this option. Note that Jext will warn you if anybody attempts to break into your system
+        through the Jext server.
+      </item>
+    </submenu>
+  </menu>
+
+  <menu title="Plugins Options">
+    <item name="(plugin)">
+      Each plugin can add its own settings panel or even several panels. In this last case, a new
+      node appears in the list.
+    </item>
+  </menu>
+</xtiny-doc-page>
+
+<!-- End of Jext documentation -->

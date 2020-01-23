@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE xtiny-doc-page SYSTEM "../dtd/xtiny-doc-page.dtd" >
+
+<!--
+  -
+  - Jext documentation source document
+  - Based on xtiny-doc DTD
+  -
+  - DTD:xtiny-doc and XSL:xtiny-doc
+  - are (C)1999 Romain Guy
+  -
+  - Last updated: 12/02/2001 - 22:15:37
+  -
+  -->
+
+<xtiny-doc-page author="Romain Guy"
+           update="12/02/2001"
+           name="Jext : Editor"
+           title="Editor"
+           prev="jext-menus-jext.html"
+           next="jext-search.html">
+
+  <paragraph title="Overview">
+    The Jext text area is familiar to anyone who is used to a modern text editor.
+    To add text, simply click in the area and enter your desired text. Beyond this basic usage,
+    the Jext text area has many other useful features which are described below.
+  </paragraph>
+
+  <paragraph title="Popup menu">
+    A right click in the text area will open the text area's popup menu. The popup menu
+    contains many items from the Edit menu as well as others such as Search and Tools.
+    Using the popup menu can increase your productivity.
+  </paragraph>
+
+  <paragraph title="Key shortcuts">
+    As a matter of fact, Jext's text area accepts several key shortcuts which will greatly
+    help you in writing your text. Shortcuts make selecting and moving text easier. Here is
+    a list of them:
+  </paragraph>
+
+  <menu>
+    <item name="TAB">
+      Indents the selected block of code.
+    </item>
+    <item name="S+TAB">
+      De-indents selected block.
+    </item>
+    <item name="CA+UP">
+      Scrolls up the text view by one line without changing the caret position relative
+      to the text.
+    </item>
+    <item name="CA+DOWN">
+      Scrolls down the text view by one line without changing the caret position relative
+      to the text.
+    </item>
+    <item name="CA+PAGE_UP">
+      Scrolls up the text view by one page without changing the caret position relative
+      to the text.
+    </item>
+    <item name="CA+PAGE_DOWN">
+      Scrolls down the text view by one page without changing the caret position relative
+      to the text.
+    </item>
+    <item name="C+UP">
+      Goes to the previous line, if one exists, starting at the first non-whitespace character.
+    </item>
+    <item name="C+DOWN">
+      Goes to the next line, if one exists, starting at the first non-whitespace character.
+    </item>
+    <item name="C+LEFT">
+      Jumps to the beginning of previous word. A word can be delimited by whitespace as well 
+      as by other symbols like braces, dots, etc...
+    </item>
+    <item name="C+RIGHT">
+      Jumps to beginning of the next word.
+    </item>
+    <item name="CS+LEFT|RIGHT">
+      Selects up to beginning/end of a word.
+    </item>
+    <item name="CA+LEFT|RIGHT">
+      Acts as C+LEFT|RIGHT but this action is case sensitive. If a word contains capitalized letters,
+      this shortcut will use them as separators. Very useful in programming.
+    </item>
+    <item name="CAS+LEFT|RIGHT">
+      Case sensitive word selection.
+    </item>
+    <item name="C+DELETE">
+      Deletes next word.
+    </item>
+    <item name="C+BACK_SPACE">
+      Deletes previous word.
+    </item>
+    <item name="CA+BACK_SPACE">
+      Deletes previous word, case sensitive.
+    </item>
+    <item name="CAS+DELETE">
+      Deletes next word, case sensitive.
+    </item>
+    <item name="INSERT">
+      Switches between insert and replace modes. Insert mode is the default. While in
+      replace mode, each character typed will overwrite the one under or above the caret 
+      (depending on which caret, block or line respectively, you choose).
+    </item>
+    <item name="HOME">
+      Goes to beginning of the current line. If Smart HOME/END option is activated, pressing
+      this key twice will place your caret at the top of the visible text and pressing it three
+      times will place your caret at the beginning of the document.
+    </item>
+    <item name="C+HOME">
+      Jumps to the beginning of the document.
+    </item>
+    <item name="END">
+      Jumps to the end of the current line. If Smart HOME/END option is activated, pressing
+      this key twice will place your caret to the bottom of the visible text and pressing it three
+      times will place your caret at the end of the document.
+    </item>
+    <item name="C+END">
+      Jumps to the end of the document.
+    </item>
+    <item name="C+TAB">
+      Browses through opened document to the right.
+    </item>
+    <item name="CS+TAB">
+      Browses through opened document to the left.
+    </item>
+    <item name="S+[LEFT | RIGHT | UP | DOWN]">
+      Selects a part of the text. Each <b>S+LEFT</b> or <b>S+RIGHT</b> press will select the 
+      next character whereas <b>S+DOWN</b> and <b>S+UP</b> will include part of an adjacent
+      line. This can be combined with the <b>C</b> key. For instance, <b>SC+LEFT</b> will select
+      the previous word.
+    </item>
+    <item name="C+[MOUSE LEFT BUTTON]">
+      Move the mouse while holding those keys down to make a rectangular selection.
+    </item>
+    <item name="[Dragging a selection]">
+      Moves the selected text from one place to another.
+    </item>
+    <item name="C+[Dragging a selection]">
+      Copies the selected text from one place to another.
+    </item>
+  </menu>
+
+  <paragraph title="Hyper Typer">
+    The standard Jext distribution comes with a plugin called HyperTyper. This plugin helps you
+    to save lots of time and typing. It is very easy to use: you define an abbreviation which
+    stands for a string of text, type the shorthand sequence (the abbreviation), press
+    <b>ESCAPE</b> (this expansion key can be changed in plugins options) and automagically,
+    HyperTyper expands the shorthand sequence into the text you've defined. The defaults 
+    are mainly designed for Java programmers, but because HyperTyper is so flexible, it's suitable to
+    whatever line of work you're in. To add/remove/edit shorthands, click on Plugins-HyperTyper-Manager
+    Window. Transient abbreviations are lost when Jext is closed whereas persistent ones will
+    be available in the next session.
+  </paragraph>
+  <paragraph>
+    To add a new sequence, simply select some text to be stored as expanded text
+    and press <b>C+F5</b> (or click on Plugins-HyperTyper-Create Sequence). A new window appears
+    which allows you to modify the selected text, to choose the type of the abbreviation 
+    (transient or persistent), and to give it an abbreviation.
+  </paragraph>
+
+  <paragraph title="Gutter">
+    Along the left of the text area, you can see a thin grey line which indicates the gutter is present.
+    Double-clicking it or clicking then dragging it will show it. The gutter offers 
+    line numbering of the text area and highlights line numbers every 5 lines. The gutter can
+    be customized in the options menu.
+  </paragraph>
+</xtiny-doc-page>
+
+<!-- End of Jext documentation -->

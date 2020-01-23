@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE xtiny-doc-page SYSTEM "../dtd/xtiny-doc-page.dtd" >
+
+<!--
+  -
+  - Jext documentation source document
+  - Based on xtiny-doc DTD
+  -
+  - DTD:xtiny-doc and XSL:xtiny-doc
+  - are (C)1999 Romain Guy
+  -
+  - Last updated: 09/30/2001 - 20:03:22
+  -
+  -->
+
+<xtiny-doc-page author="Romain Guy"
+           update="09/30/2001"
+           name="Jext : Bureaux"
+           title="Bureaux"
+           prev="jext-xinsert.html"
+           next="jext-vf.html">
+
+  <paragraph title="Présentation">
+    Les bureaux sont un moyen pratique et efficace pour gérer vos documents dans Jext. Chaque bureau peut
+    contenir un ensemble de fichiers et/ou de panneaux divers. Le panneau des bureaux affiche une liste des bureaux
+    disponibles ainsi que deux boutons. La liste contient par défaut un bureau nommé "Principal". C'est dans ce bureau
+    que Jext chargera les fichiers passés en paramètres lors de l'ouverture. Si ce bureau est effacé, il sera automatiquement
+    recréé en cas de bsoin. Vous pouvez créer et supprimer des bureaux grâce aux deux boutons.
+  </paragraph>
+
+  <paragraph title="Utilisation des bureaux">
+    Pour créer un nouveau bureau, cliquez simplement sur le premier bouton. Jext vous demandera alors le nom du
+    bureau. Si un bureau du même nom existe déjà, la création sera annulée. Le second bouton permet de supprimer le
+    bureau couramment sélectionné en fermant tout son contenu.
+  </paragraph>
+  <paragraph>
+    Chaque fichier que Jext ouvrira (à votre instance ou autre) sera placé dans le bureau en cours d'utilisation.
+    Vos fichiers sont ainsi liés à un bureau donné. Chaque fois que vous cliquez sur un des bureaux de la liste,
+    l'ensemble des fichiers ouverts changera. Pour retirer un fichier d'un bureau, fermer le en utilisant la barre
+    de boutons, le menu contextuel des onglets ou le menu "Fichier". Pour ajouter un fichier, vous pouvez également
+    faire un cliquer/glisser sur un bureau. Les bureaux et leurs contenus sont par défaut sauvegardés entre deux
+    lancements de Jext.
+  </paragraph>
+
+</xtiny-doc-page>
+
+<!-- End of Jext documentation -->

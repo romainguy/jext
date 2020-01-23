@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE xproperties SYSTEM "xproperties.dtd" >
+<xproperties>
+ <property name="plugin.PHPPlugin.name" value="PHP" />
+ <property name="plugin.PHPPlugin.author" value="Nicolas Thouvenin" />
+ <property name="plugin.PHPPlugin.version" value="1.1" />
+ <property name="PHP_menu" value="phpbrowse - phpquickopen - phpindenter  phpblocindenter - phpbeautifier phpblocbeautifier - phpcomplete" />
+ <property name="PHP_menu.label" value="PHP" />
+
+ <property name="plugin.PHPPlugin.modes" value="php3" />
+
+  <property name="phpbrowse.label" value="Navigateur de code" />
+  <property name="phpbrowse.shortcut" value="C+p C+b" />
+
+ <property name="phpindenter.label" value="Indenter " />
+
+ <property name="phpblocindenter.label" value="Indenter la séléction" />
+ <property name="phpblocindenter.shortcut" value="C+p C+i" />
+
+ <property name="phpbeautifier.label" value="Beautifier" />
+
+ <property name="phpblocbeautifier.label" value="Beautifier la séléction" />
+ <property name="phpblocbeautifier.shortcut" value="C+p C+p" />
+
+ <property name="phpquickopen.label" value="Ouverture Rapide" />
+ <property name="phpquickopen.shortcut" value="C+p C+o" />
+
+ <property name="phpcomplete.label" value="Compléter la fonction" />
+ <property name="phpcomplete.shortcut" value="C+p C+/" />
+</xproperties>

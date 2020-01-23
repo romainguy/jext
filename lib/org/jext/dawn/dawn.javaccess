@@ -1,0 +1,11 @@
+# dawn.javaccess package - Java Access
+
+org.jext.dawn.javaccess.ClassFunction
+org.jext.dawn.javaccess.ConstructorFunction
+org.jext.dawn.javaccess.FieldFunction
+org.jext.dawn.javaccess.InvokeFunction
+org.jext.dawn.javaccess.MethodFunction
+org.jext.dawn.javaccess.NewFunction
+org.jext.dawn.javaccess.NullFunction
+
+# End of dawn.javaccess package

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE xproperties SYSTEM "xproperties.dtd" >
+<xproperties>
+ <property name="plugin.FunnyBracketsPlugin.name" value="Funny Brackets" />
+ <property name="plugin.FunnyBracketsPlugin.author" value="Nicolas Thouvenin" />
+ <property name="plugin.FunnyBracketsPlugin.version" value="1.0" />
+ <property name="funnybrackets.label" value="Funny Brackets !" />
+ <property name="funnybrackets.shortcut" value="C+e C+b" />
+</xproperties>

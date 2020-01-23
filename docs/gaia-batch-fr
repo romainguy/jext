@@ -1,0 +1,31 @@
+# Gaïa batch file for Jext documentation
+# Gaïa is (C)1999 Romain Guy
+
+.indent
+.defaultXSL xml-fr\xtiny-doc-page.xsl
+
+# index
+xml:xml-fr\index.xml xsl:xml-fr\xtiny-doc.xsl html:..\..\docs\fr\index.html
+
+# menus files
+xml:xml-fr\jext-menus.xml         html:..\..\docs\fr\jext-menus.html
+xml:xml-fr\jext-menus-file.xml    html:..\..\docs\fr\jext-menus-file.html
+xml:xml-fr\jext-menus-edit.xml    html:..\..\docs\fr\jext-menus-edit.html
+xml:xml-fr\jext-menus-search.xml  html:..\..\docs\fr\jext-menus-search.html
+xml:xml-fr\jext-menus-tools.xml   html:..\..\docs\fr\jext-menus-tools.html
+xml:xml-fr\jext-menus-plugins.xml html:..\..\docs\fr\jext-menus-plugins.html
+xml:xml-fr\jext-menus-jext.xml    html:..\..\docs\fr\jext-menus-jext.html
+
+# misc
+xml:xml-fr\jext-editor.xml        html:..\..\docs\fr\jext-editor.html
+xml:xml-fr\jext-search.xml        html:..\..\docs\fr\jext-search.html
+xml:xml-fr\jext-console.xml       html:..\..\docs\fr\jext-console.html
+xml:xml-fr\jext-xinsert.xml       html:..\..\docs\fr\jext-xinsert.html
+xml:xml-fr\jext-workspaces.xml    html:..\..\docs\fr\jext-workspaces.html
+xml:xml-fr\jext-vf.xml            html:..\..\docs\fr\jext-vf.html
+xml:xml-fr\jext-options.xml       html:..\..\docs\fr\jext-options.html
+xml:xml-fr\jext-templates.xml     html:..\..\docs\fr\jext-templates.html
+xml:xml-fr\jext-scripts.xml       html:..\..\docs\fr\jext-scripts.html
+xml:xml-fr\jext-plugins.xml       html:..\..\docs\fr\jext-plugins.html
+
+# End of gaia-batch

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xproperties SYSTEM "xproperties.dtd" >
+
+<xproperties>
+  <!-- ============================================================ -->
+  <!-- FILE MENU SHORTCUTS                                          -->
+  <!-- ============================================================ -->
+  <property name="new.shortcut" value="C+n" />
+  <property name="open.shortcut" value="C+o" />
+  <property name="close.shortcut" value="C+w" />
+  <property name="open.shortcut" value="C+o" />
+  <property name="save.shortcut" value="C+s" />
+  <property name="save_all.shortcut" value="CS+s" />
+  <property name="save_as.shortcut" value="CA+s" />
+  <property name="print.shortcut" value="C+p" />
+  <property name="quit.shortcut" value="C+q" />
+
+  <!-- ============================================================ -->
+  <!-- EDIT MENU SHORTCUTS                                          -->
+  <!-- ============================================================ -->
+  <property name="undo.shortcut" value="C+z" />
+  <property name="redo.shortcut" value="C+y" />
+  <property name="copy.shortcut" value="C+c" />
+  <property name="append_copy.shortcut" value="CA+c" />
+  <property name="cut.shortcut" value="C+x" />
+  <property name="append_cut.shortcut" value="CA+x" />
+  <property name="paste.shortcut" value="C+v" />
+  <property name="filtered_paste.shortcut" value="CA+v" />
+  <property name="reverse_paste.shortcut" value="CS+v" />
+  <property name="select_all.shortcut" value="C+a" />
+    <!-- ========================================================== -->
+    <!-- ANCHOR SUBMENU SHORTCUTS                                   -->
+    <!-- ========================================================== -->
+    <property name="set_anchor.shortcut" value="C+e C+s" />
+    <property name="goto_anchor.shortcut" value="C+e C+g" />
+    <property name="exchange_anchor.shortcut" value="C+e C+x" />
+    <!-- ========================================================== -->
+    <!-- SOURCE CODE SUBMENU SHORTCUTS                              -->
+    <!-- ========================================================== -->
+    <property name="right_indent.shortcut" value="A+RIGHT" />
+    <property name="left_indent.shortcut" value="A+LEFT" />
+    <property name="find_matching_bracket.shortcut" value="C+m" />
+    <!-- ========================================================== -->
+    <!-- TEXT SUBMENU SHORTCUTS                                     -->
+    <!-- ========================================================== -->
+    <property name="to_upper_case.shortcut" value="C+e C+u" />
+    <property name="to_lower_case.shortcut" value="C+e C+l" />
+    <property name="join_lines.shortcut" value="C+e C+j" />
+    <property name="transpose_lines.shortcut" value="C+e C+t" />
+    <property name="complete_word.shortcut" value="C+SPACE" />
+    <property name="complete_word_all.shortcut" value="CS+SPACE" />
+    <!-- ========================================================== -->
+    <!-- ONE CLICK! SUBMENU SHORTCUTS                               -->
+    <!-- ========================================================== -->
+    <property name="end_one_click.shortcut" value="C+e C+e" />
+  <property name="goto_line.shortcut" value="C+g" />
+  <property name="delete_line.shortcut" value="C+d" />
+  <property name="insert_date.shortcut" value="C+i" />
+
+  <!-- ============================================================ -->
+  <!-- SEARCH MENU SHORTCUTS                                        -->
+  <!-- ============================================================ -->
+  <property name="find.shortcut" value="C+f" />
+  <property name="replace.shortcut" value="C+r" />
+  <property name="find_next.shortcut" value="F3" />
+  <property name="find_all.shortcut" value="C+F3" />
+  <property name="replace_next.shortcut" value="F4" />
+  <property name="replace_selection.shortcut" value="C+F4" />
+
+  <!-- ============================================================ -->
+  <!-- SCRIPTS MENU SHORTCUTS                                       -->
+  <!-- ============================================================ -->
+  <property name="python_execute.shortcut" value="F5" />
+  <property name="python_run_script.shortcut" value="CA+F5" />
+  <property name="python_log_window.shortcut" value="CS+F5" />
+  <property name="split_editor.shortcut" value="F6" />
+  <property name="trigger_left_pane.shortcut" value="F7" />
+  <property name="trigger_top_pane.shortcut" value="F8" />
+
+  <!-- ============================================================ -->
+  <!-- JEXT MENU SHORTCUTS                                          -->
+  <!-- ============================================================ -->
+  <property name="about.shortcut" value="F1" />
+  <property name="about_plugins.shortcut" value="F2" />
+
+  <!-- ============================================================ -->
+  <!-- SHORTCUTS                                                    -->
+  <!-- ============================================================ -->
+  <property name="next_tab.shortcut" value="C+TAB" />
+  <property name="previous_tab.shortcut" value="CS+TAB" />
+</xproperties>
+
+<!-- End of jext-keys.props.xml -->

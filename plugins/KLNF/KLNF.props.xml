@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xproperties SYSTEM "xproperties.dtd" >
+
+<xproperties>
+  <property name="plugin.KLNFPlugin.name" value="KLNF" />
+  <property name="plugin.KLNFPlugin.author" value="Romain Guy" />
+  <property name="plugin.KLNFPlugin.version" value="2.0.1" />
+  <property name="plugin.KLNFPlugin.depend.0" value="jext 03.00.00.01" />
+
+  <property name="options.klnf.label" value="Kunststoff LnF" />
+  <property name="klnf.enable.label" value="Enable Kunststoff Look and Feel" />
+  <property name="klnf.enable" value="off" />
+</xproperties>
+
+

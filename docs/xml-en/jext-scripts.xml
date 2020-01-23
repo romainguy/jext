@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE xtiny-doc-page SYSTEM "../dtd/xtiny-doc-page.dtd" >
+
+<!--
+  -
+  - Jext documentation source document
+  - Based on xtiny-doc DTD
+  -
+  - DTD:xtiny-doc and XSL:xtiny-doc
+  - are (C)1999 Romain Guy
+  -
+  - Last updated: 05/26/2001 - 23:24:17
+  -
+  -->
+
+<xtiny-doc-page author="Romain Guy"
+           update="12/02/2001"
+           name="Jext Scripts"
+           title="Scripts"
+           prev="jext-templates.html"
+           next="jext-plugins.html">
+
+  <paragraph title="Overview">
+    Jext offers an internal scripting language called <b>Dawn</b> which can be used to create
+    simple programs. The <b>Dawn</b> scripting language is based on the RPN (<i>Reverse
+    Polish Notation</i>) which is also used on the HP scientific calculators (HP48, HP49...).
+    An RPN based language works with a stack. Each time the parser finds a value (numeric or
+    literal), the value is put on the top of the stack. Each time the parser encounters a
+    function call, it takes values from the stack to make the function work.
+  </paragraph>
+  <paragraph>
+    <b>Note about Python scripts:</b> More information can be found at <a href="http://www.python.org">python.org</a>, and especially for Jython, the version we use.
+    Python scripts can use the variable <b>__jext__</b> which is an instance of <b>JextFrame</b> (i.e Jext window); to see examples of python code, see jext.actions.xml in the source package or inside jext.jar(Jext can open jars, remember!). To use the Jext class, type the following:
+    <code>from org.jext import Jext</code>
+    and then call methods you want(Jext class has no instances).
+  </paragraph>
+  <paragraph>
+    In the <b>Tools</b> menu you'll find three tools useful to handle Dawn scripts. <b>Execute</b>
+    directly executes the content of the text area as a script, <b>Run Script</b> runs a script
+    from an external file and <b>Log Window</b> displays the log window in which scripts can output
+    datas (if the script debugging option is enabled, you'll find the parser stack traces in this
+    window). (There are similar commands for Python, as you can see).
+  </paragraph>
+
+  <paragraph title="Dawn">
+    The Dawn language is very simple. Each line beginning with the sharp (#) character is
+    considered a comment and thus ignored. The peculiarity of this language is that you
+    have to write your code reversed. For instance, to write <b>2 + 2</b> in Dawn you must
+    write <b>2 2 +</b>. Why? Remember Dawn works with a stack. So <b>2 2 +</b> must be read
+    like this": <i>put 2 on the stack, put 2 on the stack, add the two first stack elements</i>.
+    The use of stack in this way is very powerful. The previous example could be rewritten like
+    this"><b>2 dup +</b> because <b>dup</b> duplicates the topmost stack value and puts it on top.
+  </paragraph>
+  <paragraph>
+    Some functions work a bit differently. Those functions are called block functions.
+    <b>if</b> is a block function. It works like this:
+    <code>if [test] then [commands] end</code>
+    Note that [test] can be empty. Indeed, the parser tests the topmost stack value when it
+    encounters <b>then</b>. If this value is greater than or equal to 1, the [commands] is
+    parsed. This means [test] is interpreted as any other part of the script. Here is a better
+    example": <code>if 2 5 &lt; then "2 is less than than 5" println end</code>
+    This code checks if 2 is less than 5. As it is true (1 is returned by the &lt; operator),
+    the code between <b>then</b> and <b>end</b> is executed. This code prints out a sentence
+    in the log window.
+  </paragraph>
+
+  <paragraph title="Values and variables">
+    Dawn knows 4 different data types ": numeric, literal, arrays and identifier datas. <b>2</b> or
+    <b>-17</b> or <b>99.99</b> are numeric values. <b>"hello world!"</b> is a literal value.
+    <b>myVariable</b> is an identifier. Arrays work differently as you have to call the
+    <b>array</b> function to put a new array on the stack.
+  </paragraph>
+  <paragraph>
+    You can store values into variables using two different functions. The most used one is
+    the <b>-&gt;</b> function which stores a value in a variable locally. On the other hand,
+    the function <b>sto</b> stores a value in a global variable. A global variable can be
+    accessed by other scripts (for instance if you call a script external to yours). Example:
+    <code>3 myVar -&gt;</code>
+    Stores 3 into myVar. To recall a variable's content from the stack, call:
+    <code>myVar rcl</code>
+    Here is the if example using variables:
+    <code>2 left -&gt; 5 right -&gt; if left rcl right rcl &lt; then "2 &lt; 5" println end</code>
+  </paragraph>
+
+  <paragraph title="Functions">
+    You should also see the directory <b>&lt;jext home&gt;/bin/scripts</b> and read the sample
+    script to better understand how to write them. Also know that the default QuickMake plugin
+    is written in Dawn. There are numerous functions in Dawn. Here is a list of them, with a
+    little help. In this list, functions are displayed under the form <b>function(arg1, arg2)</b>
+    but have to be used under the form <b>arg1 arg2 function</b>. In the function declarations,
+    <i>s</i> indicates the use of a string (i.e a literal value), <i>i</i> an identifier (i.e a
+    variable name), <i>a</i> an array, <i>n</i> a numeric value and <i>value</i> any.
+
+    <menu title="Dawn core functions">
+      <item name="!(n number)">exponential math function (3! = 1 * 2 * 3)</item>
+      <item name="!=(n left, n right)">'different from' test operator</item>
+      <item name="%(n number)">modulo operator</item>
+      <item name="&amp;(n left, n right)">binary and operator</item>
+      <item name="*(n left, n right)">times math operator</item>
+      <item name="+(n left, n right)">addition</item>
+      <item name="++(n number) or ++(i var)">increases either a number either a variable by one</item>
+      <item name="-(n left, n right)">substraction</item>
+      <item name="--(n number) or --(i var)">decreases either a number either a variable by one</item>
+      <item name="-&gt;(value, i var)">stores given value in a runtime variable</item>
+      <item name="-&gt;lit(s string)">turns a string into a literal (variable name)</item>
+      <item name="-&gt;str(n value)">turns a value into a string</item>
+      <item name="/(n left, n right)">divide</item>
+      <item name="&lt;(n left, n right)">inferior test operator</item>
+      <item name="&lt;=(n left, n right)">inferior/equals test operator</item>
+      <item name="==(n left, n right)">equals test operator</item>
+      <item name="&gt;(n left, n right)">greater test operator</item>
+      <item name="&gt;=(n left, n right)">greater/equals test operator</item>
+      <item name="^(n left, n right)">exponent math operator</item>
+      <item name="acos(n number)">arc cosinus math function</item>
+      <item name="addElement(a array, value)">adds an element into an array</item>
+      <item name="and(n number, n number)">and logic operator</item>
+      <item name="array">inits a new array</item>
+      <item name="asin(n number)">arc sinus math function</item>
+      <item name="atan(n number)">arc tan math function</item>
+      <item name="charAt(s string, n position)">gets a character from a string</item>
+      <item name="chr(n number)">gets a character from its ASCII value</item>
+      <item name="class(s className)">pushes a Java class on the stack</item>
+      <item name="clear">clears stack</item>
+      <item name="clearArray(a array)">clear given array</item>
+      <item name="closeFile(s fileID)">closes given file</item>
+      <item name="concat(s left, s right)">concatenates two strings</item>
+      <item name="constructor(c class, s constructor)">gets a constructor from a class</item>
+      <item name="constructPath(s path)">construct an abstract path from a relative one for a file</item>
+      <item name="cos(n number)">cosine math function</item>
+      <item name="date">gets current date</item>
+      <item name="depth">returns stack depth (i.e amount of stored values in it)</item>
+      <item name="do [test] until [command] loop">do/until loop</item>
+      <item name="drop">drops first element of the stack</item>
+      <item name="dropn(n number)">drops n-th element of the stack</item>
+      <item name="dump">prints stack on standard output</item>
+      <item name="dup">duplicates topmost stack element</item>
+      <item name="dupdup">duplicates twice</item>
+      <item name="dupn(n number)">duplicates n first elements</item>
+      <item name="e">math E approached value</item>
+      <item name="elementAt(a array, n number)">gets an element from a given array</item>
+      <item name="elements(a array, n amount)">adds n elements from stack in an array</item>
+      <item name="endsWith(s left, s right)">checks if given string ends with another one</item>
+      <item name="errMsg">displays last error caught message</item>
+      <item name="error">throw last caught error</item>
+      <item name="eval(s code)">executes a string (must be Dawn script)</item>
+      <item name="exec(s command)">executes an OS command</item>
+      <item name="exists(s file)">checks if given file exists</item>
+      <item name="exit">exits from current script</item>
+      <item name="fdate(s format)">displays current date using specified format</item>
+      <item name="field(c class, s field)">gets a field from a class</item>
+      <item name="fileSize(s file)">gives specified file's size</item>
+      <item name="for(n start, n end, i var) [commands] next">for loop</item>
+      <item name="function(s functioName) [body] endFunction">creates a new runtime function</item>
+      <item name="global(s functioName) [body] endFunction">creates a new global function</item>
+      <item name="head(s string)">gets first char of a string</item>
+      <item name="help">displays a list of available functions</item>
+      <item name="if [test] then [commands] end">if statement</item>
+      <item name="inputLine">inputs a line to user</item>
+      <item name="insertElementAt(a array, value, n position)">insert an element into an array</item>
+      <item name="inv(n number)">1/x math function</item>
+      <item name="invoke(c class, [parameters values], m method)">invokes a given Java method on a Java object</item>
+      <item name="isArray(value)">checks if given value is an array</item>
+      <item name="isFileAvailable(s fileID)">checks if specified file (using its Dawn ID) is available</item>
+      <item name="isLiteral(value)">checks if given value is literal</item>
+      <item name="isNumeric(value) ">checks if given value is numeric</item>
+      <item name="isString(value)">checks if given value is a string</item>
+      <item name="lastPos(s left, s right)">returns last index of a string in another one</item>
+      <item name="length(a array)">returns the length of an array</item>
+      <item name="lineSeparator ">put OS line separator on stack</item>
+      <item name="lit-&gt;(i varName)">turns a literal into a string</item>
+      <item name="lowerCase(s string)">returns same string, lower cased</item>
+      <item name="method(c class, s method)">gets a method from a Java class</item>
+      <item name="ndup(n number)">dups n time topmost stack element</item>
+      <item name="neg(n number)">returns opposite numeric value</item>
+      <item name="new(c class)">creates a new instance of given Java class</item>
+      <item name="not(n left, n right)">not logic operator</item>
+      <item name="null">returns the Java null object</item>
+      <item name="num(s string)">gets ASCII value of first char of given string</item>
+      <item name="openForInput(s file, s fileID)">opens a file for input</item>
+      <item name="openForOutput(s file, s fileID)">opens a file for output</item>
+      <item name="or(n left, n right)">or logic operator</item>
+      <item name="pi">math PI approached value</item>
+      <item name="pick(n depth)">gets an element on n-th level of stack and dup it on first level</item>
+      <item name="pos(s left, s right)">returns index of a string into another one</item>
+      <item name="print(s string)">prints on standard output</item>
+      <item name="println(s string)">prints on standard output adding a linefeed</item>
+      <item name="rand">gets a random number</item>
+      <item name="randomize">randomize random seed</item>
+      <item name="rcl(i var)">gets variable value</item>
+      <item name="rdz(n seed)">sets random seed</item>
+      <item name="read(s fileID)">reads a char from a file</item>
+      <item name="readLine(s fileID)">reads a line from a file</item>
+      <item name="removeElementAt(a array, n pos)">removes an element from an array</item>
+      <item name="rev">reverts stack</item>
+      <item name="roll(n depth)">rotates up the n first stack elements</item>
+      <item name="rolld(n depth)">rotates down the n first stack elements</item>
+      <item name="rot">rotates up the 3 first stack elements</item>
+      <item name="round(n number)">returns the round value of a decimal number</item>
+      <item name="run(s script)">runs an external script</item>
+      <item name="same(value, value)">compares two objects</item>
+      <item name="sameType(value, value)">compares two objects types</item>
+      <item name="setElementAt(a array, value, n pos)">sets an element in an array</item>
+      <item name="sin(n number)">sine math function</item>
+      <item name="size(s string)">returns length of a given string</item>
+      <item name="sqrt(n number)">square root math function</item>
+      <item name="startsWith(s left, s right)">checks if a given string begins with another one</item>
+      <item name="sto(value, i varName)">stores a value into a global variable</item>
+      <item name="str-&gt;(s string)">turns a string into a number</item>
+      <item name="sub(s string, n start, n end)">returns a portion of a string</item>
+      <item name="swap">swaps two first stack elements</item>
+      <item name="tail(s string)">returns the given string but first char</item>
+      <item name="tan(n number)">tan math function</item>
+      <item name="time">puts current time in millis on stack</item>
+      <item name="tokenize(s string)">tokenizes a string and puts each token on a level</item>
+      <item name="tokenizeArray(s string)">tokenizes a string and stores result in an array</item>
+      <item name="trim(s string)">removes white spaces at beginning and end of a string</item>
+      <item name="try [code] catch [code if err] err">try/catch block</item>
+      <item name="type(value)">gets element type</item>
+      <item name="unrot">rotates down 3 first stack elements</item>
+      <item name="upperCase(s string)">returns the same string, upper cased</item>
+      <item name="version">gets Dawn version</item>
+      <item name="wait(n delay)">wait for a specified delay (in millis)</item>
+      <item name="while [test] repeat [code] wend">while loop</item>
+      <item name="write(s string, s fileID)">writes a string into a file</item>
+      <item name="writeLine(s string, s fileID)">writes a line into a file</item>
+      <item name="xor(n left, n right)">xor binary operator</item>
+      <item name="|(n left, n right)">or binary operator</item>
+    </menu>
+
+    <menu title="Jext functions">
+      <item name="console(s command)">executes a command in the console</item>
+      <item name="createAction(s code, s actionLabel, s actionName)">creates a new item in Tools-Dawn.
+      This item is labeled with actionLabel and executes the Dawn code "code"</item>
+      <item name="getProperty(s prop)">gets a property from Jext set</item>
+      <item name="getSelectedText">gets current text area selection</item>
+      <item name="getText">gets current text area text</item>
+      <item name="input(s prompt)">displays a graphical input box</item>
+      <item name="insertText(s text)">inserts text in current text area</item>
+      <item name="isPropertyEnabled(s prop)">checks if specified property is enabled or not</item>
+      <item name="jextAction(s actionName)">executes a Jext action designed by its internal name</item>
+      <item name="msgBox(s msg)">displays a message box</item>
+      <item name="open(s file)">opens a file</item>
+      <item name="setProperty(s propName, s value)">sets a property</item>
+      <item name="setText(s text)">sets current text area text</item>
+      <item name="yesNo(s prompt)">displays a yes/no dialog box</item>
+      <item name="yesNoCancel(s prompt)">displays a yes/no/cancel dialog box</item>
+    </menu>
+
+  </paragraph>
+</xtiny-doc-page>
+
+<!-- End of Jext documentation -->

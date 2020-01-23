@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE xtiny-doc-page SYSTEM "../dtd/xtiny-doc-page.dtd" >
+
+<!--
+  -
+  - Jext documentation source document
+  - Based on xtiny-doc DTD
+  -
+  - DTD:xtiny-doc and XSL:xtiny-doc
+  - are (C)1999 Romain Guy
+  -
+  - Last updated: 12/02/2001 - 22:15:26
+  -
+  -->
+
+<xtiny-doc-page author="Romain Guy"
+           update="12/02/2001"
+           name="Jext : Console"
+           title="Console"
+           prev="jext-search.html"
+           next="jext-xinsert.html">
+
+  <paragraph title="Overview">
+    The Jext console behaves exactly like any system console (or terminal). Thus, it can be used
+    to browse disks, launch applications, etc...
+  </paragraph>
+
+  <paragraph title="Using the console">
+    First, the console is by default hidden. You have to go into the options menu and
+    activate the check box named "Show top tabbed pane".
+  </paragraph>
+  <paragraph>
+    To use the console, simply click in it and type in your command, followed by <b>ENTER</b>
+    to execute it. The Jext console provides many internal commands and variables (which generaly
+    change according to the current selected document) as well as special keys.
+  </paragraph>
+
+  <paragraph title="Console prompt">
+    Jext lets the user customize the prompt. The Default prompt is in of the form
+    <b>user_name@absolute_path &gt;</b>. In the options, you can change this prompt. Jext provides,
+    in addition to this prompt, three defaults: Linux (<b>user@host%</b>), Solaris
+    (<b>host%</b>) and DOS (<b>path &gt;</b>). To customize your prompt, enter any text in the
+    prompt text field in the options dialog. You can use one of the
+    four following variables:
+    <menu>
+      <item name="$u">
+        Includes the current user name in the prompt
+      </item>
+      <item name="$h">
+        Includes the current host (computer) name in the prompt
+      </item>
+      <item name="$p">
+        Includes the current working directory in the prompt
+      </item>
+      <item name="$$">
+        Includes the character '$' in the prompt
+      </item>
+    </menu>
+  </paragraph>
+
+  <menu title="Internal commands">
+    <item name="help">
+      Displays a summary of the console commands and variables.
+    </item>
+    <item name="clear">
+      Clears the console screen.
+    </item>
+    <item name="cd">
+      Change directory. This command is a little bit different from your
+      OS one as it accepts both / and \ path separators depending on your OS is. It also offers the
+      use of the ~ character which stands for your home directory. Type <b>cd -help</b> to get
+      more information about it.
+    </item>
+    <item name="exit">
+      Exits Jext.
+    </item>
+    <item name="home">
+      This command does a <b>cd &lt;jext home dir&gt;</b>.
+    </item>
+    <item name="ls">
+      Un*x users already know this command. Windows users have to know that this function is
+      the equivalent of their dir command. The ls command accepts many flags, type <b>ls -help</b>
+      to get a description of each of them. Note that the command <b>dir</b> can be substituted
+      with the <b>ls</b> command.
+    </item>
+    <item name="pwd">
+      Print working directory. This is useful when you choose a non-DOS prompt type (Linux or
+      Solaris type).
+    </item>
+    <item name="file:filename">
+      Typing <b>file:filename</b> will open the name file. The path to this file can
+      be relative (i.e file:../infos.txt) or absolute (i.e file:/etc/.bashrc). Note the path is
+      built using the cd command.
+    </item>
+    <item name="http://URL">
+      Opens a specified URL. Typing <b>http://www.jext.com/index.html</b> will
+      for instance open Jext (virtual ;-) web site welcome page in Jext.
+    </item>
+    <item name="run:scriptname">
+      Runs the script <b>scriptname</b>. To get more informations about Jext internal scripts,
+      please see the <a href="jext-scripts.html">Scripts section</a>.
+    </item>
+    <item name="eval:scriptlet">
+      Evaluates the script "scriptlet" as a Python script.
+    </item>
+  </menu>
+
+  <paragraph title="Using variables">
+    If you insert an internal variable in your command, the console will automatically expand it
+    to its current value before executing the command line. If you've opened the file
+    Hello.java in /home/Gfx/java/hello and you want to compile it, even if you
+    use the cd command to go in the directory /home/Gfx/java/hello, you won't be able to compile
+    the file. This is a Java limitation (usually done for portability concerns). But you can do it 
+    using a variable. To compile the file, just type the command <b>javac $n/Hello.java</b>. Then, 
+    to run the class Hello.class, type <b>java -classpath $n $e</b>. Variables can be very useful
+    in many other cases, to go to a subdirectory for instance: <b>cd $n</b> or to delete the 
+    file: <b>rm -f $f</b> (Un*x users only).
+  </paragraph>
+
+  <menu title="Internal variables">
+    <item name="$j">
+      Jext home directory.
+    </item>
+    <item name="$h">
+      User's home directory (/home/user under Un*x, C:\Windows or C:\Windows\Profiles\User under
+      Win32 environment).
+    </item>
+    <item name="$d">
+      Current directory.
+    </item>
+    <item name="$f">
+      Current (selected document) file (designed by its absolute path. Ex: C:\Gfx\Login.rtf).
+    </item>
+    <item name="$p">
+      Current (selected document) file name.
+    </item>
+    <item name="$e">
+      Current (selected document) file name with no extension.
+    </item>
+    <item name="$n">
+      Current (selected document) file directory.
+    </item>
+    <item name="$s">
+      Selected text in the editor.
+    </item>
+  </menu>
+
+  <paragraph title="Console keys">
+    The console also provides many keys to simplify and streamline its use. Here is a list of them:
+  </paragraph>
+  <menu>
+    <item name="ESCAPE">
+      Deletes the whole command line. If you typed a long command line and then changed your
+      mind, simply hit <b>ESCAPE</b> to clear it and place your caret at the prompt.
+    </item>
+    <item name="LEFT">
+      Moves caret to the left in the command line.
+    </item>
+    <item name="RIGHT">
+      Moves caret to the right in the command line.
+    </item>
+    <item name="UP">
+      Get previous typed command from the history (up to 25 commands in the history, the history
+      is saved from one session to the next).
+    </item>
+    <item name="DOWN">
+      Get next typed command from the history.
+    </item>
+    <item name="TAB">
+      Completes the file name if a match is found in the current directory. For example, if you
+      are in the a directory containing the file <b>jext-patch-2.8.0.3.zip</b>, you can type
+      <b>jext-</b> and then press <b>TAB</b> for Jext to automatically complete the file name. If
+      several files begin with your shorthand name, the longest common part among those files
+      names will be displayed.
+    </item>
+    <item name="S+TAB">
+      Completes a command if a match is found in the history. For example, if you already typed the
+      command <b>ls -rind</b>, then if you type <b>ls</b> in the console, and press
+      <b>TAB</b>, the console will expand your command line to <b>ls -rind</b>.
+    </item>
+    <item name="C+c">
+      Copies selected text to the clipboard.
+    </item>
+    <item name="C+d">
+      Kills (terminates) current process. If you ran an app which seems to have crashed or
+      needs to be terminated, press <b>C+d</b>. C+d used instead of the standard C+c 
+      because C+c is already used for copying selected text.
+    </item>
+  </menu>
+</xtiny-doc-page>
+
+<!-- End of Jext documentation -->

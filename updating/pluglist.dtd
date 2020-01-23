@@ -1,0 +1,31 @@
+<!ELEMENT pluginsDeploy (mirror+,plugList+) >
+
+  <!ELEMENT mirror EMPTY >
+  <!ATTLIST mirror name #REQUIRED >
+  <!ELEMENT plugList (plugin*) >
+  <!ATTLIST plugList downloadUrlTempl #REQUIRED >
+
+    <!ELEMENT plugin (file+,description,dependStr*,(author|htmlauthor)*)>
+    <!ATTLIST plugin 
+              name CDATA #REQUIRED
+              version CDATA #REQUIRED
+              displayName CDATA #REQUIRED>
+
+      <!ELEMENT file EMPTY>
+      <!ATTLIST file
+                type (bin | src) #REQUIRED
+                name CDATA #REQUIRED
+                size CDATA #IMPLIED >
+                <!-- Default values are not supported by our xml parser.-->
+
+      <!ELEMENT description CDATA>
+
+      <!ELEMENT dependStr EMPTY>
+      <!ATTLIST dependStr value CDATA #REQUIRED>
+
+      <!ELEMENT author EMPTY>
+      <!ATTLIST author
+                name CDATA #REQUIRED
+                email CDATA #IMPLIED >
+
+      <!ELEMENT htmlauthor CDATA>

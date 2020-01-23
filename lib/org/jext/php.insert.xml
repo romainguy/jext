@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <menu name="Php" modes="php3 php">
+
+    <menu name="Blocks">
+      <item name="{ }">{\n|\n}\n</item>
+      <item name="if">if (|)\n{\n}\nelse\n{\n}\n</item>
+      <item name="if (2nd syntax)">if (|):\n\nelse:\n\nendif;\n</item>
+    </menu>
+
+    <menu name="Comments">
+      <item name="//">// |</item>
+      <item name="#"># |</item>
+      <item name="/* */">/* | */</item>
+    </menu>
+
+    <menu name="Loops">
+      <item name="do">do\n{\n|\n} while()\n</item>
+      <item name="for">for( ; ; )\n{\n|\n}\n</item>
+      <item name="for (2nd syntax)">for( ; ; ):\n|\nendfor;\n</item>
+      <item name="while">while()\n{\n|\n}\n</item>
+      <item name="while 2nd syntax)">while():\n|\nendwhile;\n</item>
+      <item name="switch">switch()\n{\n  case:\n  |\n  default:\n}\n</item>
+      <item name="switch (2nd syntax)">switch():\n  case:\n  |\n  default:\nendswitch;\n</item>      
+    </menu>
+
+    <menu name="MySQL">
+      <item name="connect">mysql_connect("|", "", "");\n</item>
+      <item name="select dbase">mysql_select_db("|");\n</item>
+      <item name="close">mysql_close();\n|</item>
+      <item name="query">$result = mysql_query("|") or die(mysql_error());\n</item>
+      <item name="fetch row loop">while( $row = mysql_fetch_row( | ) )\n{\n\n}\n</item>      
+    </menu>
+
+
+  </menu>
