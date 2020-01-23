@@ -10,7 +10,7 @@ The last published version was Jext 5.0 and this repository is a source snapshot
 
 ## Contributors
 
-Jext was made possible tahnks to the contributions and support of many talented people including:
+Jext was made possible thanks to the contributions and support of many talented people including:
 
 - Slava Pestov and Mike Dillon
 - Karsten Lentzsch
