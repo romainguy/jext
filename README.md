@@ -1,10 +1,10 @@
 # Jext
 
-Jext is a source code editor for Windows, Linux and macOS that I started writing in 1998 and maintained until 2004 on [SourceForge](https://sourceforge.net/projects/jext/) (before GitHub was a thing).
+Jext is a source code editor for Windows, Linux and macOS that I started writing in 1998, and maintained until 2004 on [SourceForge](https://sourceforge.net/projects/jext/) (before GitHub was a thing).
 
-Jext was originally created to support the Java programming language but ended up doing much more with support for many other languages, light IDE features and extensibiliy via plugins or scripts (Python and a custom RPN-style language called Dawn).
+Jext was originally created to support the Java programming language but ended up doing much more, with support for many other languages, light IDE features, and extensibiliy via plugins or scripts (Python and a custom RPN-style language called Dawn).
 
-The last published version was Jext 5.0 and this repository is a source snapshot of the last version I ever published (see Disclaimer section below).
+The last published version was Jext 5.0. This repository is a source snapshot of the last version I ever published (see Disclaimer section below).
 
 ![Jext 5.0](./jext5.0.png)
 
